@@ -1,0 +1,1089 @@
+public class cx.hell.android.pdfview.Options extends android.preference.PreferenceActivity implements android.content.SharedPreferences$OnSharedPreferenceChangeListener
+{
+    public static final int COLOR_MODE_BLACK_ON_YELLOWISH;
+    public static final int COLOR_MODE_GRAY;
+    public static final int COLOR_MODE_GREEN_ON_BLACK;
+    public static final int COLOR_MODE_INVERT;
+    public static final int COLOR_MODE_INVERT_GRAY;
+    public static final int COLOR_MODE_NORMAL;
+    public static final int COLOR_MODE_RED_ON_BLACK;
+    public static final int DOUBLE_TAP_NONE;
+    public static final int DOUBLE_TAP_ZOOM;
+    public static final int DOUBLE_TAP_ZOOM_IN_OUT;
+    public static final int PAGE_NUMBER_DISABLED;
+    public static final int PAIR_NONE;
+    public static final int PAIR_PAGE;
+    public static final int PAIR_PAGE_REV;
+    public static final int PAIR_PAGE_TOP;
+    public static final int PAIR_PAGE_TOP_REV;
+    public static final int PAIR_SCREEN;
+    public static final int PAIR_SCREEN_REV;
+    public static final int PAIR_ZOOM_1020;
+    public static final int PAIR_ZOOM_1050;
+    public static final int PAIR_ZOOM_1100;
+    public static final int PAIR_ZOOM_1200;
+    public static final int PAIR_ZOOM_1414;
+    public static final int PAIR_ZOOM_2000;
+    public static final java.lang.String PREF_BOX;
+    public static final java.lang.String PREF_COLOR_MODE;
+    public static final java.lang.String PREF_DIRS_FIRST;
+    public static final java.lang.String PREF_DOUBLE_TAP;
+    public static final java.lang.String PREF_EINK;
+    public static final java.lang.String PREF_EXTRA_CACHE;
+    public static final java.lang.String PREF_FADE_SPEED;
+    public static final java.lang.String PREF_FULLSCREEN;
+    public static final java.lang.String PREF_HISTORY;
+    public static final java.lang.String PREF_KEEP_ON;
+    public static final java.lang.String PREF_LEFT_RIGHT_PAIR;
+    public static final java.lang.String PREF_LONG_ZOOM_PAIR;
+    public static final java.lang.String PREF_NOOK2;
+    public static final java.lang.String PREF_OMIT_IMAGES;
+    public static final java.lang.String PREF_ORIENTATION;
+    public static final java.lang.String PREF_PAGE_ANIMATION;
+    public static final java.lang.String PREF_PREV_ORIENTATION;
+    public static final java.lang.String PREF_RENDER_AHEAD;
+    public static final java.lang.String PREF_RIGHT_UP_DOWN_PAIR;
+    public static final java.lang.String PREF_SHOW_EXTENSION;
+    public static final java.lang.String PREF_SHOW_ZOOM_ON_SCROLL;
+    public static final java.lang.String PREF_SIDE_MARGINS;
+    public static final java.lang.String PREF_TAG;
+    public static final java.lang.String PREF_TOP_BOTTOM_TAP_PAIR;
+    public static final java.lang.String PREF_TOP_MARGIN;
+    public static final java.lang.String PREF_UP_DOWN_PAIR;
+    public static final java.lang.String PREF_VERTICAL_SCROLL_LOCK;
+    public static final java.lang.String PREF_VOLUME_PAIR;
+    public static final java.lang.String PREF_ZOOM_ANIMATION;
+    public static final java.lang.String PREF_ZOOM_PAIR;
+    private static final java.lang.String TAG;
+    public static final int ZOOM_BUTTONS_DISABLED;
+    private static final int[] backColors;
+    private static final float[][] colorMatrices;
+    private static final int[] foreColors;
+    private static final int[] summaryDefaults;
+    private static final int[] summaryEntries;
+    private static final int[] summaryEntryValues;
+    private static final java.lang.String[] summaryKeys;
+    private android.content.res.Resources resources;
+
+    static void <clinit>()
+    {
+        int $i0;
+        int[] $r0;
+        float[][] $r1;
+        float[] $r2;
+        java.lang.String[] $r3;
+
+        <cx.hell.android.pdfview.Options: int ZOOM_BUTTONS_DISABLED> = 100;
+
+        <cx.hell.android.pdfview.Options: java.lang.String TAG> = "cx.hell.android.pdfview";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_ZOOM_PAIR> = "zoomPair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_ZOOM_ANIMATION> = "zoomAnimation";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_VOLUME_PAIR> = "volumePair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_VERTICAL_SCROLL_LOCK> = "verticalScrollLock";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_UP_DOWN_PAIR> = "upDownPair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_TOP_MARGIN> = "topMargin";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_TOP_BOTTOM_TAP_PAIR> = "topBottomTapPair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_TAG> = "Options";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_SIDE_MARGINS> = "sideMargins2";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_SHOW_ZOOM_ON_SCROLL> = "showZoomOnScroll";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_SHOW_EXTENSION> = "showExtension";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_RIGHT_UP_DOWN_PAIR> = "rightUpDownPair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_RENDER_AHEAD> = "renderAhead";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_PREV_ORIENTATION> = "prevOrientation";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_PAGE_ANIMATION> = "pageAnimation";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_ORIENTATION> = "orientation";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_OMIT_IMAGES> = "omitImages";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_NOOK2> = "nook2";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_LONG_ZOOM_PAIR> = "longZoomPair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_LEFT_RIGHT_PAIR> = "leftRightPair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_KEEP_ON> = "keepOn";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_HISTORY> = "history";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_FULLSCREEN> = "fullscreen";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_FADE_SPEED> = "fadeSpeed";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_EXTRA_CACHE> = "extraCache";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_EINK> = "eink";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_DOUBLE_TAP> = "doubleTap";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_DIRS_FIRST> = "dirsFirst";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_COLOR_MODE> = "colorMode";
+
+        <cx.hell.android.pdfview.Options: java.lang.String PREF_BOX> = "boxType";
+
+        <cx.hell.android.pdfview.Options: int PAIR_ZOOM_2000> = 8;
+
+        <cx.hell.android.pdfview.Options: int PAIR_ZOOM_1414> = 7;
+
+        <cx.hell.android.pdfview.Options: int PAIR_ZOOM_1200> = 6;
+
+        <cx.hell.android.pdfview.Options: int PAIR_ZOOM_1100> = 5;
+
+        <cx.hell.android.pdfview.Options: int PAIR_ZOOM_1050> = 4;
+
+        <cx.hell.android.pdfview.Options: int PAIR_ZOOM_1020> = 3;
+
+        <cx.hell.android.pdfview.Options: int PAIR_SCREEN_REV> = 10;
+
+        <cx.hell.android.pdfview.Options: int PAIR_SCREEN> = 1;
+
+        <cx.hell.android.pdfview.Options: int PAIR_PAGE_TOP_REV> = 12;
+
+        <cx.hell.android.pdfview.Options: int PAIR_PAGE_TOP> = 9;
+
+        <cx.hell.android.pdfview.Options: int PAIR_PAGE_REV> = 11;
+
+        <cx.hell.android.pdfview.Options: int PAIR_PAGE> = 2;
+
+        <cx.hell.android.pdfview.Options: int PAIR_NONE> = 0;
+
+        <cx.hell.android.pdfview.Options: int PAGE_NUMBER_DISABLED> = 100;
+
+        <cx.hell.android.pdfview.Options: int DOUBLE_TAP_ZOOM_IN_OUT> = 2;
+
+        <cx.hell.android.pdfview.Options: int DOUBLE_TAP_ZOOM> = 1;
+
+        <cx.hell.android.pdfview.Options: int DOUBLE_TAP_NONE> = 0;
+
+        <cx.hell.android.pdfview.Options: int COLOR_MODE_RED_ON_BLACK> = 6;
+
+        <cx.hell.android.pdfview.Options: int COLOR_MODE_NORMAL> = 0;
+
+        <cx.hell.android.pdfview.Options: int COLOR_MODE_INVERT_GRAY> = 3;
+
+        <cx.hell.android.pdfview.Options: int COLOR_MODE_INVERT> = 1;
+
+        <cx.hell.android.pdfview.Options: int COLOR_MODE_GREEN_ON_BLACK> = 5;
+
+        <cx.hell.android.pdfview.Options: int COLOR_MODE_GRAY> = 2;
+
+        <cx.hell.android.pdfview.Options: int COLOR_MODE_BLACK_ON_YELLOWISH> = 4;
+
+        $r0 = newarray (int)[7];
+
+        $r0[0] = -16777216;
+
+        $r0[1] = -1;
+
+        $r0[2] = -16777216;
+
+        $r0[3] = -1;
+
+        $r0[4] = -16777216;
+
+        $r0[5] = -16711936;
+
+        $r0[6] = -65536;
+
+        <cx.hell.android.pdfview.Options: int[] foreColors> = $r0;
+
+        $r0 = newarray (int)[7];
+
+        $r0[0] = -1;
+
+        $r0[1] = -16777216;
+
+        $r0[2] = -1;
+
+        $r0[3] = -16777216;
+
+        $i0 = staticinvoke <android.graphics.Color: int rgb(int,int,int)>(239, 219, 189);
+
+        $r0[4] = $i0;
+
+        $r0[5] = -16777216;
+
+        $r0[6] = -16777216;
+
+        <cx.hell.android.pdfview.Options: int[] backColors> = $r0;
+
+        $r1 = newarray (float[])[7];
+
+        $r2 = newarray (float)[20];
+
+        $r2[0] = -1.0F;
+
+        $r2[1] = 0.0F;
+
+        $r2[2] = 0.0F;
+
+        $r2[3] = 0.0F;
+
+        $r2[4] = 255.0F;
+
+        $r2[5] = 0.0F;
+
+        $r2[6] = -1.0F;
+
+        $r2[7] = 0.0F;
+
+        $r2[8] = 0.0F;
+
+        $r2[9] = 255.0F;
+
+        $r2[10] = 0.0F;
+
+        $r2[11] = 0.0F;
+
+        $r2[12] = -1.0F;
+
+        $r2[13] = 0.0F;
+
+        $r2[14] = 255.0F;
+
+        $r2[15] = 0.0F;
+
+        $r2[16] = 0.0F;
+
+        $r2[17] = 0.0F;
+
+        $r2[18] = 0.0F;
+
+        $r2[19] = 255.0F;
+
+        $r1[1] = $r2;
+
+        $r2 = newarray (float)[20];
+
+        $r2[0] = 0.3F;
+
+        $r2[1] = 0.59F;
+
+        $r2[2] = 0.11F;
+
+        $r2[3] = 0.0F;
+
+        $r2[4] = 0.0F;
+
+        $r2[5] = 0.3F;
+
+        $r2[6] = 0.59F;
+
+        $r2[7] = 0.11F;
+
+        $r2[8] = 0.0F;
+
+        $r2[9] = 0.0F;
+
+        $r2[10] = 0.3F;
+
+        $r2[11] = 0.59F;
+
+        $r2[12] = 0.11F;
+
+        $r2[13] = 0.0F;
+
+        $r2[14] = 0.0F;
+
+        $r2[15] = 0.0F;
+
+        $r2[16] = 0.0F;
+
+        $r2[17] = 0.0F;
+
+        $r2[18] = 0.0F;
+
+        $r2[19] = 255.0F;
+
+        $r1[2] = $r2;
+
+        $r2 = newarray (float)[20];
+
+        $r2[0] = -0.3F;
+
+        $r2[1] = -0.59F;
+
+        $r2[2] = -0.11F;
+
+        $r2[3] = 0.0F;
+
+        $r2[4] = 255.0F;
+
+        $r2[5] = -0.3F;
+
+        $r2[6] = -0.59F;
+
+        $r2[7] = -0.11F;
+
+        $r2[8] = 0.0F;
+
+        $r2[9] = 255.0F;
+
+        $r2[10] = -0.3F;
+
+        $r2[11] = -0.59F;
+
+        $r2[12] = -0.11F;
+
+        $r2[13] = 0.0F;
+
+        $r2[14] = 255.0F;
+
+        $r2[15] = 0.0F;
+
+        $r2[16] = 0.0F;
+
+        $r2[17] = 0.0F;
+
+        $r2[18] = 0.0F;
+
+        $r2[19] = 255.0F;
+
+        $r1[3] = $r2;
+
+        $r2 = newarray (float)[20];
+
+        $r2[0] = 0.94F;
+
+        $r2[1] = 0.02F;
+
+        $r2[2] = 0.02F;
+
+        $r2[3] = 0.0F;
+
+        $r2[4] = 0.0F;
+
+        $r2[5] = 0.02F;
+
+        $r2[6] = 0.86F;
+
+        $r2[7] = 0.02F;
+
+        $r2[8] = 0.0F;
+
+        $r2[9] = 0.0F;
+
+        $r2[10] = 0.02F;
+
+        $r2[11] = 0.02F;
+
+        $r2[12] = 0.74F;
+
+        $r2[13] = 0.0F;
+
+        $r2[14] = 0.0F;
+
+        $r2[15] = 0.0F;
+
+        $r2[16] = 0.0F;
+
+        $r2[17] = 0.0F;
+
+        $r2[18] = 1.0F;
+
+        $r2[19] = 0.0F;
+
+        $r1[4] = $r2;
+
+        $r2 = newarray (float)[20];
+
+        $r2[0] = 0.0F;
+
+        $r2[1] = 0.0F;
+
+        $r2[2] = 0.0F;
+
+        $r2[3] = 0.0F;
+
+        $r2[4] = 0.0F;
+
+        $r2[5] = -0.3F;
+
+        $r2[6] = -0.59F;
+
+        $r2[7] = -0.11F;
+
+        $r2[8] = 0.0F;
+
+        $r2[9] = 255.0F;
+
+        $r2[10] = 0.0F;
+
+        $r2[11] = 0.0F;
+
+        $r2[12] = 0.0F;
+
+        $r2[13] = 0.0F;
+
+        $r2[14] = 0.0F;
+
+        $r2[15] = 0.0F;
+
+        $r2[16] = 0.0F;
+
+        $r2[17] = 0.0F;
+
+        $r2[18] = 1.0F;
+
+        $r2[19] = 0.0F;
+
+        $r1[5] = $r2;
+
+        $r2 = newarray (float)[20];
+
+        $r2[0] = -0.3F;
+
+        $r2[1] = -0.59F;
+
+        $r2[2] = -0.11F;
+
+        $r2[3] = 0.0F;
+
+        $r2[4] = 255.0F;
+
+        $r2[5] = 0.0F;
+
+        $r2[6] = 0.0F;
+
+        $r2[7] = 0.0F;
+
+        $r2[8] = 0.0F;
+
+        $r2[9] = 0.0F;
+
+        $r2[10] = 0.0F;
+
+        $r2[11] = 0.0F;
+
+        $r2[12] = 0.0F;
+
+        $r2[13] = 0.0F;
+
+        $r2[14] = 0.0F;
+
+        $r2[15] = 0.0F;
+
+        $r2[16] = 0.0F;
+
+        $r2[17] = 0.0F;
+
+        $r2[18] = 1.0F;
+
+        $r2[19] = 255.0F;
+
+        $r1[6] = $r2;
+
+        <cx.hell.android.pdfview.Options: float[][] colorMatrices> = $r1;
+
+        $r3 = newarray (java.lang.String)[17];
+
+        $r3[0] = "zoomAnimation";
+
+        $r3[1] = "orientation";
+
+        $r3[2] = "pageAnimation";
+
+        $r3[3] = "fadeSpeed";
+
+        $r3[4] = "colorMode";
+
+        $r3[5] = "boxType";
+
+        $r3[6] = "sideMargins2";
+
+        $r3[7] = "topMargin";
+
+        $r3[8] = "extraCache";
+
+        $r3[9] = "doubleTap";
+
+        $r3[10] = "volumePair";
+
+        $r3[11] = "zoomPair";
+
+        $r3[12] = "longZoomPair";
+
+        $r3[13] = "upDownPair";
+
+        $r3[14] = "leftRightPair";
+
+        $r3[15] = "rightUpDownPair";
+
+        $r3[16] = "topBottomTapPair";
+
+        <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys> = $r3;
+
+        $r0 = newarray (int)[17];
+
+        $r0[0] = 2131230720;
+
+        $r0[1] = 2131230727;
+
+        $r0[2] = 2131230722;
+
+        $r0[3] = 2131230724;
+
+        $r0[4] = 2131230729;
+
+        $r0[5] = 2131230731;
+
+        $r0[6] = 2131230734;
+
+        $r0[7] = 2131230734;
+
+        $r0[8] = 2131230732;
+
+        $r0[9] = 2131230736;
+
+        $r0[10] = 2131230738;
+
+        $r0[11] = 2131230738;
+
+        $r0[12] = 2131230738;
+
+        $r0[13] = 2131230738;
+
+        $r0[14] = 2131230738;
+
+        $r0[15] = 2131230738;
+
+        $r0[16] = 2131230738;
+
+        <cx.hell.android.pdfview.Options: int[] summaryEntryValues> = $r0;
+
+        $r0 = newarray (int)[17];
+
+        $r0[0] = 2131230721;
+
+        $r0[1] = 2131230726;
+
+        $r0[2] = 2131230723;
+
+        $r0[3] = 2131230725;
+
+        $r0[4] = 2131230728;
+
+        $r0[5] = 2131230730;
+
+        $r0[6] = 2131230735;
+
+        $r0[7] = 2131230735;
+
+        $r0[8] = 2131230733;
+
+        $r0[9] = 2131230737;
+
+        $r0[10] = 2131230739;
+
+        $r0[11] = 2131230739;
+
+        $r0[12] = 2131230739;
+
+        $r0[13] = 2131230739;
+
+        $r0[14] = 2131230739;
+
+        $r0[15] = 2131230739;
+
+        $r0[16] = 2131230739;
+
+        <cx.hell.android.pdfview.Options: int[] summaryEntries> = $r0;
+
+        $r0 = newarray (int)[17];
+
+        $r0[0] = 2131165206;
+
+        $r0[1] = 2131165215;
+
+        $r0[2] = 2131165208;
+
+        $r0[3] = 2131165210;
+
+        $r0[4] = 2131165225;
+
+        $r0[5] = 2131165230;
+
+        $r0[6] = 2131165235;
+
+        $r0[7] = 2131165237;
+
+        $r0[8] = 2131165233;
+
+        $r0[9] = 2131165240;
+
+        $r0[10] = 2131165249;
+
+        $r0[11] = 2131165252;
+
+        $r0[12] = 2131165253;
+
+        $r0[13] = 2131165250;
+
+        $r0[14] = 2131165251;
+
+        $r0[15] = 2131165254;
+
+        $r0[16] = 2131165255;
+
+        <cx.hell.android.pdfview.Options: int[] summaryDefaults> = $r0;
+
+        return;
+    }
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.Options $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        specialinvoke $r0.<android.preference.PreferenceActivity: void <init>()>();
+
+        return;
+    }
+
+    public static int getBackColor(int)
+    {
+        int $i0;
+        int[] $r0;
+
+        $i0 := @parameter0: int;
+
+        $r0 = <cx.hell.android.pdfview.Options: int[] backColors>;
+
+        $i0 = $r0[$i0];
+
+        return $i0;
+    }
+
+    public static int getColorMode(android.content.SharedPreferences)
+    {
+        android.content.SharedPreferences $r0;
+        int $i0;
+
+        $r0 := @parameter0: android.content.SharedPreferences;
+
+        $i0 = staticinvoke <cx.hell.android.pdfview.Options: int getIntFromString(android.content.SharedPreferences,java.lang.String,int)>($r0, "colorMode", 0);
+
+        return $i0;
+    }
+
+    public static float[] getColorModeMatrix(int)
+    {
+        int $i0;
+        float[][] $r0;
+        float[] $r1;
+
+        $i0 := @parameter0: int;
+
+        $r0 = <cx.hell.android.pdfview.Options: float[][] colorMatrices>;
+
+        $r1 = $r0[$i0];
+
+        return $r1;
+    }
+
+    public static int getForeColor(int)
+    {
+        int $i0;
+        int[] $r0;
+
+        $i0 := @parameter0: int;
+
+        $r0 = <cx.hell.android.pdfview.Options: int[] foreColors>;
+
+        $i0 = $r0[$i0];
+
+        return $i0;
+    }
+
+    public static int getIntFromString(android.content.SharedPreferences, java.lang.String, int)
+    {
+        android.content.SharedPreferences $r0;
+        java.lang.String $r1, $r3;
+        int $i0;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @parameter0: android.content.SharedPreferences;
+
+        $r1 := @parameter1: java.lang.String;
+
+        $i0 := @parameter2: int;
+
+        $r2 = new java.lang.StringBuilder;
+
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>()>();
+
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r1 = interfaceinvoke $r0.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r1, $r3);
+
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r1);
+
+        return $i0;
+    }
+
+    public static java.lang.String getString(android.content.res.Resources, android.content.SharedPreferences, java.lang.String)
+    {
+        android.content.res.Resources $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2, $r4;
+        int $i0, $i1;
+        java.lang.String[] $r3;
+        boolean $z0;
+        int[] $r5;
+
+        $r0 := @parameter0: android.content.res.Resources;
+
+        $r1 := @parameter1: android.content.SharedPreferences;
+
+        $r2 := @parameter2: java.lang.String;
+
+        $i0 = 0;
+
+     label1:
+        $r3 = <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys>;
+
+        $i1 = lengthof $r3;
+
+        if $i0 < $i1 goto label2;
+
+        $r2 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r2, "");
+
+        return $r2;
+
+     label2:
+        $r3 = <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys>;
+
+        $r4 = $r3[$i0];
+
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean equals(java.lang.Object)>($r2);
+
+        if $z0 == 0 goto label3;
+
+        $r5 = <cx.hell.android.pdfview.Options: int[] summaryDefaults>;
+
+        $i0 = $r5[$i0];
+
+        $r4 = virtualinvoke $r0.<android.content.res.Resources: java.lang.String getString(int)>($i0);
+
+        $r2 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r2, $r4);
+
+        return $r2;
+
+     label3:
+        $i0 = $i0 + 1;
+
+        goto label1;
+    }
+
+    public static boolean setOrientation(android.app.Activity)
+    {
+        android.app.Activity $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2;
+        int $i0;
+        java.lang.StringBuilder $r3;
+
+        $r0 := @parameter0: android.app.Activity;
+
+        $r1 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $r2 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("orientation", "0");
+
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r2);
+
+        lookupswitch($i0)
+        {
+            case 0: goto label2;
+            case 1: goto label3;
+            case 2: goto label4;
+            case 3: goto label5;
+            default: goto label1;
+        };
+
+     label1:
+        return 0;
+
+     label2:
+        virtualinvoke $r0.<android.app.Activity: void setRequestedOrientation(int)>(4);
+
+        goto label1;
+
+     label3:
+        virtualinvoke $r0.<android.app.Activity: void setRequestedOrientation(int)>(1);
+
+        goto label1;
+
+     label4:
+        virtualinvoke $r0.<android.app.Activity: void setRequestedOrientation(int)>(0);
+
+        goto label1;
+
+     label5:
+        $i0 = interfaceinvoke $r1.<android.content.SharedPreferences: int getInt(java.lang.String,int)>("prevOrientation", 1);
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("restoring orientation: ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r2 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r2);
+
+        virtualinvoke $r0.<android.app.Activity: void setRequestedOrientation(int)>($i0);
+
+        return 1;
+    }
+
+    public java.lang.String getString(android.content.SharedPreferences, java.lang.String)
+    {
+        cx.hell.android.pdfview.Options $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2;
+        android.content.res.Resources $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        $r1 := @parameter0: android.content.SharedPreferences;
+
+        $r2 := @parameter1: java.lang.String;
+
+        $r3 = $r0.<cx.hell.android.pdfview.Options: android.content.res.Resources resources>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.Options: java.lang.String getString(android.content.res.Resources,android.content.SharedPreferences,java.lang.String)>($r3, $r1, $r2);
+
+        return $r2;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        cx.hell.android.pdfview.Options $r0;
+        android.os.Bundle $r1;
+        android.content.res.Resources $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.preference.PreferenceActivity: void onCreate(android.os.Bundle)>($r1);
+
+        $r2 = virtualinvoke $r0.<cx.hell.android.pdfview.Options: android.content.res.Resources getResources()>();
+
+        $r0.<cx.hell.android.pdfview.Options: android.content.res.Resources resources> = $r2;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.Options: void addPreferencesFromResource(int)>(2131034112);
+
+        return;
+    }
+
+    public void onResume()
+    {
+        cx.hell.android.pdfview.Options $r0;
+        android.preference.PreferenceScreen $r1;
+        android.content.SharedPreferences $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        specialinvoke $r0.<android.preference.PreferenceActivity: void onResume()>();
+
+        staticinvoke <cx.hell.android.pdfview.Options: boolean setOrientation(android.app.Activity)>($r0);
+
+        $r1 = virtualinvoke $r0.<cx.hell.android.pdfview.Options: android.preference.PreferenceScreen getPreferenceScreen()>();
+
+        $r2 = virtualinvoke $r1.<android.preference.PreferenceScreen: android.content.SharedPreferences getSharedPreferences()>();
+
+        interfaceinvoke $r2.<android.content.SharedPreferences: void registerOnSharedPreferenceChangeListener(android.content.SharedPreferences$OnSharedPreferenceChangeListener)>($r0);
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.Options: void setSummaries()>();
+
+        return;
+    }
+
+    public void onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)
+    {
+        cx.hell.android.pdfview.Options $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        $r1 := @parameter0: android.content.SharedPreferences;
+
+        $r2 := @parameter1: java.lang.String;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.Options: void setSummary(java.lang.String)>($r2);
+
+        return;
+    }
+
+    public void setSummaries()
+    {
+        cx.hell.android.pdfview.Options $r0;
+        int $i0, $i1;
+        java.lang.String[] $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        $i0 = 0;
+
+     label1:
+        $r1 = <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys>;
+
+        $i1 = lengthof $r1;
+
+        if $i0 < $i1 goto label2;
+
+        return;
+
+     label2:
+        virtualinvoke $r0.<cx.hell.android.pdfview.Options: void setSummary(int)>($i0);
+
+        $i0 = $i0 + 1;
+
+        goto label1;
+    }
+
+    public void setSummary(int)
+    {
+        cx.hell.android.pdfview.Options $r0;
+        int $i0, $i1;
+        android.content.SharedPreferences $r1;
+        java.lang.String[] $r2, $r8;
+        java.lang.String $r3, $r7;
+        android.preference.Preference $r4;
+        android.content.res.Resources $r5;
+        int[] $r6;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        $i0 := @parameter0: int;
+
+        $r1 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $r2 = <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys>;
+
+        $r3 = $r2[$i0];
+
+        $r4 = virtualinvoke $r0.<cx.hell.android.pdfview.Options: android.preference.Preference findPreference(java.lang.CharSequence)>($r3);
+
+        $r2 = <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys>;
+
+        $r3 = $r2[$i0];
+
+        $r5 = $r0.<cx.hell.android.pdfview.Options: android.content.res.Resources resources>;
+
+        $r6 = <cx.hell.android.pdfview.Options: int[] summaryDefaults>;
+
+        $i1 = $r6[$i0];
+
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String getString(int)>($i1);
+
+        $r3 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>($r3, $r7);
+
+        $r5 = $r0.<cx.hell.android.pdfview.Options: android.content.res.Resources resources>;
+
+        $r6 = <cx.hell.android.pdfview.Options: int[] summaryEntryValues>;
+
+        $i1 = $r6[$i0];
+
+        $r2 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String[] getStringArray(int)>($i1);
+
+        $r5 = $r0.<cx.hell.android.pdfview.Options: android.content.res.Resources resources>;
+
+        $r6 = <cx.hell.android.pdfview.Options: int[] summaryEntries>;
+
+        $i0 = $r6[$i0];
+
+        $r8 = virtualinvoke $r5.<android.content.res.Resources: java.lang.String[] getStringArray(int)>($i0);
+
+        $i0 = 0;
+
+     label1:
+        $i1 = lengthof $r2;
+
+        if $i0 < $i1 goto label2;
+
+        return;
+
+     label2:
+        $r7 = $r2[$i0];
+
+        $z0 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>($r3);
+
+        if $z0 == 0 goto label3;
+
+        $r3 = $r8[$i0];
+
+        virtualinvoke $r4.<android.preference.Preference: void setSummary(java.lang.CharSequence)>($r3);
+
+        return;
+
+     label3:
+        $i0 = $i0 + 1;
+
+        goto label1;
+    }
+
+    public void setSummary(java.lang.String)
+    {
+        cx.hell.android.pdfview.Options $r0;
+        java.lang.String $r1, $r3;
+        boolean $z0;
+        int $i0, $i1;
+        java.lang.String[] $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.Options;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $i0 = 0;
+
+     label1:
+        $r2 = <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys>;
+
+        $i1 = lengthof $r2;
+
+        if $i0 < $i1 goto label2;
+
+        return;
+
+     label2:
+        $r2 = <cx.hell.android.pdfview.Options: java.lang.String[] summaryKeys>;
+
+        $r3 = $r2[$i0];
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>($r1);
+
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.Options: void setSummary(int)>($i0);
+
+        return;
+
+     label3:
+        $i0 = $i0 + 1;
+
+        goto label1;
+    }
+}

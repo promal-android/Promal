@@ -1,0 +1,21 @@
+public interface  android.widget.AbsListView$OnScrollListener extends java.lang.Object
+{
+    public static final int SCROLL_STATE_IDLE;
+    public static final int SCROLL_STATE_TOUCH_SCROLL;
+    public static final int SCROLL_STATE_FLING;
+
+    public abstract void onScrollStateChanged(android.widget.AbsListView, int);
+
+    public abstract void onScroll(android.widget.AbsListView, int, int, int);
+
+    public static void <clinit>()
+    {
+        <android.widget.AbsListView$OnScrollListener: int SCROLL_STATE_FLING> = 2;
+
+        <android.widget.AbsListView$OnScrollListener: int SCROLL_STATE_TOUCH_SCROLL> = 1;
+
+        <android.widget.AbsListView$OnScrollListener: int SCROLL_STATE_IDLE> = 0;
+
+        return;
+    }
+}

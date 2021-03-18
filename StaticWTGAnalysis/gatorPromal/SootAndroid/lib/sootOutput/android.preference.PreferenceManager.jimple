@@ -1,0 +1,199 @@
+public class android.preference.PreferenceManager extends java.lang.Object
+{
+    public static final java.lang.String METADATA_KEY_PREFERENCES;
+    public static final java.lang.String KEY_HAS_SET_DEFAULT_VALUES;
+
+    void <init>()
+    {
+        android.preference.PreferenceManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.preference.PreferenceScreen createPreferenceScreen(android.content.Context)
+    {
+        android.preference.PreferenceManager r0;
+        android.content.Context r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        r1 := @parameter0: android.content.Context;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String getSharedPreferencesName()
+    {
+        android.preference.PreferenceManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setSharedPreferencesName(java.lang.String)
+    {
+        android.preference.PreferenceManager r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int getSharedPreferencesMode()
+    {
+        android.preference.PreferenceManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setSharedPreferencesMode(int)
+    {
+        android.preference.PreferenceManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.SharedPreferences getSharedPreferences()
+    {
+        android.preference.PreferenceManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)
+    {
+        android.content.Context r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.content.Context;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.preference.Preference findPreference(java.lang.CharSequence)
+    {
+        android.preference.PreferenceManager r0;
+        java.lang.CharSequence r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceManager;
+
+        r1 := @parameter0: java.lang.CharSequence;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static void setDefaultValues(android.content.Context, int, boolean)
+    {
+        android.content.Context r0;
+        int i0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.content.Context;
+
+        i0 := @parameter1: int;
+
+        z0 := @parameter2: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static void setDefaultValues(android.content.Context, java.lang.String, int, int, boolean)
+    {
+        android.content.Context r0;
+        java.lang.String r1;
+        int i0, i1;
+        boolean z0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @parameter0: android.content.Context;
+
+        r1 := @parameter1: java.lang.String;
+
+        i0 := @parameter2: int;
+
+        i1 := @parameter3: int;
+
+        z0 := @parameter4: boolean;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static void <clinit>()
+    {
+        <android.preference.PreferenceManager: java.lang.String KEY_HAS_SET_DEFAULT_VALUES> = "_has_set_default_values";
+
+        <android.preference.PreferenceManager: java.lang.String METADATA_KEY_PREFERENCES> = "android.preference";
+
+        return;
+    }
+}

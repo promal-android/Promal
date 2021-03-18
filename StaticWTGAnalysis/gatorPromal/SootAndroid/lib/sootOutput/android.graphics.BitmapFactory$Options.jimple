@@ -1,0 +1,53 @@
+public class android.graphics.BitmapFactory$Options extends java.lang.Object
+{
+    public android.graphics.Bitmap inBitmap;
+    public boolean inMutable;
+    public boolean inJustDecodeBounds;
+    public int inSampleSize;
+    public android.graphics.Bitmap$Config inPreferredConfig;
+    public boolean inDither;
+    public int inDensity;
+    public int inTargetDensity;
+    public int inScreenDensity;
+    public boolean inScaled;
+    public boolean inPurgeable;
+    public boolean inInputShareable;
+    public boolean inPreferQualityOverSpeed;
+    public int outWidth;
+    public int outHeight;
+    public java.lang.String outMimeType;
+    public byte[] inTempStorage;
+    public boolean mCancel;
+
+    public void <init>()
+    {
+        android.graphics.BitmapFactory$Options r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.BitmapFactory$Options;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        r0.<android.graphics.BitmapFactory$Options: byte[] inTempStorage> = null;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void requestCancelDecode()
+    {
+        android.graphics.BitmapFactory$Options r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.BitmapFactory$Options;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+}

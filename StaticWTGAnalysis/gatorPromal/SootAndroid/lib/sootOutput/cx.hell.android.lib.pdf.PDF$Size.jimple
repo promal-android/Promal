@@ -1,0 +1,69 @@
+public class cx.hell.android.lib.pdf.PDF$Size extends java.lang.Object implements java.lang.Cloneable
+{
+    public int height;
+    public int width;
+
+    public void <init>()
+    {
+        cx.hell.android.lib.pdf.PDF$Size $r0;
+
+        $r0 := @this: cx.hell.android.lib.pdf.PDF$Size;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<cx.hell.android.lib.pdf.PDF$Size: int width> = 0;
+
+        $r0.<cx.hell.android.lib.pdf.PDF$Size: int height> = 0;
+
+        return;
+    }
+
+    public void <init>(int, int)
+    {
+        cx.hell.android.lib.pdf.PDF$Size $r0;
+        int $i0, $i1;
+
+        $r0 := @this: cx.hell.android.lib.pdf.PDF$Size;
+
+        $i0 := @parameter0: int;
+
+        $i1 := @parameter1: int;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<cx.hell.android.lib.pdf.PDF$Size: int width> = $i0;
+
+        $r0.<cx.hell.android.lib.pdf.PDF$Size: int height> = $i1;
+
+        return;
+    }
+
+    public cx.hell.android.lib.pdf.PDF$Size clone()
+    {
+        cx.hell.android.lib.pdf.PDF$Size $r0, $r1;
+        int $i0, $i1;
+
+        $r0 := @this: cx.hell.android.lib.pdf.PDF$Size;
+
+        $r1 = new cx.hell.android.lib.pdf.PDF$Size;
+
+        $i0 = $r0.<cx.hell.android.lib.pdf.PDF$Size: int width>;
+
+        $i1 = $r0.<cx.hell.android.lib.pdf.PDF$Size: int height>;
+
+        specialinvoke $r1.<cx.hell.android.lib.pdf.PDF$Size: void <init>(int,int)>($i0, $i1);
+
+        return $r1;
+    }
+
+    public volatile java.lang.Object clone() throws java.lang.CloneNotSupportedException
+    {
+        cx.hell.android.lib.pdf.PDF$Size $r0;
+
+        $r0 := @this: cx.hell.android.lib.pdf.PDF$Size;
+
+        $r0 = virtualinvoke $r0.<cx.hell.android.lib.pdf.PDF$Size: cx.hell.android.lib.pdf.PDF$Size clone()>();
+
+        return $r0;
+    }
+}

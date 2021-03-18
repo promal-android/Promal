@@ -1,0 +1,45 @@
+public interface  android.support.v4.internal.view.SupportMenuItem extends java.lang.Object implements android.view.MenuItem
+{
+    public static final int SHOW_AS_ACTION_ALWAYS;
+    public static final int SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW;
+    public static final int SHOW_AS_ACTION_IF_ROOM;
+    public static final int SHOW_AS_ACTION_NEVER;
+    public static final int SHOW_AS_ACTION_WITH_TEXT;
+
+    public abstract boolean collapseActionView();
+
+    public abstract boolean expandActionView();
+
+    public abstract android.view.View getActionView();
+
+    public abstract android.support.v4.view.ActionProvider getSupportActionProvider();
+
+    public abstract boolean isActionViewExpanded();
+
+    public abstract android.view.MenuItem setActionView(int);
+
+    public abstract android.view.MenuItem setActionView(android.view.View);
+
+    public abstract void setShowAsAction(int);
+
+    public abstract android.view.MenuItem setShowAsActionFlags(int);
+
+    public abstract android.support.v4.internal.view.SupportMenuItem setSupportActionProvider(android.support.v4.view.ActionProvider);
+
+    public abstract android.support.v4.internal.view.SupportMenuItem setSupportOnActionExpandListener(android.support.v4.view.MenuItemCompat$OnActionExpandListener);
+
+    public static void <clinit>()
+    {
+        <android.support.v4.internal.view.SupportMenuItem: int SHOW_AS_ACTION_WITH_TEXT> = 4;
+
+        <android.support.v4.internal.view.SupportMenuItem: int SHOW_AS_ACTION_NEVER> = 0;
+
+        <android.support.v4.internal.view.SupportMenuItem: int SHOW_AS_ACTION_IF_ROOM> = 1;
+
+        <android.support.v4.internal.view.SupportMenuItem: int SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW> = 8;
+
+        <android.support.v4.internal.view.SupportMenuItem: int SHOW_AS_ACTION_ALWAYS> = 2;
+
+        return;
+    }
+}

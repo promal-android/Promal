@@ -1,0 +1,3137 @@
+public class cx.hell.android.pdfview.OpenFileActivity extends android.app.Activity implements android.hardware.SensorEventListener
+{
+    private static final java.lang.String TAG;
+    private static final int ZOOM_COLOR_GREEN;
+    private static final int ZOOM_COLOR_NORMAL;
+    private static final int ZOOM_COLOR_RED;
+    private static final int[] pageNumberAnimations;
+    private static final int[] zoomAnimations;
+    private static final int[] zoomDownId;
+    private static final int[] zoomUpId;
+    private static final int[] zoomWidthId;
+    private android.view.MenuItem aboutMenuItem;
+    private cx.hell.android.pdfview.Actions actions;
+    private android.widget.RelativeLayout activityLayout;
+    private int box;
+    private android.view.MenuItem chooseFileMenuItem;
+    private android.view.MenuItem clearFindTextMenuItem;
+    private int colorMode;
+    private java.lang.Integer currentFindResultNumber;
+    private java.lang.Integer currentFindResultPage;
+    private boolean eink;
+    private int fadeStartOffset;
+    private java.lang.String filePath;
+    private android.widget.LinearLayout findButtonsLayout;
+    private android.widget.Button findHideButton;
+    private android.widget.Button findNextButton;
+    private android.widget.Button findPrevButton;
+    private java.lang.String findText;
+    private android.widget.EditText findTextInputField;
+    private android.view.MenuItem findTextMenuItem;
+    private android.view.MenuItem gotoPageMenuItem;
+    private float[] gravity;
+    private long gravityAge;
+    private boolean history;
+    private android.view.MenuItem optionsMenuItem;
+    private android.os.Handler pageHandler;
+    private android.view.animation.Animation pageNumberAnim;
+    private android.widget.EditText pageNumberInputField;
+    private android.widget.TextView pageNumberTextView;
+    private java.lang.Runnable pageRunnable;
+    private cx.hell.android.lib.pagesview.PagesView pagesView;
+    private cx.hell.android.lib.pdf.PDF pdf;
+    private cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider;
+    private int prevOrientation;
+    private android.view.MenuItem rotateLeftMenuItem;
+    private android.view.MenuItem rotateRightMenuItem;
+    private android.hardware.SensorManager sensorManager;
+    public boolean showZoomOnScroll;
+    private android.view.animation.Animation zoomAnim;
+    private android.widget.ImageButton zoomDownButton;
+    private android.os.Handler zoomHandler;
+    private android.widget.LinearLayout zoomLayout;
+    private java.lang.Runnable zoomRunnable;
+    private android.widget.ImageButton zoomUpButton;
+    private android.widget.ImageButton zoomWidthButton;
+
+    static void <clinit>()
+    {
+        int[] $r0;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int ZOOM_COLOR_RED> = 1;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int ZOOM_COLOR_NORMAL> = 0;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int ZOOM_COLOR_GREEN> = 2;
+
+        <cx.hell.android.pdfview.OpenFileActivity: java.lang.String TAG> = "cx.hell.android.pdfview";
+
+        $r0 = newarray (int)[3];
+
+        $r0[0] = 2130968582;
+
+        $r0[1] = 2130968581;
+
+        $r0[2] = 2130968580;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int[] zoomAnimations> = $r0;
+
+        $r0 = newarray (int)[4];
+
+        $r0[0] = 2130968578;
+
+        $r0[1] = 2130968577;
+
+        $r0[2] = 2130968576;
+
+        $r0[3] = 2130968579;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int[] pageNumberAnimations> = $r0;
+
+        $r0 = newarray (int)[3];
+
+        $r0[0] = 2130837511;
+
+        $r0[1] = 2130837546;
+
+        $r0[2] = 2130837525;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int[] zoomUpId> = $r0;
+
+        $r0 = newarray (int)[3];
+
+        $r0[0] = 2130837505;
+
+        $r0[1] = 2130837542;
+
+        $r0[2] = 2130837521;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int[] zoomDownId> = $r0;
+
+        $r0 = newarray (int)[3];
+
+        $r0[0] = 2130837517;
+
+        $r0[1] = 2130837551;
+
+        $r0[2] = 2130837529;
+
+        <cx.hell.android.pdfview.OpenFileActivity: int[] zoomWidthId> = $r0;
+
+        return;
+    }
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        float[] $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.Actions actions> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler zoomHandler> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler pageHandler> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable zoomRunnable> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable pageRunnable> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem aboutMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem gotoPageMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateLeftMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateRightMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem findTextMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem clearFindTextMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem chooseFileMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem optionsMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText pageNumberInputField> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText findTextInputField> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findPrevButton> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findNextButton> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findHideButton> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean eink> = 0;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String filePath> = "/";
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String findText> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultPage> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultNumber> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int box> = 2;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean showZoomOnScroll> = 0;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int fadeStartOffset> = 7000;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int colorMode> = 0;
+
+        $r1 = newarray (float)[3];
+
+        $r1[0] = 0.0F;
+
+        $r1[1] = -9.81F;
+
+        $r1[2] = 0.0F;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity> = $r1;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: long gravityAge> = 0L;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean history> = 1;
+
+        return;
+    }
+
+    static java.lang.String access$0(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.String r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String findText>;
+
+        return r1;
+    }
+
+    static cx.hell.android.lib.pagesview.PagesView access$1(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        cx.hell.android.lib.pagesview.PagesView r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        return r1;
+    }
+
+    static void access$10(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void findNext()>();
+
+        return;
+    }
+
+    static void access$11(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void findHide()>();
+
+        return;
+    }
+
+    static cx.hell.android.pdfview.Actions access$12(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        cx.hell.android.pdfview.Actions r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.Actions actions>;
+
+        return r1;
+    }
+
+    static android.widget.EditText access$13(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.widget.EditText r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText pageNumberInputField>;
+
+        return r1;
+    }
+
+    static void access$14(cx.hell.android.pdfview.OpenFileActivity, int)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        int $i0;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $i0 := @parameter1: int;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void gotoPage(int)>($i0);
+
+        return;
+    }
+
+    static void access$15(cx.hell.android.pdfview.OpenFileActivity, java.lang.String)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter1: java.lang.String;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void errorMessage(java.lang.String)>($r1);
+
+        return;
+    }
+
+    static android.widget.EditText access$16(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.widget.EditText r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText findTextInputField>;
+
+        return r1;
+    }
+
+    static void access$17(cx.hell.android.pdfview.OpenFileActivity, java.lang.String)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.String $r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter1: java.lang.String;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void findText(java.lang.String)>($r1);
+
+        return;
+    }
+
+    static java.lang.Integer access$2(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.Integer r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultPage>;
+
+        return r1;
+    }
+
+    static cx.hell.android.lib.pdf.PDF access$3(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        cx.hell.android.lib.pdf.PDF r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf>;
+
+        return r1;
+    }
+
+    static void access$4(cx.hell.android.pdfview.OpenFileActivity, java.lang.Integer)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.Integer $r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter1: java.lang.Integer;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultPage> = $r1;
+
+        return;
+    }
+
+    static void access$5(cx.hell.android.pdfview.OpenFileActivity, java.lang.Integer)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.Integer $r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter1: java.lang.Integer;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultNumber> = $r1;
+
+        return;
+    }
+
+    static android.widget.LinearLayout access$6(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.widget.LinearLayout r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        return r1;
+    }
+
+    static void access$7(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void fadeZoom()>();
+
+        return;
+    }
+
+    static void access$8(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void fadePage()>();
+
+        return;
+    }
+
+    static void access$9(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void findPrev()>();
+
+        return;
+    }
+
+    private void clearFind()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        cx.hell.android.lib.pagesview.PagesView $r1;
+        android.widget.LinearLayout $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultPage> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultNumber> = null;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r1.<cx.hell.android.lib.pagesview.PagesView: void setFindMode(boolean)>(0);
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void setVisibility(int)>(8);
+
+        return;
+    }
+
+    private void errorMessage(java.lang.String)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.String $r1;
+        android.app.AlertDialog$Builder $r2;
+        android.app.AlertDialog $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 = new android.app.AlertDialog$Builder;
+
+        specialinvoke $r2.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r0);
+
+        $r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setMessage(java.lang.CharSequence)>($r1);
+
+        $r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(java.lang.CharSequence)>("Error");
+
+        $r3 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+
+        virtualinvoke $r3.<android.app.AlertDialog: void show()>();
+
+        return;
+    }
+
+    private void fadePage()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        boolean $z0;
+        android.view.animation.Animation $r1;
+        android.widget.TextView $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $z0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean eink>;
+
+        if $z0 != 0 goto label1;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim>;
+
+        if $r1 != null goto label2;
+
+     label1:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        virtualinvoke $r2.<android.widget.TextView: void setVisibility(int)>(8);
+
+        return;
+
+     label2:
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim>;
+
+        virtualinvoke $r1.<android.view.animation.Animation: void setStartOffset(long)>(0L);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim>;
+
+        virtualinvoke $r1.<android.view.animation.Animation: void setFillAfter(boolean)>(1);
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim>;
+
+        virtualinvoke $r2.<android.widget.TextView: void startAnimation(android.view.animation.Animation)>($r1);
+
+        return;
+    }
+
+    private void fadeZoom()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        boolean $z0;
+        android.view.animation.Animation $r1;
+        android.widget.LinearLayout $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $z0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean eink>;
+
+        if $z0 != 0 goto label1;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim>;
+
+        if $r1 != null goto label2;
+
+     label1:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void setVisibility(int)>(8);
+
+        return;
+
+     label2:
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim>;
+
+        virtualinvoke $r1.<android.view.animation.Animation: void setStartOffset(long)>(0L);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim>;
+
+        virtualinvoke $r1.<android.view.animation.Animation: void setFillAfter(boolean)>(1);
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void startAnimation(android.view.animation.Animation)>($r1);
+
+        return;
+    }
+
+    private void find(boolean)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        boolean $z0;
+        cx.hell.android.pdfview.OpenFileActivity$Finder $r1;
+        java.lang.Thread $r2;
+        java.lang.Integer $r3;
+        int $i0, $i1;
+        cx.hell.android.lib.pagesview.PagesView $r4;
+        java.util.List $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $z0 := @parameter0: boolean;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultPage>;
+
+        if $r3 == null goto label3;
+
+        if $z0 == 0 goto label2;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultNumber>;
+
+        $i0 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+
+        $i0 = $i0 + 1;
+
+     label1:
+        if $i0 < 0 goto label3;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r5 = virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: java.util.List getFindResults()>();
+
+        $i1 = interfaceinvoke $r5.<java.util.List: int size()>();
+
+        if $i0 >= $i1 goto label3;
+
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultNumber> = $r3;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void scrollToFindResult(int)>($i0);
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void invalidate()>();
+
+        return;
+
+     label2:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultNumber>;
+
+        $i0 = virtualinvoke $r3.<java.lang.Integer: int intValue()>();
+
+        $i0 = $i0 + -1;
+
+        goto label1;
+
+     label3:
+        $r1 = new cx.hell.android.pdfview.OpenFileActivity$Finder;
+
+        specialinvoke $r1.<cx.hell.android.pdfview.OpenFileActivity$Finder: void <init>(cx.hell.android.pdfview.OpenFileActivity,boolean)>($r0, $z0);
+
+        $r2 = new java.lang.Thread;
+
+        specialinvoke $r2.<java.lang.Thread: void <init>(java.lang.Runnable)>($r1);
+
+        virtualinvoke $r2.<java.lang.Thread: void start()>();
+
+        return;
+    }
+
+    private void findHide()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        cx.hell.android.lib.pagesview.PagesView $r1;
+        android.widget.LinearLayout $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        if $r1 == null goto label1;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r1.<cx.hell.android.lib.pagesview.PagesView: void setFindMode(boolean)>(0);
+
+     label1:
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultNumber> = null;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Integer currentFindResultPage> = null;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void setVisibility(int)>(8);
+
+        return;
+    }
+
+    private void findNext()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void find(boolean)>(1);
+
+        return;
+    }
+
+    private void findPrev()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void find(boolean)>(0);
+
+        return;
+    }
+
+    private void findText(java.lang.String)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.lang.String $r1, $r3;
+        java.lang.StringBuilder $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.StringBuilder;
+
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("findText(");
+
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r3);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String findText> = $r1;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void find(boolean)>(1);
+
+        return;
+    }
+
+    private cx.hell.android.lib.pdf.PDF getPDF()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        java.io.FileNotFoundException $r1;
+        cx.hell.android.pdfview.Recent $r2;
+        android.content.Intent $r3;
+        android.net.Uri $r4;
+        java.lang.String $r5;
+        boolean $z0;
+        cx.hell.android.lib.pdf.PDF $r6;
+        java.io.File $r7;
+        int $i0;
+        android.content.ContentResolver $r8;
+        android.os.ParcelFileDescriptor $r9;
+        java.lang.RuntimeException $r10;
+        java.lang.StringBuilder $r11;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r3 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.Intent getIntent()>();
+
+        $r4 = virtualinvoke $r3.<android.content.Intent: android.net.Uri getData()>();
+
+        $r5 = virtualinvoke $r4.<android.net.Uri: java.lang.String getPath()>();
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String filePath> = $r5;
+
+        $r5 = virtualinvoke $r4.<android.net.Uri: java.lang.String getScheme()>();
+
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("file");
+
+        if $z0 == 0 goto label2;
+
+        $z0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean history>;
+
+        if $z0 == 0 goto label1;
+
+        $r2 = new cx.hell.android.pdfview.Recent;
+
+        specialinvoke $r2.<cx.hell.android.pdfview.Recent: void <init>(android.content.Context)>($r0);
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String filePath>;
+
+        virtualinvoke $r2.<cx.hell.android.pdfview.Recent: void add(int,java.lang.Object)>(0, $r5);
+
+        virtualinvoke $r2.<cx.hell.android.pdfview.Recent: void commit()>();
+
+     label1:
+        $r6 = new cx.hell.android.lib.pdf.PDF;
+
+        $r7 = new java.io.File;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String filePath>;
+
+        specialinvoke $r7.<java.io.File: void <init>(java.lang.String)>($r5);
+
+        $i0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int box>;
+
+        specialinvoke $r6.<cx.hell.android.lib.pdf.PDF: void <init>(java.io.File,int)>($r7, $i0);
+
+        return $r6;
+
+     label2:
+        $r5 = virtualinvoke $r4.<android.net.Uri: java.lang.String getScheme()>();
+
+        $z0 = virtualinvoke $r5.<java.lang.String: boolean equals(java.lang.Object)>("content");
+
+        if $z0 == 0 goto label6;
+
+        $r8 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.ContentResolver getContentResolver()>();
+
+     label3:
+        $r9 = virtualinvoke $r8.<android.content.ContentResolver: android.os.ParcelFileDescriptor openFileDescriptor(android.net.Uri,java.lang.String)>($r4, "r");
+
+     label4:
+        $r6 = new cx.hell.android.lib.pdf.PDF;
+
+        $i0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int box>;
+
+        specialinvoke $r6.<cx.hell.android.lib.pdf.PDF: void <init>(android.os.ParcelFileDescriptor,int)>($r9, $i0);
+
+        return $r6;
+
+     label5:
+        $r1 := @caughtexception;
+
+        $r10 = new java.lang.RuntimeException;
+
+        specialinvoke $r10.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>($r1);
+
+        throw $r10;
+
+     label6:
+        $r10 = new java.lang.RuntimeException;
+
+        $r11 = new java.lang.StringBuilder;
+
+        specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("don\'t know how to get filename from ");
+
+        $r11 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4);
+
+        $r5 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r10.<java.lang.RuntimeException: void <init>(java.lang.String)>($r5);
+
+        throw $r10;
+
+        catch java.io.FileNotFoundException from label3 to label4 with label5;
+    }
+
+    private void gotoPage(int)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        int $i0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        cx.hell.android.lib.pagesview.PagesView $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $i0 := @parameter0: int;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("rewind to page ");
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r2);
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r3.<cx.hell.android.lib.pagesview.PagesView: void scrollToPage(int)>($i0);
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showAnimated(boolean)>(1);
+
+     label1:
+        return;
+    }
+
+    private void saveLastPage()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        cx.hell.android.lib.pagesview.PagesView $r1;
+        cx.hell.android.pdfview.BookmarkEntry $r2;
+        cx.hell.android.pdfview.Bookmark $r3;
+        android.content.Context $r4;
+        java.lang.String $r5;
+        java.lang.StringBuilder $r6;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r2 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.PagesView: cx.hell.android.pdfview.BookmarkEntry toBookmarkEntry()>();
+
+        $r3 = new cx.hell.android.pdfview.Bookmark;
+
+        $r4 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.Context getApplicationContext()>();
+
+        specialinvoke $r3.<cx.hell.android.pdfview.Bookmark: void <init>(android.content.Context)>($r4);
+
+        $r3 = virtualinvoke $r3.<cx.hell.android.pdfview.Bookmark: cx.hell.android.pdfview.Bookmark open()>();
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String filePath>;
+
+        virtualinvoke $r3.<cx.hell.android.pdfview.Bookmark: void setLast(java.lang.String,cx.hell.android.pdfview.BookmarkEntry)>($r5, $r2);
+
+        virtualinvoke $r3.<cx.hell.android.pdfview.Bookmark: void close()>();
+
+        $r6 = new java.lang.StringBuilder;
+
+        specialinvoke $r6.<java.lang.StringBuilder: void <init>(java.lang.String)>("last page saved for ");
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String filePath>;
+
+        $r6 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r5);
+
+        $r5 = virtualinvoke $r6.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r5);
+
+        return;
+    }
+
+    private void setFindButtonHandlers()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.widget.Button $r1;
+        cx.hell.android.pdfview.OpenFileActivity$3 $r2;
+        cx.hell.android.pdfview.OpenFileActivity$4 $r3;
+        cx.hell.android.pdfview.OpenFileActivity$5 $r4;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findPrevButton>;
+
+        $r2 = new cx.hell.android.pdfview.OpenFileActivity$3;
+
+        specialinvoke $r2.<cx.hell.android.pdfview.OpenFileActivity$3: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r2);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findNextButton>;
+
+        $r3 = new cx.hell.android.pdfview.OpenFileActivity$4;
+
+        specialinvoke $r3.<cx.hell.android.pdfview.OpenFileActivity$4: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r3);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findHideButton>;
+
+        $r4 = new cx.hell.android.pdfview.OpenFileActivity$5;
+
+        specialinvoke $r4.<cx.hell.android.pdfview.OpenFileActivity$5: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r4);
+
+        return;
+    }
+
+    private void setOrientation(int)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        int $i0, $i1;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $i0 := @parameter0: int;
+
+        $i1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int prevOrientation>;
+
+        if $i0 == $i1 goto label1;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("setOrientation: ");
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r2);
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setRequestedOrientation(int)>($i0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int prevOrientation> = $i0;
+
+     label1:
+        return;
+    }
+
+    private void setZoomButtonHandlers()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.widget.ImageButton $r1;
+        cx.hell.android.pdfview.OpenFileActivity$6 $r2;
+        cx.hell.android.pdfview.OpenFileActivity$7 $r3;
+        cx.hell.android.pdfview.OpenFileActivity$8 $r4;
+        cx.hell.android.pdfview.OpenFileActivity$9 $r5;
+        cx.hell.android.pdfview.OpenFileActivity$10 $r6;
+        cx.hell.android.pdfview.OpenFileActivity$11 $r7;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomDownButton>;
+
+        $r2 = new cx.hell.android.pdfview.OpenFileActivity$6;
+
+        specialinvoke $r2.<cx.hell.android.pdfview.OpenFileActivity$6: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.ImageButton: void setOnLongClickListener(android.view.View$OnLongClickListener)>($r2);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomDownButton>;
+
+        $r3 = new cx.hell.android.pdfview.OpenFileActivity$7;
+
+        specialinvoke $r3.<cx.hell.android.pdfview.OpenFileActivity$7: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r3);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomWidthButton>;
+
+        $r4 = new cx.hell.android.pdfview.OpenFileActivity$8;
+
+        specialinvoke $r4.<cx.hell.android.pdfview.OpenFileActivity$8: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r4);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomWidthButton>;
+
+        $r5 = new cx.hell.android.pdfview.OpenFileActivity$9;
+
+        specialinvoke $r5.<cx.hell.android.pdfview.OpenFileActivity$9: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.ImageButton: void setOnLongClickListener(android.view.View$OnLongClickListener)>($r5);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomUpButton>;
+
+        $r6 = new cx.hell.android.pdfview.OpenFileActivity$10;
+
+        specialinvoke $r6.<cx.hell.android.pdfview.OpenFileActivity$10: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r6);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomUpButton>;
+
+        $r7 = new cx.hell.android.pdfview.OpenFileActivity$11;
+
+        specialinvoke $r7.<cx.hell.android.pdfview.OpenFileActivity$11: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r1.<android.widget.ImageButton: void setOnLongClickListener(android.view.View$OnLongClickListener)>($r7);
+
+        return;
+    }
+
+    private void setZoomLayout(android.content.SharedPreferences)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.content.SharedPreferences $r1;
+        android.widget.RelativeLayout$LayoutParams $r2;
+        android.util.DisplayMetrics $r3;
+        android.widget.ImageButton $r4;
+        android.view.WindowManager $r5;
+        android.view.Display $r6;
+        int $i0, $i2;
+        byte $b1;
+        android.widget.LinearLayout $r7;
+        android.widget.RelativeLayout $r8;
+        android.content.res.Resources $r9;
+        int[] $r10;
+        android.graphics.drawable.Drawable $r11;
+        float $f0;
+        android.view.ViewConfiguration $r12;
+        boolean $z0;
+        cx.hell.android.pdfview.OpenFileActivity$16 $r13;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.content.SharedPreferences;
+
+        $r3 = new android.util.DisplayMetrics;
+
+        specialinvoke $r3.<android.util.DisplayMetrics: void <init>()>();
+
+        $r5 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.WindowManager getWindowManager()>();
+
+        $r6 = interfaceinvoke $r5.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+
+        virtualinvoke $r6.<android.view.Display: void getMetrics(android.util.DisplayMetrics)>($r3);
+
+        $i0 = staticinvoke <cx.hell.android.pdfview.Options: int getColorMode(android.content.SharedPreferences)>($r1);
+
+        $b1 = 0;
+
+        if $i0 != 5 goto label4;
+
+        $b1 = 2;
+
+     label1:
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        if $r7 == null goto label2;
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout>;
+
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r8.<android.widget.RelativeLayout: void removeView(android.view.View)>($r7);
+
+     label2:
+        $r7 = new android.widget.LinearLayout;
+
+        specialinvoke $r7.<android.widget.LinearLayout: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout> = $r7;
+
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r7.<android.widget.LinearLayout: void setOrientation(int)>(0);
+
+        $r4 = new android.widget.ImageButton;
+
+        specialinvoke $r4.<android.widget.ImageButton: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomDownButton> = $r4;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomDownButton>;
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.res.Resources getResources()>();
+
+        $r10 = <cx.hell.android.pdfview.OpenFileActivity: int[] zoomDownId>;
+
+        $i0 = $r10[$b1];
+
+        $r11 = virtualinvoke $r9.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setImageDrawable(android.graphics.drawable.Drawable)>($r11);
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomDownButton>;
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setBackgroundColor(int)>(0);
+
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomDownButton>;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 80.0F;
+
+        $i0 = (int) $f0;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 50.0F;
+
+        $i2 = (int) $f0;
+
+        virtualinvoke $r7.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r4, $i0, $i2);
+
+        $r4 = new android.widget.ImageButton;
+
+        specialinvoke $r4.<android.widget.ImageButton: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomWidthButton> = $r4;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomWidthButton>;
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.res.Resources getResources()>();
+
+        $r10 = <cx.hell.android.pdfview.OpenFileActivity: int[] zoomWidthId>;
+
+        $i0 = $r10[$b1];
+
+        $r11 = virtualinvoke $r9.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setImageDrawable(android.graphics.drawable.Drawable)>($r11);
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomWidthButton>;
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setBackgroundColor(int)>(0);
+
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomWidthButton>;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = 58.0F * $f0;
+
+        $i0 = (int) $f0;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 50.0F;
+
+        $i2 = (int) $f0;
+
+        virtualinvoke $r7.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r4, $i0, $i2);
+
+        $r4 = new android.widget.ImageButton;
+
+        specialinvoke $r4.<android.widget.ImageButton: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomUpButton> = $r4;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomUpButton>;
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.res.Resources getResources()>();
+
+        $r10 = <cx.hell.android.pdfview.OpenFileActivity: int[] zoomUpId>;
+
+        $i0 = $r10[$b1];
+
+        $r11 = virtualinvoke $r9.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setImageDrawable(android.graphics.drawable.Drawable)>($r11);
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomUpButton>;
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setBackgroundColor(int)>(0);
+
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.ImageButton zoomUpButton>;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 80.0F;
+
+        $i0 = (int) $f0;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 50.0F;
+
+        $i2 = (int) $f0;
+
+        virtualinvoke $r7.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r4, $i0, $i2);
+
+        $r12 = staticinvoke <android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>($r0);
+
+        $z0 = staticinvoke <cx.hell.android.pdfview.AndroidReflections: boolean hasPermanentMenuKey(android.view.ViewConfiguration)>($r12);
+
+        if $z0 != 0 goto label3;
+
+        $r4 = new android.widget.ImageButton;
+
+        specialinvoke $r4.<android.widget.ImageButton: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setImageResource(int)>(2130837533);
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setBackgroundColor(int)>(0);
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void registerForContextMenu(android.view.View)>($r4);
+
+        $r13 = new cx.hell.android.pdfview.OpenFileActivity$16;
+
+        specialinvoke $r13.<cx.hell.android.pdfview.OpenFileActivity$16: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        virtualinvoke $r4.<android.widget.ImageButton: void setOnClickListener(android.view.View$OnClickListener)>($r13);
+
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 50.0F;
+
+        $i0 = (int) $f0;
+
+        $f0 = $r3.<android.util.DisplayMetrics: float density>;
+
+        $f0 = $f0 * 50.0F;
+
+        $i2 = (int) $f0;
+
+        virtualinvoke $r7.<android.widget.LinearLayout: void addView(android.view.View,int,int)>($r4, $i0, $i2);
+
+     label3:
+        $r2 = new android.widget.RelativeLayout$LayoutParams;
+
+        specialinvoke $r2.<android.widget.RelativeLayout$LayoutParams: void <init>(int,int)>(-2, -2);
+
+        virtualinvoke $r2.<android.widget.RelativeLayout$LayoutParams: void addRule(int)>(14);
+
+        virtualinvoke $r2.<android.widget.RelativeLayout$LayoutParams: void addRule(int)>(12);
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setZoomButtonHandlers()>();
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout>;
+
+        $r7 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r8.<android.widget.RelativeLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r7, $r2);
+
+        return;
+
+     label4:
+        if $i0 != 6 goto label1;
+
+        $b1 = 1;
+
+        goto label1;
+    }
+
+    private void showGotoPageDialog()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.widget.LinearLayout $r1;
+        android.app.Dialog $r2;
+        android.widget.Button $r3, $r5, $r6;
+        android.widget.TextView $r4;
+        android.widget.LinearLayout$LayoutParams $r7;
+        cx.hell.android.pdfview.PDFPagesProvider $r8;
+        int $i0, $i1;
+        java.lang.StringBuilder $r9;
+        java.lang.String $r10;
+        android.widget.EditText $r11;
+        cx.hell.android.lib.pagesview.PagesView $r12;
+        cx.hell.android.pdfview.OpenFileActivity$12 $r13;
+        android.content.res.Resources $r14;
+        cx.hell.android.pdfview.OpenFileActivity$13 $r15;
+        cx.hell.android.pdfview.OpenFileActivity$14 $r16;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r2 = new android.app.Dialog;
+
+        specialinvoke $r2.<android.app.Dialog: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r2.<android.app.Dialog: void setTitle(int)>(2131165187);
+
+        $r1 = new android.widget.LinearLayout;
+
+        specialinvoke $r1.<android.widget.LinearLayout: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void setOrientation(int)>(1);
+
+        $r4 = new android.widget.TextView;
+
+        specialinvoke $r4.<android.widget.TextView: void <init>(android.content.Context)>($r0);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        $i0 = virtualinvoke $r8.<cx.hell.android.pdfview.PDFPagesProvider: int getPageCount()>();
+
+        $r9 = new java.lang.StringBuilder;
+
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("Page number from 1 to ");
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r4.<android.widget.TextView: void setText(java.lang.CharSequence)>($r10);
+
+        $r11 = new android.widget.EditText;
+
+        specialinvoke $r11.<android.widget.EditText: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText pageNumberInputField> = $r11;
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText pageNumberInputField>;
+
+        virtualinvoke $r11.<android.widget.EditText: void setInputType(int)>(2);
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText pageNumberInputField>;
+
+        $r9 = new java.lang.StringBuilder;
+
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>()>();
+
+        $r12 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $i1 = virtualinvoke $r12.<cx.hell.android.lib.pagesview.PagesView: int getCurrentPage()>();
+
+        $i1 = $i1 + 1;
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r11.<android.widget.EditText: void setText(java.lang.CharSequence)>($r10);
+
+        $r3 = new android.widget.Button;
+
+        specialinvoke $r3.<android.widget.Button: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r3.<android.widget.Button: void setText(int)>(2131165188);
+
+        $r13 = new cx.hell.android.pdfview.OpenFileActivity$12;
+
+        specialinvoke $r13.<cx.hell.android.pdfview.OpenFileActivity$12: void <init>(cx.hell.android.pdfview.OpenFileActivity,android.app.Dialog,int)>($r0, $r2, $i0);
+
+        virtualinvoke $r3.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r13);
+
+        $r6 = new android.widget.Button;
+
+        specialinvoke $r6.<android.widget.Button: void <init>(android.content.Context)>($r0);
+
+        $r9 = new java.lang.StringBuilder;
+
+        $r14 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.res.Resources getResources()>();
+
+        $r10 = virtualinvoke $r14.<android.content.res.Resources: java.lang.String getString(int)>(2131165223);
+
+        $r10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r10);
+
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>($r10);
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" 1");
+
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r6.<android.widget.Button: void setText(java.lang.CharSequence)>($r10);
+
+        $r15 = new cx.hell.android.pdfview.OpenFileActivity$13;
+
+        specialinvoke $r15.<cx.hell.android.pdfview.OpenFileActivity$13: void <init>(cx.hell.android.pdfview.OpenFileActivity,android.app.Dialog)>($r0, $r2);
+
+        virtualinvoke $r6.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r15);
+
+        $r5 = new android.widget.Button;
+
+        specialinvoke $r5.<android.widget.Button: void <init>(android.content.Context)>($r0);
+
+        $r9 = new java.lang.StringBuilder;
+
+        $r14 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.res.Resources getResources()>();
+
+        $r10 = virtualinvoke $r14.<android.content.res.Resources: java.lang.String getString(int)>(2131165223);
+
+        $r10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r10);
+
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>($r10);
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" ");
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r5.<android.widget.Button: void setText(java.lang.CharSequence)>($r10);
+
+        $r16 = new cx.hell.android.pdfview.OpenFileActivity$14;
+
+        specialinvoke $r16.<cx.hell.android.pdfview.OpenFileActivity$14: void <init>(cx.hell.android.pdfview.OpenFileActivity,android.app.Dialog,int)>($r0, $r2, $i0);
+
+        virtualinvoke $r5.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r16);
+
+        $r7 = new android.widget.LinearLayout$LayoutParams;
+
+        specialinvoke $r7.<android.widget.LinearLayout$LayoutParams: void <init>(int,int)>(-1, -2);
+
+        $r7.<android.widget.LinearLayout$LayoutParams: int leftMargin> = 5;
+
+        $r7.<android.widget.LinearLayout$LayoutParams: int rightMargin> = 5;
+
+        $r7.<android.widget.LinearLayout$LayoutParams: int bottomMargin> = 2;
+
+        $r7.<android.widget.LinearLayout$LayoutParams: int topMargin> = 2;
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r4, $r7);
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText pageNumberInputField>;
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r11, $r7);
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r3, $r7);
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r6, $r7);
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r5, $r7);
+
+        virtualinvoke $r2.<android.app.Dialog: void setContentView(android.view.View)>($r1);
+
+        virtualinvoke $r2.<android.app.Dialog: void show()>();
+
+        return;
+    }
+
+    private void startPDF(android.content.SharedPreferences)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.content.SharedPreferences $r1;
+        cx.hell.android.lib.pdf.PDF $r2;
+        boolean $z0, $z1;
+        android.widget.Toast $r3;
+        int $i0;
+        cx.hell.android.pdfview.PDFPagesProvider $r4;
+        cx.hell.android.lib.pagesview.PagesView $r5;
+        cx.hell.android.pdfview.Bookmark $r6;
+        android.content.Context $r7;
+        java.lang.String $r8;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.content.SharedPreferences;
+
+        $r2 = specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF getPDF()>();
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf> = $r2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf>;
+
+        $z0 = virtualinvoke $r2.<cx.hell.android.lib.pdf.PDF: boolean isValid()>();
+
+        if $z0 != 0 goto label2;
+
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "Invalid PDF");
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf>;
+
+        $z0 = virtualinvoke $r2.<cx.hell.android.lib.pdf.PDF: boolean isInvalidPassword()>();
+
+        if $z0 == 0 goto label1;
+
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>($r0, "This file needs a password", 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+        return;
+
+     label1:
+        $r3 = staticinvoke <android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>($r0, "Invalid PDF file", 0);
+
+        virtualinvoke $r3.<android.widget.Toast: void show()>();
+
+        return;
+
+     label2:
+        $i0 = staticinvoke <cx.hell.android.pdfview.Options: int getColorMode(android.content.SharedPreferences)>($r1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int colorMode> = $i0;
+
+        $r4 = new cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf>;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("omitImages", 0);
+
+        $z1 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("renderAhead", 1);
+
+        specialinvoke $r4.<cx.hell.android.pdfview.PDFPagesProvider: void <init>(android.app.Activity,cx.hell.android.lib.pdf.PDF,boolean,boolean)>($r0, $r2, $z0, $z1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider> = $r4;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        virtualinvoke $r5.<cx.hell.android.lib.pagesview.PagesView: void setPagesProvider(cx.hell.android.lib.pagesview.PagesProvider)>($r4);
+
+        $r6 = new cx.hell.android.pdfview.Bookmark;
+
+        $r7 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.content.Context getApplicationContext()>();
+
+        specialinvoke $r6.<cx.hell.android.pdfview.Bookmark: void <init>(android.content.Context)>($r7);
+
+        $r6 = virtualinvoke $r6.<cx.hell.android.pdfview.Bookmark: cx.hell.android.pdfview.Bookmark open()>();
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String filePath>;
+
+        virtualinvoke $r5.<cx.hell.android.lib.pagesview.PagesView: void setStartBookmark(cx.hell.android.pdfview.Bookmark,java.lang.String)>($r6, $r8);
+
+        virtualinvoke $r6.<cx.hell.android.pdfview.Bookmark: void close()>();
+
+        return;
+    }
+
+    public boolean dispatchKeyEvent(android.view.KeyEvent)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.KeyEvent $r1;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.view.KeyEvent;
+
+        $i0 = virtualinvoke $r1.<android.view.KeyEvent: int getAction()>();
+
+        if $i0 == 1 goto label1;
+
+        if $i0 != 0 goto label2;
+
+     label1:
+        $z0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean eink>;
+
+        if $z0 != 0 goto label2;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showAnimated(boolean)>(0);
+
+     label2:
+        $z0 = specialinvoke $r0.<android.app.Activity: boolean dispatchKeyEvent(android.view.KeyEvent)>($r1);
+
+        return $z0;
+    }
+
+    public boolean dispatchTouchEvent(android.view.MotionEvent)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.MotionEvent $r1;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.view.MotionEvent;
+
+        $i0 = virtualinvoke $r1.<android.view.MotionEvent: int getAction()>();
+
+        if $i0 == 1 goto label1;
+
+        if $i0 != 0 goto label2;
+
+     label1:
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showPageNumber(boolean)>(1);
+
+        $z0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean showZoomOnScroll>;
+
+        if $z0 == 0 goto label2;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showZoom()>();
+
+     label2:
+        $z0 = specialinvoke $r0.<android.app.Activity: boolean dispatchTouchEvent(android.view.MotionEvent)>($r1);
+
+        return $z0;
+    }
+
+    public void onAccuracyChanged(android.hardware.Sensor, int)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.hardware.Sensor $r1;
+        int $i0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.hardware.Sensor;
+
+        $i0 := @parameter1: int;
+
+        return;
+    }
+
+    public void onConfigurationChanged(android.content.res.Configuration)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.content.res.Configuration $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.content.res.Configuration;
+
+        specialinvoke $r0.<android.app.Activity: void onConfigurationChanged(android.content.res.Configuration)>($r1);
+
+        $r2 = new java.lang.StringBuilder;
+
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("onConfigurationChanged(");
+
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r3);
+
+        return;
+    }
+
+    public boolean onContextItemSelected(android.view.MenuItem)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.MenuItem $r1, $r3;
+        android.content.Intent $r2;
+        cx.hell.android.lib.pagesview.PagesView $r4;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.view.MenuItem;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem aboutMenuItem>;
+
+        if $r1 != $r3 goto label1;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>()>();
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/AboutPDFViewActivity");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startActivity(android.content.Intent)>($r2);
+
+        return 1;
+
+     label1:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem gotoPageMenuItem>;
+
+        if $r1 != $r3 goto label2;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showGotoPageDialog()>();
+
+        return 1;
+
+     label2:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateLeftMenuItem>;
+
+        if $r1 != $r3 goto label3;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void rotate(int)>(-1);
+
+        return 1;
+
+     label3:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateRightMenuItem>;
+
+        if $r1 != $r3 goto label4;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void rotate(int)>(1);
+
+        return 1;
+
+     label4:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem findTextMenuItem>;
+
+        if $r1 != $r3 goto label5;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showFindDialog()>();
+
+        return 1;
+
+     label5:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem clearFindTextMenuItem>;
+
+        if $r1 != $r3 goto label6;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void clearFind()>();
+
+        return 1;
+
+     label6:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem chooseFileMenuItem>;
+
+        if $r1 != $r3 goto label7;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/ChooseFileActivity");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startActivity(android.content.Intent)>($r2);
+
+        return 1;
+
+     label7:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem optionsMenuItem>;
+
+        if $r1 != $r3 goto label8;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/Options");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startActivity(android.content.Intent)>($r2);
+
+     label8:
+        return 1;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.os.Bundle $r1;
+        android.util.DisplayMetrics $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        android.content.SharedPreferences $r5;
+        int $i0;
+        android.view.WindowManager $r6;
+        android.view.Display $r7;
+        android.widget.RelativeLayout $r8;
+        cx.hell.android.lib.pagesview.PagesView $r9;
+        cx.hell.android.lib.pdf.PDF $r10;
+        boolean $z0;
+        android.widget.LinearLayout $r11;
+        android.widget.Button $r12;
+        android.widget.RelativeLayout$LayoutParams $r13;
+        android.widget.TextView $r14;
+        float $f0;
+        android.os.Handler $r15;
+        cx.hell.android.pdfview.OpenFileActivity$1 $r16;
+        cx.hell.android.pdfview.OpenFileActivity$2 $r17;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("onCreate(");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r4);
+
+        staticinvoke <cx.hell.android.pdfview.Options: boolean setOrientation(android.app.Activity)>($r0);
+
+        $r5 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $r4 = interfaceinvoke $r5.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("boxType", "2");
+
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r4);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int box> = $i0;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean requestWindowFeature(int)>(1);
+
+        $r2 = new android.util.DisplayMetrics;
+
+        specialinvoke $r2.<android.util.DisplayMetrics: void <init>()>();
+
+        $r6 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.WindowManager getWindowManager()>();
+
+        $r7 = interfaceinvoke $r6.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+
+        virtualinvoke $r7.<android.view.Display: void getMetrics(android.util.DisplayMetrics)>($r2);
+
+        $r8 = new android.widget.RelativeLayout;
+
+        specialinvoke $r8.<android.widget.RelativeLayout: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout> = $r8;
+
+        $r9 = new cx.hell.android.lib.pagesview.PagesView;
+
+        specialinvoke $r9.<cx.hell.android.lib.pagesview.PagesView: void <init>(android.app.Activity)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView> = $r9;
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout>;
+
+        $r9 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r8.<android.widget.RelativeLayout: void addView(android.view.View)>($r9);
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startPDF(android.content.SharedPreferences)>($r5);
+
+        $r10 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf>;
+
+        $z0 = virtualinvoke $r10.<cx.hell.android.lib.pdf.PDF: boolean isValid()>();
+
+        if $z0 != 0 goto label1;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void finish()>();
+
+     label1:
+        $r11 = new android.widget.LinearLayout;
+
+        specialinvoke $r11.<android.widget.LinearLayout: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout> = $r11;
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        virtualinvoke $r11.<android.widget.LinearLayout: void setOrientation(int)>(0);
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        virtualinvoke $r11.<android.widget.LinearLayout: void setVisibility(int)>(8);
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        virtualinvoke $r11.<android.widget.LinearLayout: void setGravity(int)>(17);
+
+        $r12 = new android.widget.Button;
+
+        specialinvoke $r12.<android.widget.Button: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findPrevButton> = $r12;
+
+        $r12 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findPrevButton>;
+
+        virtualinvoke $r12.<android.widget.Button: void setText(java.lang.CharSequence)>("Prev");
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        $r12 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findPrevButton>;
+
+        virtualinvoke $r11.<android.widget.LinearLayout: void addView(android.view.View)>($r12);
+
+        $r12 = new android.widget.Button;
+
+        specialinvoke $r12.<android.widget.Button: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findNextButton> = $r12;
+
+        $r12 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findNextButton>;
+
+        virtualinvoke $r12.<android.widget.Button: void setText(java.lang.CharSequence)>("Next");
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        $r12 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findNextButton>;
+
+        virtualinvoke $r11.<android.widget.LinearLayout: void addView(android.view.View)>($r12);
+
+        $r12 = new android.widget.Button;
+
+        specialinvoke $r12.<android.widget.Button: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findHideButton> = $r12;
+
+        $r12 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findHideButton>;
+
+        virtualinvoke $r12.<android.widget.Button: void setText(java.lang.CharSequence)>("Hide");
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        $r12 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.Button findHideButton>;
+
+        virtualinvoke $r11.<android.widget.LinearLayout: void addView(android.view.View)>($r12);
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setFindButtonHandlers()>();
+
+        $r13 = new android.widget.RelativeLayout$LayoutParams;
+
+        specialinvoke $r13.<android.widget.RelativeLayout$LayoutParams: void <init>(int,int)>(-2, -2);
+
+        virtualinvoke $r13.<android.widget.RelativeLayout$LayoutParams: void addRule(int)>(14);
+
+        virtualinvoke $r13.<android.widget.RelativeLayout$LayoutParams: void addRule(int)>(10);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout>;
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout findButtonsLayout>;
+
+        virtualinvoke $r8.<android.widget.RelativeLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r11, $r13);
+
+        $r14 = new android.widget.TextView;
+
+        specialinvoke $r14.<android.widget.TextView: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView> = $r14;
+
+        $r14 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        $f0 = $r2.<android.util.DisplayMetrics: float density>;
+
+        $f0 = 8.0F * $f0;
+
+        virtualinvoke $r14.<android.widget.TextView: void setTextSize(float)>($f0);
+
+        $r13 = new android.widget.RelativeLayout$LayoutParams;
+
+        specialinvoke $r13.<android.widget.RelativeLayout$LayoutParams: void <init>(int,int)>(-2, -2);
+
+        virtualinvoke $r13.<android.widget.RelativeLayout$LayoutParams: void addRule(int)>(11);
+
+        virtualinvoke $r13.<android.widget.RelativeLayout$LayoutParams: void addRule(int)>(10);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout>;
+
+        $r14 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        virtualinvoke $r8.<android.widget.RelativeLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r14, $r13);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.RelativeLayout activityLayout>;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setContentView(android.view.View)>($r8);
+
+        $r9 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r9.<cx.hell.android.lib.pagesview.PagesView: void setFocusable(boolean)>(1);
+
+        $r9 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r9.<cx.hell.android.lib.pagesview.PagesView: void setFocusableInTouchMode(boolean)>(1);
+
+        $r15 = new android.os.Handler;
+
+        specialinvoke $r15.<android.os.Handler: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler zoomHandler> = $r15;
+
+        $r15 = new android.os.Handler;
+
+        specialinvoke $r15.<android.os.Handler: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler pageHandler> = $r15;
+
+        $r16 = new cx.hell.android.pdfview.OpenFileActivity$1;
+
+        specialinvoke $r16.<cx.hell.android.pdfview.OpenFileActivity$1: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable zoomRunnable> = $r16;
+
+        $r17 = new cx.hell.android.pdfview.OpenFileActivity$2;
+
+        specialinvoke $r17.<cx.hell.android.pdfview.OpenFileActivity$2: void <init>(cx.hell.android.pdfview.OpenFileActivity)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable pageRunnable> = $r17;
+
+        return;
+    }
+
+    public void onCreateContextMenu(android.view.ContextMenu, android.view.View, android.view.ContextMenu$ContextMenuInfo)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.ContextMenu $r1;
+        android.view.View $r2;
+        android.view.ContextMenu$ContextMenuInfo $r3;
+        android.view.MenuItem $r4;
+        cx.hell.android.lib.pagesview.PagesView $r5;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.view.ContextMenu;
+
+        $r2 := @parameter1: android.view.View;
+
+        $r3 := @parameter2: android.view.ContextMenu$ContextMenuInfo;
+
+        specialinvoke $r0.<android.app.Activity: void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo)>($r1, $r2, $r3);
+
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165186);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem gotoPageMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165189);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateRightMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165190);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateLeftMenuItem> = $r4;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $z0 = virtualinvoke $r5.<cx.hell.android.lib.pagesview.PagesView: boolean getFindMode()>();
+
+        if $z0 == 0 goto label1;
+
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165195);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem clearFindTextMenuItem> = $r4;
+
+     label1:
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165196);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem chooseFileMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165204);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem optionsMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165191);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem findTextMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165185);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem aboutMenuItem> = $r4;
+
+        return;
+    }
+
+    public boolean onCreateOptionsMenu(android.view.Menu)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.Menu $r1;
+        java.lang.StringBuilder $r2;
+        java.lang.String $r3;
+        android.view.MenuItem $r4;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.view.Menu;
+
+        specialinvoke $r0.<android.app.Activity: boolean onCreateOptionsMenu(android.view.Menu)>($r1);
+
+        $r2 = new java.lang.StringBuilder;
+
+        specialinvoke $r2.<java.lang.StringBuilder: void <init>(java.lang.String)>("onCreateOptionsMenu(");
+
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+        $r2 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r3);
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165186);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem gotoPageMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165189);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateRightMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165190);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateLeftMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165195);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem clearFindTextMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165196);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem chooseFileMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165204);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem optionsMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165191);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem findTextMenuItem> = $r4;
+
+        $r4 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165185);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem aboutMenuItem> = $r4;
+
+        return 1;
+    }
+
+    public void onDestroy()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        cx.hell.android.lib.pdf.PDF $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<android.app.Activity: void onDestroy()>();
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "onDestroy()");
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pdf.PDF pdf>;
+
+        virtualinvoke $r1.<cx.hell.android.lib.pdf.PDF: void freeMemory()>();
+
+        return;
+    }
+
+    public boolean onOptionsItemSelected(android.view.MenuItem)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.MenuItem $r1, $r3;
+        android.content.Intent $r2;
+        cx.hell.android.lib.pagesview.PagesView $r4;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.view.MenuItem;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem aboutMenuItem>;
+
+        if $r1 != $r3 goto label1;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>()>();
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/AboutPDFViewActivity");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startActivity(android.content.Intent)>($r2);
+
+        return 1;
+
+     label1:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem gotoPageMenuItem>;
+
+        if $r1 != $r3 goto label2;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showGotoPageDialog()>();
+
+        return 1;
+
+     label2:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateLeftMenuItem>;
+
+        if $r1 != $r3 goto label3;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void rotate(int)>(-1);
+
+        return 1;
+
+     label3:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem rotateRightMenuItem>;
+
+        if $r1 != $r3 goto label4;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void rotate(int)>(1);
+
+        return 1;
+
+     label4:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem findTextMenuItem>;
+
+        if $r1 != $r3 goto label5;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showFindDialog()>();
+
+        return 1;
+
+     label5:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem clearFindTextMenuItem>;
+
+        if $r1 != $r3 goto label6;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void clearFind()>();
+
+        return 1;
+
+     label6:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem chooseFileMenuItem>;
+
+        if $r1 != $r3 goto label7;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/ChooseFileActivity");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startActivity(android.content.Intent)>($r2);
+
+        return 1;
+
+     label7:
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem optionsMenuItem>;
+
+        if $r1 != $r3 goto label8;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/Options");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startActivity(android.content.Intent)>($r2);
+
+     label8:
+        return 1;
+    }
+
+    protected void onPause()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.hardware.SensorManager $r1;
+        android.content.SharedPreferences $r2;
+        android.content.SharedPreferences$Editor $r3;
+        int $i0;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<android.app.Activity: void onPause()>();
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void saveLastPage()>();
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager>;
+
+        if $r1 == null goto label1;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager>;
+
+        virtualinvoke $r1.<android.hardware.SensorManager: void unregisterListener(android.hardware.SensorEventListener)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager> = null;
+
+        $r2 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $r3 = interfaceinvoke $r2.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+
+        $i0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int prevOrientation>;
+
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putInt(java.lang.String,int)>("prevOrientation", $i0);
+
+        $r4 = new java.lang.StringBuilder;
+
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("prevOrientation saved: ");
+
+        $i0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int prevOrientation>;
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r5);
+
+        interfaceinvoke $r3.<android.content.SharedPreferences$Editor: boolean commit()>();
+
+     label1:
+        return;
+    }
+
+    public boolean onPrepareOptionsMenu(android.view.Menu)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.Menu $r1;
+        boolean $z0;
+        android.view.MenuItem $r2;
+        cx.hell.android.lib.pagesview.PagesView $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.view.Menu;
+
+        specialinvoke $r0.<android.app.Activity: boolean onPrepareOptionsMenu(android.view.Menu)>($r1);
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.MenuItem clearFindTextMenuItem>;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $z0 = virtualinvoke $r3.<cx.hell.android.lib.pagesview.PagesView: boolean getFindMode()>();
+
+        interfaceinvoke $r2.<android.view.MenuItem: android.view.MenuItem setVisible(boolean)>($z0);
+
+        return 1;
+    }
+
+    protected void onResume()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        byte $b0, $b3;
+        android.content.SharedPreferences $r1;
+        boolean $z0;
+        java.lang.Object $r2;
+        android.hardware.SensorManager $r3, $r6;
+        java.util.List $r4;
+        int $i1, $i2;
+        float[] $r5;
+        android.hardware.Sensor $r7;
+        cx.hell.android.lib.pagesview.PagesView $r8;
+        android.view.Window $r9;
+        cx.hell.android.pdfview.Actions $r10;
+        android.widget.LinearLayout $r11;
+        java.lang.String $r12;
+        android.widget.TextView $r13;
+        cx.hell.android.pdfview.PDFPagesProvider $r14;
+        android.view.animation.Animation $r15;
+        int[] $r16;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $b0 = 8;
+
+        specialinvoke $r0.<android.app.Activity: void onResume()>();
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager> = null;
+
+        $r1 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $z0 = staticinvoke <cx.hell.android.pdfview.Options: boolean setOrientation(android.app.Activity)>($r0);
+
+        if $z0 == 0 goto label01;
+
+        $r2 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Object getSystemService(java.lang.String)>("sensor");
+
+        $r3 = (android.hardware.SensorManager) $r2;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager> = $r3;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager>;
+
+        $r4 = virtualinvoke $r3.<android.hardware.SensorManager: java.util.List getSensorList(int)>(1);
+
+        $i1 = interfaceinvoke $r4.<java.util.List: int size()>();
+
+        if $i1 <= 0 goto label10;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $r5[0] = 0.0F;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $r5[1] = -9.81F;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $r5[2] = 0.0F;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: long gravityAge> = 0L;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager>;
+
+        $r6 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.hardware.SensorManager sensorManager>;
+
+        $r7 = virtualinvoke $r6.<android.hardware.SensorManager: android.hardware.Sensor getDefaultSensor(int)>(1);
+
+        virtualinvoke $r3.<android.hardware.SensorManager: boolean registerListener(android.hardware.SensorEventListener,android.hardware.Sensor,int)>($r0, $r7, 3);
+
+        $i1 = interfaceinvoke $r1.<android.content.SharedPreferences: int getInt(java.lang.String,int)>("prevOrientation", 1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int prevOrientation> = $i1;
+
+        $i1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int prevOrientation>;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setRequestedOrientation(int)>($i1);
+
+     label01:
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("history", 1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean history> = $z0;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("eink", 0);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setEink(boolean)>($z0);
+
+        if $z0 == 0 goto label02;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setTheme(int)>(16973836);
+
+     label02:
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("nook2", 0);
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setNook2(boolean)>($z0);
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("keepOn", 0);
+
+        if $z0 == 0 goto label11;
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.Window getWindow()>();
+
+        virtualinvoke $r9.<android.view.Window: void addFlags(int)>(128);
+
+     label03:
+        $r10 = new cx.hell.android.pdfview.Actions;
+
+        specialinvoke $r10.<cx.hell.android.pdfview.Actions: void <init>(android.content.SharedPreferences)>($r1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.Actions actions> = $r10;
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r10 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.Actions actions>;
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setActions(cx.hell.android.pdfview.Actions)>($r10);
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setZoomLayout(android.content.SharedPreferences)>($r1);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setZoomLayout(android.widget.LinearLayout)>($r11);
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("showZoomOnScroll", 0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean showZoomOnScroll> = $z0;
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r12 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("sideMargins2", "0");
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setSideMargins(int)>($i1);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r12 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("topMargin", "0");
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setTopMargin(int)>($i1);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $r12 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("doubleTap", "2");
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setDoubleTap(int)>($i1);
+
+        $r12 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("boxType", "2");
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+
+        $i2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int box>;
+
+        if $i2 == $i1 goto label04;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void saveLastPage()>();
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int box> = $i1;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void startPDF(android.content.SharedPreferences)>($r1);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void goToBookmark()>();
+
+     label04:
+        $i1 = staticinvoke <cx.hell.android.pdfview.Options: int getColorMode(android.content.SharedPreferences)>($r1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int colorMode> = $i1;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("eink", 0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: boolean eink> = $z0;
+
+        $r13 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        $i1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int colorMode>;
+
+        $i1 = staticinvoke <cx.hell.android.pdfview.Options: int getBackColor(int)>($i1);
+
+        virtualinvoke $r13.<android.widget.TextView: void setBackgroundColor(int)>($i1);
+
+        $r13 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        $i1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int colorMode>;
+
+        $i1 = staticinvoke <cx.hell.android.pdfview.Options: int getForeColor(int)>($i1);
+
+        virtualinvoke $r13.<android.widget.TextView: void setTextColor(int)>($i1);
+
+        $r14 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        $i1 = staticinvoke <cx.hell.android.pdfview.Options: int getIntFromString(android.content.SharedPreferences,java.lang.String,int)>($r1, "extraCache", 0);
+
+        $i1 = 1048576 * $i1;
+
+        virtualinvoke $r14.<cx.hell.android.pdfview.PDFPagesProvider: void setExtraCache(int)>($i1);
+
+        $r14 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("omitImages", 0);
+
+        virtualinvoke $r14.<cx.hell.android.pdfview.PDFPagesProvider: void setOmitImages(boolean)>($z0);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $i1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int colorMode>;
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setColorMode(int)>($i1);
+
+        $r14 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("renderAhead", 1);
+
+        virtualinvoke $r14.<cx.hell.android.pdfview.PDFPagesProvider: void setRenderAhead(boolean)>($z0);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("verticalScrollLock", 0);
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void setVerticalScrollLock(boolean)>($z0);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        virtualinvoke $r8.<cx.hell.android.lib.pagesview.PagesView: void invalidate()>();
+
+        $r12 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("zoomAnimation", "2");
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+
+        if $i1 != 100 goto label12;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim> = null;
+
+     label05:
+        $r12 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("pageAnimation", "3");
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+
+        if $i1 != 100 goto label13;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim> = null;
+
+     label06:
+        $r12 = interfaceinvoke $r1.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("fadeSpeed", "7");
+
+        $i1 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r12);
+
+        $i1 = $i1 * 1000;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: int fadeStartOffset> = $i1;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("fullscreen", 0);
+
+        if $z0 == 0 goto label14;
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.Window getWindow()>();
+
+        virtualinvoke $r9.<android.view.Window: void addFlags(int)>(1024);
+
+     label07:
+        $r13 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        $r15 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim>;
+
+        if $r15 != null goto label15;
+
+        $b3 = 8;
+
+     label08:
+        virtualinvoke $r13.<android.widget.TextView: void setVisibility(int)>($b3);
+
+        $r11 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        $r15 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim>;
+
+        if $r15 != null goto label16;
+
+     label09:
+        virtualinvoke $r11.<android.widget.LinearLayout: void setVisibility(int)>($b0);
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showAnimated(boolean)>(1);
+
+        return;
+
+     label10:
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setRequestedOrientation(int)>(1);
+
+        goto label01;
+
+     label11:
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.Window getWindow()>();
+
+        virtualinvoke $r9.<android.view.Window: void clearFlags(int)>(128);
+
+        goto label03;
+
+     label12:
+        $r16 = <cx.hell.android.pdfview.OpenFileActivity: int[] zoomAnimations>;
+
+        $i1 = $r16[$i1];
+
+        $r15 = staticinvoke <android.view.animation.AnimationUtils: android.view.animation.Animation loadAnimation(android.content.Context,int)>($r0, $i1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim> = $r15;
+
+        goto label05;
+
+     label13:
+        $r16 = <cx.hell.android.pdfview.OpenFileActivity: int[] pageNumberAnimations>;
+
+        $i1 = $r16[$i1];
+
+        $r15 = staticinvoke <android.view.animation.AnimationUtils: android.view.animation.Animation loadAnimation(android.content.Context,int)>($r0, $i1);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim> = $r15;
+
+        goto label06;
+
+     label14:
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.Window getWindow()>();
+
+        virtualinvoke $r9.<android.view.Window: void clearFlags(int)>(1024);
+
+        goto label07;
+
+     label15:
+        $b3 = 0;
+
+        goto label08;
+
+     label16:
+        $b0 = 0;
+
+        goto label09;
+    }
+
+    public void onSensorChanged(android.hardware.SensorEvent)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.hardware.SensorEvent $r1;
+        float $f0, $f1, $f2, $f3;
+        float[] $r2, $r3;
+        long $l0;
+        byte $b1;
+        java.lang.String $r4;
+        int $i2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 := @parameter0: android.hardware.SensorEvent;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r3[0];
+
+        $f0 = $f0 * 0.8F;
+
+        $r3 = $r1.<android.hardware.SensorEvent: float[] values>;
+
+        $f1 = $r3[0];
+
+        $f1 = $f1 * 0.2F;
+
+        $f0 = $f0 + $f1;
+
+        $r2[0] = $f0;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r3[1];
+
+        $f0 = $f0 * 0.8F;
+
+        $r3 = $r1.<android.hardware.SensorEvent: float[] values>;
+
+        $f1 = $r3[1];
+
+        $f1 = $f1 * 0.2F;
+
+        $f0 = $f0 + $f1;
+
+        $r2[1] = $f0;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r3[2];
+
+        $f0 = $f0 * 0.8F;
+
+        $r3 = $r1.<android.hardware.SensorEvent: float[] values>;
+
+        $f1 = $r3[2];
+
+        $f1 = $f1 * 0.2F;
+
+        $f0 = $f0 + $f1;
+
+        $r2[2] = $f0;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r2[0];
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f1 = $r2[0];
+
+        $f0 = $f0 * $f1;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f1 = $r2[1];
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f2 = $r2[1];
+
+        $f1 = $f1 * $f2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f2 = $r2[2];
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f3 = $r2[2];
+
+        $f2 = $f2 * $f3;
+
+        $l0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: long gravityAge>;
+
+        $l0 = $l0 + 1L;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: long gravityAge> = $l0;
+
+        $l0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: long gravityAge>;
+
+        $b1 = $l0 cmp 4L;
+
+        if $b1 >= 0 goto label1;
+
+        return;
+
+     label1:
+        $f3 = $f0 + $f2;
+
+        $f3 = 3.0F * $f3;
+
+        $b1 = $f1 cmpl $f3;
+
+        if $b1 <= 0 goto label3;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r2[1];
+
+        $b1 = $f0 cmpl 4.0F;
+
+        if $b1 <= 0 goto label2;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setOrientation(int)>(1);
+
+        return;
+
+     label2:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r2[1];
+
+        $b1 = $f0 cmpg -4.0F;
+
+        if $b1 >= 0 goto label5;
+
+        $r4 = <android.os.Build$VERSION: java.lang.String SDK>;
+
+        $i2 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r4);
+
+        if $i2 < 9 goto label5;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setOrientation(int)>(9);
+
+        return;
+
+     label3:
+        $f1 = $f1 + $f2;
+
+        $f1 = 3.0F * $f1;
+
+        $b1 = $f0 cmpl $f1;
+
+        if $b1 <= 0 goto label5;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r2[0];
+
+        $b1 = $f0 cmpl 4.0F;
+
+        if $b1 <= 0 goto label4;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setOrientation(int)>(0);
+
+        return;
+
+     label4:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: float[] gravity>;
+
+        $f0 = $r2[0];
+
+        $b1 = $f0 cmpg -4.0F;
+
+        if $b1 >= 0 goto label5;
+
+        $r4 = <android.os.Build$VERSION: java.lang.String SDK>;
+
+        $i2 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r4);
+
+        if $i2 < 9 goto label5;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void setOrientation(int)>(8);
+
+     label5:
+        return;
+    }
+
+    public void onStop()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        specialinvoke $r0.<android.app.Activity: void onStop()>();
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "onStop()");
+
+        return;
+    }
+
+    public void showAnimated(boolean)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $z0 := @parameter0: boolean;
+
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showZoom()>();
+
+     label1:
+        virtualinvoke $r0.<cx.hell.android.pdfview.OpenFileActivity: void showPageNumber(boolean)>(1);
+
+        return;
+    }
+
+    public void showFindDialog()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.widget.LinearLayout $r1;
+        android.app.Dialog $r2;
+        android.widget.Button $r3;
+        android.widget.LinearLayout$LayoutParams $r4;
+        int $i0;
+        android.widget.EditText $r5;
+        cx.hell.android.lib.pagesview.PagesView $r6;
+        cx.hell.android.pdfview.OpenFileActivity$15 $r7;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "find dialog...");
+
+        $r2 = new android.app.Dialog;
+
+        specialinvoke $r2.<android.app.Dialog: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r2.<android.app.Dialog: void setTitle(int)>(2131165192);
+
+        $r1 = new android.widget.LinearLayout;
+
+        specialinvoke $r1.<android.widget.LinearLayout: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void setOrientation(int)>(1);
+
+        $r5 = new android.widget.EditText;
+
+        specialinvoke $r5.<android.widget.EditText: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText findTextInputField> = $r5;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText findTextInputField>;
+
+        $r6 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $i0 = virtualinvoke $r6.<cx.hell.android.lib.pagesview.PagesView: int getWidth()>();
+
+        $i0 = $i0 * 80;
+
+        $i0 = $i0 / 100;
+
+        virtualinvoke $r5.<android.widget.EditText: void setWidth(int)>($i0);
+
+        $r3 = new android.widget.Button;
+
+        specialinvoke $r3.<android.widget.Button: void <init>(android.content.Context)>($r0);
+
+        virtualinvoke $r3.<android.widget.Button: void setText(int)>(2131165193);
+
+        $r7 = new cx.hell.android.pdfview.OpenFileActivity$15;
+
+        specialinvoke $r7.<cx.hell.android.pdfview.OpenFileActivity$15: void <init>(cx.hell.android.pdfview.OpenFileActivity,android.app.Dialog)>($r0, $r2);
+
+        virtualinvoke $r3.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r7);
+
+        $r4 = new android.widget.LinearLayout$LayoutParams;
+
+        specialinvoke $r4.<android.widget.LinearLayout$LayoutParams: void <init>(int,int)>(-1, -2);
+
+        $r4.<android.widget.LinearLayout$LayoutParams: int leftMargin> = 5;
+
+        $r4.<android.widget.LinearLayout$LayoutParams: int rightMargin> = 5;
+
+        $r4.<android.widget.LinearLayout$LayoutParams: int bottomMargin> = 2;
+
+        $r4.<android.widget.LinearLayout$LayoutParams: int topMargin> = 2;
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText findTextInputField>;
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r5, $r4);
+
+        virtualinvoke $r1.<android.widget.LinearLayout: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>($r3, $r4);
+
+        virtualinvoke $r2.<android.app.Dialog: void setContentView(android.view.View)>($r1);
+
+        virtualinvoke $r2.<android.app.Dialog: void show()>();
+
+        return;
+    }
+
+    public void showPageNumber(boolean)
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        boolean $z0;
+        android.view.animation.Animation $r1;
+        android.widget.TextView $r2;
+        java.lang.StringBuilder $r3;
+        cx.hell.android.lib.pagesview.PagesView $r4;
+        int $i0;
+        cx.hell.android.pdfview.PDFPagesProvider $r5;
+        java.lang.String $r6;
+        java.lang.CharSequence $r7;
+        android.os.Handler $r8;
+        java.lang.Runnable $r9;
+        long $l1;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $z0 := @parameter0: boolean;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation pageNumberAnim>;
+
+        if $r1 != null goto label1;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        virtualinvoke $r2.<android.widget.TextView: void setVisibility(int)>(8);
+
+        return;
+
+     label1:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        virtualinvoke $r2.<android.widget.TextView: void setVisibility(int)>(0);
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>()>();
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView pagesView>;
+
+        $i0 = virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: int getCurrentPage()>();
+
+        $i0 = $i0 + 1;
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/");
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        $i0 = virtualinvoke $r5.<cx.hell.android.pdfview.PDFPagesProvider: int getPageCount()>();
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r6 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        if $z0 != 0 goto label2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        $r7 = virtualinvoke $r2.<android.widget.TextView: java.lang.CharSequence getText()>();
+
+        $z0 = virtualinvoke $r6.<java.lang.String: boolean equals(java.lang.Object)>($r7);
+
+        if $z0 != 0 goto label3;
+
+     label2:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        virtualinvoke $r2.<android.widget.TextView: void setText(java.lang.CharSequence)>($r6);
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.TextView pageNumberTextView>;
+
+        virtualinvoke $r2.<android.widget.TextView: void clearAnimation()>();
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler pageHandler>;
+
+        $r9 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable pageRunnable>;
+
+        virtualinvoke $r8.<android.os.Handler: void removeCallbacks(java.lang.Runnable)>($r9);
+
+        $r8 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler pageHandler>;
+
+        $r9 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable pageRunnable>;
+
+        $i0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int fadeStartOffset>;
+
+        $l1 = (long) $i0;
+
+        virtualinvoke $r8.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r9, $l1);
+
+     label3:
+        return;
+    }
+
+    public void showZoom()
+    {
+        cx.hell.android.pdfview.OpenFileActivity $r0;
+        android.view.animation.Animation $r1;
+        android.widget.LinearLayout $r2;
+        android.os.Handler $r3;
+        java.lang.Runnable $r4;
+        int $i0;
+        long $l1;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.view.animation.Animation zoomAnim>;
+
+        if $r1 != null goto label1;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void setVisibility(int)>(8);
+
+        return;
+
+     label1:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void clearAnimation()>();
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout zoomLayout>;
+
+        virtualinvoke $r2.<android.widget.LinearLayout: void setVisibility(int)>(0);
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler zoomHandler>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable zoomRunnable>;
+
+        virtualinvoke $r3.<android.os.Handler: void removeCallbacks(java.lang.Runnable)>($r4);
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity: android.os.Handler zoomHandler>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.OpenFileActivity: java.lang.Runnable zoomRunnable>;
+
+        $i0 = $r0.<cx.hell.android.pdfview.OpenFileActivity: int fadeStartOffset>;
+
+        $l1 = (long) $i0;
+
+        virtualinvoke $r3.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r4, $l1);
+
+        return;
+    }
+}

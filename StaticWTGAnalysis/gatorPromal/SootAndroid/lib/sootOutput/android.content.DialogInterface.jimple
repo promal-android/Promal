@@ -1,0 +1,30 @@
+public interface  android.content.DialogInterface extends java.lang.Object
+{
+    public static final int BUTTON_POSITIVE;
+    public static final int BUTTON_NEGATIVE;
+    public static final int BUTTON_NEUTRAL;
+    public static final int BUTTON1;
+    public static final int BUTTON2;
+    public static final int BUTTON3;
+
+    public abstract void cancel();
+
+    public abstract void dismiss();
+
+    public static void <clinit>()
+    {
+        <android.content.DialogInterface: int BUTTON3> = -3;
+
+        <android.content.DialogInterface: int BUTTON2> = -2;
+
+        <android.content.DialogInterface: int BUTTON1> = -1;
+
+        <android.content.DialogInterface: int BUTTON_NEUTRAL> = -3;
+
+        <android.content.DialogInterface: int BUTTON_NEGATIVE> = -2;
+
+        <android.content.DialogInterface: int BUTTON_POSITIVE> = -1;
+
+        return;
+    }
+}

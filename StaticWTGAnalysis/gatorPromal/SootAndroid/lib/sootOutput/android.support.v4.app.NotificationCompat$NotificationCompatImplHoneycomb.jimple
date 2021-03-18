@@ -1,0 +1,55 @@
+class android.support.v4.app.NotificationCompat$NotificationCompatImplHoneycomb extends java.lang.Object implements android.support.v4.app.NotificationCompat$NotificationCompatImpl
+{
+
+    void <init>()
+    {
+        android.support.v4.app.NotificationCompat$NotificationCompatImplHoneycomb $r0;
+
+        $r0 := @this: android.support.v4.app.NotificationCompat$NotificationCompatImplHoneycomb;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public android.app.Notification build(android.support.v4.app.NotificationCompat$Builder)
+    {
+        android.support.v4.app.NotificationCompat$NotificationCompatImplHoneycomb $r0;
+        android.support.v4.app.NotificationCompat$Builder $r1;
+        android.app.Notification $r2;
+        java.lang.CharSequence $r3, $r4, $r5;
+        android.widget.RemoteViews $r6;
+        int $i0;
+        android.app.PendingIntent $r7, $r8;
+        android.graphics.Bitmap $r9;
+        android.content.Context $r10;
+
+        $r0 := @this: android.support.v4.app.NotificationCompat$NotificationCompatImplHoneycomb;
+
+        $r1 := @parameter0: android.support.v4.app.NotificationCompat$Builder;
+
+        $r10 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.content.Context mContext>;
+
+        $r2 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.app.Notification mNotification>;
+
+        $r3 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.lang.CharSequence mContentTitle>;
+
+        $r4 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.lang.CharSequence mContentText>;
+
+        $r5 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.lang.CharSequence mContentInfo>;
+
+        $r6 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.widget.RemoteViews mTickerView>;
+
+        $i0 = $r1.<android.support.v4.app.NotificationCompat$Builder: int mNumber>;
+
+        $r7 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.app.PendingIntent mContentIntent>;
+
+        $r8 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.app.PendingIntent mFullScreenIntent>;
+
+        $r9 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.graphics.Bitmap mLargeIcon>;
+
+        $r2 = staticinvoke <android.support.v4.app.NotificationCompatHoneycomb: android.app.Notification add(android.content.Context,android.app.Notification,java.lang.CharSequence,java.lang.CharSequence,java.lang.CharSequence,android.widget.RemoteViews,int,android.app.PendingIntent,android.app.PendingIntent,android.graphics.Bitmap)>($r10, $r2, $r3, $r4, $r5, $r6, $i0, $r7, $r8, $r9);
+
+        return $r2;
+    }
+}

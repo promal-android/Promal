@@ -1,0 +1,69 @@
+public class cx.hell.android.pdfview.AboutPDFViewActivity extends android.app.Activity
+{
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.AboutPDFViewActivity $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.AboutPDFViewActivity;
+
+        specialinvoke $r0.<android.app.Activity: void <init>()>();
+
+        return;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        cx.hell.android.pdfview.AboutPDFViewActivity $r0;
+        android.os.Bundle $r1;
+        java.io.IOException $r2;
+        android.view.View $r3;
+        android.webkit.WebView $r4;
+        android.content.res.Resources $r5;
+        java.io.BufferedInputStream $r6;
+        java.io.InputStream $r7;
+        java.lang.String $r8;
+        java.lang.RuntimeException $r9;
+
+        $r0 := @this: cx.hell.android.pdfview.AboutPDFViewActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1);
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.AboutPDFViewActivity: void setContentView(int)>(2130903040);
+
+        $r3 = virtualinvoke $r0.<cx.hell.android.pdfview.AboutPDFViewActivity: android.view.View findViewById(int)>(2131296256);
+
+        $r4 = (android.webkit.WebView) $r3;
+
+        $r5 = virtualinvoke $r0.<cx.hell.android.pdfview.AboutPDFViewActivity: android.content.res.Resources getResources()>();
+
+        $r6 = new java.io.BufferedInputStream;
+
+        $r7 = virtualinvoke $r5.<android.content.res.Resources: java.io.InputStream openRawResource(int)>(2131099648);
+
+        specialinvoke $r6.<java.io.BufferedInputStream: void <init>(java.io.InputStream)>($r7);
+
+     label1:
+        $r8 = staticinvoke <cx.hell.android.pdfview.StreamUtils: java.lang.String readStringFully(java.io.InputStream)>($r6);
+
+        virtualinvoke $r6.<java.io.InputStream: void close()>();
+
+     label2:
+        virtualinvoke $r4.<android.webkit.WebView: void loadData(java.lang.String,java.lang.String,java.lang.String)>($r8, "text/html", "utf-8");
+
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        $r9 = new java.lang.RuntimeException;
+
+        specialinvoke $r9.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>($r2);
+
+        throw $r9;
+
+        catch java.io.IOException from label1 to label2 with label3;
+    }
+}

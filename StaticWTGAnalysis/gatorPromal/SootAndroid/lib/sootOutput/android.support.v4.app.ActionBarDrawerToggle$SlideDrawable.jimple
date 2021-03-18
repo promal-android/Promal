@@ -1,0 +1,559 @@
+class android.support.v4.app.ActionBarDrawerToggle$SlideDrawable extends android.graphics.drawable.Drawable implements android.graphics.drawable.Drawable$Callback
+{
+    private float mOffset;
+    private float mOffsetBy;
+    private final android.graphics.Rect mTmpRect;
+    private android.graphics.drawable.Drawable mWrapped;
+
+    public void <init>(android.graphics.drawable.Drawable)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.drawable.Drawable $r1;
+        android.graphics.Rect $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+
+        specialinvoke $r0.<android.graphics.drawable.Drawable: void <init>()>();
+
+        $r2 = new android.graphics.Rect;
+
+        specialinvoke $r2.<android.graphics.Rect: void <init>()>();
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.Rect mTmpRect> = $r2;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped> = $r1;
+
+        return;
+    }
+
+    public void clearColorFilter()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r1.<android.graphics.drawable.Drawable: void clearColorFilter()>();
+
+        return;
+    }
+
+    public void draw(android.graphics.Canvas)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.Canvas $r1;
+        int $i0;
+        android.graphics.drawable.Drawable $r2;
+        android.graphics.Rect $r3;
+        float $f0, $f1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.Canvas;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.Rect mTmpRect>;
+
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void copyBounds(android.graphics.Rect)>($r3);
+
+        virtualinvoke $r1.<android.graphics.Canvas: int save()>();
+
+        $f0 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mOffsetBy>;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.Rect mTmpRect>;
+
+        $i0 = virtualinvoke $r3.<android.graphics.Rect: int width()>();
+
+        $f1 = (float) $i0;
+
+        $f0 = $f0 * $f1;
+
+        $f1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mOffset>;
+
+        $f1 = neg $f1;
+
+        $f0 = $f0 * $f1;
+
+        virtualinvoke $r1.<android.graphics.Canvas: void translate(float,float)>($f0, 0.0F);
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void draw(android.graphics.Canvas)>($r1);
+
+        virtualinvoke $r1.<android.graphics.Canvas: void restore()>();
+
+        return;
+    }
+
+    public int getChangingConfigurations()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getChangingConfigurations()>();
+
+        return $i0;
+    }
+
+    public android.graphics.drawable.Drawable$ConstantState getConstantState()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.drawable.Drawable$ConstantState $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = specialinvoke $r0.<android.graphics.drawable.Drawable: android.graphics.drawable.Drawable$ConstantState getConstantState()>();
+
+        return $r1;
+    }
+
+    public android.graphics.drawable.Drawable getCurrent()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $r1 = virtualinvoke $r1.<android.graphics.drawable.Drawable: android.graphics.drawable.Drawable getCurrent()>();
+
+        return $r1;
+    }
+
+    public int getIntrinsicHeight()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getIntrinsicHeight()>();
+
+        return $i0;
+    }
+
+    public int getIntrinsicWidth()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getIntrinsicWidth()>();
+
+        return $i0;
+    }
+
+    public int getMinimumHeight()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getMinimumHeight()>();
+
+        return $i0;
+    }
+
+    public int getMinimumWidth()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getMinimumWidth()>();
+
+        return $i0;
+    }
+
+    public float getOffset()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        float f0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        f0 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mOffset>;
+
+        return f0;
+    }
+
+    public int getOpacity()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $i0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: int getOpacity()>();
+
+        return $i0;
+    }
+
+    public boolean getPadding(android.graphics.Rect)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.Rect $r1;
+        boolean $z0;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.Rect;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $z0 = virtualinvoke $r2.<android.graphics.drawable.Drawable: boolean getPadding(android.graphics.Rect)>($r1);
+
+        return $z0;
+    }
+
+    public int[] getState()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int[] $r1;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $r1 = virtualinvoke $r2.<android.graphics.drawable.Drawable: int[] getState()>();
+
+        return $r1;
+    }
+
+    public android.graphics.Region getTransparentRegion()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.Region $r1;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $r1 = virtualinvoke $r2.<android.graphics.drawable.Drawable: android.graphics.Region getTransparentRegion()>();
+
+        return $r1;
+    }
+
+    public void invalidateDrawable(android.graphics.drawable.Drawable)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.drawable.Drawable $r1, $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        if $r1 != $r2 goto label1;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void invalidateSelf()>();
+
+     label1:
+        return;
+    }
+
+    public boolean isStateful()
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        boolean $z0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $z0 = virtualinvoke $r1.<android.graphics.drawable.Drawable: boolean isStateful()>();
+
+        return $z0;
+    }
+
+    protected void onBoundsChange(android.graphics.Rect)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.Rect $r1;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.Rect;
+
+        specialinvoke $r0.<android.graphics.drawable.Drawable: void onBoundsChange(android.graphics.Rect)>($r1);
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void setBounds(android.graphics.Rect)>($r1);
+
+        return;
+    }
+
+    protected boolean onStateChange(int[])
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int[] $r1;
+        boolean $z0;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: int[];
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: boolean setState(int[])>($r1);
+
+        $z0 = specialinvoke $r0.<android.graphics.drawable.Drawable: boolean onStateChange(int[])>($r1);
+
+        return $z0;
+    }
+
+    public void scheduleDrawable(android.graphics.drawable.Drawable, java.lang.Runnable, long)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.drawable.Drawable $r1, $r3;
+        java.lang.Runnable $r2;
+        long $l0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+
+        $r2 := @parameter1: java.lang.Runnable;
+
+        $l0 := @parameter2: long;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        if $r1 != $r3 goto label1;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void scheduleSelf(java.lang.Runnable,long)>($r2, $l0);
+
+     label1:
+        return;
+    }
+
+    public void setAlpha(int)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $i0 := @parameter0: int;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r1.<android.graphics.drawable.Drawable: void setAlpha(int)>($i0);
+
+        return;
+    }
+
+    public void setChangingConfigurations(int)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $i0 := @parameter0: int;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r1.<android.graphics.drawable.Drawable: void setChangingConfigurations(int)>($i0);
+
+        return;
+    }
+
+    public void setColorFilter(int, android.graphics.PorterDuff$Mode)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int $i0;
+        android.graphics.PorterDuff$Mode $r1;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $i0 := @parameter0: int;
+
+        $r1 := @parameter1: android.graphics.PorterDuff$Mode;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void setColorFilter(int,android.graphics.PorterDuff$Mode)>($i0, $r1);
+
+        return;
+    }
+
+    public void setColorFilter(android.graphics.ColorFilter)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.ColorFilter $r1;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.ColorFilter;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r2.<android.graphics.drawable.Drawable: void setColorFilter(android.graphics.ColorFilter)>($r1);
+
+        return;
+    }
+
+    public void setDither(boolean)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        boolean $z0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $z0 := @parameter0: boolean;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r1.<android.graphics.drawable.Drawable: void setDither(boolean)>($z0);
+
+        return;
+    }
+
+    public void setFilterBitmap(boolean)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        boolean $z0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $z0 := @parameter0: boolean;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        virtualinvoke $r1.<android.graphics.drawable.Drawable: void setFilterBitmap(boolean)>($z0);
+
+        return;
+    }
+
+    public void setOffset(float)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        float $f0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $f0 := @parameter0: float;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mOffset> = $f0;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void invalidateSelf()>();
+
+        return;
+    }
+
+    public void setOffsetBy(float)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        float $f0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $f0 := @parameter0: float;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float mOffsetBy> = $f0;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void invalidateSelf()>();
+
+        return;
+    }
+
+    public boolean setState(int[])
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        int[] $r1;
+        boolean $z0;
+        android.graphics.drawable.Drawable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: int[];
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        $z0 = virtualinvoke $r2.<android.graphics.drawable.Drawable: boolean setState(int[])>($r1);
+
+        return $z0;
+    }
+
+    public boolean setVisible(boolean, boolean)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        boolean $z0, $z1;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $z0 := @parameter0: boolean;
+
+        $z1 := @parameter1: boolean;
+
+        $z0 = specialinvoke $r0.<android.graphics.drawable.Drawable: boolean setVisible(boolean,boolean)>($z0, $z1);
+
+        return $z0;
+    }
+
+    public void unscheduleDrawable(android.graphics.drawable.Drawable, java.lang.Runnable)
+    {
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r0;
+        android.graphics.drawable.Drawable $r1, $r3;
+        java.lang.Runnable $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+
+        $r2 := @parameter1: java.lang.Runnable;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: android.graphics.drawable.Drawable mWrapped>;
+
+        if $r1 != $r3 goto label1;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void unscheduleSelf(java.lang.Runnable)>($r2);
+
+     label1:
+        return;
+    }
+}

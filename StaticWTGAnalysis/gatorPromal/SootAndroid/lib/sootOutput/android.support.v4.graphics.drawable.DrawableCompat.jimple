@@ -1,0 +1,57 @@
+public class android.support.v4.graphics.drawable.DrawableCompat extends java.lang.Object
+{
+    static final android.support.v4.graphics.drawable.DrawableCompat$DrawableImpl IMPL;
+
+    static void <clinit>()
+    {
+        int $i0;
+        android.support.v4.graphics.drawable.DrawableCompat$HoneycombDrawableImpl $r0;
+        android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl $r1;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+
+        if $i0 < 11 goto label1;
+
+        $r0 = new android.support.v4.graphics.drawable.DrawableCompat$HoneycombDrawableImpl;
+
+        specialinvoke $r0.<android.support.v4.graphics.drawable.DrawableCompat$HoneycombDrawableImpl: void <init>()>();
+
+        <android.support.v4.graphics.drawable.DrawableCompat: android.support.v4.graphics.drawable.DrawableCompat$DrawableImpl IMPL> = $r0;
+
+        return;
+
+     label1:
+        $r1 = new android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl;
+
+        specialinvoke $r1.<android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl: void <init>()>();
+
+        <android.support.v4.graphics.drawable.DrawableCompat: android.support.v4.graphics.drawable.DrawableCompat$DrawableImpl IMPL> = $r1;
+
+        return;
+    }
+
+    public void <init>()
+    {
+        android.support.v4.graphics.drawable.DrawableCompat $r0;
+
+        $r0 := @this: android.support.v4.graphics.drawable.DrawableCompat;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void jumpToCurrentState(android.graphics.drawable.Drawable)
+    {
+        android.graphics.drawable.Drawable $r0;
+        android.support.v4.graphics.drawable.DrawableCompat$DrawableImpl $r1;
+
+        $r0 := @parameter0: android.graphics.drawable.Drawable;
+
+        $r1 = <android.support.v4.graphics.drawable.DrawableCompat: android.support.v4.graphics.drawable.DrawableCompat$DrawableImpl IMPL>;
+
+        interfaceinvoke $r1.<android.support.v4.graphics.drawable.DrawableCompat$DrawableImpl: void jumpToCurrentState(android.graphics.drawable.Drawable)>($r0);
+
+        return;
+    }
+}

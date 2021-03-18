@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="tools/PAI/src"/>
+	<classpathentry kind="src" path="tools/ResourceUsageAnalysis/src"/>
+	<classpathentry kind="lib" path="deps/android-17-stubs.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-annotations.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v7-appcompat.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v7-cardview.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v7-gridlayout.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v7-mediarouter.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v7-palette.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v7-preference.jar"/>
+	<classpathentry kind="lib" path="deps/android-support-v7-recyclerview.jar"/>
+	<classpathentry kind="lib" path="deps/annotations.jar"/>
+	<classpathentry kind="lib" path="deps/legacy/android-17-stubs.jar"/>
+	<classpathentry kind="lib" path="deps/legacy/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="deps/legacy/annotations.jar"/>
+	<classpathentry kind="lib" path="guava-14.0.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/guava-14.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="lib/sootclasses.jar"/>
+	<classpathentry kind="lib" path="lib/velocity-1.7-dep.jar"/>
+	<classpathentry kind="lib" path="scripts/testgen4leaks-leakdroid/pai.jar"/>
+	<classpathentry kind="lib" path="scripts/testgen4leaks-leakdroid/robotium-solo-5.4.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="scripts/testgen4leaks-leakdroid/robotium-solo-5.4.1.jar"/>
+	<classpathentry kind="lib" path="scripts/testgen4leaks/pai.jar"/>
+	<classpathentry kind="lib" path="scripts/testgen4leaks/robotium-solo-5.3.1.jar"/>
+	<classpathentry kind="lib" path="tools/PAI/lib/android.jar"/>
+	<classpathentry kind="lib" path="tools/PAI/lib/robotium-solo-5.3.1.jar"/>
+	<classpathentry kind="lib" path="tools/ResourceUsageAnalysis/lib/RCaller-2.0.7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.8.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

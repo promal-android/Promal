@@ -1,0 +1,79 @@
+public final class cx.hell.android.pdfview.R$array extends java.lang.Object
+{
+    public static final int action_pair_labels;
+    public static final int action_pairs;
+    public static final int box_labels;
+    public static final int boxes;
+    public static final int color_mode_labels;
+    public static final int color_modes;
+    public static final int double_tap_action_labels;
+    public static final int double_tap_actions;
+    public static final int extra_cache_labels;
+    public static final int extra_caches;
+    public static final int fade_speed_labels;
+    public static final int fade_speeds;
+    public static final int margin_labels;
+    public static final int margins;
+    public static final int orientation_labels;
+    public static final int orientations;
+    public static final int page_animation_labels;
+    public static final int page_animations;
+    public static final int zoom_animation_labels;
+    public static final int zoom_animations;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$array $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$array;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$array: int zoom_animations> = 2131230720;
+
+        <cx.hell.android.pdfview.R$array: int zoom_animation_labels> = 2131230721;
+
+        <cx.hell.android.pdfview.R$array: int page_animations> = 2131230722;
+
+        <cx.hell.android.pdfview.R$array: int page_animation_labels> = 2131230723;
+
+        <cx.hell.android.pdfview.R$array: int orientations> = 2131230727;
+
+        <cx.hell.android.pdfview.R$array: int orientation_labels> = 2131230726;
+
+        <cx.hell.android.pdfview.R$array: int margins> = 2131230734;
+
+        <cx.hell.android.pdfview.R$array: int margin_labels> = 2131230735;
+
+        <cx.hell.android.pdfview.R$array: int fade_speeds> = 2131230724;
+
+        <cx.hell.android.pdfview.R$array: int fade_speed_labels> = 2131230725;
+
+        <cx.hell.android.pdfview.R$array: int extra_caches> = 2131230732;
+
+        <cx.hell.android.pdfview.R$array: int extra_cache_labels> = 2131230733;
+
+        <cx.hell.android.pdfview.R$array: int double_tap_actions> = 2131230736;
+
+        <cx.hell.android.pdfview.R$array: int double_tap_action_labels> = 2131230737;
+
+        <cx.hell.android.pdfview.R$array: int color_modes> = 2131230729;
+
+        <cx.hell.android.pdfview.R$array: int color_mode_labels> = 2131230728;
+
+        <cx.hell.android.pdfview.R$array: int boxes> = 2131230731;
+
+        <cx.hell.android.pdfview.R$array: int box_labels> = 2131230730;
+
+        <cx.hell.android.pdfview.R$array: int action_pairs> = 2131230738;
+
+        <cx.hell.android.pdfview.R$array: int action_pair_labels> = 2131230739;
+
+        return;
+    }
+}

@@ -1,0 +1,14 @@
+public final class cx.hell.android.pdfview.R$attr extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$attr $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$attr;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

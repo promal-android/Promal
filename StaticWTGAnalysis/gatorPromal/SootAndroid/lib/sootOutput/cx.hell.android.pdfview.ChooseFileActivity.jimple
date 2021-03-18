@@ -1,0 +1,971 @@
+public class cx.hell.android.pdfview.ChooseFileActivity extends android.support.v4.app.FragmentActivity implements android.widget.AdapterView$OnItemClickListener
+{
+    private static final java.lang.String PREF_HOME;
+    private static final java.lang.String PREF_TAG;
+    private static final java.lang.String TAG;
+    private static final int[] recentIds;
+    private android.view.MenuItem aboutMenuItem;
+    private java.lang.String currentPath;
+    private android.view.MenuItem deleteContextMenuItem;
+    private java.lang.Boolean dirsFirst;
+    private java.io.FileFilter fileFilter;
+    private java.util.ArrayList fileList;
+    private android.widget.ArrayAdapter fileListAdapter;
+    private android.widget.ListView filesListView;
+    private java.lang.Boolean history;
+    private java.lang.Boolean light;
+    private android.view.MenuItem optionsMenuItem;
+    private android.widget.TextView pathTextView;
+    private cx.hell.android.pdfview.Recent recent;
+    private android.view.MenuItem removeContextMenuItem;
+    private android.view.MenuItem setAsHomeContextMenuItem;
+    private android.view.MenuItem setAsHomeMenuItem;
+    private java.lang.Boolean showExtension;
+
+    static void <clinit>()
+    {
+        int[] $r0;
+
+        <cx.hell.android.pdfview.ChooseFileActivity: java.lang.String TAG> = "cx.hell.android.pdfview";
+
+        <cx.hell.android.pdfview.ChooseFileActivity: java.lang.String PREF_TAG> = "ChooseFileActivity";
+
+        <cx.hell.android.pdfview.ChooseFileActivity: java.lang.String PREF_HOME> = "Home";
+
+        $r0 = newarray (int)[5];
+
+        $r0[0] = 2131296263;
+
+        $r0[1] = 2131296264;
+
+        $r0[2] = 2131296265;
+
+        $r0[3] = 2131296266;
+
+        $r0[4] = 2131296267;
+
+        <cx.hell.android.pdfview.ChooseFileActivity: int[] recentIds> = $r0;
+
+        return;
+    }
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        java.lang.Boolean $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        specialinvoke $r0.<android.support.v4.app.FragmentActivity: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.TextView pathTextView> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ListView filesListView> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.io.FileFilter fileFilter> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ArrayAdapter fileListAdapter> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: cx.hell.android.pdfview.Recent recent> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem aboutMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem setAsHomeMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem optionsMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem deleteContextMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem removeContextMenuItem> = null;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem setAsHomeContextMenuItem> = null;
+
+        $r1 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean dirsFirst> = $r1;
+
+        $r1 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean showExtension> = $r1;
+
+        $r1 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(1);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean history> = $r1;
+
+        $r1 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean light> = $r1;
+
+        return;
+    }
+
+    static java.util.ArrayList access$0(cx.hell.android.pdfview.ChooseFileActivity)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        java.util.ArrayList r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.ChooseFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList>;
+
+        return r1;
+    }
+
+    static int[] access$1()
+    {
+        int[] r0;
+
+        r0 = <cx.hell.android.pdfview.ChooseFileActivity: int[] recentIds>;
+
+        return r0;
+    }
+
+    static java.lang.Boolean access$2(cx.hell.android.pdfview.ChooseFileActivity)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        java.lang.Boolean r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.ChooseFileActivity;
+
+        r1 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean dirsFirst>;
+
+        return r1;
+    }
+
+    private java.lang.String getHome()
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        java.io.File $r1;
+        java.lang.String $r2, $r4, $r5;
+        android.content.SharedPreferences $r3;
+        int $i0;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 = staticinvoke <android.os.Environment: java.io.File getExternalStorageDirectory()>();
+
+        $r2 = virtualinvoke $r1.<java.io.File: java.lang.String getAbsolutePath()>();
+
+        $r3 = virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("ChooseFileActivity", 0);
+
+        $r4 = interfaceinvoke $r3.<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>("Home", $r2);
+
+        $r5 = $r4;
+
+        $i0 = virtualinvoke $r4.<java.lang.String: int length()>();
+
+        if $i0 <= 1 goto label1;
+
+        $z0 = virtualinvoke $r4.<java.lang.String: boolean endsWith(java.lang.String)>("/");
+
+        if $z0 == 0 goto label1;
+
+        $i0 = virtualinvoke $r4.<java.lang.String: int length()>();
+
+        $i0 = $i0 + -2;
+
+        $r5 = virtualinvoke $r4.<java.lang.String: java.lang.String substring(int,int)>(0, $i0);
+
+     label1:
+        $r1 = new java.io.File;
+
+        specialinvoke $r1.<java.io.File: void <init>(java.lang.String)>($r5);
+
+        $z0 = virtualinvoke $r1.<java.io.File: boolean exists()>();
+
+        if $z0 == 0 goto label2;
+
+        $z0 = virtualinvoke $r1.<java.io.File: boolean isDirectory()>();
+
+        if $z0 == 0 goto label2;
+
+        return $r5;
+
+     label2:
+        return $r2;
+    }
+
+    private boolean isHome(java.lang.String)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        java.lang.String $r1, $r5;
+        java.io.IOException $r2;
+        java.io.File $r3, $r4;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r4 = new java.io.File;
+
+        specialinvoke $r4.<java.io.File: void <init>(java.lang.String)>($r1);
+
+        $r3 = new java.io.File;
+
+        $r1 = specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String getHome()>();
+
+        specialinvoke $r3.<java.io.File: void <init>(java.lang.String)>($r1);
+
+     label1:
+        $r1 = virtualinvoke $r4.<java.io.File: java.lang.String getCanonicalPath()>();
+
+        $r5 = virtualinvoke $r3.<java.io.File: java.lang.String getCanonicalPath()>();
+
+        $z0 = virtualinvoke $r1.<java.lang.String: boolean equals(java.lang.Object)>($r5);
+
+     label2:
+        return $z0;
+
+     label3:
+        $r2 := @caughtexception;
+
+        return 0;
+
+        catch java.io.IOException from label1 to label2 with label3;
+    }
+
+    private void update()
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        java.lang.NullPointerException $r1;
+        android.widget.TextView $r2;
+        java.lang.String $r3;
+        android.widget.ArrayAdapter $r4;
+        java.lang.Boolean $r5;
+        boolean $z0;
+        cx.hell.android.pdfview.Recent $r6;
+        int $i0, $i1;
+        int[] $r7;
+        cx.hell.android.pdfview.FileListEntry $r8;
+        android.content.res.Resources $r9;
+        java.io.File $r10;
+        java.io.FileFilter $r11;
+        java.io.File[] $r12;
+        cx.hell.android.pdfview.ChooseFileActivity$3 $r13;
+        android.widget.ListView $r14;
+        java.lang.Object $r15;
+        java.util.ArrayList $r16;
+        java.lang.RuntimeException $r17;
+        java.lang.StringBuilder $r18;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r2 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.TextView pathTextView>;
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath>;
+
+        virtualinvoke $r2.<android.widget.TextView: void setText(java.lang.CharSequence)>($r3);
+
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ArrayAdapter fileListAdapter>;
+
+        virtualinvoke $r4.<android.widget.ArrayAdapter: void clear()>();
+
+        $r5 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean history>;
+
+        $z0 = virtualinvoke $r5.<java.lang.Boolean: boolean booleanValue()>();
+
+        if $z0 == 0 goto label09;
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath>;
+
+        $z0 = specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: boolean isHome(java.lang.String)>($r3);
+
+        if $z0 == 0 goto label09;
+
+        $r6 = new cx.hell.android.pdfview.Recent;
+
+        specialinvoke $r6.<cx.hell.android.pdfview.Recent: void <init>(android.content.Context)>($r0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: cx.hell.android.pdfview.Recent recent> = $r6;
+
+        $i0 = 0;
+
+     label01:
+        $r6 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: cx.hell.android.pdfview.Recent recent>;
+
+        $i1 = virtualinvoke $r6.<cx.hell.android.pdfview.Recent: int size()>();
+
+        if $i0 >= $i1 goto label02;
+
+        $r7 = <cx.hell.android.pdfview.ChooseFileActivity: int[] recentIds>;
+
+        $i1 = lengthof $r7;
+
+        if $i0 < $i1 goto label08;
+
+     label02:
+        $r8 = new cx.hell.android.pdfview.FileListEntry;
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.content.res.Resources getResources()>();
+
+        $r3 = virtualinvoke $r9.<android.content.res.Resources: java.lang.String getString(int)>(2131165200);
+
+        specialinvoke $r8.<cx.hell.android.pdfview.FileListEntry: void <init>(int,java.lang.String)>(1, $r3);
+
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ArrayAdapter fileListAdapter>;
+
+        virtualinvoke $r4.<android.widget.ArrayAdapter: void add(java.lang.Object)>($r8);
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath>;
+
+        $z0 = virtualinvoke $r3.<java.lang.String: boolean equals(java.lang.Object)>("/");
+
+        if $z0 != 0 goto label03;
+
+        $r10 = new java.io.File;
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath>;
+
+        specialinvoke $r10.<java.io.File: void <init>(java.lang.String)>($r3);
+
+        $r10 = virtualinvoke $r10.<java.io.File: java.io.File getParentFile()>();
+
+        $r8 = new cx.hell.android.pdfview.FileListEntry;
+
+        specialinvoke $r8.<cx.hell.android.pdfview.FileListEntry: void <init>(int,int,java.io.File,java.lang.String)>(0, -1, $r10, "..");
+
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ArrayAdapter fileListAdapter>;
+
+        virtualinvoke $r4.<android.widget.ArrayAdapter: void add(java.lang.Object)>($r8);
+
+     label03:
+        $r10 = new java.io.File;
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath>;
+
+        specialinvoke $r10.<java.io.File: void <init>(java.lang.String)>($r3);
+
+        $r11 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.io.FileFilter fileFilter>;
+
+        $r12 = virtualinvoke $r10.<java.io.File: java.io.File[] listFiles(java.io.FileFilter)>($r11);
+
+        if $r12 == null goto label07;
+
+        $r13 = new cx.hell.android.pdfview.ChooseFileActivity$3;
+
+     label04:
+        specialinvoke $r13.<cx.hell.android.pdfview.ChooseFileActivity$3: void <init>(cx.hell.android.pdfview.ChooseFileActivity)>($r0);
+
+        staticinvoke <java.util.Arrays: void sort(java.lang.Object[],java.util.Comparator)>($r12, $r13);
+
+     label05:
+        $i0 = lengthof $r12;
+
+        $i1 = 0;
+
+     label06:
+        if $i1 < $i0 goto label11;
+
+     label07:
+        $r14 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ListView filesListView>;
+
+        virtualinvoke $r14.<android.widget.ListView: void setSelection(int)>(0);
+
+        return;
+
+     label08:
+        $r10 = new java.io.File;
+
+        $r6 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: cx.hell.android.pdfview.Recent recent>;
+
+        $r15 = virtualinvoke $r6.<cx.hell.android.pdfview.Recent: java.lang.Object get(int)>($i0);
+
+        $r3 = (java.lang.String) $r15;
+
+        specialinvoke $r10.<java.io.File: void <init>(java.lang.String)>($r3);
+
+        $r8 = new cx.hell.android.pdfview.FileListEntry;
+
+        $r5 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean showExtension>;
+
+        specialinvoke $r8.<cx.hell.android.pdfview.FileListEntry: void <init>(int,int,java.io.File,java.lang.Boolean)>(2, $i0, $r10, $r5);
+
+        $r16 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList>;
+
+        virtualinvoke $r16.<java.util.ArrayList: boolean add(java.lang.Object)>($r8);
+
+        $i0 = $i0 + 1;
+
+        goto label01;
+
+     label09:
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: cx.hell.android.pdfview.Recent recent> = null;
+
+        goto label02;
+
+     label10:
+        $r1 := @caughtexception;
+
+        $r17 = new java.lang.RuntimeException;
+
+        $r18 = new java.lang.StringBuilder;
+
+        specialinvoke $r18.<java.lang.StringBuilder: void <init>(java.lang.String)>("failed to sort file list ");
+
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r12);
+
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" for path ");
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath>;
+
+        $r18 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r3);
+
+        $r3 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r17.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r3, $r1);
+
+        throw $r17;
+
+     label11:
+        $r10 = $r12[$i1];
+
+        $r8 = new cx.hell.android.pdfview.FileListEntry;
+
+        $r5 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean showExtension>;
+
+        specialinvoke $r8.<cx.hell.android.pdfview.FileListEntry: void <init>(int,int,java.io.File,java.lang.Boolean)>(0, -1, $r10, $r5);
+
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ArrayAdapter fileListAdapter>;
+
+        virtualinvoke $r4.<android.widget.ArrayAdapter: void add(java.lang.Object)>($r8);
+
+        $i1 = $i1 + 1;
+
+        goto label06;
+
+        catch java.lang.NullPointerException from label04 to label05 with label10;
+    }
+
+    public boolean onContextItemSelected(android.view.MenuItem)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.view.MenuItem $r1, $r4;
+        int $i0;
+        android.view.ContextMenu$ContextMenuInfo $r2;
+        android.widget.AdapterView$AdapterContextMenuInfo $r3;
+        java.util.ArrayList $r5;
+        java.lang.Object $r6;
+        cx.hell.android.pdfview.FileListEntry $r7;
+        boolean $z0;
+        java.io.File $r8;
+        cx.hell.android.pdfview.Recent $r9;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: android.view.MenuItem;
+
+        $r2 = interfaceinvoke $r1.<android.view.MenuItem: android.view.ContextMenu$ContextMenuInfo getMenuInfo()>();
+
+        $r3 = (android.widget.AdapterView$AdapterContextMenuInfo) $r2;
+
+        $i0 = $r3.<android.widget.AdapterView$AdapterContextMenuInfo: int position>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem deleteContextMenuItem>;
+
+        if $r1 != $r4 goto label2;
+
+        $r5 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList>;
+
+        $r6 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+
+        $r7 = (cx.hell.android.pdfview.FileListEntry) $r6;
+
+        $i0 = virtualinvoke $r7.<cx.hell.android.pdfview.FileListEntry: int getType()>();
+
+        if $i0 != 0 goto label1;
+
+        $z0 = virtualinvoke $r7.<cx.hell.android.pdfview.FileListEntry: boolean isDirectory()>();
+
+        if $z0 != 0 goto label1;
+
+        $r8 = virtualinvoke $r7.<cx.hell.android.pdfview.FileListEntry: java.io.File getFile()>();
+
+        virtualinvoke $r8.<java.io.File: boolean delete()>();
+
+        specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void update()>();
+
+     label1:
+        return 1;
+
+     label2:
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem removeContextMenuItem>;
+
+        if $r1 != $r4 goto label4;
+
+        $r5 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList>;
+
+        $r6 = virtualinvoke $r5.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+
+        $r7 = (cx.hell.android.pdfview.FileListEntry) $r6;
+
+        $i0 = virtualinvoke $r7.<cx.hell.android.pdfview.FileListEntry: int getType()>();
+
+        if $i0 != 2 goto label3;
+
+        $r9 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: cx.hell.android.pdfview.Recent recent>;
+
+        $i0 = virtualinvoke $r7.<cx.hell.android.pdfview.FileListEntry: int getRecentNumber()>();
+
+        virtualinvoke $r9.<cx.hell.android.pdfview.Recent: java.lang.Object remove(int)>($i0);
+
+        $r9 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: cx.hell.android.pdfview.Recent recent>;
+
+        virtualinvoke $r9.<cx.hell.android.pdfview.Recent: void commit()>();
+
+        specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void update()>();
+
+     label3:
+        return 0;
+
+     label4:
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem setAsHomeContextMenuItem>;
+
+        if $r1 != $r4 goto label3;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void setAsHome()>();
+
+        goto label3;
+    }
+
+    public void onCreate(android.os.Bundle)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.os.Bundle $r1;
+        java.util.ArrayList $r2;
+        java.io.PrintStream $r3;
+        java.lang.StringBuilder $r4;
+        android.content.Intent $r5;
+        java.lang.String $r6;
+        java.lang.Boolean $r7;
+        boolean $z0;
+        cx.hell.android.pdfview.ChooseFileActivity$1 $r8;
+        android.view.View $r9;
+        android.widget.TextView $r10;
+        android.widget.ListView $r11;
+        cx.hell.android.pdfview.ChooseFileActivity$2 $r12;
+        android.widget.ArrayAdapter $r13;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.<android.support.v4.app.FragmentActivity: void onCreate(android.os.Bundle)>($r1);
+
+        $r3 = <java.lang.System: java.io.PrintStream out>;
+
+        $r4 = new java.lang.StringBuilder;
+
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("victor: ");
+
+        $r5 = virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.content.Intent getIntent()>();
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r5);
+
+        $r6 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r3.<java.io.PrintStream: void println(java.lang.String)>($r6);
+
+        $r7 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean light>;
+
+        $z0 = virtualinvoke $r7.<java.lang.Boolean: boolean booleanValue()>();
+
+        if $z0 == 0 goto label1;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void setTheme(int)>(16973836);
+
+     label1:
+        $r6 = specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String getHome()>();
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath> = $r6;
+
+        $r8 = new cx.hell.android.pdfview.ChooseFileActivity$1;
+
+        specialinvoke $r8.<cx.hell.android.pdfview.ChooseFileActivity$1: void <init>(cx.hell.android.pdfview.ChooseFileActivity)>($r0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.io.FileFilter fileFilter> = $r8;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void setContentView(int)>(2130903041);
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.View findViewById(int)>(2131296258);
+
+        $r10 = (android.widget.TextView) $r9;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.TextView pathTextView> = $r10;
+
+        $r9 = virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.View findViewById(int)>(2131296259);
+
+        $r11 = (android.widget.ListView) $r9;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ListView filesListView> = $r11;
+
+        $r2 = new java.util.ArrayList;
+
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList> = $r2;
+
+        $r12 = new cx.hell.android.pdfview.ChooseFileActivity$2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList>;
+
+        specialinvoke $r12.<cx.hell.android.pdfview.ChooseFileActivity$2: void <init>(cx.hell.android.pdfview.ChooseFileActivity,android.content.Context,int,java.util.List,android.app.Activity)>($r0, $r0, 2130903042, $r2, $r0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ArrayAdapter fileListAdapter> = $r12;
+
+        $r11 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ListView filesListView>;
+
+        $r13 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ArrayAdapter fileListAdapter>;
+
+        virtualinvoke $r11.<android.widget.ListView: void setAdapter(android.widget.ListAdapter)>($r13);
+
+        $r11 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ListView filesListView>;
+
+        virtualinvoke $r11.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0);
+
+        $r11 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ListView filesListView>;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void registerForContextMenu(android.view.View)>($r11);
+
+        return;
+    }
+
+    public void onCreateContextMenu(android.view.ContextMenu, android.view.View, android.view.ContextMenu$ContextMenuInfo)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.view.ContextMenu $r1;
+        android.view.View $r2;
+        android.view.ContextMenu$ContextMenuInfo $r3;
+        android.widget.ListView $r4;
+        android.widget.AdapterView$AdapterContextMenuInfo $r5;
+        int $i0;
+        java.util.ArrayList $r6;
+        java.lang.Object $r7;
+        cx.hell.android.pdfview.FileListEntry $r8;
+        android.view.MenuItem $r9;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: android.view.ContextMenu;
+
+        $r2 := @parameter1: android.view.View;
+
+        $r3 := @parameter2: android.view.ContextMenu$ContextMenuInfo;
+
+        specialinvoke $r0.<android.support.v4.app.FragmentActivity: void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo)>($r1, $r2, $r3);
+
+        $r4 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.widget.ListView filesListView>;
+
+        if $r2 != $r4 goto label4;
+
+        $r5 = (android.widget.AdapterView$AdapterContextMenuInfo) $r3;
+
+        $i0 = $r5.<android.widget.AdapterView$AdapterContextMenuInfo: int position>;
+
+        if $i0 >= 0 goto label1;
+
+        return;
+
+     label1:
+        $r6 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList>;
+
+        $i0 = $r5.<android.widget.AdapterView$AdapterContextMenuInfo: int position>;
+
+        $r7 = virtualinvoke $r6.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+
+        $r8 = (cx.hell.android.pdfview.FileListEntry) $r7;
+
+        $i0 = virtualinvoke $r8.<cx.hell.android.pdfview.FileListEntry: int getType()>();
+
+        if $i0 != 1 goto label2;
+
+        $r9 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165199);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem setAsHomeContextMenuItem> = $r9;
+
+        return;
+
+     label2:
+        $i0 = virtualinvoke $r8.<cx.hell.android.pdfview.FileListEntry: int getType()>();
+
+        if $i0 != 2 goto label3;
+
+        $r9 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165238);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem removeContextMenuItem> = $r9;
+
+        return;
+
+     label3:
+        $z0 = virtualinvoke $r8.<cx.hell.android.pdfview.FileListEntry: boolean isDirectory()>();
+
+        if $z0 != 0 goto label4;
+
+        $r9 = interfaceinvoke $r1.<android.view.ContextMenu: android.view.MenuItem add(int)>(2131165239);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem deleteContextMenuItem> = $r9;
+
+     label4:
+        return;
+    }
+
+    public boolean onCreateOptionsMenu(android.view.Menu)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.view.Menu $r1;
+        android.view.MenuItem $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: android.view.Menu;
+
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165199);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem setAsHomeMenuItem> = $r2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem setAsHomeMenuItem>;
+
+        staticinvoke <android.support.v4.view.MenuItemCompat: void setShowAsAction(android.view.MenuItem,int)>($r2, 1);
+
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(int)>(2131165204);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem optionsMenuItem> = $r2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem optionsMenuItem>;
+
+        staticinvoke <android.support.v4.view.MenuItemCompat: void setShowAsAction(android.view.MenuItem,int)>($r2, 1);
+
+        $r2 = interfaceinvoke $r1.<android.view.Menu: android.view.MenuItem add(java.lang.CharSequence)>("About");
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem aboutMenuItem> = $r2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem aboutMenuItem>;
+
+        staticinvoke <android.support.v4.view.MenuItemCompat: void setShowAsAction(android.view.MenuItem,int)>($r2, 1);
+
+        return 1;
+    }
+
+    public void onItemClick(android.widget.AdapterView, android.view.View, int, long)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.widget.AdapterView $r1;
+        android.view.View $r2;
+        int $i0;
+        long $l1;
+        java.util.ArrayList $r3;
+        java.lang.Object $r4;
+        cx.hell.android.pdfview.FileListEntry $r5;
+        java.io.File $r6;
+        java.lang.String $r7;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: android.widget.AdapterView;
+
+        $r2 := @parameter1: android.view.View;
+
+        $i0 := @parameter2: int;
+
+        $l1 := @parameter3: long;
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.util.ArrayList fileList>;
+
+        $r4 = virtualinvoke $r3.<java.util.ArrayList: java.lang.Object get(int)>($i0);
+
+        $r5 = (cx.hell.android.pdfview.FileListEntry) $r4;
+
+        $i0 = virtualinvoke $r5.<cx.hell.android.pdfview.FileListEntry: int getType()>();
+
+        if $i0 != 1 goto label2;
+
+        $r6 = new java.io.File;
+
+        $r7 = specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String getHome()>();
+
+        specialinvoke $r6.<java.io.File: void <init>(java.lang.String)>($r7);
+
+     label1:
+        $z0 = virtualinvoke $r6.<java.io.File: boolean exists()>();
+
+        if $z0 != 0 goto label3;
+
+        return;
+
+     label2:
+        $r6 = virtualinvoke $r5.<cx.hell.android.pdfview.FileListEntry: java.io.File getFile()>();
+
+        goto label1;
+
+     label3:
+        $z0 = virtualinvoke $r6.<java.io.File: boolean isDirectory()>();
+
+        if $z0 == 0 goto label4;
+
+        $r7 = virtualinvoke $r6.<java.io.File: java.lang.String getAbsolutePath()>();
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath> = $r7;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void update()>();
+
+        return;
+
+     label4:
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void pdfView(java.io.File)>($r6);
+
+        return;
+    }
+
+    public boolean onOptionsItemSelected(android.view.MenuItem)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.view.MenuItem $r1, $r3;
+        android.content.Intent $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: android.view.MenuItem;
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem aboutMenuItem>;
+
+        if $r1 != $r3 goto label1;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>()>();
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/AboutPDFViewActivity");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void startActivity(android.content.Intent)>($r2);
+
+        return 1;
+
+     label1:
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem setAsHomeMenuItem>;
+
+        if $r1 != $r3 goto label2;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void setAsHome()>();
+
+        return 1;
+
+     label2:
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.view.MenuItem optionsMenuItem>;
+
+        if $r1 != $r3 goto label3;
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/Options");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void startActivity(android.content.Intent)>($r2);
+
+     label3:
+        return 0;
+    }
+
+    public void onResume()
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.content.SharedPreferences $r1;
+        boolean $z0;
+        java.lang.Boolean $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        specialinvoke $r0.<android.support.v4.app.FragmentActivity: void onResume()>();
+
+        staticinvoke <cx.hell.android.pdfview.Options: boolean setOrientation(android.app.Activity)>($r0);
+
+        $r1 = staticinvoke <android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>($r0);
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("dirsFirst", 1);
+
+        $r2 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean dirsFirst> = $r2;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("showExtension", 0);
+
+        $r2 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean showExtension> = $r2;
+
+        $z0 = interfaceinvoke $r1.<android.content.SharedPreferences: boolean getBoolean(java.lang.String,boolean)>("history", 1);
+
+        $r2 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z0);
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean history> = $r2;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void update()>();
+
+        return;
+    }
+
+    public void pdfView(java.io.File)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        java.io.File $r1;
+        android.content.Intent $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        android.net.Uri $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 := @parameter0: java.io.File;
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("post intent to open file ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r4);
+
+        $r2 = new android.content.Intent;
+
+        specialinvoke $r2.<android.content.Intent: void <init>()>();
+
+        $r5 = staticinvoke <android.net.Uri: android.net.Uri fromFile(java.io.File)>($r1);
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setDataAndType(android.net.Uri,java.lang.String)>($r5, "application/pdf");
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setClass(android.content.Context,java.lang.Class)>($r0, class "cx/hell/android/pdfview/OpenFileActivity");
+
+        virtualinvoke $r2.<android.content.Intent: android.content.Intent setAction(java.lang.String)>("android.intent.action.VIEW");
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: void startActivity(android.content.Intent)>($r2);
+
+        return;
+    }
+
+    public void setAsHome()
+    {
+        cx.hell.android.pdfview.ChooseFileActivity $r0;
+        android.content.SharedPreferences $r1;
+        android.content.SharedPreferences$Editor $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r1 = virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>("ChooseFileActivity", 0);
+
+        $r2 = interfaceinvoke $r1.<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>();
+
+        $r3 = $r0.<cx.hell.android.pdfview.ChooseFileActivity: java.lang.String currentPath>;
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)>("Home", $r3);
+
+        interfaceinvoke $r2.<android.content.SharedPreferences$Editor: boolean commit()>();
+
+        return;
+    }
+}

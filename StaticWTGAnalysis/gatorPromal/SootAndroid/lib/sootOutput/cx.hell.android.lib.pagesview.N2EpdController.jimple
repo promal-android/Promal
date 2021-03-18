@@ -1,0 +1,751 @@
+public class cx.hell.android.lib.pagesview.N2EpdController extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        cx.hell.android.lib.pagesview.N2EpdController $r0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.N2EpdController;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void enterA2Mode()
+    {
+        java.lang.Exception $r0;
+        java.io.PrintStream $r1;
+        java.lang.Class $r2, $r3, $r4, $r5, $r9;
+        java.lang.Object[] $r6, $r7, $r11;
+        boolean $z0;
+        java.lang.Class[] $r8;
+        java.lang.reflect.Constructor $r10;
+        java.lang.Integer $r12;
+        java.lang.Object $r13, $r15;
+        java.lang.reflect.Method $r14;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("APV::enterA2Mode");
+
+     label01:
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController");
+
+        $r3 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Region");
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$RegionParams");
+
+        $r5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Wave");
+
+     label02:
+        $r6 = null;
+
+     label03:
+        $z0 = virtualinvoke $r5.<java.lang.Class: boolean isEnum()>();
+
+     label04:
+        if $z0 == 0 goto label06;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label05:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Wave Enum successfully retrived.");
+
+        $r6 = virtualinvoke $r5.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label06:
+        $r7 = null;
+
+     label07:
+        $z0 = virtualinvoke $r3.<java.lang.Class: boolean isEnum()>();
+
+     label08:
+        if $z0 == 0 goto label10;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label09:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Region Enum successfully retrived.");
+
+        $r7 = virtualinvoke $r3.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label10:
+        $r8 = newarray (java.lang.Class)[6];
+
+     label11:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label12:
+        $r8[0] = $r9;
+
+     label13:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label14:
+        $r8[1] = $r9;
+
+     label15:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label16:
+        $r8[2] = $r9;
+
+     label17:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label18:
+        $r8[3] = $r9;
+
+        $r8[4] = $r5;
+
+     label19:
+        $r5 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label20:
+        $r8[5] = $r5;
+
+        $r10 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>($r8);
+
+        $r11 = newarray (java.lang.Object)[6];
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[0] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[1] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(600);
+
+        $r11[2] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(800);
+
+        $r11[3] = $r12;
+
+        $r13 = $r6[2];
+
+        $r11[4] = $r13;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(16);
+
+        $r11[5] = $r12;
+
+        $r13 = virtualinvoke $r10.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>($r11);
+
+        $r8 = newarray (java.lang.Class)[3];
+
+        $r8[0] = class "java/lang/String";
+
+        $r8[1] = $r3;
+
+        $r8[2] = $r4;
+
+        $r14 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("setRegion", $r8);
+
+        $r11 = newarray (java.lang.Object)[3];
+
+        $r11[0] = "APV-ReadingView";
+
+        $r15 = $r7[2];
+
+        $r11[1] = $r15;
+
+        $r11[2] = $r13;
+
+        virtualinvoke $r14.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r11);
+
+        staticinvoke <java.lang.Thread: void sleep(long)>(100L);
+
+        $r11 = newarray (java.lang.Object)[6];
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[0] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[1] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(600);
+
+        $r11[2] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(800);
+
+        $r11[3] = $r12;
+
+        $r13 = $r6[3];
+
+        $r11[4] = $r13;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(14);
+
+        $r11[5] = $r12;
+
+        $r13 = virtualinvoke $r10.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>($r11);
+
+        $r6 = newarray (java.lang.Object)[3];
+
+        $r6[0] = "APV-ReadingView";
+
+        $r15 = $r7[2];
+
+        $r6[1] = $r15;
+
+        $r6[2] = $r13;
+
+        virtualinvoke $r14.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r6);
+
+     label21:
+        return;
+
+     label22:
+        $r0 := @caughtexception;
+
+        virtualinvoke $r0.<java.lang.Exception: void printStackTrace()>();
+
+        return;
+
+        catch java.lang.Exception from label01 to label02 with label22;
+        catch java.lang.Exception from label03 to label04 with label22;
+        catch java.lang.Exception from label05 to label06 with label22;
+        catch java.lang.Exception from label07 to label08 with label22;
+        catch java.lang.Exception from label09 to label10 with label22;
+        catch java.lang.Exception from label10 to label11 with label22;
+        catch java.lang.Exception from label12 to label13 with label22;
+        catch java.lang.Exception from label14 to label15 with label22;
+        catch java.lang.Exception from label16 to label17 with label22;
+        catch java.lang.Exception from label18 to label19 with label22;
+        catch java.lang.Exception from label20 to label21 with label22;
+    }
+
+    public static void exitA2Mode()
+    {
+        java.lang.Exception $r0;
+        java.io.PrintStream $r1;
+        java.lang.Class $r2, $r3, $r4, $r5, $r9;
+        java.lang.Object[] $r6, $r7, $r11;
+        boolean $z0;
+        java.lang.Class[] $r8;
+        java.lang.reflect.Constructor $r10;
+        java.lang.Integer $r12;
+        java.lang.Object $r13, $r15;
+        java.lang.reflect.Method $r14;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("APV::exitA2Mode");
+
+     label01:
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController");
+
+        $r3 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Region");
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$RegionParams");
+
+        $r5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Wave");
+
+     label02:
+        $r6 = null;
+
+     label03:
+        $z0 = virtualinvoke $r5.<java.lang.Class: boolean isEnum()>();
+
+     label04:
+        if $z0 == 0 goto label06;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label05:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Wave Enum successfully retrived.");
+
+        $r6 = virtualinvoke $r5.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label06:
+        $r7 = null;
+
+     label07:
+        $z0 = virtualinvoke $r3.<java.lang.Class: boolean isEnum()>();
+
+     label08:
+        if $z0 == 0 goto label10;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label09:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Region Enum successfully retrived.");
+
+        $r7 = virtualinvoke $r3.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label10:
+        $r8 = newarray (java.lang.Class)[6];
+
+     label11:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label12:
+        $r8[0] = $r9;
+
+     label13:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label14:
+        $r8[1] = $r9;
+
+     label15:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label16:
+        $r8[2] = $r9;
+
+     label17:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label18:
+        $r8[3] = $r9;
+
+        $r8[4] = $r5;
+
+     label19:
+        $r5 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label20:
+        $r8[5] = $r5;
+
+        $r10 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>($r8);
+
+        $r11 = newarray (java.lang.Object)[6];
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[0] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[1] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(600);
+
+        $r11[2] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(800);
+
+        $r11[3] = $r12;
+
+        $r13 = $r6[3];
+
+        $r11[4] = $r13;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(16);
+
+        $r11[5] = $r12;
+
+        $r13 = virtualinvoke $r10.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>($r11);
+
+        $r8 = newarray (java.lang.Class)[3];
+
+        $r8[0] = class "java/lang/String";
+
+        $r8[1] = $r3;
+
+        $r8[2] = $r4;
+
+        $r14 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("setRegion", $r8);
+
+        $r6 = newarray (java.lang.Object)[3];
+
+        $r6[0] = "APV-ReadingView";
+
+        $r15 = $r7[2];
+
+        $r6[1] = $r15;
+
+        $r6[2] = $r13;
+
+        virtualinvoke $r14.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r6);
+
+     label21:
+        return;
+
+     label22:
+        $r0 := @caughtexception;
+
+        virtualinvoke $r0.<java.lang.Exception: void printStackTrace()>();
+
+        return;
+
+        catch java.lang.Exception from label01 to label02 with label22;
+        catch java.lang.Exception from label03 to label04 with label22;
+        catch java.lang.Exception from label05 to label06 with label22;
+        catch java.lang.Exception from label07 to label08 with label22;
+        catch java.lang.Exception from label09 to label10 with label22;
+        catch java.lang.Exception from label10 to label11 with label22;
+        catch java.lang.Exception from label12 to label13 with label22;
+        catch java.lang.Exception from label14 to label15 with label22;
+        catch java.lang.Exception from label16 to label17 with label22;
+        catch java.lang.Exception from label18 to label19 with label22;
+        catch java.lang.Exception from label20 to label21 with label22;
+    }
+
+    public static void setDUMode()
+    {
+        java.lang.Exception $r0;
+        java.io.PrintStream $r1;
+        java.lang.Class $r2, $r3, $r4, $r5, $r9;
+        java.lang.Object[] $r6, $r7, $r11;
+        boolean $z0;
+        java.lang.Class[] $r8;
+        java.lang.reflect.Constructor $r10;
+        java.lang.Integer $r12;
+        java.lang.Object $r13, $r15;
+        java.lang.reflect.Method $r14;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("APV::setDUMode");
+
+     label01:
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController");
+
+        $r3 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Region");
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$RegionParams");
+
+        $r5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Wave");
+
+     label02:
+        $r6 = null;
+
+     label03:
+        $z0 = virtualinvoke $r5.<java.lang.Class: boolean isEnum()>();
+
+     label04:
+        if $z0 == 0 goto label06;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label05:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Wave Enum successfully retrived.");
+
+        $r6 = virtualinvoke $r5.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label06:
+        $r7 = null;
+
+     label07:
+        $z0 = virtualinvoke $r3.<java.lang.Class: boolean isEnum()>();
+
+     label08:
+        if $z0 == 0 goto label10;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label09:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Region Enum successfully retrived.");
+
+        $r7 = virtualinvoke $r3.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label10:
+        $r8 = newarray (java.lang.Class)[6];
+
+     label11:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label12:
+        $r8[0] = $r9;
+
+     label13:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label14:
+        $r8[1] = $r9;
+
+     label15:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label16:
+        $r8[2] = $r9;
+
+     label17:
+        $r9 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label18:
+        $r8[3] = $r9;
+
+        $r8[4] = $r5;
+
+     label19:
+        $r5 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label20:
+        $r8[5] = $r5;
+
+        $r10 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>($r8);
+
+        $r11 = newarray (java.lang.Object)[6];
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[0] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r11[1] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(600);
+
+        $r11[2] = $r12;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(800);
+
+        $r11[3] = $r12;
+
+        $r13 = $r6[2];
+
+        $r11[4] = $r13;
+
+        $r12 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(14);
+
+        $r11[5] = $r12;
+
+        $r13 = virtualinvoke $r10.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>($r11);
+
+        $r8 = newarray (java.lang.Class)[3];
+
+        $r8[0] = class "java/lang/String";
+
+        $r8[1] = $r3;
+
+        $r8[2] = $r4;
+
+        $r14 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("setRegion", $r8);
+
+        $r6 = newarray (java.lang.Object)[3];
+
+        $r6[0] = "APV-ReadingView";
+
+        $r15 = $r7[2];
+
+        $r6[1] = $r15;
+
+        $r6[2] = $r13;
+
+        virtualinvoke $r14.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r6);
+
+     label21:
+        return;
+
+     label22:
+        $r0 := @caughtexception;
+
+        virtualinvoke $r0.<java.lang.Exception: void printStackTrace()>();
+
+        return;
+
+        catch java.lang.Exception from label01 to label02 with label22;
+        catch java.lang.Exception from label03 to label04 with label22;
+        catch java.lang.Exception from label05 to label06 with label22;
+        catch java.lang.Exception from label07 to label08 with label22;
+        catch java.lang.Exception from label09 to label10 with label22;
+        catch java.lang.Exception from label10 to label11 with label22;
+        catch java.lang.Exception from label12 to label13 with label22;
+        catch java.lang.Exception from label14 to label15 with label22;
+        catch java.lang.Exception from label16 to label17 with label22;
+        catch java.lang.Exception from label18 to label19 with label22;
+        catch java.lang.Exception from label20 to label21 with label22;
+    }
+
+    public static void setGL16Mode()
+    {
+        java.lang.Exception $r0;
+        java.io.PrintStream $r1;
+        java.lang.Class $r2, $r3, $r4, $r5, $r6, $r12;
+        java.lang.Object[] $r7, $r8, $r9, $r10;
+        boolean $z0;
+        java.lang.Class[] $r11;
+        java.lang.reflect.Constructor $r13;
+        java.lang.Integer $r14;
+        java.lang.Object $r15, $r17;
+        java.lang.reflect.Method $r16;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("APV::setGL16Mode");
+
+     label01:
+        $r2 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController");
+
+        $r3 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Region");
+
+        $r4 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$RegionParams");
+
+        $r5 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Wave");
+
+        $r6 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("android.hardware.EpdController$Mode");
+
+     label02:
+        $r7 = null;
+
+     label03:
+        $z0 = virtualinvoke $r5.<java.lang.Class: boolean isEnum()>();
+
+     label04:
+        if $z0 == 0 goto label06;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label05:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Wave Enum successfully retrived.");
+
+        $r7 = virtualinvoke $r5.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label06:
+        $r8 = null;
+
+     label07:
+        $z0 = virtualinvoke $r3.<java.lang.Class: boolean isEnum()>();
+
+     label08:
+        if $z0 == 0 goto label10;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label09:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Region Enum successfully retrived.");
+
+        $r8 = virtualinvoke $r3.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label10:
+        $r9 = null;
+
+     label11:
+        $z0 = virtualinvoke $r6.<java.lang.Class: boolean isEnum()>();
+
+     label12:
+        if $z0 == 0 goto label16;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label13:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("EpdController Region Enum successfully retrived.");
+
+        $r10 = virtualinvoke $r6.<java.lang.Class: java.lang.Object[] getEnumConstants()>();
+
+     label14:
+        $r9 = $r10;
+
+        $r1 = <java.lang.System: java.io.PrintStream err>;
+
+     label15:
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.Object)>($r10);
+
+     label16:
+        $r11 = newarray (java.lang.Class)[5];
+
+     label17:
+        $r12 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label18:
+        $r11[0] = $r12;
+
+     label19:
+        $r12 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label20:
+        $r11[1] = $r12;
+
+     label21:
+        $r12 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label22:
+        $r11[2] = $r12;
+
+     label23:
+        $r12 = <java.lang.Integer: java.lang.Class TYPE>;
+
+     label24:
+        $r11[3] = $r12;
+
+        $r11[4] = $r5;
+
+        $r13 = virtualinvoke $r4.<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>($r11);
+
+        $r10 = newarray (java.lang.Object)[5];
+
+        $r14 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r10[0] = $r14;
+
+        $r14 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0);
+
+        $r10[1] = $r14;
+
+        $r14 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(600);
+
+        $r10[2] = $r14;
+
+        $r14 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(800);
+
+        $r10[3] = $r14;
+
+        $r15 = $r7[1];
+
+        $r10[4] = $r15;
+
+        $r15 = virtualinvoke $r13.<java.lang.reflect.Constructor: java.lang.Object newInstance(java.lang.Object[])>($r10);
+
+        $r11 = newarray (java.lang.Class)[4];
+
+        $r11[0] = class "java/lang/String";
+
+        $r11[1] = $r3;
+
+        $r11[2] = $r4;
+
+        $r11[3] = $r6;
+
+        $r16 = virtualinvoke $r2.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>("setRegion", $r11);
+
+        $r7 = newarray (java.lang.Object)[4];
+
+        $r7[0] = "APV-ReadingView";
+
+        $r17 = $r8[2];
+
+        $r7[1] = $r17;
+
+        $r7[2] = $r15;
+
+        $r15 = $r9[2];
+
+        $r7[3] = $r15;
+
+        virtualinvoke $r16.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, $r7);
+
+     label25:
+        return;
+
+     label26:
+        $r0 := @caughtexception;
+
+        virtualinvoke $r0.<java.lang.Exception: void printStackTrace()>();
+
+        return;
+
+        catch java.lang.Exception from label01 to label02 with label26;
+        catch java.lang.Exception from label03 to label04 with label26;
+        catch java.lang.Exception from label05 to label06 with label26;
+        catch java.lang.Exception from label07 to label08 with label26;
+        catch java.lang.Exception from label09 to label10 with label26;
+        catch java.lang.Exception from label11 to label12 with label26;
+        catch java.lang.Exception from label13 to label14 with label26;
+        catch java.lang.Exception from label15 to label17 with label26;
+        catch java.lang.Exception from label18 to label19 with label26;
+        catch java.lang.Exception from label20 to label21 with label26;
+        catch java.lang.Exception from label22 to label23 with label26;
+        catch java.lang.Exception from label24 to label25 with label26;
+    }
+}

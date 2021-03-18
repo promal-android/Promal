@@ -1,0 +1,96 @@
+class cx.hell.android.pdfview.OpenFileActivity$12 extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final cx.hell.android.pdfview.OpenFileActivity this$0;
+    private final android.app.Dialog val$d;
+    private final int val$pagecount;
+
+    void <init>(cx.hell.android.pdfview.OpenFileActivity, android.app.Dialog, int)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$12 $r0;
+        cx.hell.android.pdfview.OpenFileActivity $r1;
+        android.app.Dialog $r2;
+        int $i0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$12;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r2 := @parameter1: android.app.Dialog;
+
+        $i0 := @parameter2: int;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$12: cx.hell.android.pdfview.OpenFileActivity this$0> = $r1;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$12: android.app.Dialog val$d> = $r2;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$12: int val$pagecount> = $i0;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$12 $r0;
+        android.view.View $r1;
+        int $i0, $i1;
+        cx.hell.android.pdfview.OpenFileActivity $r2;
+        android.widget.EditText $r3;
+        android.text.Editable $r4;
+        java.lang.String $r5;
+        android.app.Dialog $r6;
+        java.lang.NumberFormatException $r7;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$12;
+
+        $r1 := @parameter0: android.view.View;
+
+        $i0 = -1;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity$12: cx.hell.android.pdfview.OpenFileActivity this$0>;
+
+     label1:
+        $r3 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity: android.widget.EditText access$13(cx.hell.android.pdfview.OpenFileActivity)>($r2);
+
+        $r4 = virtualinvoke $r3.<android.widget.EditText: android.text.Editable getText()>();
+
+        $r5 = interfaceinvoke $r4.<android.text.Editable: java.lang.String toString()>();
+
+        $i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r5);
+
+     label2:
+        $i0 = $i0 + -1;
+
+     label3:
+        $r6 = $r0.<cx.hell.android.pdfview.OpenFileActivity$12: android.app.Dialog val$d>;
+
+        virtualinvoke $r6.<android.app.Dialog: void dismiss()>();
+
+        if $i0 < 0 goto label4;
+
+        $i1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$12: int val$pagecount>;
+
+        if $i0 >= $i1 goto label4;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity$12: cx.hell.android.pdfview.OpenFileActivity this$0>;
+
+        staticinvoke <cx.hell.android.pdfview.OpenFileActivity: void access$14(cx.hell.android.pdfview.OpenFileActivity,int)>($r2, $i0);
+
+        return;
+
+     label4:
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity$12: cx.hell.android.pdfview.OpenFileActivity this$0>;
+
+        staticinvoke <cx.hell.android.pdfview.OpenFileActivity: void access$15(cx.hell.android.pdfview.OpenFileActivity,java.lang.String)>($r2, "Invalid page number");
+
+        return;
+
+     label5:
+        $r7 := @caughtexception;
+
+        goto label3;
+
+        catch java.lang.NumberFormatException from label1 to label2 with label5;
+    }
+}

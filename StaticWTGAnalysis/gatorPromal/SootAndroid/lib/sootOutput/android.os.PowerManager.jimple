@@ -1,0 +1,147 @@
+public final class android.os.PowerManager extends java.lang.Object
+{
+    public static final int PARTIAL_WAKE_LOCK;
+    public static final int SCREEN_DIM_WAKE_LOCK;
+    public static final int SCREEN_BRIGHT_WAKE_LOCK;
+    public static final int FULL_WAKE_LOCK;
+    public static final int ACQUIRE_CAUSES_WAKEUP;
+    public static final int ON_AFTER_RELEASE;
+
+    void <init>()
+    {
+        android.os.PowerManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.os.PowerManager;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.os.PowerManager$WakeLock newWakeLock(int, java.lang.String)
+    {
+        android.os.PowerManager r0;
+        int i0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.os.PowerManager;
+
+        i0 := @parameter0: int;
+
+        r1 := @parameter1: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void userActivity(long, boolean)
+    {
+        android.os.PowerManager r0;
+        long l0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.os.PowerManager;
+
+        l0 := @parameter0: long;
+
+        z0 := @parameter1: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void goToSleep(long)
+    {
+        android.os.PowerManager r0;
+        long l0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.os.PowerManager;
+
+        l0 := @parameter0: long;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void wakeUp(long)
+    {
+        android.os.PowerManager r0;
+        long l0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.os.PowerManager;
+
+        l0 := @parameter0: long;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isScreenOn()
+    {
+        android.os.PowerManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.os.PowerManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void reboot(java.lang.String)
+    {
+        android.os.PowerManager r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.os.PowerManager;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static void <clinit>()
+    {
+        <android.os.PowerManager: int ON_AFTER_RELEASE> = 536870912;
+
+        <android.os.PowerManager: int ACQUIRE_CAUSES_WAKEUP> = 268435456;
+
+        <android.os.PowerManager: int FULL_WAKE_LOCK> = 26;
+
+        <android.os.PowerManager: int SCREEN_BRIGHT_WAKE_LOCK> = 10;
+
+        <android.os.PowerManager: int SCREEN_DIM_WAKE_LOCK> = 6;
+
+        <android.os.PowerManager: int PARTIAL_WAKE_LOCK> = 1;
+
+        return;
+    }
+}

@@ -1,0 +1,34 @@
+class cx.hell.android.pdfview.OpenFileActivity$2 extends java.lang.Object implements java.lang.Runnable
+{
+    final cx.hell.android.pdfview.OpenFileActivity this$0;
+
+    void <init>(cx.hell.android.pdfview.OpenFileActivity)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$2 $r0;
+        cx.hell.android.pdfview.OpenFileActivity $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$2;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$2: cx.hell.android.pdfview.OpenFileActivity this$0> = $r1;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void run()
+    {
+        cx.hell.android.pdfview.OpenFileActivity$2 $r0;
+        cx.hell.android.pdfview.OpenFileActivity $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$2;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$2: cx.hell.android.pdfview.OpenFileActivity this$0>;
+
+        staticinvoke <cx.hell.android.pdfview.OpenFileActivity: void access$8(cx.hell.android.pdfview.OpenFileActivity)>($r1);
+
+        return;
+    }
+}

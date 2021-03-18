@@ -1,0 +1,215 @@
+public class cx.hell.android.lib.pagesview.FindResult extends java.lang.Object
+{
+    public static final java.lang.String TAG;
+    public java.util.List markers;
+    public int page;
+
+    public void <init>()
+    {
+        cx.hell.android.lib.pagesview.FindResult $r0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.FindResult;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void addMarker(int, int, int, int)
+    {
+        cx.hell.android.lib.pagesview.FindResult $r0;
+        int $i0, $i1, $i2, $i3;
+        android.graphics.Rect $r1, $r8;
+        java.lang.IllegalArgumentException $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+        java.util.List $r5;
+        java.util.ArrayList $r6;
+        boolean $z0;
+        java.lang.Object $r7;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.FindResult;
+
+        $i0 := @parameter0: int;
+
+        $i1 := @parameter1: int;
+
+        $i2 := @parameter2: int;
+
+        $i3 := @parameter3: int;
+
+        if $i0 < $i2 goto label1;
+
+        $r2 = new java.lang.IllegalArgumentException;
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("x0 must be smaller than x1: ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r4);
+
+        throw $r2;
+
+     label1:
+        if $i1 < $i3 goto label2;
+
+        $r2 = new java.lang.IllegalArgumentException;
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("y0 must be smaller than y1: ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r4);
+
+        throw $r2;
+
+     label2:
+        $r5 = $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers>;
+
+        if $r5 != null goto label3;
+
+        $r6 = new java.util.ArrayList;
+
+        specialinvoke $r6.<java.util.ArrayList: void <init>()>();
+
+        $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers> = $r6;
+
+     label3:
+        $r1 = new android.graphics.Rect;
+
+        specialinvoke $r1.<android.graphics.Rect: void <init>(int,int,int,int)>($i0, $i1, $i2, $i3);
+
+        $r5 = $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers>;
+
+        $z0 = interfaceinvoke $r5.<java.util.List: boolean isEmpty()>();
+
+        if $z0 == 0 goto label4;
+
+        $r5 = $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers>;
+
+        interfaceinvoke $r5.<java.util.List: boolean add(java.lang.Object)>($r1);
+
+        return;
+
+     label4:
+        $r5 = $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers>;
+
+        $r7 = interfaceinvoke $r5.<java.util.List: java.lang.Object get(int)>(0);
+
+        $r8 = (android.graphics.Rect) $r7;
+
+        virtualinvoke $r8.<android.graphics.Rect: void union(android.graphics.Rect)>($r1);
+
+        return;
+    }
+
+    public void finalize()
+    {
+        cx.hell.android.lib.pagesview.FindResult $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.FindResult;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r0);
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".finalize()");
+
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r2);
+
+        return;
+    }
+
+    public java.lang.String toString()
+    {
+        cx.hell.android.lib.pagesview.FindResult $r0;
+        java.lang.StringBuilder $r1;
+        java.util.List $r2;
+        boolean $z0;
+        java.lang.String $r3;
+        java.util.Iterator $r4;
+        java.lang.Object $r5;
+        android.graphics.Rect $r6;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.FindResult;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>()>();
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("FindResult(");
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers>;
+
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers>;
+
+        $z0 = interfaceinvoke $r2.<java.util.List: boolean isEmpty()>();
+
+        if $z0 == 0 goto label3;
+
+     label1:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("no markers");
+
+     label2:
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+
+        $r3 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        return $r3;
+
+     label3:
+        $r2 = $r0.<cx.hell.android.lib.pagesview.FindResult: java.util.List markers>;
+
+        $r4 = interfaceinvoke $r2.<java.util.List: java.util.Iterator iterator()>();
+
+     label4:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 == 0 goto label2;
+
+        $r5 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+
+        $r6 = (android.graphics.Rect) $r5;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r6);
+
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 == 0 goto label4;
+
+        virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+        goto label4;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.lib.pagesview.FindResult: java.lang.String TAG> = "cx.hell.android.pdfview";
+
+        return;
+    }
+}

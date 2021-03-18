@@ -1,0 +1,255 @@
+public class android.graphics.ColorMatrix extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        android.graphics.ColorMatrix r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(float[])
+    {
+        android.graphics.ColorMatrix r0;
+        float[] r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        r1 := @parameter0: float[];
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void <init>(android.graphics.ColorMatrix)
+    {
+        android.graphics.ColorMatrix r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        r1 := @parameter0: android.graphics.ColorMatrix;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public final float[] getArray()
+    {
+        android.graphics.ColorMatrix r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void reset()
+    {
+        android.graphics.ColorMatrix r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void set(android.graphics.ColorMatrix)
+    {
+        android.graphics.ColorMatrix r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        r1 := @parameter0: android.graphics.ColorMatrix;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void set(float[])
+    {
+        android.graphics.ColorMatrix r0;
+        float[] r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        r1 := @parameter0: float[];
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void setScale(float, float, float, float)
+    {
+        android.graphics.ColorMatrix r0;
+        float f0, f1, f2, f3;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        f0 := @parameter0: float;
+
+        f1 := @parameter1: float;
+
+        f2 := @parameter2: float;
+
+        f3 := @parameter3: float;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setRotate(int, float)
+    {
+        android.graphics.ColorMatrix r0;
+        int i0;
+        float f0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        i0 := @parameter0: int;
+
+        f0 := @parameter1: float;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setConcat(android.graphics.ColorMatrix, android.graphics.ColorMatrix)
+    {
+        android.graphics.ColorMatrix r0, r1, r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        r1 := @parameter0: android.graphics.ColorMatrix;
+
+        r2 := @parameter1: android.graphics.ColorMatrix;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public void preConcat(android.graphics.ColorMatrix)
+    {
+        android.graphics.ColorMatrix r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        r1 := @parameter0: android.graphics.ColorMatrix;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void postConcat(android.graphics.ColorMatrix)
+    {
+        android.graphics.ColorMatrix r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        r1 := @parameter0: android.graphics.ColorMatrix;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void setSaturation(float)
+    {
+        android.graphics.ColorMatrix r0;
+        float f0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        f0 := @parameter0: float;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setRGB2YUV()
+    {
+        android.graphics.ColorMatrix r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setYUV2RGB()
+    {
+        android.graphics.ColorMatrix r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.graphics.ColorMatrix;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+}

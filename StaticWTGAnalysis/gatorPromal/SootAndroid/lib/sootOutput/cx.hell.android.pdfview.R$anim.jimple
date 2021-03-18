@@ -1,0 +1,40 @@
+public final class cx.hell.android.pdfview.R$anim extends java.lang.Object
+{
+    public static final int page;
+    public static final int page_almost_disappear;
+    public static final int page_disappear;
+    public static final int page_show_always;
+    public static final int zoom;
+    public static final int zoom_almost_disappear;
+    public static final int zoom_disappear;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$anim $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$anim;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$anim: int zoom_disappear> = 2130968582;
+
+        <cx.hell.android.pdfview.R$anim: int zoom_almost_disappear> = 2130968581;
+
+        <cx.hell.android.pdfview.R$anim: int zoom> = 2130968580;
+
+        <cx.hell.android.pdfview.R$anim: int page_show_always> = 2130968579;
+
+        <cx.hell.android.pdfview.R$anim: int page_disappear> = 2130968578;
+
+        <cx.hell.android.pdfview.R$anim: int page_almost_disappear> = 2130968577;
+
+        <cx.hell.android.pdfview.R$anim: int page> = 2130968576;
+
+        return;
+    }
+}

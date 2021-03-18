@@ -1,0 +1,510 @@
+public class cx.hell.android.pdfview.Bookmark extends java.lang.Object
+{
+    private static final java.lang.String DATABASE_CREATE;
+    private static final int DB_VERSION;
+    public static final java.lang.String KEY_BOOK;
+    public static final java.lang.String KEY_COMMENT;
+    public static final java.lang.String KEY_ENTRY;
+    public static final java.lang.String KEY_ID;
+    public static final java.lang.String KEY_NAME;
+    public static final java.lang.String KEY_TIME;
+    private cx.hell.android.pdfview.Bookmark$DatabaseHelper DBHelper;
+    private final android.content.Context context;
+    private android.database.sqlite.SQLiteDatabase db;
+
+    public void <init>(android.content.Context)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        android.content.Context $r1;
+        cx.hell.android.pdfview.Bookmark$DatabaseHelper $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: android.content.Context;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.Bookmark: android.content.Context context> = $r1;
+
+        $r2 = new cx.hell.android.pdfview.Bookmark$DatabaseHelper;
+
+        $r1 = $r0.<cx.hell.android.pdfview.Bookmark: android.content.Context context>;
+
+        specialinvoke $r2.<cx.hell.android.pdfview.Bookmark$DatabaseHelper: void <init>(android.content.Context)>($r1);
+
+        $r0.<cx.hell.android.pdfview.Bookmark: cx.hell.android.pdfview.Bookmark$DatabaseHelper DBHelper> = $r2;
+
+        return;
+    }
+
+    private java.lang.String nameToMD5(java.lang.String)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        java.lang.String $r1, $r6;
+        java.security.NoSuchAlgorithmException $r2;
+        java.lang.StringBuffer $r3;
+        java.security.MessageDigest $r4;
+        java.lang.StringBuilder $r5;
+        java.io.File $r7;
+        long $l0;
+        byte[] $r8;
+        int $i1, $i2;
+        byte $b3;
+        short $s4;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: java.lang.String;
+
+     label1:
+        $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>("MD5");
+
+     label2:
+        $r5 = new java.lang.StringBuilder;
+
+        $r6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r1);
+
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>($r6);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":");
+
+        $r7 = new java.io.File;
+
+        specialinvoke $r7.<java.io.File: void <init>(java.lang.String)>($r1);
+
+        $l0 = virtualinvoke $r7.<java.io.File: long length()>();
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+
+        $r1 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r8 = virtualinvoke $r1.<java.lang.String: byte[] getBytes()>();
+
+        virtualinvoke $r4.<java.security.MessageDigest: void update(byte[])>($r8);
+
+        $r8 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>();
+
+        $r3 = new java.lang.StringBuffer;
+
+        specialinvoke $r3.<java.lang.StringBuffer: void <init>()>();
+
+        $i1 = 0;
+
+     label3:
+        $i2 = lengthof $r8;
+
+        if $i1 < $i2 goto label5;
+
+        $r1 = virtualinvoke $r3.<java.lang.StringBuffer: java.lang.String toString()>();
+
+        return $r1;
+
+     label4:
+        $r2 := @caughtexception;
+
+        virtualinvoke $r2.<java.security.NoSuchAlgorithmException: void printStackTrace()>();
+
+        return "";
+
+     label5:
+        $b3 = $r8[$i1];
+
+        $s4 = $b3 & 255;
+
+        $r1 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>($s4);
+
+        virtualinvoke $r3.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>($r1);
+
+        $i1 = $i1 + 1;
+
+        goto label3;
+
+        catch java.security.NoSuchAlgorithmException from label1 to label2 with label4;
+    }
+
+    public void addBookmark(java.lang.String, cx.hell.android.pdfview.BookmarkEntry)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        java.lang.String $r1;
+        cx.hell.android.pdfview.BookmarkEntry $r2;
+        android.content.ContentValues $r3;
+        long $l0;
+        java.lang.Long $r4;
+        android.database.sqlite.SQLiteDatabase $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: cx.hell.android.pdfview.BookmarkEntry;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.Bookmark: void deleteBookmark(java.lang.String,cx.hell.android.pdfview.BookmarkEntry)>($r1, $r2);
+
+        $r1 = specialinvoke $r0.<cx.hell.android.pdfview.Bookmark: java.lang.String nameToMD5(java.lang.String)>($r1);
+
+        $r3 = new android.content.ContentValues;
+
+        specialinvoke $r3.<android.content.ContentValues: void <init>()>();
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("book", $r1);
+
+        $r1 = virtualinvoke $r2.<cx.hell.android.pdfview.BookmarkEntry: java.lang.String toString()>();
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("entry", $r1);
+
+        $r1 = $r2.<cx.hell.android.pdfview.BookmarkEntry: java.lang.String comment>;
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("comment", $r1);
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("name", "user");
+
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+
+        $l0 = $l0 / 1000L;
+
+        $r4 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.Long)>("time", $r4);
+
+        $r5 = $r0.<cx.hell.android.pdfview.Bookmark: android.database.sqlite.SQLiteDatabase db>;
+
+        virtualinvoke $r5.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("bookmark", null, $r3);
+
+        return;
+    }
+
+    public void changeBookmark(java.lang.String, cx.hell.android.pdfview.BookmarkEntry, cx.hell.android.pdfview.BookmarkEntry)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        java.lang.String $r1;
+        cx.hell.android.pdfview.BookmarkEntry $r2, $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: cx.hell.android.pdfview.BookmarkEntry;
+
+        $r3 := @parameter2: cx.hell.android.pdfview.BookmarkEntry;
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.Bookmark: void deleteBookmark(java.lang.String,cx.hell.android.pdfview.BookmarkEntry)>($r1, $r2);
+
+        virtualinvoke $r0.<cx.hell.android.pdfview.Bookmark: void addBookmark(java.lang.String,cx.hell.android.pdfview.BookmarkEntry)>($r1, $r3);
+
+        return;
+    }
+
+    public void close()
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        cx.hell.android.pdfview.Bookmark$DatabaseHelper $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 = $r0.<cx.hell.android.pdfview.Bookmark: cx.hell.android.pdfview.Bookmark$DatabaseHelper DBHelper>;
+
+        virtualinvoke $r1.<cx.hell.android.pdfview.Bookmark$DatabaseHelper: void close()>();
+
+        return;
+    }
+
+    public void deleteBookmark(java.lang.String, cx.hell.android.pdfview.BookmarkEntry)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        java.lang.String $r1, $r6;
+        cx.hell.android.pdfview.BookmarkEntry $r2;
+        android.database.sqlite.SQLiteDatabase $r3;
+        java.lang.StringBuilder $r4;
+        java.lang.String[] $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: cx.hell.android.pdfview.BookmarkEntry;
+
+        $r1 = specialinvoke $r0.<cx.hell.android.pdfview.Bookmark: java.lang.String nameToMD5(java.lang.String)>($r1);
+
+        $r3 = $r0.<cx.hell.android.pdfview.Bookmark: android.database.sqlite.SQLiteDatabase db>;
+
+        $r4 = new java.lang.StringBuilder;
+
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("book=\'");
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' AND ");
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("name");
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("= \'user\' AND ");
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("entry");
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("= ? AND ");
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("comment");
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("= ?");
+
+        $r1 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r5 = newarray (java.lang.String)[2];
+
+        $r6 = virtualinvoke $r2.<cx.hell.android.pdfview.BookmarkEntry: java.lang.String toString()>();
+
+        $r5[0] = $r6;
+
+        $r6 = $r2.<cx.hell.android.pdfview.BookmarkEntry: java.lang.String comment>;
+
+        $r5[1] = $r6;
+
+        virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>("bookmark", $r1, $r5);
+
+        return;
+    }
+
+    public java.util.ArrayList getBookmarks(java.lang.String)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        java.lang.String $r1, $r8;
+        java.util.ArrayList $r2;
+        android.database.sqlite.SQLiteDatabase $r3;
+        java.lang.String[] $r4;
+        java.lang.StringBuilder $r5;
+        android.database.Cursor $r6;
+        boolean $z0;
+        cx.hell.android.pdfview.BookmarkEntry $r7;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.util.ArrayList;
+
+        specialinvoke $r2.<java.util.ArrayList: void <init>()>();
+
+        $r1 = specialinvoke $r0.<cx.hell.android.pdfview.Bookmark: java.lang.String nameToMD5(java.lang.String)>($r1);
+
+        $r3 = $r0.<cx.hell.android.pdfview.Bookmark: android.database.sqlite.SQLiteDatabase db>;
+
+        $r4 = newarray (java.lang.String)[2];
+
+        $r4[0] = "entry";
+
+        $r4[1] = "comment";
+
+        $r5 = new java.lang.StringBuilder;
+
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("book=\'");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' AND ");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("name");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("= \'user\'");
+
+        $r1 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r6 = virtualinvoke $r3.<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(boolean,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(1, "bookmark", $r4, $r1, null, null, null, null, "1");
+
+        if $r6 == null goto label3;
+
+        $z0 = interfaceinvoke $r6.<android.database.Cursor: boolean moveToFirst()>();
+
+        if $z0 == 0 goto label2;
+
+     label1:
+        $r7 = new cx.hell.android.pdfview.BookmarkEntry;
+
+        $r1 = interfaceinvoke $r6.<android.database.Cursor: java.lang.String getString(int)>(1);
+
+        $r8 = interfaceinvoke $r6.<android.database.Cursor: java.lang.String getString(int)>(0);
+
+        specialinvoke $r7.<cx.hell.android.pdfview.BookmarkEntry: void <init>(java.lang.String,java.lang.String)>($r1, $r8);
+
+        virtualinvoke $r2.<java.util.ArrayList: boolean add(java.lang.Object)>($r7);
+
+        $z0 = interfaceinvoke $r6.<android.database.Cursor: boolean moveToNext()>();
+
+        if $z0 != 0 goto label1;
+
+     label2:
+        interfaceinvoke $r6.<android.database.Cursor: void close()>();
+
+     label3:
+        staticinvoke <java.util.Collections: void sort(java.util.List)>($r2);
+
+        return $r2;
+    }
+
+    public cx.hell.android.pdfview.BookmarkEntry getLast(java.lang.String)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        java.lang.String $r1;
+        java.lang.String[] $r2;
+        cx.hell.android.pdfview.BookmarkEntry $r3;
+        android.database.sqlite.SQLiteDatabase $r4;
+        java.lang.StringBuilder $r5;
+        android.database.Cursor $r6;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r3 = null;
+
+        $r1 = specialinvoke $r0.<cx.hell.android.pdfview.Bookmark: java.lang.String nameToMD5(java.lang.String)>($r1);
+
+        $r4 = $r0.<cx.hell.android.pdfview.Bookmark: android.database.sqlite.SQLiteDatabase db>;
+
+        $r2 = newarray (java.lang.String)[1];
+
+        $r2[0] = "entry";
+
+        $r5 = new java.lang.StringBuilder;
+
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("book=\'");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' AND ");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("name");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("= \'last\'");
+
+        $r1 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $r6 = virtualinvoke $r4.<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(boolean,java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(1, "bookmark", $r2, $r1, null, null, null, null, "1");
+
+        if $r6 == null goto label2;
+
+        $z0 = interfaceinvoke $r6.<android.database.Cursor: boolean moveToFirst()>();
+
+        if $z0 == 0 goto label1;
+
+        $r3 = new cx.hell.android.pdfview.BookmarkEntry;
+
+        $r1 = interfaceinvoke $r6.<android.database.Cursor: java.lang.String getString(int)>(0);
+
+        specialinvoke $r3.<cx.hell.android.pdfview.BookmarkEntry: void <init>(java.lang.String)>($r1);
+
+     label1:
+        interfaceinvoke $r6.<android.database.Cursor: void close()>();
+
+        return $r3;
+
+     label2:
+        return null;
+    }
+
+    public cx.hell.android.pdfview.Bookmark open() throws android.database.SQLException
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        cx.hell.android.pdfview.Bookmark$DatabaseHelper $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r2 = $r0.<cx.hell.android.pdfview.Bookmark: cx.hell.android.pdfview.Bookmark$DatabaseHelper DBHelper>;
+
+        $r1 = virtualinvoke $r2.<cx.hell.android.pdfview.Bookmark$DatabaseHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>();
+
+        $r0.<cx.hell.android.pdfview.Bookmark: android.database.sqlite.SQLiteDatabase db> = $r1;
+
+        return $r0;
+    }
+
+    public void setLast(java.lang.String, cx.hell.android.pdfview.BookmarkEntry)
+    {
+        cx.hell.android.pdfview.Bookmark $r0;
+        java.lang.String $r1, $r4;
+        cx.hell.android.pdfview.BookmarkEntry $r2;
+        android.content.ContentValues $r3;
+        long $l0;
+        java.lang.Long $r5;
+        android.database.sqlite.SQLiteDatabase $r6;
+        java.lang.StringBuilder $r7;
+        int $i1;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: cx.hell.android.pdfview.BookmarkEntry;
+
+        $r1 = specialinvoke $r0.<cx.hell.android.pdfview.Bookmark: java.lang.String nameToMD5(java.lang.String)>($r1);
+
+        $r3 = new android.content.ContentValues;
+
+        specialinvoke $r3.<android.content.ContentValues: void <init>()>();
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("book", $r1);
+
+        $r4 = virtualinvoke $r2.<cx.hell.android.pdfview.BookmarkEntry: java.lang.String toString()>();
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("entry", $r4);
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.String)>("name", "last");
+
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+
+        $l0 = $l0 / 1000L;
+
+        $r5 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l0);
+
+        virtualinvoke $r3.<android.content.ContentValues: void put(java.lang.String,java.lang.Long)>("time", $r5);
+
+        $r6 = $r0.<cx.hell.android.pdfview.Bookmark: android.database.sqlite.SQLiteDatabase db>;
+
+        $r7 = new java.lang.StringBuilder;
+
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("book=\'");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1);
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\' AND ");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("name");
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("= \'last\'");
+
+        $r1 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        $i1 = virtualinvoke $r6.<android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String[])>("bookmark", $r3, $r1, null);
+
+        if $i1 != 0 goto label1;
+
+        $r6 = $r0.<cx.hell.android.pdfview.Bookmark: android.database.sqlite.SQLiteDatabase db>;
+
+        virtualinvoke $r6.<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>("bookmark", null, $r3);
+
+     label1:
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.Bookmark: java.lang.String KEY_TIME> = "time";
+
+        <cx.hell.android.pdfview.Bookmark: java.lang.String KEY_NAME> = "name";
+
+        <cx.hell.android.pdfview.Bookmark: java.lang.String KEY_ID> = "_id";
+
+        <cx.hell.android.pdfview.Bookmark: java.lang.String KEY_ENTRY> = "entry";
+
+        <cx.hell.android.pdfview.Bookmark: java.lang.String KEY_COMMENT> = "comment";
+
+        <cx.hell.android.pdfview.Bookmark: java.lang.String KEY_BOOK> = "book";
+
+        <cx.hell.android.pdfview.Bookmark: int DB_VERSION> = 1;
+
+        <cx.hell.android.pdfview.Bookmark: java.lang.String DATABASE_CREATE> = "create table bookmark (_id integer primary key autoincrement, book text not null, name text not null, entry text, comment text, time integer);";
+
+        return;
+    }
+}

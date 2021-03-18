@@ -1,0 +1,628 @@
+class cx.hell.android.pdfview.PDFPagesProvider$BitmapCache extends java.lang.Object
+{
+    static final boolean $assertionsDisabled;
+    private java.util.Map bitmaps;
+    private long hits;
+    private int maxCacheSizeBytes;
+    private long misses;
+
+    static void <clinit>()
+    {
+        boolean $z0;
+        java.lang.Class $r0;
+
+        $r0 = class "cx/hell/android/pdfview/PDFPagesProvider";
+
+        $z0 = virtualinvoke $r0.<java.lang.Class: boolean desiredAssertionStatus()>();
+
+        if $z0 != 0 goto label2;
+
+        $z0 = 1;
+
+     label1:
+        <cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: boolean $assertionsDisabled> = $z0;
+
+        return;
+
+     label2:
+        $z0 = 0;
+
+        goto label1;
+    }
+
+    void <init>()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        java.util.HashMap $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: int maxCacheSizeBytes> = 4194304;
+
+        $r1 = new java.util.HashMap;
+
+        specialinvoke $r1.<java.util.HashMap: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps> = $r1;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits> = 0L;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long misses> = 0L;
+
+        return;
+    }
+
+    private static int getBitmapSizeInCache(android.graphics.Bitmap)
+    {
+        android.graphics.Bitmap $r0;
+        int $i0, $i1;
+        android.graphics.Bitmap$Config $r1, $r2;
+
+        $r0 := @parameter0: android.graphics.Bitmap;
+
+        $i0 = virtualinvoke $r0.<android.graphics.Bitmap: int getWidth()>();
+
+        $i1 = virtualinvoke $r0.<android.graphics.Bitmap: int getHeight()>();
+
+        $i0 = $i0 * $i1;
+
+        $r1 = virtualinvoke $r0.<android.graphics.Bitmap: android.graphics.Bitmap$Config getConfig()>();
+
+        $r2 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config RGB_565>;
+
+        if $r1 != $r2 goto label1;
+
+        $i0 = $i0 * 2;
+
+        return $i0;
+
+     label1:
+        $r1 = virtualinvoke $r0.<android.graphics.Bitmap: android.graphics.Bitmap$Config getConfig()>();
+
+        $r2 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config ALPHA_8>;
+
+        if $r1 == $r2 goto label2;
+
+        $i0 = $i0 * 4;
+
+     label2:
+        return $i0;
+    }
+
+    private int getCurrentCacheSize()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        android.graphics.Bitmap $r1;
+        int $i0, $i1;
+        java.util.Map $r2;
+        java.util.Collection $r3;
+        java.util.Iterator $r4;
+        boolean $z0;
+        java.lang.StringBuilder $r5;
+        java.lang.String $r6;
+        java.lang.Object $r7;
+        cx.hell.android.pdfview.BitmapCacheValue $r8;
+        java.lang.Throwable $r9;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        entermonitor $r0;
+
+        $i0 = 0;
+
+     label1:
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r3 = interfaceinvoke $r2.<java.util.Map: java.util.Collection values()>();
+
+        $r4 = interfaceinvoke $r3.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label2:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 != 0 goto label4;
+
+        $r5 = new java.lang.StringBuilder;
+
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Cache size: ");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r6);
+
+     label3:
+        exitmonitor $r0;
+
+        return $i0;
+
+     label4:
+        $r7 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+
+        $r8 = (cx.hell.android.pdfview.BitmapCacheValue) $r7;
+
+        $r1 = $r8.<cx.hell.android.pdfview.BitmapCacheValue: android.graphics.Bitmap bitmap>;
+
+        $i1 = staticinvoke <cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: int getBitmapSizeInCache(android.graphics.Bitmap)>($r1);
+
+     label5:
+        $i0 = $i0 + $i1;
+
+        goto label2;
+
+     label6:
+        $r9 := @caughtexception;
+
+        exitmonitor $r0;
+
+        throw $r9;
+
+        catch java.lang.Throwable from label1 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    private void removeOldest()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        java.util.Map $r1;
+        java.util.Set $r2;
+        java.util.Iterator $r3;
+        long $l0, $l1;
+        cx.hell.android.lib.pagesview.Tile $r4, $r7;
+        boolean $z0;
+        java.lang.RuntimeException $r5;
+        java.lang.Object $r6;
+        cx.hell.android.pdfview.BitmapCacheValue $r8;
+        byte $b2;
+        android.graphics.Bitmap $r9;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r2 = interfaceinvoke $r1.<java.util.Map: java.util.Set keySet()>();
+
+        $r3 = interfaceinvoke $r2.<java.util.Set: java.util.Iterator iterator()>();
+
+        $l0 = 0L;
+
+        $r4 = null;
+
+     label1:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 != 0 goto label2;
+
+        if $r4 != null goto label4;
+
+        $r5 = new java.lang.RuntimeException;
+
+        specialinvoke $r5.<java.lang.RuntimeException: void <init>(java.lang.String)>("couldnt find oldest");
+
+        throw $r5;
+
+     label2:
+        $r6 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+
+        $r7 = (cx.hell.android.lib.pagesview.Tile) $r6;
+
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r6 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r7);
+
+        $r8 = (cx.hell.android.pdfview.BitmapCacheValue) $r6;
+
+        if $r4 != null goto label3;
+
+        $r4 = $r7;
+
+        $l0 = $r8.<cx.hell.android.pdfview.BitmapCacheValue: long millisAccessed>;
+
+        goto label1;
+
+     label3:
+        $l1 = $r8.<cx.hell.android.pdfview.BitmapCacheValue: long millisAccessed>;
+
+        $b2 = $l0 cmp $l1;
+
+        if $b2 <= 0 goto label1;
+
+        $l0 = $r8.<cx.hell.android.pdfview.BitmapCacheValue: long millisAccessed>;
+
+        $r4 = $r7;
+
+        goto label1;
+
+     label4:
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r6 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r4);
+
+        $r8 = (cx.hell.android.pdfview.BitmapCacheValue) $r6;
+
+        $r9 = $r8.<cx.hell.android.pdfview.BitmapCacheValue: android.graphics.Bitmap bitmap>;
+
+        virtualinvoke $r9.<android.graphics.Bitmap: void recycle()>();
+
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        interfaceinvoke $r1.<java.util.Map: java.lang.Object remove(java.lang.Object)>($r4);
+
+        return;
+    }
+
+    private boolean willExceedCacheSize(android.graphics.Bitmap)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        android.graphics.Bitmap $r1;
+        int $i0, $i1;
+        boolean $z0;
+        java.lang.Throwable $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $r1 := @parameter0: android.graphics.Bitmap;
+
+        entermonitor $r0;
+
+     label1:
+        $i0 = specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: int getCurrentCacheSize()>();
+
+        $i1 = staticinvoke <cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: int getBitmapSizeInCache(android.graphics.Bitmap)>($r1);
+
+        $i0 = $i0 + $i1;
+
+        $i1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: int maxCacheSizeBytes>;
+
+     label2:
+        if $i0 <= $i1 goto label4;
+
+        $z0 = 1;
+
+     label3:
+        exitmonitor $r0;
+
+        return $z0;
+
+     label4:
+        $z0 = 0;
+
+        goto label3;
+
+     label5:
+        $r2 := @caughtexception;
+
+        exitmonitor $r0;
+
+        throw $r2;
+
+        catch java.lang.Throwable from label1 to label2 with label5;
+    }
+
+    public void clearCache()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        java.util.Map $r1;
+        java.util.Set $r2;
+        java.util.Iterator $r3;
+        boolean $z0;
+        java.lang.Object $r4;
+        cx.hell.android.lib.pagesview.Tile $r5;
+        java.lang.String $r6;
+        cx.hell.android.pdfview.BitmapCacheValue $r7;
+        android.graphics.Bitmap $r8;
+        java.lang.Throwable $r9;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        entermonitor $r0;
+
+     label1:
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r2 = interfaceinvoke $r1.<java.util.Map: java.util.Set keySet()>();
+
+        $r3 = interfaceinvoke $r2.<java.util.Set: java.util.Iterator iterator()>();
+
+     label2:
+        $z0 = interfaceinvoke $r3.<java.util.Iterator: boolean hasNext()>();
+
+     label3:
+        if $z0 != 0 goto label4;
+
+        exitmonitor $r0;
+
+        return;
+
+     label4:
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+
+        $r5 = (cx.hell.android.lib.pagesview.Tile) $r4;
+
+        $r6 = virtualinvoke $r5.<cx.hell.android.lib.pagesview.Tile: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("Deleting", $r6);
+
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r4 = interfaceinvoke $r1.<java.util.Map: java.lang.Object get(java.lang.Object)>($r5);
+
+        $r7 = (cx.hell.android.pdfview.BitmapCacheValue) $r4;
+
+        $r8 = $r7.<cx.hell.android.pdfview.BitmapCacheValue: android.graphics.Bitmap bitmap>;
+
+        virtualinvoke $r8.<android.graphics.Bitmap: void recycle()>();
+
+        interfaceinvoke $r3.<java.util.Iterator: void remove()>();
+
+     label5:
+        goto label2;
+
+     label6:
+        $r9 := @caughtexception;
+
+        exitmonitor $r0;
+
+        throw $r9;
+
+        catch java.lang.Throwable from label1 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    boolean contains(cx.hell.android.lib.pagesview.Tile)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        cx.hell.android.lib.pagesview.Tile $r1;
+        boolean $z0;
+        java.util.Map $r2;
+        java.lang.Throwable $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.Tile;
+
+        entermonitor $r0;
+
+     label1:
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $z0 = interfaceinvoke $r2.<java.util.Map: boolean containsKey(java.lang.Object)>($r1);
+
+     label2:
+        exitmonitor $r0;
+
+        return $z0;
+
+     label3:
+        $r3 := @caughtexception;
+
+        exitmonitor $r0;
+
+        throw $r3;
+
+        catch java.lang.Throwable from label1 to label2 with label3;
+    }
+
+    android.graphics.Bitmap get(cx.hell.android.lib.pagesview.Tile)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        cx.hell.android.lib.pagesview.Tile $r1;
+        long $l0, $l1;
+        java.util.Map $r2;
+        java.lang.Object $r3;
+        cx.hell.android.pdfview.BitmapCacheValue $r4;
+        android.graphics.Bitmap $r5;
+        boolean $z0;
+        java.lang.AssertionError $r6;
+        byte $b2;
+        java.lang.StringBuilder $r7;
+        float $f0, $f1;
+        int $i3;
+        java.lang.String $r8;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.Tile;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r3 = interfaceinvoke $r2.<java.util.Map: java.lang.Object get(java.lang.Object)>($r1);
+
+        $r4 = (cx.hell.android.pdfview.BitmapCacheValue) $r3;
+
+        $r5 = null;
+
+        if $r4 == null goto label4;
+
+        $r5 = $r4.<cx.hell.android.pdfview.BitmapCacheValue: android.graphics.Bitmap bitmap>;
+
+        $z0 = <cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: boolean $assertionsDisabled>;
+
+        if $z0 != 0 goto label1;
+
+        if $r5 != null goto label1;
+
+        $r6 = new java.lang.AssertionError;
+
+        specialinvoke $r6.<java.lang.AssertionError: void <init>()>();
+
+        throw $r6;
+
+     label1:
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+
+        $r4.<cx.hell.android.pdfview.BitmapCacheValue: long millisAccessed> = $l0;
+
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits>;
+
+        $l0 = $l0 + 1L;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits> = $l0;
+
+     label2:
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits>;
+
+        $l1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long misses>;
+
+        $l0 = $l0 + $l1;
+
+        $l0 = $l0 % 100L;
+
+        $b2 = $l0 cmp 0L;
+
+        if $b2 != 0 goto label5;
+
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits>;
+
+        $b2 = $l0 cmp 0L;
+
+        if $b2 > 0 goto label3;
+
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long misses>;
+
+        $b2 = $l0 cmp 0L;
+
+        if $b2 <= 0 goto label5;
+
+     label3:
+        $r7 = new java.lang.StringBuilder;
+
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("hits: ");
+
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits>;
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", misses: ");
+
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long misses>;
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l0);
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", hit ratio: ");
+
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits>;
+
+        $f0 = (float) $l0;
+
+        $l1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long hits>;
+
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long misses>;
+
+        $l0 = $l1 + $l0;
+
+        $f1 = (float) $l0;
+
+        $f0 = $f0 / $f1;
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", size: ");
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $i3 = interfaceinvoke $r2.<java.util.Map: int size()>();
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3);
+
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("cx.hell.android.pdfview.pagecache", $r8);
+
+        return $r5;
+
+     label4:
+        $l0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long misses>;
+
+        $l0 = $l0 + 1L;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: long misses> = $l0;
+
+        goto label2;
+
+     label5:
+        return $r5;
+    }
+
+    void put(cx.hell.android.lib.pagesview.Tile, android.graphics.Bitmap)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        cx.hell.android.lib.pagesview.Tile $r1;
+        android.graphics.Bitmap $r2;
+        java.util.Map $r3;
+        boolean $z0;
+        cx.hell.android.pdfview.BitmapCacheValue $r4;
+        long $l0;
+        java.lang.Throwable $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.Tile;
+
+        $r2 := @parameter1: android.graphics.Bitmap;
+
+        entermonitor $r0;
+
+     label1:
+        $z0 = specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: boolean willExceedCacheSize(android.graphics.Bitmap)>($r2);
+
+        if $z0 == 0 goto label2;
+
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $z0 = interfaceinvoke $r3.<java.util.Map: boolean isEmpty()>();
+
+        if $z0 == 0 goto label4;
+
+     label2:
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: java.util.Map bitmaps>;
+
+        $r4 = new cx.hell.android.pdfview.BitmapCacheValue;
+
+        $l0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+
+        specialinvoke $r4.<cx.hell.android.pdfview.BitmapCacheValue: void <init>(android.graphics.Bitmap,long,long)>($r2, $l0, 0L);
+
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r1, $r4);
+
+     label3:
+        exitmonitor $r0;
+
+        return;
+
+     label4:
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "Removing oldest");
+
+        specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: void removeOldest()>();
+
+     label5:
+        goto label1;
+
+     label6:
+        $r5 := @caughtexception;
+
+        exitmonitor $r0;
+
+        throw $r5;
+
+        catch java.lang.Throwable from label1 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    public void setMaxCacheSizeBytes(int)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r0;
+        int $i0;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $i0 := @parameter0: int;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: int maxCacheSizeBytes> = $i0;
+
+        return;
+    }
+}

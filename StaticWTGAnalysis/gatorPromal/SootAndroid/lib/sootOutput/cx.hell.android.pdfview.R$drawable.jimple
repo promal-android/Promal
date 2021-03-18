@@ -1,0 +1,172 @@
+public final class cx.hell.android.pdfview.R$drawable extends java.lang.Object
+{
+    public static final int apvpro_icon;
+    public static final int btn_zoom_down;
+    public static final int btn_zoom_down_disabled;
+    public static final int btn_zoom_down_disabled_focused;
+    public static final int btn_zoom_down_normal;
+    public static final int btn_zoom_down_pressed;
+    public static final int btn_zoom_down_selected;
+    public static final int btn_zoom_up;
+    public static final int btn_zoom_up_disabled;
+    public static final int btn_zoom_up_disabled_focused;
+    public static final int btn_zoom_up_normal;
+    public static final int btn_zoom_up_pressed;
+    public static final int btn_zoom_up_selected;
+    public static final int btn_zoom_width;
+    public static final int btn_zoom_width_normal;
+    public static final int btn_zoom_width_pressed;
+    public static final int folder;
+    public static final int green_btn_zoom_down;
+    public static final int green_btn_zoom_down_disabled;
+    public static final int green_btn_zoom_down_disabled_focused;
+    public static final int green_btn_zoom_down_normal;
+    public static final int green_btn_zoom_up;
+    public static final int green_btn_zoom_up_disabled;
+    public static final int green_btn_zoom_up_disabled_focused;
+    public static final int green_btn_zoom_up_normal;
+    public static final int green_btn_zoom_width;
+    public static final int green_btn_zoom_width_normal;
+    public static final int green_red_btn_zoom_up_selected;
+    public static final int home;
+    public static final int ic_menu_agenda;
+    public static final int minus;
+    public static final int pdfviewer;
+    public static final int plus;
+    public static final int recent1;
+    public static final int recent2;
+    public static final int recent3;
+    public static final int recent4;
+    public static final int recent5;
+    public static final int red_btn_zoom_down;
+    public static final int red_btn_zoom_down_disabled;
+    public static final int red_btn_zoom_down_disabled_focused;
+    public static final int red_btn_zoom_down_normal;
+    public static final int red_btn_zoom_up;
+    public static final int red_btn_zoom_up_disabled;
+    public static final int red_btn_zoom_up_disabled_focused;
+    public static final int red_btn_zoom_up_normal;
+    public static final int red_btn_zoom_up_selected;
+    public static final int red_btn_zoom_width;
+    public static final int red_btn_zoom_width_normal;
+    public static final int red_red_btn_zoom_up_selected;
+    public static final int upfolder;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$drawable $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$drawable;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$drawable: int upfolder> = 2130837554;
+
+        <cx.hell.android.pdfview.R$drawable: int red_red_btn_zoom_up_selected> = 2130837553;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_width_normal> = 2130837552;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_width> = 2130837551;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_up_selected> = 2130837550;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_up_normal> = 2130837549;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_up_disabled_focused> = 2130837548;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_up_disabled> = 2130837547;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_up> = 2130837546;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_down_normal> = 2130837545;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_down_disabled_focused> = 2130837544;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_down_disabled> = 2130837543;
+
+        <cx.hell.android.pdfview.R$drawable: int red_btn_zoom_down> = 2130837542;
+
+        <cx.hell.android.pdfview.R$drawable: int recent5> = 2130837541;
+
+        <cx.hell.android.pdfview.R$drawable: int recent4> = 2130837540;
+
+        <cx.hell.android.pdfview.R$drawable: int recent3> = 2130837539;
+
+        <cx.hell.android.pdfview.R$drawable: int recent2> = 2130837538;
+
+        <cx.hell.android.pdfview.R$drawable: int recent1> = 2130837537;
+
+        <cx.hell.android.pdfview.R$drawable: int plus> = 2130837536;
+
+        <cx.hell.android.pdfview.R$drawable: int pdfviewer> = 2130837535;
+
+        <cx.hell.android.pdfview.R$drawable: int minus> = 2130837534;
+
+        <cx.hell.android.pdfview.R$drawable: int ic_menu_agenda> = 2130837533;
+
+        <cx.hell.android.pdfview.R$drawable: int home> = 2130837532;
+
+        <cx.hell.android.pdfview.R$drawable: int green_red_btn_zoom_up_selected> = 2130837531;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_width_normal> = 2130837530;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_width> = 2130837529;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_up_normal> = 2130837528;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_up_disabled_focused> = 2130837527;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_up_disabled> = 2130837526;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_up> = 2130837525;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_down_normal> = 2130837524;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_down_disabled_focused> = 2130837523;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_down_disabled> = 2130837522;
+
+        <cx.hell.android.pdfview.R$drawable: int green_btn_zoom_down> = 2130837521;
+
+        <cx.hell.android.pdfview.R$drawable: int folder> = 2130837520;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_width_pressed> = 2130837519;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_width_normal> = 2130837518;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_width> = 2130837517;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_up_selected> = 2130837516;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_up_pressed> = 2130837515;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_up_normal> = 2130837514;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_up_disabled_focused> = 2130837513;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_up_disabled> = 2130837512;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_up> = 2130837511;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_down_selected> = 2130837510;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_down_pressed> = 2130837509;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_down_normal> = 2130837508;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_down_disabled_focused> = 2130837507;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_down_disabled> = 2130837506;
+
+        <cx.hell.android.pdfview.R$drawable: int btn_zoom_down> = 2130837505;
+
+        <cx.hell.android.pdfview.R$drawable: int apvpro_icon> = 2130837504;
+
+        return;
+    }
+}

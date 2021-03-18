@@ -1,0 +1,66 @@
+class cx.hell.android.pdfview.OpenFileActivity$Finder$2 extends java.lang.Object implements java.lang.Runnable
+{
+    final cx.hell.android.pdfview.OpenFileActivity$Finder this$1;
+    private final int val$page;
+
+    void <init>(cx.hell.android.pdfview.OpenFileActivity$Finder, int)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$Finder$2 $r0;
+        cx.hell.android.pdfview.OpenFileActivity$Finder $r1;
+        int $i0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$Finder$2;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.OpenFileActivity$Finder;
+
+        $i0 := @parameter1: int;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$2: cx.hell.android.pdfview.OpenFileActivity$Finder this$1> = $r1;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$2: int val$page> = $i0;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void run()
+    {
+        cx.hell.android.pdfview.OpenFileActivity$Finder$2 $r0;
+        cx.hell.android.pdfview.OpenFileActivity$Finder $r1;
+        cx.hell.android.pdfview.OpenFileActivity $r2;
+        java.lang.String $r3, $r4;
+        int $i0;
+        android.app.AlertDialog $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$Finder$2;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$2: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r3 = virtualinvoke $r2.<cx.hell.android.pdfview.OpenFileActivity: java.lang.String getString(int)>(2131165203);
+
+        $i0 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$2: int val$page>;
+
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+
+        $r3 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("%1$d", $r4);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$2: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $i0 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: int access$3(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r4 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>($i0);
+
+        $r3 = virtualinvoke $r3.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("%2$d", $r4);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$2: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r5 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: android.app.AlertDialog access$5(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        virtualinvoke $r5.<android.app.AlertDialog: void setMessage(java.lang.CharSequence)>($r3);
+
+        return;
+    }
+}

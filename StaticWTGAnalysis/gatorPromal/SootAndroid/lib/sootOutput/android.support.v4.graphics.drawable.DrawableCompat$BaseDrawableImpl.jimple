@@ -1,0 +1,26 @@
+class android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl extends java.lang.Object implements android.support.v4.graphics.drawable.DrawableCompat$DrawableImpl
+{
+
+    void <init>()
+    {
+        android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl $r0;
+
+        $r0 := @this: android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void jumpToCurrentState(android.graphics.drawable.Drawable)
+    {
+        android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl $r0;
+        android.graphics.drawable.Drawable $r1;
+
+        $r0 := @this: android.support.v4.graphics.drawable.DrawableCompat$BaseDrawableImpl;
+
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+
+        return;
+    }
+}

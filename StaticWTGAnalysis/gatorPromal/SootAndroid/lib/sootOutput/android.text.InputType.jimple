@@ -1,0 +1,122 @@
+public interface  android.text.InputType extends java.lang.Object
+{
+    public static final int TYPE_MASK_CLASS;
+    public static final int TYPE_MASK_VARIATION;
+    public static final int TYPE_MASK_FLAGS;
+    public static final int TYPE_NULL;
+    public static final int TYPE_CLASS_TEXT;
+    public static final int TYPE_TEXT_FLAG_CAP_CHARACTERS;
+    public static final int TYPE_TEXT_FLAG_CAP_WORDS;
+    public static final int TYPE_TEXT_FLAG_CAP_SENTENCES;
+    public static final int TYPE_TEXT_FLAG_AUTO_CORRECT;
+    public static final int TYPE_TEXT_FLAG_AUTO_COMPLETE;
+    public static final int TYPE_TEXT_FLAG_MULTI_LINE;
+    public static final int TYPE_TEXT_FLAG_IME_MULTI_LINE;
+    public static final int TYPE_TEXT_FLAG_NO_SUGGESTIONS;
+    public static final int TYPE_TEXT_VARIATION_NORMAL;
+    public static final int TYPE_TEXT_VARIATION_URI;
+    public static final int TYPE_TEXT_VARIATION_EMAIL_ADDRESS;
+    public static final int TYPE_TEXT_VARIATION_EMAIL_SUBJECT;
+    public static final int TYPE_TEXT_VARIATION_SHORT_MESSAGE;
+    public static final int TYPE_TEXT_VARIATION_LONG_MESSAGE;
+    public static final int TYPE_TEXT_VARIATION_PERSON_NAME;
+    public static final int TYPE_TEXT_VARIATION_POSTAL_ADDRESS;
+    public static final int TYPE_TEXT_VARIATION_PASSWORD;
+    public static final int TYPE_TEXT_VARIATION_VISIBLE_PASSWORD;
+    public static final int TYPE_TEXT_VARIATION_WEB_EDIT_TEXT;
+    public static final int TYPE_TEXT_VARIATION_FILTER;
+    public static final int TYPE_TEXT_VARIATION_PHONETIC;
+    public static final int TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS;
+    public static final int TYPE_TEXT_VARIATION_WEB_PASSWORD;
+    public static final int TYPE_CLASS_NUMBER;
+    public static final int TYPE_NUMBER_FLAG_SIGNED;
+    public static final int TYPE_NUMBER_FLAG_DECIMAL;
+    public static final int TYPE_NUMBER_VARIATION_NORMAL;
+    public static final int TYPE_NUMBER_VARIATION_PASSWORD;
+    public static final int TYPE_CLASS_PHONE;
+    public static final int TYPE_CLASS_DATETIME;
+    public static final int TYPE_DATETIME_VARIATION_NORMAL;
+    public static final int TYPE_DATETIME_VARIATION_DATE;
+    public static final int TYPE_DATETIME_VARIATION_TIME;
+
+    public static void <clinit>()
+    {
+        <android.text.InputType: int TYPE_DATETIME_VARIATION_TIME> = 32;
+
+        <android.text.InputType: int TYPE_DATETIME_VARIATION_DATE> = 16;
+
+        <android.text.InputType: int TYPE_DATETIME_VARIATION_NORMAL> = 0;
+
+        <android.text.InputType: int TYPE_CLASS_DATETIME> = 4;
+
+        <android.text.InputType: int TYPE_CLASS_PHONE> = 3;
+
+        <android.text.InputType: int TYPE_NUMBER_VARIATION_PASSWORD> = 16;
+
+        <android.text.InputType: int TYPE_NUMBER_VARIATION_NORMAL> = 0;
+
+        <android.text.InputType: int TYPE_NUMBER_FLAG_DECIMAL> = 8192;
+
+        <android.text.InputType: int TYPE_NUMBER_FLAG_SIGNED> = 4096;
+
+        <android.text.InputType: int TYPE_CLASS_NUMBER> = 2;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_WEB_PASSWORD> = 224;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS> = 208;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_PHONETIC> = 192;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_FILTER> = 176;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_WEB_EDIT_TEXT> = 160;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_VISIBLE_PASSWORD> = 144;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_PASSWORD> = 128;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_POSTAL_ADDRESS> = 112;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_PERSON_NAME> = 96;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_LONG_MESSAGE> = 80;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_SHORT_MESSAGE> = 64;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_EMAIL_SUBJECT> = 48;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_EMAIL_ADDRESS> = 32;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_URI> = 16;
+
+        <android.text.InputType: int TYPE_TEXT_VARIATION_NORMAL> = 0;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_NO_SUGGESTIONS> = 524288;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_IME_MULTI_LINE> = 262144;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_MULTI_LINE> = 131072;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_AUTO_COMPLETE> = 65536;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_AUTO_CORRECT> = 32768;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_CAP_SENTENCES> = 16384;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_CAP_WORDS> = 8192;
+
+        <android.text.InputType: int TYPE_TEXT_FLAG_CAP_CHARACTERS> = 4096;
+
+        <android.text.InputType: int TYPE_CLASS_TEXT> = 1;
+
+        <android.text.InputType: int TYPE_NULL> = 0;
+
+        <android.text.InputType: int TYPE_MASK_FLAGS> = 16773120;
+
+        <android.text.InputType: int TYPE_MASK_VARIATION> = 4080;
+
+        <android.text.InputType: int TYPE_MASK_CLASS> = 15;
+
+        return;
+    }
+}

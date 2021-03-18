@@ -1,0 +1,48 @@
+class cx.hell.android.pdfview.Bookmark$DatabaseHelper extends android.database.sqlite.SQLiteOpenHelper
+{
+
+    void <init>(android.content.Context)
+    {
+        cx.hell.android.pdfview.Bookmark$DatabaseHelper $r0;
+        android.content.Context $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark$DatabaseHelper;
+
+        $r1 := @parameter0: android.content.Context;
+
+        specialinvoke $r0.<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>($r1, "bookmarks.db", null, 1);
+
+        return;
+    }
+
+    public void onCreate(android.database.sqlite.SQLiteDatabase)
+    {
+        cx.hell.android.pdfview.Bookmark$DatabaseHelper $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark$DatabaseHelper;
+
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+
+        virtualinvoke $r1.<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>("create table bookmark (_id integer primary key autoincrement, book text not null, name text not null, entry text, comment text, time integer);");
+
+        return;
+    }
+
+    public void onUpgrade(android.database.sqlite.SQLiteDatabase, int, int)
+    {
+        cx.hell.android.pdfview.Bookmark$DatabaseHelper $r0;
+        android.database.sqlite.SQLiteDatabase $r1;
+        int $i0, $i1;
+
+        $r0 := @this: cx.hell.android.pdfview.Bookmark$DatabaseHelper;
+
+        $r1 := @parameter0: android.database.sqlite.SQLiteDatabase;
+
+        $i0 := @parameter1: int;
+
+        $i1 := @parameter2: int;
+
+        return;
+    }
+}

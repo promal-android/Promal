@@ -1,0 +1,31 @@
+public class cx.hell.android.pdfview.BitmapCacheValue extends java.lang.Object
+{
+    public android.graphics.Bitmap bitmap;
+    public long millisAccessed;
+    public long priority;
+
+    public void <init>(android.graphics.Bitmap, long, long)
+    {
+        cx.hell.android.pdfview.BitmapCacheValue $r0;
+        android.graphics.Bitmap $r1;
+        long $l0, $l1;
+
+        $r0 := @this: cx.hell.android.pdfview.BitmapCacheValue;
+
+        $r1 := @parameter0: android.graphics.Bitmap;
+
+        $l0 := @parameter1: long;
+
+        $l1 := @parameter2: long;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.BitmapCacheValue: android.graphics.Bitmap bitmap> = $r1;
+
+        $r0.<cx.hell.android.pdfview.BitmapCacheValue: long millisAccessed> = $l0;
+
+        $r0.<cx.hell.android.pdfview.BitmapCacheValue: long priority> = $l1;
+
+        return;
+    }
+}

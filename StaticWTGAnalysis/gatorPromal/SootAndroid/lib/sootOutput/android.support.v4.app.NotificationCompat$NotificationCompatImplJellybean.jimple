@@ -1,0 +1,180 @@
+class android.support.v4.app.NotificationCompat$NotificationCompatImplJellybean extends java.lang.Object implements android.support.v4.app.NotificationCompat$NotificationCompatImpl
+{
+
+    void <init>()
+    {
+        android.support.v4.app.NotificationCompat$NotificationCompatImplJellybean $r0;
+
+        $r0 := @this: android.support.v4.app.NotificationCompat$NotificationCompatImplJellybean;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public android.app.Notification build(android.support.v4.app.NotificationCompat$Builder)
+    {
+        android.support.v4.app.NotificationCompat$NotificationCompatImplJellybean $r0;
+        android.support.v4.app.NotificationCompat$Builder $r1;
+        android.support.v4.app.NotificationCompatJellybean $r2;
+        int $i0, $i1, $i2, $i3;
+        android.app.PendingIntent $r3, $r4;
+        android.graphics.Bitmap $r5, $r21;
+        boolean $z0, $z1;
+        android.content.Context $r6;
+        android.app.Notification $r7;
+        java.lang.CharSequence $r8, $r9, $r10, $r12;
+        android.widget.RemoteViews $r11;
+        java.util.ArrayList $r13;
+        java.util.Iterator $r14;
+        java.lang.Object $r15;
+        android.support.v4.app.NotificationCompat$Action $r16;
+        android.support.v4.app.NotificationCompat$Style $r17;
+        android.support.v4.app.NotificationCompat$BigTextStyle $r18;
+        android.support.v4.app.NotificationCompat$InboxStyle $r19;
+        android.support.v4.app.NotificationCompat$BigPictureStyle $r20;
+
+        $r0 := @this: android.support.v4.app.NotificationCompat$NotificationCompatImplJellybean;
+
+        $r1 := @parameter0: android.support.v4.app.NotificationCompat$Builder;
+
+        $r2 = new android.support.v4.app.NotificationCompatJellybean;
+
+        $r6 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.content.Context mContext>;
+
+        $r7 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.app.Notification mNotification>;
+
+        $r8 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.lang.CharSequence mContentTitle>;
+
+        $r9 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.lang.CharSequence mContentText>;
+
+        $r10 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.lang.CharSequence mContentInfo>;
+
+        $r11 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.widget.RemoteViews mTickerView>;
+
+        $i0 = $r1.<android.support.v4.app.NotificationCompat$Builder: int mNumber>;
+
+        $r3 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.app.PendingIntent mContentIntent>;
+
+        $r4 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.app.PendingIntent mFullScreenIntent>;
+
+        $r5 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.graphics.Bitmap mLargeIcon>;
+
+        $i1 = $r1.<android.support.v4.app.NotificationCompat$Builder: int mProgressMax>;
+
+        $i2 = $r1.<android.support.v4.app.NotificationCompat$Builder: int mProgress>;
+
+        $z0 = $r1.<android.support.v4.app.NotificationCompat$Builder: boolean mProgressIndeterminate>;
+
+        $z1 = $r1.<android.support.v4.app.NotificationCompat$Builder: boolean mUseChronometer>;
+
+        $i3 = $r1.<android.support.v4.app.NotificationCompat$Builder: int mPriority>;
+
+        $r12 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.lang.CharSequence mSubText>;
+
+        specialinvoke $r2.<android.support.v4.app.NotificationCompatJellybean: void <init>(android.content.Context,android.app.Notification,java.lang.CharSequence,java.lang.CharSequence,java.lang.CharSequence,android.widget.RemoteViews,int,android.app.PendingIntent,android.app.PendingIntent,android.graphics.Bitmap,int,int,boolean,boolean,int,java.lang.CharSequence)>($r6, $r7, $r8, $r9, $r10, $r11, $i0, $r3, $r4, $r5, $i1, $i2, $z0, $z1, $i3, $r12);
+
+        $r13 = $r1.<android.support.v4.app.NotificationCompat$Builder: java.util.ArrayList mActions>;
+
+        $r14 = virtualinvoke $r13.<java.util.ArrayList: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r14.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 == 0 goto label2;
+
+        $r15 = interfaceinvoke $r14.<java.util.Iterator: java.lang.Object next()>();
+
+        $r16 = (android.support.v4.app.NotificationCompat$Action) $r15;
+
+        $i0 = $r16.<android.support.v4.app.NotificationCompat$Action: int icon>;
+
+        $r8 = $r16.<android.support.v4.app.NotificationCompat$Action: java.lang.CharSequence title>;
+
+        $r3 = $r16.<android.support.v4.app.NotificationCompat$Action: android.app.PendingIntent actionIntent>;
+
+        virtualinvoke $r2.<android.support.v4.app.NotificationCompatJellybean: void addAction(int,java.lang.CharSequence,android.app.PendingIntent)>($i0, $r8, $r3);
+
+        goto label1;
+
+     label2:
+        $r17 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.support.v4.app.NotificationCompat$Style mStyle>;
+
+        if $r17 == null goto label3;
+
+        $r17 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.support.v4.app.NotificationCompat$Style mStyle>;
+
+        $z0 = $r17 instanceof android.support.v4.app.NotificationCompat$BigTextStyle;
+
+        if $z0 == 0 goto label4;
+
+        $r17 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.support.v4.app.NotificationCompat$Style mStyle>;
+
+        $r18 = (android.support.v4.app.NotificationCompat$BigTextStyle) $r17;
+
+        $r8 = $r18.<android.support.v4.app.NotificationCompat$BigTextStyle: java.lang.CharSequence mBigContentTitle>;
+
+        $z0 = $r18.<android.support.v4.app.NotificationCompat$BigTextStyle: boolean mSummaryTextSet>;
+
+        $r9 = $r18.<android.support.v4.app.NotificationCompat$BigTextStyle: java.lang.CharSequence mSummaryText>;
+
+        $r10 = $r18.<android.support.v4.app.NotificationCompat$BigTextStyle: java.lang.CharSequence mBigText>;
+
+        virtualinvoke $r2.<android.support.v4.app.NotificationCompatJellybean: void addBigTextStyle(java.lang.CharSequence,boolean,java.lang.CharSequence,java.lang.CharSequence)>($r8, $z0, $r9, $r10);
+
+     label3:
+        $r7 = virtualinvoke $r2.<android.support.v4.app.NotificationCompatJellybean: android.app.Notification build()>();
+
+        return $r7;
+
+     label4:
+        $r17 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.support.v4.app.NotificationCompat$Style mStyle>;
+
+        $z0 = $r17 instanceof android.support.v4.app.NotificationCompat$InboxStyle;
+
+        if $z0 == 0 goto label5;
+
+        $r17 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.support.v4.app.NotificationCompat$Style mStyle>;
+
+        $r19 = (android.support.v4.app.NotificationCompat$InboxStyle) $r17;
+
+        $r8 = $r19.<android.support.v4.app.NotificationCompat$InboxStyle: java.lang.CharSequence mBigContentTitle>;
+
+        $z0 = $r19.<android.support.v4.app.NotificationCompat$InboxStyle: boolean mSummaryTextSet>;
+
+        $r9 = $r19.<android.support.v4.app.NotificationCompat$InboxStyle: java.lang.CharSequence mSummaryText>;
+
+        $r13 = $r19.<android.support.v4.app.NotificationCompat$InboxStyle: java.util.ArrayList mTexts>;
+
+        virtualinvoke $r2.<android.support.v4.app.NotificationCompatJellybean: void addInboxStyle(java.lang.CharSequence,boolean,java.lang.CharSequence,java.util.ArrayList)>($r8, $z0, $r9, $r13);
+
+        goto label3;
+
+     label5:
+        $r17 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.support.v4.app.NotificationCompat$Style mStyle>;
+
+        $z0 = $r17 instanceof android.support.v4.app.NotificationCompat$BigPictureStyle;
+
+        if $z0 == 0 goto label3;
+
+        $r17 = $r1.<android.support.v4.app.NotificationCompat$Builder: android.support.v4.app.NotificationCompat$Style mStyle>;
+
+        $r20 = (android.support.v4.app.NotificationCompat$BigPictureStyle) $r17;
+
+        $r8 = $r20.<android.support.v4.app.NotificationCompat$BigPictureStyle: java.lang.CharSequence mBigContentTitle>;
+
+        $z0 = $r20.<android.support.v4.app.NotificationCompat$BigPictureStyle: boolean mSummaryTextSet>;
+
+        $r9 = $r20.<android.support.v4.app.NotificationCompat$BigPictureStyle: java.lang.CharSequence mSummaryText>;
+
+        $r5 = $r20.<android.support.v4.app.NotificationCompat$BigPictureStyle: android.graphics.Bitmap mPicture>;
+
+        $r21 = $r20.<android.support.v4.app.NotificationCompat$BigPictureStyle: android.graphics.Bitmap mBigLargeIcon>;
+
+        $z1 = $r20.<android.support.v4.app.NotificationCompat$BigPictureStyle: boolean mBigLargeIconSet>;
+
+        virtualinvoke $r2.<android.support.v4.app.NotificationCompatJellybean: void addBigPictureStyle(java.lang.CharSequence,boolean,java.lang.CharSequence,android.graphics.Bitmap,android.graphics.Bitmap,boolean)>($r8, $z0, $r9, $r5, $r21, $z1);
+
+        goto label3;
+    }
+}

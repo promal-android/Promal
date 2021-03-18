@@ -1,0 +1,48 @@
+public class cx.hell.android.pdfview.APVApplication extends android.app.Application
+{
+    private static final java.lang.String TAG;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.APVApplication $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.APVApplication;
+
+        specialinvoke $r0.<android.app.Application: void <init>()>();
+
+        return;
+    }
+
+    public void onCreate()
+    {
+        cx.hell.android.pdfview.APVApplication $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.APVApplication;
+
+        specialinvoke $r0.<android.app.Application: void onCreate()>();
+
+        staticinvoke <cx.hell.android.lib.pdf.PDF: void setApplicationContext(android.content.Context)>($r0);
+
+        return;
+    }
+
+    public void onLowMemory()
+    {
+        cx.hell.android.pdfview.APVApplication $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.APVApplication;
+
+        specialinvoke $r0.<android.app.Application: void onLowMemory()>();
+
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "onLowMemory");
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.APVApplication: java.lang.String TAG> = "cx.hell.android.pdfview";
+
+        return;
+    }
+}

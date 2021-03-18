@@ -1,0 +1,22 @@
+public final class cx.hell.android.pdfview.R$xml extends java.lang.Object
+{
+    public static final int options;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$xml $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$xml;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$xml: int options> = 2131034112;
+
+        return;
+    }
+}

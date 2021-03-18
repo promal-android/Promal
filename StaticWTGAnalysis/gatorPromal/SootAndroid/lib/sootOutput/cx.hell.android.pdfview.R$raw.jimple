@@ -1,0 +1,22 @@
+public final class cx.hell.android.pdfview.R$raw extends java.lang.Object
+{
+    public static final int about;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$raw $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$raw;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$raw: int about> = 2131099648;
+
+        return;
+    }
+}

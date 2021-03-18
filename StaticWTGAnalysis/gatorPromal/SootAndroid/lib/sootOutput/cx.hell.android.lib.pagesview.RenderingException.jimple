@@ -1,0 +1,25 @@
+public class cx.hell.android.lib.pagesview.RenderingException extends java.lang.Exception
+{
+    private static final long serialVersionUID;
+
+    public void <init>(java.lang.String)
+    {
+        cx.hell.android.lib.pagesview.RenderingException $r0;
+        java.lang.String $r1;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.RenderingException;
+
+        $r1 := @parameter0: java.lang.String;
+
+        specialinvoke $r0.<java.lang.Exception: void <init>(java.lang.String)>($r1);
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.lib.pagesview.RenderingException: long serialVersionUID> = 1010978161527539002L;
+
+        return;
+    }
+}

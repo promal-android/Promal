@@ -1,0 +1,134 @@
+public class cx.hell.android.pdfview.StreamUtils extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.StreamUtils $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.StreamUtils;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static byte[] readBytesFully(java.io.InputStream) throws java.io.IOException
+    {
+        java.io.InputStream $r0;
+        byte[] $r1;
+
+        $r0 := @parameter0: java.io.InputStream;
+
+        $r1 = staticinvoke <cx.hell.android.pdfview.StreamUtils: byte[] readBytesFully(java.io.InputStream,int,android.widget.ProgressBar)>($r0, 0, null);
+
+        return $r1;
+    }
+
+    public static byte[] readBytesFully(java.io.InputStream, int, android.widget.ProgressBar) throws java.io.IOException
+    {
+        java.io.InputStream $r0;
+        int $i0, $i1, $i2;
+        android.widget.ProgressBar $r1;
+        byte[] $r2, $r3;
+        java.io.IOException $r4;
+        java.lang.StringBuilder $r5;
+        java.lang.String $r6;
+
+        $r0 := @parameter0: java.io.InputStream;
+
+        $i0 := @parameter1: int;
+
+        $r1 := @parameter2: android.widget.ProgressBar;
+
+        $r3 = newarray (byte)[4096];
+
+        $i1 = 0;
+
+     label1:
+        $i2 = lengthof $r3;
+
+        $i2 = $i2 - $i1;
+
+        $i2 = virtualinvoke $r0.<java.io.InputStream: int read(byte[],int,int)>($r3, $i1, $i2);
+
+        if $i2 >= 0 goto label2;
+
+        $r2 = newarray (byte)[$i1];
+
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, 0, $r2, 0, $i1);
+
+        return $r2;
+
+     label2:
+        $i1 = $i1 + $i2;
+
+        if $r1 == null goto label3;
+
+        virtualinvoke $r1.<android.widget.ProgressBar: void setProgress(int)>($i1);
+
+     label3:
+        if $i0 <= 0 goto label4;
+
+        if $i1 <= $i0 goto label4;
+
+        $r4 = new java.io.IOException;
+
+        specialinvoke $r4.<java.io.IOException: void <init>(java.lang.String)>("Remote file is too big");
+
+        throw $r4;
+
+     label4:
+        $i2 = lengthof $r3;
+
+        if $i1 != $i2 goto label1;
+
+        $r5 = new java.lang.StringBuilder;
+
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("readBytesFully: growing buffer from ");
+
+        $i2 = lengthof $r3;
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" to ");
+
+        $i2 = lengthof $r3;
+
+        $i2 = $i2 * 2;
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r6);
+
+        $i2 = lengthof $r3;
+
+        $i2 = $i2 * 2;
+
+        $r2 = newarray (byte)[$i2];
+
+        staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r3, 0, $r2, 0, $i1);
+
+        $r3 = $r2;
+
+        goto label1;
+    }
+
+    public static java.lang.String readStringFully(java.io.InputStream) throws java.io.IOException
+    {
+        java.io.InputStream $r0;
+        java.lang.String $r1;
+        byte[] $r2;
+
+        $r0 := @parameter0: java.io.InputStream;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.StreamUtils: byte[] readBytesFully(java.io.InputStream)>($r0);
+
+        $r1 = new java.lang.String;
+
+        specialinvoke $r1.<java.lang.String: void <init>(byte[],java.lang.String)>($r2, "utf-8");
+
+        return $r1;
+    }
+}

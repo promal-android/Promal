@@ -1,0 +1,18 @@
+public interface  android.os.Parcelable extends java.lang.Object
+{
+    public static final int PARCELABLE_WRITE_RETURN_VALUE;
+    public static final int CONTENTS_FILE_DESCRIPTOR;
+
+    public abstract int describeContents();
+
+    public abstract void writeToParcel(android.os.Parcel, int);
+
+    public static void <clinit>()
+    {
+        <android.os.Parcelable: int CONTENTS_FILE_DESCRIPTOR> = 1;
+
+        <android.os.Parcelable: int PARCELABLE_WRITE_RETURN_VALUE> = 1;
+
+        return;
+    }
+}

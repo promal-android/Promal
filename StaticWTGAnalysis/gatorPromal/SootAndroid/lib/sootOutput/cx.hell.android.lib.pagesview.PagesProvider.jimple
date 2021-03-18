@@ -1,0 +1,36 @@
+public abstract class cx.hell.android.lib.pagesview.PagesProvider extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        cx.hell.android.lib.pagesview.PagesProvider $r0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesProvider;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public abstract android.graphics.Bitmap getPageBitmap(cx.hell.android.lib.pagesview.Tile);
+
+    public abstract int getPageCount();
+
+    public abstract int[][] getPageSizes();
+
+    public abstract float getRenderAhead();
+
+    public void setOnImageRenderedListener(cx.hell.android.lib.pagesview.OnImageRenderedListener)
+    {
+        cx.hell.android.lib.pagesview.PagesProvider $r0;
+        cx.hell.android.lib.pagesview.OnImageRenderedListener $r1;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesProvider;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.OnImageRenderedListener;
+
+        return;
+    }
+
+    public abstract void setVisibleTiles(java.util.Collection);
+}

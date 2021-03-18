@@ -1,0 +1,82 @@
+public class android.webkit.WebView$HitTestResult extends java.lang.Object
+{
+    public static final int UNKNOWN_TYPE;
+    public static final int ANCHOR_TYPE;
+    public static final int PHONE_TYPE;
+    public static final int GEO_TYPE;
+    public static final int EMAIL_TYPE;
+    public static final int IMAGE_TYPE;
+    public static final int IMAGE_ANCHOR_TYPE;
+    public static final int SRC_ANCHOR_TYPE;
+    public static final int SRC_IMAGE_ANCHOR_TYPE;
+    public static final int EDIT_TEXT_TYPE;
+
+    void <init>()
+    {
+        android.webkit.WebView$HitTestResult r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.webkit.WebView$HitTestResult;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getType()
+    {
+        android.webkit.WebView$HitTestResult r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.webkit.WebView$HitTestResult;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getExtra()
+    {
+        android.webkit.WebView$HitTestResult r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.webkit.WebView$HitTestResult;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static void <clinit>()
+    {
+        <android.webkit.WebView$HitTestResult: int EDIT_TEXT_TYPE> = 9;
+
+        <android.webkit.WebView$HitTestResult: int SRC_IMAGE_ANCHOR_TYPE> = 8;
+
+        <android.webkit.WebView$HitTestResult: int SRC_ANCHOR_TYPE> = 7;
+
+        <android.webkit.WebView$HitTestResult: int IMAGE_ANCHOR_TYPE> = 6;
+
+        <android.webkit.WebView$HitTestResult: int IMAGE_TYPE> = 5;
+
+        <android.webkit.WebView$HitTestResult: int EMAIL_TYPE> = 4;
+
+        <android.webkit.WebView$HitTestResult: int GEO_TYPE> = 3;
+
+        <android.webkit.WebView$HitTestResult: int PHONE_TYPE> = 2;
+
+        <android.webkit.WebView$HitTestResult: int ANCHOR_TYPE> = 1;
+
+        <android.webkit.WebView$HitTestResult: int UNKNOWN_TYPE> = 0;
+
+        return;
+    }
+}

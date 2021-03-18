@@ -1,0 +1,980 @@
+public class android.media.AudioManager extends java.lang.Object
+{
+    public static final java.lang.String ACTION_AUDIO_BECOMING_NOISY;
+    public static final java.lang.String RINGER_MODE_CHANGED_ACTION;
+    public static final java.lang.String EXTRA_RINGER_MODE;
+    public static final java.lang.String VIBRATE_SETTING_CHANGED_ACTION;
+    public static final java.lang.String EXTRA_VIBRATE_SETTING;
+    public static final java.lang.String EXTRA_VIBRATE_TYPE;
+    public static final int STREAM_VOICE_CALL;
+    public static final int STREAM_SYSTEM;
+    public static final int STREAM_RING;
+    public static final int STREAM_MUSIC;
+    public static final int STREAM_ALARM;
+    public static final int STREAM_NOTIFICATION;
+    public static final int STREAM_DTMF;
+    public static final int NUM_STREAMS;
+    public static final int ADJUST_RAISE;
+    public static final int ADJUST_LOWER;
+    public static final int ADJUST_SAME;
+    public static final int FLAG_SHOW_UI;
+    public static final int FLAG_ALLOW_RINGER_MODES;
+    public static final int FLAG_PLAY_SOUND;
+    public static final int FLAG_REMOVE_SOUND_AND_VIBRATE;
+    public static final int FLAG_VIBRATE;
+    public static final int RINGER_MODE_SILENT;
+    public static final int RINGER_MODE_VIBRATE;
+    public static final int RINGER_MODE_NORMAL;
+    public static final int VIBRATE_TYPE_RINGER;
+    public static final int VIBRATE_TYPE_NOTIFICATION;
+    public static final int VIBRATE_SETTING_OFF;
+    public static final int VIBRATE_SETTING_ON;
+    public static final int VIBRATE_SETTING_ONLY_SILENT;
+    public static final int USE_DEFAULT_STREAM_TYPE;
+    public static final java.lang.String ACTION_SCO_AUDIO_STATE_CHANGED;
+    public static final java.lang.String ACTION_SCO_AUDIO_STATE_UPDATED;
+    public static final java.lang.String EXTRA_SCO_AUDIO_STATE;
+    public static final java.lang.String EXTRA_SCO_AUDIO_PREVIOUS_STATE;
+    public static final int SCO_AUDIO_STATE_DISCONNECTED;
+    public static final int SCO_AUDIO_STATE_CONNECTED;
+    public static final int SCO_AUDIO_STATE_CONNECTING;
+    public static final int SCO_AUDIO_STATE_ERROR;
+    public static final int MODE_INVALID;
+    public static final int MODE_CURRENT;
+    public static final int MODE_NORMAL;
+    public static final int MODE_RINGTONE;
+    public static final int MODE_IN_CALL;
+    public static final int MODE_IN_COMMUNICATION;
+    public static final int ROUTE_EARPIECE;
+    public static final int ROUTE_SPEAKER;
+    public static final int ROUTE_BLUETOOTH;
+    public static final int ROUTE_BLUETOOTH_SCO;
+    public static final int ROUTE_HEADSET;
+    public static final int ROUTE_BLUETOOTH_A2DP;
+    public static final int ROUTE_ALL;
+    public static final int FX_KEY_CLICK;
+    public static final int FX_FOCUS_NAVIGATION_UP;
+    public static final int FX_FOCUS_NAVIGATION_DOWN;
+    public static final int FX_FOCUS_NAVIGATION_LEFT;
+    public static final int FX_FOCUS_NAVIGATION_RIGHT;
+    public static final int FX_KEYPRESS_STANDARD;
+    public static final int FX_KEYPRESS_SPACEBAR;
+    public static final int FX_KEYPRESS_DELETE;
+    public static final int FX_KEYPRESS_RETURN;
+    public static final int AUDIOFOCUS_GAIN;
+    public static final int AUDIOFOCUS_GAIN_TRANSIENT;
+    public static final int AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK;
+    public static final int AUDIOFOCUS_LOSS;
+    public static final int AUDIOFOCUS_LOSS_TRANSIENT;
+    public static final int AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK;
+    public static final int AUDIOFOCUS_REQUEST_FAILED;
+    public static final int AUDIOFOCUS_REQUEST_GRANTED;
+    public static final java.lang.String PROPERTY_OUTPUT_SAMPLE_RATE;
+    public static final java.lang.String PROPERTY_OUTPUT_FRAMES_PER_BUFFER;
+
+    void <init>()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void adjustStreamVolume(int, int, int)
+    {
+        android.media.AudioManager r0;
+        int i0, i1, i2;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        i2 := @parameter2: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void adjustVolume(int, int)
+    {
+        android.media.AudioManager r0;
+        int i0, i1;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void adjustSuggestedStreamVolume(int, int, int)
+    {
+        android.media.AudioManager r0;
+        int i0, i1, i2;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        i2 := @parameter2: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getRingerMode()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getStreamMaxVolume(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getStreamVolume(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setRingerMode(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setStreamVolume(int, int, int)
+    {
+        android.media.AudioManager r0;
+        int i0, i1, i2;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        i2 := @parameter2: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setStreamSolo(int, boolean)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        z0 := @parameter1: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setStreamMute(int, boolean)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        z0 := @parameter1: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean shouldVibrate(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getVibrateSetting(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setVibrateSetting(int, int)
+    {
+        android.media.AudioManager r0;
+        int i0, i1;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setSpeakerphoneOn(boolean)
+    {
+        android.media.AudioManager r0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        z0 := @parameter0: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isSpeakerphoneOn()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isBluetoothScoAvailableOffCall()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void startBluetoothSco()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void stopBluetoothSco()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setBluetoothScoOn(boolean)
+    {
+        android.media.AudioManager r0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        z0 := @parameter0: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isBluetoothScoOn()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setBluetoothA2dpOn(boolean)
+    {
+        android.media.AudioManager r0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        z0 := @parameter0: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isBluetoothA2dpOn()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setWiredHeadsetOn(boolean)
+    {
+        android.media.AudioManager r0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        z0 := @parameter0: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isWiredHeadsetOn()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setMicrophoneMute(boolean)
+    {
+        android.media.AudioManager r0;
+        boolean z0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        z0 := @parameter0: boolean;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isMicrophoneMute()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setMode(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getMode()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setRouting(int, int, int)
+    {
+        android.media.AudioManager r0;
+        int i0, i1, i2;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        i2 := @parameter2: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getRouting(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isMusicActive()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setParameters(java.lang.String)
+    {
+        android.media.AudioManager r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String getParameters(java.lang.String)
+    {
+        android.media.AudioManager r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void playSoundEffect(int)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void playSoundEffect(int, float)
+    {
+        android.media.AudioManager r0;
+        int i0;
+        float f0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        i0 := @parameter0: int;
+
+        f0 := @parameter1: float;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void loadSoundEffects()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void unloadSoundEffects()
+    {
+        android.media.AudioManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.media.AudioManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int requestAudioFocus(android.media.AudioManager$OnAudioFocusChangeListener, int, int)
+    {
+        android.media.AudioManager r0;
+        android.media.AudioManager$OnAudioFocusChangeListener r1;
+        int i0, i1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: android.media.AudioManager$OnAudioFocusChangeListener;
+
+        i0 := @parameter1: int;
+
+        i1 := @parameter2: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int abandonAudioFocus(android.media.AudioManager$OnAudioFocusChangeListener)
+    {
+        android.media.AudioManager r0;
+        android.media.AudioManager$OnAudioFocusChangeListener r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: android.media.AudioManager$OnAudioFocusChangeListener;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void registerMediaButtonEventReceiver(android.content.ComponentName)
+    {
+        android.media.AudioManager r0;
+        android.content.ComponentName r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: android.content.ComponentName;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void unregisterMediaButtonEventReceiver(android.content.ComponentName)
+    {
+        android.media.AudioManager r0;
+        android.content.ComponentName r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: android.content.ComponentName;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void registerRemoteControlClient(android.media.RemoteControlClient)
+    {
+        android.media.AudioManager r0;
+        android.media.RemoteControlClient r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: android.media.RemoteControlClient;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void unregisterRemoteControlClient(android.media.RemoteControlClient)
+    {
+        android.media.AudioManager r0;
+        android.media.RemoteControlClient r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: android.media.RemoteControlClient;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String getProperty(java.lang.String)
+    {
+        android.media.AudioManager r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.media.AudioManager;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static void <clinit>()
+    {
+        <android.media.AudioManager: java.lang.String PROPERTY_OUTPUT_FRAMES_PER_BUFFER> = "android.media.property.OUTPUT_FRAMES_PER_BUFFER";
+
+        <android.media.AudioManager: java.lang.String PROPERTY_OUTPUT_SAMPLE_RATE> = "android.media.property.OUTPUT_SAMPLE_RATE";
+
+        <android.media.AudioManager: int AUDIOFOCUS_REQUEST_GRANTED> = 1;
+
+        <android.media.AudioManager: int AUDIOFOCUS_REQUEST_FAILED> = 0;
+
+        <android.media.AudioManager: int AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK> = -3;
+
+        <android.media.AudioManager: int AUDIOFOCUS_LOSS_TRANSIENT> = -2;
+
+        <android.media.AudioManager: int AUDIOFOCUS_LOSS> = -1;
+
+        <android.media.AudioManager: int AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK> = 3;
+
+        <android.media.AudioManager: int AUDIOFOCUS_GAIN_TRANSIENT> = 2;
+
+        <android.media.AudioManager: int AUDIOFOCUS_GAIN> = 1;
+
+        <android.media.AudioManager: int FX_KEYPRESS_RETURN> = 8;
+
+        <android.media.AudioManager: int FX_KEYPRESS_DELETE> = 7;
+
+        <android.media.AudioManager: int FX_KEYPRESS_SPACEBAR> = 6;
+
+        <android.media.AudioManager: int FX_KEYPRESS_STANDARD> = 5;
+
+        <android.media.AudioManager: int FX_FOCUS_NAVIGATION_RIGHT> = 4;
+
+        <android.media.AudioManager: int FX_FOCUS_NAVIGATION_LEFT> = 3;
+
+        <android.media.AudioManager: int FX_FOCUS_NAVIGATION_DOWN> = 2;
+
+        <android.media.AudioManager: int FX_FOCUS_NAVIGATION_UP> = 1;
+
+        <android.media.AudioManager: int FX_KEY_CLICK> = 0;
+
+        <android.media.AudioManager: int ROUTE_ALL> = -1;
+
+        <android.media.AudioManager: int ROUTE_BLUETOOTH_A2DP> = 16;
+
+        <android.media.AudioManager: int ROUTE_HEADSET> = 8;
+
+        <android.media.AudioManager: int ROUTE_BLUETOOTH_SCO> = 4;
+
+        <android.media.AudioManager: int ROUTE_BLUETOOTH> = 4;
+
+        <android.media.AudioManager: int ROUTE_SPEAKER> = 2;
+
+        <android.media.AudioManager: int ROUTE_EARPIECE> = 1;
+
+        <android.media.AudioManager: int MODE_IN_COMMUNICATION> = 3;
+
+        <android.media.AudioManager: int MODE_IN_CALL> = 2;
+
+        <android.media.AudioManager: int MODE_RINGTONE> = 1;
+
+        <android.media.AudioManager: int MODE_NORMAL> = 0;
+
+        <android.media.AudioManager: int MODE_CURRENT> = -1;
+
+        <android.media.AudioManager: int MODE_INVALID> = -2;
+
+        <android.media.AudioManager: int SCO_AUDIO_STATE_ERROR> = -1;
+
+        <android.media.AudioManager: int SCO_AUDIO_STATE_CONNECTING> = 2;
+
+        <android.media.AudioManager: int SCO_AUDIO_STATE_CONNECTED> = 1;
+
+        <android.media.AudioManager: int SCO_AUDIO_STATE_DISCONNECTED> = 0;
+
+        <android.media.AudioManager: java.lang.String EXTRA_SCO_AUDIO_PREVIOUS_STATE> = "android.media.extra.SCO_AUDIO_PREVIOUS_STATE";
+
+        <android.media.AudioManager: java.lang.String EXTRA_SCO_AUDIO_STATE> = "android.media.extra.SCO_AUDIO_STATE";
+
+        <android.media.AudioManager: java.lang.String ACTION_SCO_AUDIO_STATE_UPDATED> = "android.media.ACTION_SCO_AUDIO_STATE_UPDATED";
+
+        <android.media.AudioManager: java.lang.String ACTION_SCO_AUDIO_STATE_CHANGED> = "android.media.SCO_AUDIO_STATE_CHANGED";
+
+        <android.media.AudioManager: int USE_DEFAULT_STREAM_TYPE> = -2147483648;
+
+        <android.media.AudioManager: int VIBRATE_SETTING_ONLY_SILENT> = 2;
+
+        <android.media.AudioManager: int VIBRATE_SETTING_ON> = 1;
+
+        <android.media.AudioManager: int VIBRATE_SETTING_OFF> = 0;
+
+        <android.media.AudioManager: int VIBRATE_TYPE_NOTIFICATION> = 1;
+
+        <android.media.AudioManager: int VIBRATE_TYPE_RINGER> = 0;
+
+        <android.media.AudioManager: int RINGER_MODE_NORMAL> = 2;
+
+        <android.media.AudioManager: int RINGER_MODE_VIBRATE> = 1;
+
+        <android.media.AudioManager: int RINGER_MODE_SILENT> = 0;
+
+        <android.media.AudioManager: int FLAG_VIBRATE> = 16;
+
+        <android.media.AudioManager: int FLAG_REMOVE_SOUND_AND_VIBRATE> = 8;
+
+        <android.media.AudioManager: int FLAG_PLAY_SOUND> = 4;
+
+        <android.media.AudioManager: int FLAG_ALLOW_RINGER_MODES> = 2;
+
+        <android.media.AudioManager: int FLAG_SHOW_UI> = 1;
+
+        <android.media.AudioManager: int ADJUST_SAME> = 0;
+
+        <android.media.AudioManager: int ADJUST_LOWER> = -1;
+
+        <android.media.AudioManager: int ADJUST_RAISE> = 1;
+
+        <android.media.AudioManager: int NUM_STREAMS> = 5;
+
+        <android.media.AudioManager: int STREAM_DTMF> = 8;
+
+        <android.media.AudioManager: int STREAM_NOTIFICATION> = 5;
+
+        <android.media.AudioManager: int STREAM_ALARM> = 4;
+
+        <android.media.AudioManager: int STREAM_MUSIC> = 3;
+
+        <android.media.AudioManager: int STREAM_RING> = 2;
+
+        <android.media.AudioManager: int STREAM_SYSTEM> = 1;
+
+        <android.media.AudioManager: int STREAM_VOICE_CALL> = 0;
+
+        <android.media.AudioManager: java.lang.String EXTRA_VIBRATE_TYPE> = "android.media.EXTRA_VIBRATE_TYPE";
+
+        <android.media.AudioManager: java.lang.String EXTRA_VIBRATE_SETTING> = "android.media.EXTRA_VIBRATE_SETTING";
+
+        <android.media.AudioManager: java.lang.String VIBRATE_SETTING_CHANGED_ACTION> = "android.media.VIBRATE_SETTING_CHANGED";
+
+        <android.media.AudioManager: java.lang.String EXTRA_RINGER_MODE> = "android.media.EXTRA_RINGER_MODE";
+
+        <android.media.AudioManager: java.lang.String RINGER_MODE_CHANGED_ACTION> = "android.media.RINGER_MODE_CHANGED";
+
+        <android.media.AudioManager: java.lang.String ACTION_AUDIO_BECOMING_NOISY> = "android.media.AUDIO_BECOMING_NOISY";
+
+        return;
+    }
+}

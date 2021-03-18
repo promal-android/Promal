@@ -1,0 +1,148 @@
+class cx.hell.android.pdfview.ChooseFileActivity$3 extends java.lang.Object implements java.util.Comparator
+{
+    final cx.hell.android.pdfview.ChooseFileActivity this$0;
+
+    void <init>(cx.hell.android.pdfview.ChooseFileActivity)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity$3 $r0;
+        cx.hell.android.pdfview.ChooseFileActivity $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity$3;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.ChooseFileActivity;
+
+        $r0.<cx.hell.android.pdfview.ChooseFileActivity$3: cx.hell.android.pdfview.ChooseFileActivity this$0> = $r1;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public int compare(java.io.File, java.io.File)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity$3 $r0;
+        java.io.File $r1, $r2;
+        java.lang.NullPointerException $r3;
+        java.lang.RuntimeException $r4;
+        cx.hell.android.pdfview.ChooseFileActivity $r5;
+        java.lang.Boolean $r6;
+        boolean $z0, $z1;
+        java.lang.String $r7, $r8;
+        int $i0;
+        java.lang.StringBuilder $r9;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity$3;
+
+        $r1 := @parameter0: java.io.File;
+
+        $r2 := @parameter1: java.io.File;
+
+        if $r1 != null goto label01;
+
+        $r4 = new java.lang.RuntimeException;
+
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("f1 is null inside sort");
+
+        throw $r4;
+
+     label01:
+        if $r2 != null goto label02;
+
+        $r4 = new java.lang.RuntimeException;
+
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("f2 is null inside sort");
+
+        throw $r4;
+
+     label02:
+        $r5 = $r0.<cx.hell.android.pdfview.ChooseFileActivity$3: cx.hell.android.pdfview.ChooseFileActivity this$0>;
+
+        $r6 = staticinvoke <cx.hell.android.pdfview.ChooseFileActivity: java.lang.Boolean access$2(cx.hell.android.pdfview.ChooseFileActivity)>($r5);
+
+        $z0 = virtualinvoke $r6.<java.lang.Boolean: boolean booleanValue()>();
+
+     label03:
+        if $z0 == 0 goto label09;
+
+     label04:
+        $z0 = virtualinvoke $r1.<java.io.File: boolean isDirectory()>();
+
+        $z1 = virtualinvoke $r2.<java.io.File: boolean isDirectory()>();
+
+     label05:
+        if $z0 == $z1 goto label09;
+
+     label06:
+        $z0 = virtualinvoke $r1.<java.io.File: boolean isDirectory()>();
+
+     label07:
+        if $z0 == 0 goto label08;
+
+        return -1;
+
+     label08:
+        return 1;
+
+     label09:
+        $r7 = virtualinvoke $r1.<java.io.File: java.lang.String getName()>();
+
+        $r7 = virtualinvoke $r7.<java.lang.String: java.lang.String toLowerCase()>();
+
+        $r8 = virtualinvoke $r2.<java.io.File: java.lang.String getName()>();
+
+        $r8 = virtualinvoke $r8.<java.lang.String: java.lang.String toLowerCase()>();
+
+        $i0 = virtualinvoke $r7.<java.lang.String: int compareTo(java.lang.String)>($r8);
+
+     label10:
+        return $i0;
+
+     label11:
+        $r3 := @caughtexception;
+
+        $r4 = new java.lang.RuntimeException;
+
+        $r9 = new java.lang.StringBuilder;
+
+        specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("failed to compare ");
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r1);
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" and ");
+
+        $r9 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r2);
+
+        $r7 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>($r7, $r3);
+
+        throw $r4;
+
+        catch java.lang.NullPointerException from label02 to label03 with label11;
+        catch java.lang.NullPointerException from label04 to label05 with label11;
+        catch java.lang.NullPointerException from label06 to label07 with label11;
+        catch java.lang.NullPointerException from label09 to label10 with label11;
+    }
+
+    public volatile int compare(java.lang.Object, java.lang.Object)
+    {
+        cx.hell.android.pdfview.ChooseFileActivity$3 $r0;
+        int $i0;
+        java.lang.Object $r1, $r2;
+        java.io.File $r3, $r4;
+
+        $r0 := @this: cx.hell.android.pdfview.ChooseFileActivity$3;
+
+        $r1 := @parameter0: java.lang.Object;
+
+        $r2 := @parameter1: java.lang.Object;
+
+        $r3 = (java.io.File) $r1;
+
+        $r4 = (java.io.File) $r2;
+
+        $i0 = virtualinvoke $r0.<cx.hell.android.pdfview.ChooseFileActivity$3: int compare(java.io.File,java.io.File)>($r3, $r4);
+
+        return $i0;
+    }
+}

@@ -1,0 +1,2904 @@
+public class android.content.Intent extends java.lang.Object implements android.os.Parcelable, java.lang.Cloneable
+{
+    public static final java.lang.String ACTION_MAIN;
+    public static final java.lang.String ACTION_VIEW;
+    public static final java.lang.String ACTION_DEFAULT;
+    public static final java.lang.String ACTION_ATTACH_DATA;
+    public static final java.lang.String ACTION_EDIT;
+    public static final java.lang.String ACTION_INSERT_OR_EDIT;
+    public static final java.lang.String ACTION_PICK;
+    public static final java.lang.String ACTION_CREATE_SHORTCUT;
+    public static final java.lang.String EXTRA_SHORTCUT_INTENT;
+    public static final java.lang.String EXTRA_SHORTCUT_NAME;
+    public static final java.lang.String EXTRA_SHORTCUT_ICON;
+    public static final java.lang.String EXTRA_SHORTCUT_ICON_RESOURCE;
+    public static final java.lang.String ACTION_CHOOSER;
+    public static final java.lang.String ACTION_GET_CONTENT;
+    public static final java.lang.String ACTION_DIAL;
+    public static final java.lang.String ACTION_CALL;
+    public static final java.lang.String ACTION_SENDTO;
+    public static final java.lang.String ACTION_SEND;
+    public static final java.lang.String ACTION_SEND_MULTIPLE;
+    public static final java.lang.String ACTION_ANSWER;
+    public static final java.lang.String ACTION_INSERT;
+    public static final java.lang.String ACTION_PASTE;
+    public static final java.lang.String ACTION_DELETE;
+    public static final java.lang.String ACTION_RUN;
+    public static final java.lang.String ACTION_SYNC;
+    public static final java.lang.String ACTION_PICK_ACTIVITY;
+    public static final java.lang.String ACTION_SEARCH;
+    public static final java.lang.String ACTION_SYSTEM_TUTORIAL;
+    public static final java.lang.String ACTION_WEB_SEARCH;
+    public static final java.lang.String ACTION_ASSIST;
+    public static final java.lang.String ACTION_ALL_APPS;
+    public static final java.lang.String ACTION_SET_WALLPAPER;
+    public static final java.lang.String ACTION_BUG_REPORT;
+    public static final java.lang.String ACTION_FACTORY_TEST;
+    public static final java.lang.String ACTION_CALL_BUTTON;
+    public static final java.lang.String ACTION_VOICE_COMMAND;
+    public static final java.lang.String ACTION_SEARCH_LONG_PRESS;
+    public static final java.lang.String ACTION_APP_ERROR;
+    public static final java.lang.String ACTION_POWER_USAGE_SUMMARY;
+    public static final java.lang.String ACTION_MANAGE_NETWORK_USAGE;
+    public static final java.lang.String ACTION_INSTALL_PACKAGE;
+    public static final java.lang.String EXTRA_INSTALLER_PACKAGE_NAME;
+    public static final java.lang.String EXTRA_NOT_UNKNOWN_SOURCE;
+    public static final java.lang.String EXTRA_ORIGINATING_URI;
+    public static final java.lang.String EXTRA_REFERRER;
+    public static final java.lang.String EXTRA_ALLOW_REPLACE;
+    public static final java.lang.String EXTRA_RETURN_RESULT;
+    public static final java.lang.String ACTION_UNINSTALL_PACKAGE;
+    public static final java.lang.String ACTION_SCREEN_OFF;
+    public static final java.lang.String ACTION_SCREEN_ON;
+    public static final java.lang.String ACTION_DREAMING_STOPPED;
+    public static final java.lang.String ACTION_DREAMING_STARTED;
+    public static final java.lang.String ACTION_USER_PRESENT;
+    public static final java.lang.String ACTION_TIME_TICK;
+    public static final java.lang.String ACTION_TIME_CHANGED;
+    public static final java.lang.String ACTION_DATE_CHANGED;
+    public static final java.lang.String ACTION_TIMEZONE_CHANGED;
+    public static final java.lang.String ACTION_BOOT_COMPLETED;
+    public static final java.lang.String ACTION_CLOSE_SYSTEM_DIALOGS;
+    public static final java.lang.String ACTION_PACKAGE_INSTALL;
+    public static final java.lang.String ACTION_PACKAGE_ADDED;
+    public static final java.lang.String ACTION_PACKAGE_REPLACED;
+    public static final java.lang.String ACTION_MY_PACKAGE_REPLACED;
+    public static final java.lang.String ACTION_PACKAGE_REMOVED;
+    public static final java.lang.String ACTION_PACKAGE_FULLY_REMOVED;
+    public static final java.lang.String ACTION_PACKAGE_CHANGED;
+    public static final java.lang.String ACTION_PACKAGE_RESTARTED;
+    public static final java.lang.String ACTION_PACKAGE_DATA_CLEARED;
+    public static final java.lang.String ACTION_UID_REMOVED;
+    public static final java.lang.String ACTION_PACKAGE_FIRST_LAUNCH;
+    public static final java.lang.String ACTION_PACKAGE_NEEDS_VERIFICATION;
+    public static final java.lang.String ACTION_PACKAGE_VERIFIED;
+    public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE;
+    public static final java.lang.String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE;
+    public static final java.lang.String ACTION_WALLPAPER_CHANGED;
+    public static final java.lang.String ACTION_CONFIGURATION_CHANGED;
+    public static final java.lang.String ACTION_LOCALE_CHANGED;
+    public static final java.lang.String ACTION_BATTERY_CHANGED;
+    public static final java.lang.String ACTION_BATTERY_LOW;
+    public static final java.lang.String ACTION_BATTERY_OKAY;
+    public static final java.lang.String ACTION_POWER_CONNECTED;
+    public static final java.lang.String ACTION_POWER_DISCONNECTED;
+    public static final java.lang.String ACTION_SHUTDOWN;
+    public static final java.lang.String ACTION_DEVICE_STORAGE_LOW;
+    public static final java.lang.String ACTION_DEVICE_STORAGE_OK;
+    public static final java.lang.String ACTION_MANAGE_PACKAGE_STORAGE;
+    public static final java.lang.String ACTION_UMS_CONNECTED;
+    public static final java.lang.String ACTION_UMS_DISCONNECTED;
+    public static final java.lang.String ACTION_MEDIA_REMOVED;
+    public static final java.lang.String ACTION_MEDIA_UNMOUNTED;
+    public static final java.lang.String ACTION_MEDIA_CHECKING;
+    public static final java.lang.String ACTION_MEDIA_NOFS;
+    public static final java.lang.String ACTION_MEDIA_MOUNTED;
+    public static final java.lang.String ACTION_MEDIA_SHARED;
+    public static final java.lang.String ACTION_MEDIA_BAD_REMOVAL;
+    public static final java.lang.String ACTION_MEDIA_UNMOUNTABLE;
+    public static final java.lang.String ACTION_MEDIA_EJECT;
+    public static final java.lang.String ACTION_MEDIA_SCANNER_STARTED;
+    public static final java.lang.String ACTION_MEDIA_SCANNER_FINISHED;
+    public static final java.lang.String ACTION_MEDIA_SCANNER_SCAN_FILE;
+    public static final java.lang.String ACTION_MEDIA_BUTTON;
+    public static final java.lang.String ACTION_CAMERA_BUTTON;
+    public static final java.lang.String ACTION_GTALK_SERVICE_CONNECTED;
+    public static final java.lang.String ACTION_GTALK_SERVICE_DISCONNECTED;
+    public static final java.lang.String ACTION_INPUT_METHOD_CHANGED;
+    public static final java.lang.String ACTION_AIRPLANE_MODE_CHANGED;
+    public static final java.lang.String ACTION_PROVIDER_CHANGED;
+    public static final java.lang.String ACTION_HEADSET_PLUG;
+    public static final java.lang.String ACTION_NEW_OUTGOING_CALL;
+    public static final java.lang.String ACTION_REBOOT;
+    public static final java.lang.String ACTION_DOCK_EVENT;
+    public static final java.lang.String ACTION_USER_INITIALIZE;
+    public static final java.lang.String ACTION_USER_FOREGROUND;
+    public static final java.lang.String ACTION_USER_BACKGROUND;
+    public static final java.lang.String ACTION_QUICK_CLOCK;
+    public static final java.lang.String CATEGORY_DEFAULT;
+    public static final java.lang.String CATEGORY_BROWSABLE;
+    public static final java.lang.String CATEGORY_ALTERNATIVE;
+    public static final java.lang.String CATEGORY_SELECTED_ALTERNATIVE;
+    public static final java.lang.String CATEGORY_TAB;
+    public static final java.lang.String CATEGORY_LAUNCHER;
+    public static final java.lang.String CATEGORY_INFO;
+    public static final java.lang.String CATEGORY_HOME;
+    public static final java.lang.String CATEGORY_PREFERENCE;
+    public static final java.lang.String CATEGORY_DEVELOPMENT_PREFERENCE;
+    public static final java.lang.String CATEGORY_EMBED;
+    public static final java.lang.String CATEGORY_APP_MARKET;
+    public static final java.lang.String CATEGORY_MONKEY;
+    public static final java.lang.String CATEGORY_TEST;
+    public static final java.lang.String CATEGORY_UNIT_TEST;
+    public static final java.lang.String CATEGORY_SAMPLE_CODE;
+    public static final java.lang.String CATEGORY_OPENABLE;
+    public static final java.lang.String CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST;
+    public static final java.lang.String CATEGORY_CAR_DOCK;
+    public static final java.lang.String CATEGORY_DESK_DOCK;
+    public static final java.lang.String CATEGORY_LE_DESK_DOCK;
+    public static final java.lang.String CATEGORY_HE_DESK_DOCK;
+    public static final java.lang.String CATEGORY_CAR_MODE;
+    public static final java.lang.String CATEGORY_APP_BROWSER;
+    public static final java.lang.String CATEGORY_APP_CALCULATOR;
+    public static final java.lang.String CATEGORY_APP_CALENDAR;
+    public static final java.lang.String CATEGORY_APP_CONTACTS;
+    public static final java.lang.String CATEGORY_APP_EMAIL;
+    public static final java.lang.String CATEGORY_APP_GALLERY;
+    public static final java.lang.String CATEGORY_APP_MAPS;
+    public static final java.lang.String CATEGORY_APP_MESSAGING;
+    public static final java.lang.String CATEGORY_APP_MUSIC;
+    public static final java.lang.String EXTRA_TEMPLATE;
+    public static final java.lang.String EXTRA_TEXT;
+    public static final java.lang.String EXTRA_HTML_TEXT;
+    public static final java.lang.String EXTRA_STREAM;
+    public static final java.lang.String EXTRA_EMAIL;
+    public static final java.lang.String EXTRA_CC;
+    public static final java.lang.String EXTRA_BCC;
+    public static final java.lang.String EXTRA_SUBJECT;
+    public static final java.lang.String EXTRA_INTENT;
+    public static final java.lang.String EXTRA_TITLE;
+    public static final java.lang.String EXTRA_INITIAL_INTENTS;
+    public static final java.lang.String EXTRA_KEY_EVENT;
+    public static final java.lang.String EXTRA_DONT_KILL_APP;
+    public static final java.lang.String EXTRA_PHONE_NUMBER;
+    public static final java.lang.String EXTRA_UID;
+    public static final java.lang.String EXTRA_DATA_REMOVED;
+    public static final java.lang.String EXTRA_REPLACING;
+    public static final java.lang.String EXTRA_ALARM_COUNT;
+    public static final java.lang.String EXTRA_DOCK_STATE;
+    public static final int EXTRA_DOCK_STATE_UNDOCKED;
+    public static final int EXTRA_DOCK_STATE_DESK;
+    public static final int EXTRA_DOCK_STATE_CAR;
+    public static final int EXTRA_DOCK_STATE_LE_DESK;
+    public static final int EXTRA_DOCK_STATE_HE_DESK;
+    public static final java.lang.String METADATA_DOCK_HOME;
+    public static final java.lang.String EXTRA_BUG_REPORT;
+    public static final java.lang.String EXTRA_REMOTE_INTENT_TOKEN;
+    public static final java.lang.String EXTRA_CHANGED_COMPONENT_NAME;
+    public static final java.lang.String EXTRA_CHANGED_COMPONENT_NAME_LIST;
+    public static final java.lang.String EXTRA_CHANGED_PACKAGE_LIST;
+    public static final java.lang.String EXTRA_CHANGED_UID_LIST;
+    public static final java.lang.String EXTRA_LOCAL_ONLY;
+    public static final int FLAG_GRANT_READ_URI_PERMISSION;
+    public static final int FLAG_GRANT_WRITE_URI_PERMISSION;
+    public static final int FLAG_FROM_BACKGROUND;
+    public static final int FLAG_DEBUG_LOG_RESOLUTION;
+    public static final int FLAG_EXCLUDE_STOPPED_PACKAGES;
+    public static final int FLAG_INCLUDE_STOPPED_PACKAGES;
+    public static final int FLAG_ACTIVITY_NO_HISTORY;
+    public static final int FLAG_ACTIVITY_SINGLE_TOP;
+    public static final int FLAG_ACTIVITY_NEW_TASK;
+    public static final int FLAG_ACTIVITY_MULTIPLE_TASK;
+    public static final int FLAG_ACTIVITY_CLEAR_TOP;
+    public static final int FLAG_ACTIVITY_FORWARD_RESULT;
+    public static final int FLAG_ACTIVITY_PREVIOUS_IS_TOP;
+    public static final int FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS;
+    public static final int FLAG_ACTIVITY_BROUGHT_TO_FRONT;
+    public static final int FLAG_ACTIVITY_RESET_TASK_IF_NEEDED;
+    public static final int FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY;
+    public static final int FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
+    public static final int FLAG_ACTIVITY_NO_USER_ACTION;
+    public static final int FLAG_ACTIVITY_REORDER_TO_FRONT;
+    public static final int FLAG_ACTIVITY_NO_ANIMATION;
+    public static final int FLAG_ACTIVITY_CLEAR_TASK;
+    public static final int FLAG_ACTIVITY_TASK_ON_HOME;
+    public static final int FLAG_RECEIVER_REGISTERED_ONLY;
+    public static final int FLAG_RECEIVER_REPLACE_PENDING;
+    public static final int FLAG_RECEIVER_FOREGROUND;
+    public static final int URI_INTENT_SCHEME;
+    public static final int FILL_IN_ACTION;
+    public static final int FILL_IN_DATA;
+    public static final int FILL_IN_CATEGORIES;
+    public static final int FILL_IN_COMPONENT;
+    public static final int FILL_IN_PACKAGE;
+    public static final int FILL_IN_SOURCE_BOUNDS;
+    public static final int FILL_IN_SELECTOR;
+    public static final int FILL_IN_CLIP_DATA;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(android.content.Intent)
+    {
+        android.content.Intent r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Intent;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void <init>(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void <init>(java.lang.String, android.net.Uri)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        android.net.Uri r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: android.net.Uri;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public void <init>(android.content.Context, java.lang.Class)
+    {
+        android.content.Intent r0;
+        android.content.Context r1;
+        java.lang.Class r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Context;
+
+        r2 := @parameter1: java.lang.Class;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public void <init>(java.lang.String, android.net.Uri, android.content.Context, java.lang.Class)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        android.net.Uri r2;
+        android.content.Context r3;
+        java.lang.Class r4;
+        java.lang.RuntimeException $r5;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: android.net.Uri;
+
+        r3 := @parameter2: android.content.Context;
+
+        r4 := @parameter3: java.lang.Class;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r5 = new java.lang.RuntimeException;
+
+        specialinvoke $r5.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r5;
+    }
+
+    public static android.content.Intent createChooser(android.content.Intent, java.lang.CharSequence)
+    {
+        android.content.Intent r0;
+        java.lang.CharSequence r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @parameter0: android.content.Intent;
+
+        r1 := @parameter1: java.lang.CharSequence;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.Object clone()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.Intent cloneFilter()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.content.Intent makeMainActivity(android.content.ComponentName)
+    {
+        android.content.ComponentName r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.content.ComponentName;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.content.Intent makeMainSelectorActivity(java.lang.String, java.lang.String)
+    {
+        java.lang.String r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @parameter0: java.lang.String;
+
+        r1 := @parameter1: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static android.content.Intent makeRestartActivityTask(android.content.ComponentName)
+    {
+        android.content.ComponentName r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.content.ComponentName;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.content.Intent getIntent(java.lang.String) throws java.net.URISyntaxException
+    {
+        java.lang.String r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: java.lang.String;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.content.Intent parseUri(java.lang.String, int) throws java.net.URISyntaxException
+    {
+        java.lang.String r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: java.lang.String;
+
+        i0 := @parameter1: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.content.Intent getIntentOld(java.lang.String) throws java.net.URISyntaxException
+    {
+        java.lang.String r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: java.lang.String;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getAction()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.net.Uri getData()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getDataString()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getScheme()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getType()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String resolveType(android.content.Context)
+    {
+        android.content.Intent r0;
+        android.content.Context r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Context;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String resolveType(android.content.ContentResolver)
+    {
+        android.content.Intent r0;
+        android.content.ContentResolver r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.ContentResolver;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String resolveTypeIfNeeded(android.content.ContentResolver)
+    {
+        android.content.Intent r0;
+        android.content.ContentResolver r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.ContentResolver;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean hasCategory(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.util.Set getCategories()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.Intent getSelector()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.ClipData getClipData()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setExtrasClassLoader(java.lang.ClassLoader)
+    {
+        android.content.Intent r0;
+        java.lang.ClassLoader r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.ClassLoader;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean hasExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean hasFileDescriptors()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean getBooleanExtra(java.lang.String, boolean)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        boolean z0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        z0 := @parameter1: boolean;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public byte getByteExtra(java.lang.String, byte)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        byte b0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        b0 := @parameter1: byte;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public short getShortExtra(java.lang.String, short)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        short s0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        s0 := @parameter1: short;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public char getCharExtra(java.lang.String, char)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        char c0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        c0 := @parameter1: char;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int getIntExtra(java.lang.String, int)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public long getLongExtra(java.lang.String, long)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        long l0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        l0 := @parameter1: long;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public float getFloatExtra(java.lang.String, float)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        float f0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        f0 := @parameter1: float;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public double getDoubleExtra(java.lang.String, double)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        double d0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        d0 := @parameter1: double;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String getStringExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.CharSequence getCharSequenceExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.os.Parcelable getParcelableExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.os.Parcelable[] getParcelableArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.util.ArrayList getParcelableArrayListExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.io.Serializable getSerializableExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.util.ArrayList getIntegerArrayListExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.util.ArrayList getStringArrayListExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.util.ArrayList getCharSequenceArrayListExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean[] getBooleanArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public byte[] getByteArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public short[] getShortArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public char[] getCharArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int[] getIntArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public long[] getLongArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public float[] getFloatArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public double[] getDoubleArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String[] getStringArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.CharSequence[] getCharSequenceArrayExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.os.Bundle getBundleExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.os.Bundle getExtras()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getFlags()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getPackage()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.ComponentName getComponent()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.graphics.Rect getSourceBounds()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.ComponentName resolveActivity(android.content.pm.PackageManager)
+    {
+        android.content.Intent r0;
+        android.content.pm.PackageManager r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.pm.PackageManager;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.pm.ActivityInfo resolveActivityInfo(android.content.pm.PackageManager, int)
+    {
+        android.content.Intent r0;
+        android.content.pm.PackageManager r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.pm.PackageManager;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setAction(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setData(android.net.Uri)
+    {
+        android.content.Intent r0;
+        android.net.Uri r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.net.Uri;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setDataAndNormalize(android.net.Uri)
+    {
+        android.content.Intent r0;
+        android.net.Uri r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.net.Uri;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setType(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setTypeAndNormalize(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setDataAndType(android.net.Uri, java.lang.String)
+    {
+        android.content.Intent r0;
+        android.net.Uri r1;
+        java.lang.String r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.net.Uri;
+
+        r2 := @parameter1: java.lang.String;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent setDataAndTypeAndNormalize(android.net.Uri, java.lang.String)
+    {
+        android.content.Intent r0;
+        android.net.Uri r1;
+        java.lang.String r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.net.Uri;
+
+        r2 := @parameter1: java.lang.String;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent addCategory(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void removeCategory(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void setSelector(android.content.Intent)
+    {
+        android.content.Intent r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Intent;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void setClipData(android.content.ClipData)
+    {
+        android.content.Intent r0;
+        android.content.ClipData r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.ClipData;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, boolean)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        boolean z0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        z0 := @parameter1: boolean;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, byte)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        byte b0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        b0 := @parameter1: byte;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, char)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        char c0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        c0 := @parameter1: char;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, short)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        short s0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        s0 := @parameter1: short;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, int)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, long)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        long l0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        l0 := @parameter1: long;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, float)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        float f0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        f0 := @parameter1: float;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, double)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        double d0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        d0 := @parameter1: double;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1, r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.lang.String;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, java.lang.CharSequence)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.CharSequence r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.lang.CharSequence;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, android.os.Parcelable)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        android.os.Parcelable r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: android.os.Parcelable;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, android.os.Parcelable[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        android.os.Parcelable[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: android.os.Parcelable[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putParcelableArrayListExtra(java.lang.String, java.util.ArrayList)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.util.ArrayList r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.util.ArrayList;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putIntegerArrayListExtra(java.lang.String, java.util.ArrayList)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.util.ArrayList r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.util.ArrayList;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putStringArrayListExtra(java.lang.String, java.util.ArrayList)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.util.ArrayList r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.util.ArrayList;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putCharSequenceArrayListExtra(java.lang.String, java.util.ArrayList)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.util.ArrayList r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.util.ArrayList;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, java.io.Serializable)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.io.Serializable r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.io.Serializable;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, boolean[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        boolean[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: boolean[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, byte[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        byte[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: byte[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, short[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        short[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: short[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, char[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        char[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: char[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, int[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        int[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: int[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, long[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        long[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: long[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, float[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        float[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: float[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, double[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        double[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: double[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, java.lang.String[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.String[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.lang.String[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, java.lang.CharSequence[])
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.CharSequence[] r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.lang.CharSequence[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtra(java.lang.String, android.os.Bundle)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        android.os.Bundle r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: android.os.Bundle;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent putExtras(android.content.Intent)
+    {
+        android.content.Intent r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Intent;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent putExtras(android.os.Bundle)
+    {
+        android.content.Intent r0;
+        android.os.Bundle r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.os.Bundle;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent replaceExtras(android.content.Intent)
+    {
+        android.content.Intent r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Intent;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent replaceExtras(android.os.Bundle)
+    {
+        android.content.Intent r0;
+        android.os.Bundle r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.os.Bundle;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void removeExtra(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setFlags(int)
+    {
+        android.content.Intent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.Intent addFlags(int)
+    {
+        android.content.Intent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.content.Intent setPackage(java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setComponent(android.content.ComponentName)
+    {
+        android.content.Intent r0;
+        android.content.ComponentName r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.ComponentName;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.content.Intent setClassName(android.content.Context, java.lang.String)
+    {
+        android.content.Intent r0;
+        android.content.Context r1;
+        java.lang.String r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Context;
+
+        r2 := @parameter1: java.lang.String;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent setClassName(java.lang.String, java.lang.String)
+    {
+        android.content.Intent r0;
+        java.lang.String r1, r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: java.lang.String;
+
+        r2 := @parameter1: java.lang.String;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public android.content.Intent setClass(android.content.Context, java.lang.Class)
+    {
+        android.content.Intent r0;
+        android.content.Context r1;
+        java.lang.Class r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Context;
+
+        r2 := @parameter1: java.lang.Class;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public void setSourceBounds(android.graphics.Rect)
+    {
+        android.content.Intent r0;
+        android.graphics.Rect r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.graphics.Rect;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int fillIn(android.content.Intent, int)
+    {
+        android.content.Intent r0, r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Intent;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean filterEquals(android.content.Intent)
+    {
+        android.content.Intent r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.content.Intent;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int filterHashCode()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String toString()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String toURI()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String toUri(int)
+    {
+        android.content.Intent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int describeContents()
+    {
+        android.content.Intent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.Intent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.content.Intent r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void readFromParcel(android.os.Parcel)
+    {
+        android.content.Intent r0;
+        android.os.Parcel r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.Intent;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static android.content.Intent parseIntent(android.content.res.Resources, org.xmlpull.v1.XmlPullParser, android.util.AttributeSet) throws org.xmlpull.v1.XmlPullParserException, java.io.IOException
+    {
+        android.content.res.Resources r0;
+        org.xmlpull.v1.XmlPullParser r1;
+        android.util.AttributeSet r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @parameter0: android.content.res.Resources;
+
+        r1 := @parameter1: org.xmlpull.v1.XmlPullParser;
+
+        r2 := @parameter2: android.util.AttributeSet;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public static java.lang.String normalizeMimeType(java.lang.String)
+    {
+        java.lang.String r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: java.lang.String;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    static void <clinit>()
+    {
+        <android.content.Intent: int FILL_IN_CLIP_DATA> = 128;
+
+        <android.content.Intent: int FILL_IN_SELECTOR> = 64;
+
+        <android.content.Intent: int FILL_IN_SOURCE_BOUNDS> = 32;
+
+        <android.content.Intent: int FILL_IN_PACKAGE> = 16;
+
+        <android.content.Intent: int FILL_IN_COMPONENT> = 8;
+
+        <android.content.Intent: int FILL_IN_CATEGORIES> = 4;
+
+        <android.content.Intent: int FILL_IN_DATA> = 2;
+
+        <android.content.Intent: int FILL_IN_ACTION> = 1;
+
+        <android.content.Intent: int URI_INTENT_SCHEME> = 1;
+
+        <android.content.Intent: int FLAG_RECEIVER_FOREGROUND> = 268435456;
+
+        <android.content.Intent: int FLAG_RECEIVER_REPLACE_PENDING> = 536870912;
+
+        <android.content.Intent: int FLAG_RECEIVER_REGISTERED_ONLY> = 1073741824;
+
+        <android.content.Intent: int FLAG_ACTIVITY_TASK_ON_HOME> = 16384;
+
+        <android.content.Intent: int FLAG_ACTIVITY_CLEAR_TASK> = 32768;
+
+        <android.content.Intent: int FLAG_ACTIVITY_NO_ANIMATION> = 65536;
+
+        <android.content.Intent: int FLAG_ACTIVITY_REORDER_TO_FRONT> = 131072;
+
+        <android.content.Intent: int FLAG_ACTIVITY_NO_USER_ACTION> = 262144;
+
+        <android.content.Intent: int FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET> = 524288;
+
+        <android.content.Intent: int FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY> = 1048576;
+
+        <android.content.Intent: int FLAG_ACTIVITY_RESET_TASK_IF_NEEDED> = 2097152;
+
+        <android.content.Intent: int FLAG_ACTIVITY_BROUGHT_TO_FRONT> = 4194304;
+
+        <android.content.Intent: int FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS> = 8388608;
+
+        <android.content.Intent: int FLAG_ACTIVITY_PREVIOUS_IS_TOP> = 16777216;
+
+        <android.content.Intent: int FLAG_ACTIVITY_FORWARD_RESULT> = 33554432;
+
+        <android.content.Intent: int FLAG_ACTIVITY_CLEAR_TOP> = 67108864;
+
+        <android.content.Intent: int FLAG_ACTIVITY_MULTIPLE_TASK> = 134217728;
+
+        <android.content.Intent: int FLAG_ACTIVITY_NEW_TASK> = 268435456;
+
+        <android.content.Intent: int FLAG_ACTIVITY_SINGLE_TOP> = 536870912;
+
+        <android.content.Intent: int FLAG_ACTIVITY_NO_HISTORY> = 1073741824;
+
+        <android.content.Intent: int FLAG_INCLUDE_STOPPED_PACKAGES> = 32;
+
+        <android.content.Intent: int FLAG_EXCLUDE_STOPPED_PACKAGES> = 16;
+
+        <android.content.Intent: int FLAG_DEBUG_LOG_RESOLUTION> = 8;
+
+        <android.content.Intent: int FLAG_FROM_BACKGROUND> = 4;
+
+        <android.content.Intent: int FLAG_GRANT_WRITE_URI_PERMISSION> = 2;
+
+        <android.content.Intent: int FLAG_GRANT_READ_URI_PERMISSION> = 1;
+
+        <android.content.Intent: java.lang.String EXTRA_LOCAL_ONLY> = "android.intent.extra.LOCAL_ONLY";
+
+        <android.content.Intent: java.lang.String EXTRA_CHANGED_UID_LIST> = "android.intent.extra.changed_uid_list";
+
+        <android.content.Intent: java.lang.String EXTRA_CHANGED_PACKAGE_LIST> = "android.intent.extra.changed_package_list";
+
+        <android.content.Intent: java.lang.String EXTRA_CHANGED_COMPONENT_NAME_LIST> = "android.intent.extra.changed_component_name_list";
+
+        <android.content.Intent: java.lang.String EXTRA_CHANGED_COMPONENT_NAME> = "android.intent.extra.changed_component_name";
+
+        <android.content.Intent: java.lang.String EXTRA_REMOTE_INTENT_TOKEN> = "android.intent.extra.remote_intent_token";
+
+        <android.content.Intent: java.lang.String EXTRA_BUG_REPORT> = "android.intent.extra.BUG_REPORT";
+
+        <android.content.Intent: java.lang.String METADATA_DOCK_HOME> = "android.dock_home";
+
+        <android.content.Intent: int EXTRA_DOCK_STATE_HE_DESK> = 4;
+
+        <android.content.Intent: int EXTRA_DOCK_STATE_LE_DESK> = 3;
+
+        <android.content.Intent: int EXTRA_DOCK_STATE_CAR> = 2;
+
+        <android.content.Intent: int EXTRA_DOCK_STATE_DESK> = 1;
+
+        <android.content.Intent: int EXTRA_DOCK_STATE_UNDOCKED> = 0;
+
+        <android.content.Intent: java.lang.String EXTRA_DOCK_STATE> = "android.intent.extra.DOCK_STATE";
+
+        <android.content.Intent: java.lang.String EXTRA_ALARM_COUNT> = "android.intent.extra.ALARM_COUNT";
+
+        <android.content.Intent: java.lang.String EXTRA_REPLACING> = "android.intent.extra.REPLACING";
+
+        <android.content.Intent: java.lang.String EXTRA_DATA_REMOVED> = "android.intent.extra.DATA_REMOVED";
+
+        <android.content.Intent: java.lang.String EXTRA_UID> = "android.intent.extra.UID";
+
+        <android.content.Intent: java.lang.String EXTRA_PHONE_NUMBER> = "android.intent.extra.PHONE_NUMBER";
+
+        <android.content.Intent: java.lang.String EXTRA_DONT_KILL_APP> = "android.intent.extra.DONT_KILL_APP";
+
+        <android.content.Intent: java.lang.String EXTRA_KEY_EVENT> = "android.intent.extra.KEY_EVENT";
+
+        <android.content.Intent: java.lang.String EXTRA_INITIAL_INTENTS> = "android.intent.extra.INITIAL_INTENTS";
+
+        <android.content.Intent: java.lang.String EXTRA_TITLE> = "android.intent.extra.TITLE";
+
+        <android.content.Intent: java.lang.String EXTRA_INTENT> = "android.intent.extra.INTENT";
+
+        <android.content.Intent: java.lang.String EXTRA_SUBJECT> = "android.intent.extra.SUBJECT";
+
+        <android.content.Intent: java.lang.String EXTRA_BCC> = "android.intent.extra.BCC";
+
+        <android.content.Intent: java.lang.String EXTRA_CC> = "android.intent.extra.CC";
+
+        <android.content.Intent: java.lang.String EXTRA_EMAIL> = "android.intent.extra.EMAIL";
+
+        <android.content.Intent: java.lang.String EXTRA_STREAM> = "android.intent.extra.STREAM";
+
+        <android.content.Intent: java.lang.String EXTRA_HTML_TEXT> = "android.intent.extra.HTML_TEXT";
+
+        <android.content.Intent: java.lang.String EXTRA_TEXT> = "android.intent.extra.TEXT";
+
+        <android.content.Intent: java.lang.String EXTRA_TEMPLATE> = "android.intent.extra.TEMPLATE";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_MUSIC> = "android.intent.category.APP_MUSIC";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_MESSAGING> = "android.intent.category.APP_MESSAGING";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_MAPS> = "android.intent.category.APP_MAPS";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_GALLERY> = "android.intent.category.APP_GALLERY";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_EMAIL> = "android.intent.category.APP_EMAIL";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_CONTACTS> = "android.intent.category.APP_CONTACTS";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_CALENDAR> = "android.intent.category.APP_CALENDAR";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_CALCULATOR> = "android.intent.category.APP_CALCULATOR";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_BROWSER> = "android.intent.category.APP_BROWSER";
+
+        <android.content.Intent: java.lang.String CATEGORY_CAR_MODE> = "android.intent.category.CAR_MODE";
+
+        <android.content.Intent: java.lang.String CATEGORY_HE_DESK_DOCK> = "android.intent.category.HE_DESK_DOCK";
+
+        <android.content.Intent: java.lang.String CATEGORY_LE_DESK_DOCK> = "android.intent.category.LE_DESK_DOCK";
+
+        <android.content.Intent: java.lang.String CATEGORY_DESK_DOCK> = "android.intent.category.DESK_DOCK";
+
+        <android.content.Intent: java.lang.String CATEGORY_CAR_DOCK> = "android.intent.category.CAR_DOCK";
+
+        <android.content.Intent: java.lang.String CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST> = "android.intent.category.FRAMEWORK_INSTRUMENTATION_TEST";
+
+        <android.content.Intent: java.lang.String CATEGORY_OPENABLE> = "android.intent.category.OPENABLE";
+
+        <android.content.Intent: java.lang.String CATEGORY_SAMPLE_CODE> = "android.intent.category.SAMPLE_CODE";
+
+        <android.content.Intent: java.lang.String CATEGORY_UNIT_TEST> = "android.intent.category.UNIT_TEST";
+
+        <android.content.Intent: java.lang.String CATEGORY_TEST> = "android.intent.category.TEST";
+
+        <android.content.Intent: java.lang.String CATEGORY_MONKEY> = "android.intent.category.MONKEY";
+
+        <android.content.Intent: java.lang.String CATEGORY_APP_MARKET> = "android.intent.category.APP_MARKET";
+
+        <android.content.Intent: java.lang.String CATEGORY_EMBED> = "android.intent.category.EMBED";
+
+        <android.content.Intent: java.lang.String CATEGORY_DEVELOPMENT_PREFERENCE> = "android.intent.category.DEVELOPMENT_PREFERENCE";
+
+        <android.content.Intent: java.lang.String CATEGORY_PREFERENCE> = "android.intent.category.PREFERENCE";
+
+        <android.content.Intent: java.lang.String CATEGORY_HOME> = "android.intent.category.HOME";
+
+        <android.content.Intent: java.lang.String CATEGORY_INFO> = "android.intent.category.INFO";
+
+        <android.content.Intent: java.lang.String CATEGORY_LAUNCHER> = "android.intent.category.LAUNCHER";
+
+        <android.content.Intent: java.lang.String CATEGORY_TAB> = "android.intent.category.TAB";
+
+        <android.content.Intent: java.lang.String CATEGORY_SELECTED_ALTERNATIVE> = "android.intent.category.SELECTED_ALTERNATIVE";
+
+        <android.content.Intent: java.lang.String CATEGORY_ALTERNATIVE> = "android.intent.category.ALTERNATIVE";
+
+        <android.content.Intent: java.lang.String CATEGORY_BROWSABLE> = "android.intent.category.BROWSABLE";
+
+        <android.content.Intent: java.lang.String CATEGORY_DEFAULT> = "android.intent.category.DEFAULT";
+
+        <android.content.Intent: java.lang.String ACTION_QUICK_CLOCK> = "android.intent.action.QUICK_CLOCK";
+
+        <android.content.Intent: java.lang.String ACTION_USER_BACKGROUND> = "android.intent.action.USER_BACKGROUND";
+
+        <android.content.Intent: java.lang.String ACTION_USER_FOREGROUND> = "android.intent.action.USER_FOREGROUND";
+
+        <android.content.Intent: java.lang.String ACTION_USER_INITIALIZE> = "android.intent.action.USER_INITIALIZE";
+
+        <android.content.Intent: java.lang.String ACTION_DOCK_EVENT> = "android.intent.action.DOCK_EVENT";
+
+        <android.content.Intent: java.lang.String ACTION_REBOOT> = "android.intent.action.REBOOT";
+
+        <android.content.Intent: java.lang.String ACTION_NEW_OUTGOING_CALL> = "android.intent.action.NEW_OUTGOING_CALL";
+
+        <android.content.Intent: java.lang.String ACTION_HEADSET_PLUG> = "android.intent.action.HEADSET_PLUG";
+
+        <android.content.Intent: java.lang.String ACTION_PROVIDER_CHANGED> = "android.intent.action.PROVIDER_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_AIRPLANE_MODE_CHANGED> = "android.intent.action.AIRPLANE_MODE";
+
+        <android.content.Intent: java.lang.String ACTION_INPUT_METHOD_CHANGED> = "android.intent.action.INPUT_METHOD_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_GTALK_SERVICE_DISCONNECTED> = "android.intent.action.GTALK_DISCONNECTED";
+
+        <android.content.Intent: java.lang.String ACTION_GTALK_SERVICE_CONNECTED> = "android.intent.action.GTALK_CONNECTED";
+
+        <android.content.Intent: java.lang.String ACTION_CAMERA_BUTTON> = "android.intent.action.CAMERA_BUTTON";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_BUTTON> = "android.intent.action.MEDIA_BUTTON";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_SCANNER_SCAN_FILE> = "android.intent.action.MEDIA_SCANNER_SCAN_FILE";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_SCANNER_FINISHED> = "android.intent.action.MEDIA_SCANNER_FINISHED";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_SCANNER_STARTED> = "android.intent.action.MEDIA_SCANNER_STARTED";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_EJECT> = "android.intent.action.MEDIA_EJECT";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_UNMOUNTABLE> = "android.intent.action.MEDIA_UNMOUNTABLE";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_BAD_REMOVAL> = "android.intent.action.MEDIA_BAD_REMOVAL";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_SHARED> = "android.intent.action.MEDIA_SHARED";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_MOUNTED> = "android.intent.action.MEDIA_MOUNTED";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_NOFS> = "android.intent.action.MEDIA_NOFS";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_CHECKING> = "android.intent.action.MEDIA_CHECKING";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_UNMOUNTED> = "android.intent.action.MEDIA_UNMOUNTED";
+
+        <android.content.Intent: java.lang.String ACTION_MEDIA_REMOVED> = "android.intent.action.MEDIA_REMOVED";
+
+        <android.content.Intent: java.lang.String ACTION_UMS_DISCONNECTED> = "android.intent.action.UMS_DISCONNECTED";
+
+        <android.content.Intent: java.lang.String ACTION_UMS_CONNECTED> = "android.intent.action.UMS_CONNECTED";
+
+        <android.content.Intent: java.lang.String ACTION_MANAGE_PACKAGE_STORAGE> = "android.intent.action.MANAGE_PACKAGE_STORAGE";
+
+        <android.content.Intent: java.lang.String ACTION_DEVICE_STORAGE_OK> = "android.intent.action.DEVICE_STORAGE_OK";
+
+        <android.content.Intent: java.lang.String ACTION_DEVICE_STORAGE_LOW> = "android.intent.action.DEVICE_STORAGE_LOW";
+
+        <android.content.Intent: java.lang.String ACTION_SHUTDOWN> = "android.intent.action.ACTION_SHUTDOWN";
+
+        <android.content.Intent: java.lang.String ACTION_POWER_DISCONNECTED> = "android.intent.action.ACTION_POWER_DISCONNECTED";
+
+        <android.content.Intent: java.lang.String ACTION_POWER_CONNECTED> = "android.intent.action.ACTION_POWER_CONNECTED";
+
+        <android.content.Intent: java.lang.String ACTION_BATTERY_OKAY> = "android.intent.action.BATTERY_OKAY";
+
+        <android.content.Intent: java.lang.String ACTION_BATTERY_LOW> = "android.intent.action.BATTERY_LOW";
+
+        <android.content.Intent: java.lang.String ACTION_BATTERY_CHANGED> = "android.intent.action.BATTERY_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_LOCALE_CHANGED> = "android.intent.action.LOCALE_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_CONFIGURATION_CHANGED> = "android.intent.action.CONFIGURATION_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_WALLPAPER_CHANGED> = "android.intent.action.WALLPAPER_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE> = "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE";
+
+        <android.content.Intent: java.lang.String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE> = "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_VERIFIED> = "android.intent.action.PACKAGE_VERIFIED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_NEEDS_VERIFICATION> = "android.intent.action.PACKAGE_NEEDS_VERIFICATION";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_FIRST_LAUNCH> = "android.intent.action.PACKAGE_FIRST_LAUNCH";
+
+        <android.content.Intent: java.lang.String ACTION_UID_REMOVED> = "android.intent.action.UID_REMOVED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_DATA_CLEARED> = "android.intent.action.PACKAGE_DATA_CLEARED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_RESTARTED> = "android.intent.action.PACKAGE_RESTARTED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_CHANGED> = "android.intent.action.PACKAGE_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_FULLY_REMOVED> = "android.intent.action.PACKAGE_FULLY_REMOVED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_REMOVED> = "android.intent.action.PACKAGE_REMOVED";
+
+        <android.content.Intent: java.lang.String ACTION_MY_PACKAGE_REPLACED> = "android.intent.action.MY_PACKAGE_REPLACED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_REPLACED> = "android.intent.action.PACKAGE_REPLACED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_ADDED> = "android.intent.action.PACKAGE_ADDED";
+
+        <android.content.Intent: java.lang.String ACTION_PACKAGE_INSTALL> = "android.intent.action.PACKAGE_INSTALL";
+
+        <android.content.Intent: java.lang.String ACTION_CLOSE_SYSTEM_DIALOGS> = "android.intent.action.CLOSE_SYSTEM_DIALOGS";
+
+        <android.content.Intent: java.lang.String ACTION_BOOT_COMPLETED> = "android.intent.action.BOOT_COMPLETED";
+
+        <android.content.Intent: java.lang.String ACTION_TIMEZONE_CHANGED> = "android.intent.action.TIMEZONE_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_DATE_CHANGED> = "android.intent.action.DATE_CHANGED";
+
+        <android.content.Intent: java.lang.String ACTION_TIME_CHANGED> = "android.intent.action.TIME_SET";
+
+        <android.content.Intent: java.lang.String ACTION_TIME_TICK> = "android.intent.action.TIME_TICK";
+
+        <android.content.Intent: java.lang.String ACTION_USER_PRESENT> = "android.intent.action.USER_PRESENT";
+
+        <android.content.Intent: java.lang.String ACTION_DREAMING_STARTED> = "android.intent.action.DREAMING_STARTED";
+
+        <android.content.Intent: java.lang.String ACTION_DREAMING_STOPPED> = "android.intent.action.DREAMING_STOPPED";
+
+        <android.content.Intent: java.lang.String ACTION_SCREEN_ON> = "android.intent.action.SCREEN_ON";
+
+        <android.content.Intent: java.lang.String ACTION_SCREEN_OFF> = "android.intent.action.SCREEN_OFF";
+
+        <android.content.Intent: java.lang.String ACTION_UNINSTALL_PACKAGE> = "android.intent.action.UNINSTALL_PACKAGE";
+
+        <android.content.Intent: java.lang.String EXTRA_RETURN_RESULT> = "android.intent.extra.RETURN_RESULT";
+
+        <android.content.Intent: java.lang.String EXTRA_ALLOW_REPLACE> = "android.intent.extra.ALLOW_REPLACE";
+
+        <android.content.Intent: java.lang.String EXTRA_REFERRER> = "android.intent.extra.REFERRER";
+
+        <android.content.Intent: java.lang.String EXTRA_ORIGINATING_URI> = "android.intent.extra.ORIGINATING_URI";
+
+        <android.content.Intent: java.lang.String EXTRA_NOT_UNKNOWN_SOURCE> = "android.intent.extra.NOT_UNKNOWN_SOURCE";
+
+        <android.content.Intent: java.lang.String EXTRA_INSTALLER_PACKAGE_NAME> = "android.intent.extra.INSTALLER_PACKAGE_NAME";
+
+        <android.content.Intent: java.lang.String ACTION_INSTALL_PACKAGE> = "android.intent.action.INSTALL_PACKAGE";
+
+        <android.content.Intent: java.lang.String ACTION_MANAGE_NETWORK_USAGE> = "android.intent.action.MANAGE_NETWORK_USAGE";
+
+        <android.content.Intent: java.lang.String ACTION_POWER_USAGE_SUMMARY> = "android.intent.action.POWER_USAGE_SUMMARY";
+
+        <android.content.Intent: java.lang.String ACTION_APP_ERROR> = "android.intent.action.APP_ERROR";
+
+        <android.content.Intent: java.lang.String ACTION_SEARCH_LONG_PRESS> = "android.intent.action.SEARCH_LONG_PRESS";
+
+        <android.content.Intent: java.lang.String ACTION_VOICE_COMMAND> = "android.intent.action.VOICE_COMMAND";
+
+        <android.content.Intent: java.lang.String ACTION_CALL_BUTTON> = "android.intent.action.CALL_BUTTON";
+
+        <android.content.Intent: java.lang.String ACTION_FACTORY_TEST> = "android.intent.action.FACTORY_TEST";
+
+        <android.content.Intent: java.lang.String ACTION_BUG_REPORT> = "android.intent.action.BUG_REPORT";
+
+        <android.content.Intent: java.lang.String ACTION_SET_WALLPAPER> = "android.intent.action.SET_WALLPAPER";
+
+        <android.content.Intent: java.lang.String ACTION_ALL_APPS> = "android.intent.action.ALL_APPS";
+
+        <android.content.Intent: java.lang.String ACTION_ASSIST> = "android.intent.action.ASSIST";
+
+        <android.content.Intent: java.lang.String ACTION_WEB_SEARCH> = "android.intent.action.WEB_SEARCH";
+
+        <android.content.Intent: java.lang.String ACTION_SYSTEM_TUTORIAL> = "android.intent.action.SYSTEM_TUTORIAL";
+
+        <android.content.Intent: java.lang.String ACTION_SEARCH> = "android.intent.action.SEARCH";
+
+        <android.content.Intent: java.lang.String ACTION_PICK_ACTIVITY> = "android.intent.action.PICK_ACTIVITY";
+
+        <android.content.Intent: java.lang.String ACTION_SYNC> = "android.intent.action.SYNC";
+
+        <android.content.Intent: java.lang.String ACTION_RUN> = "android.intent.action.RUN";
+
+        <android.content.Intent: java.lang.String ACTION_DELETE> = "android.intent.action.DELETE";
+
+        <android.content.Intent: java.lang.String ACTION_PASTE> = "android.intent.action.PASTE";
+
+        <android.content.Intent: java.lang.String ACTION_INSERT> = "android.intent.action.INSERT";
+
+        <android.content.Intent: java.lang.String ACTION_ANSWER> = "android.intent.action.ANSWER";
+
+        <android.content.Intent: java.lang.String ACTION_SEND_MULTIPLE> = "android.intent.action.SEND_MULTIPLE";
+
+        <android.content.Intent: java.lang.String ACTION_SEND> = "android.intent.action.SEND";
+
+        <android.content.Intent: java.lang.String ACTION_SENDTO> = "android.intent.action.SENDTO";
+
+        <android.content.Intent: java.lang.String ACTION_CALL> = "android.intent.action.CALL";
+
+        <android.content.Intent: java.lang.String ACTION_DIAL> = "android.intent.action.DIAL";
+
+        <android.content.Intent: java.lang.String ACTION_GET_CONTENT> = "android.intent.action.GET_CONTENT";
+
+        <android.content.Intent: java.lang.String ACTION_CHOOSER> = "android.intent.action.CHOOSER";
+
+        <android.content.Intent: java.lang.String EXTRA_SHORTCUT_ICON_RESOURCE> = "android.intent.extra.shortcut.ICON_RESOURCE";
+
+        <android.content.Intent: java.lang.String EXTRA_SHORTCUT_ICON> = "android.intent.extra.shortcut.ICON";
+
+        <android.content.Intent: java.lang.String EXTRA_SHORTCUT_NAME> = "android.intent.extra.shortcut.NAME";
+
+        <android.content.Intent: java.lang.String EXTRA_SHORTCUT_INTENT> = "android.intent.extra.shortcut.INTENT";
+
+        <android.content.Intent: java.lang.String ACTION_CREATE_SHORTCUT> = "android.intent.action.CREATE_SHORTCUT";
+
+        <android.content.Intent: java.lang.String ACTION_PICK> = "android.intent.action.PICK";
+
+        <android.content.Intent: java.lang.String ACTION_INSERT_OR_EDIT> = "android.intent.action.INSERT_OR_EDIT";
+
+        <android.content.Intent: java.lang.String ACTION_EDIT> = "android.intent.action.EDIT";
+
+        <android.content.Intent: java.lang.String ACTION_ATTACH_DATA> = "android.intent.action.ATTACH_DATA";
+
+        <android.content.Intent: java.lang.String ACTION_DEFAULT> = "android.intent.action.VIEW";
+
+        <android.content.Intent: java.lang.String ACTION_VIEW> = "android.intent.action.VIEW";
+
+        <android.content.Intent: java.lang.String ACTION_MAIN> = "android.intent.action.MAIN";
+
+        <android.content.Intent: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}

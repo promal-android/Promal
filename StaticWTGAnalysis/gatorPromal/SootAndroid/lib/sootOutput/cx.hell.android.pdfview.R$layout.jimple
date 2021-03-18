@@ -1,0 +1,31 @@
+public final class cx.hell.android.pdfview.R$layout extends java.lang.Object
+{
+    public static final int about;
+    public static final int filechooser;
+    public static final int onelinewithicon;
+    public static final int toc_list_item;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$layout $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$layout;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$layout: int toc_list_item> = 2130903043;
+
+        <cx.hell.android.pdfview.R$layout: int onelinewithicon> = 2130903042;
+
+        <cx.hell.android.pdfview.R$layout: int filechooser> = 2130903041;
+
+        <cx.hell.android.pdfview.R$layout: int about> = 2130903040;
+
+        return;
+    }
+}

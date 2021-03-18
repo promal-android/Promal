@@ -1,0 +1,198 @@
+public class android.content.res.AssetFileDescriptor extends java.lang.Object implements android.os.Parcelable
+{
+    public static final long UNKNOWN_LENGTH;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>(android.os.ParcelFileDescriptor, long, long)
+    {
+        android.content.res.AssetFileDescriptor r0;
+        android.os.ParcelFileDescriptor r1;
+        long l0, l1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        r1 := @parameter0: android.os.ParcelFileDescriptor;
+
+        l0 := @parameter1: long;
+
+        l1 := @parameter2: long;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public android.os.ParcelFileDescriptor getParcelFileDescriptor()
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.io.FileDescriptor getFileDescriptor()
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public long getStartOffset()
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public long getLength()
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public long getDeclaredLength()
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void close() throws java.io.IOException
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.io.FileInputStream createInputStream() throws java.io.IOException
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.io.FileOutputStream createOutputStream() throws java.io.IOException
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String toString()
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int describeContents()
+    {
+        android.content.res.AssetFileDescriptor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.content.res.AssetFileDescriptor r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.AssetFileDescriptor;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    static void <clinit>()
+    {
+        <android.content.res.AssetFileDescriptor: long UNKNOWN_LENGTH> = -1L;
+
+        <android.content.res.AssetFileDescriptor: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}

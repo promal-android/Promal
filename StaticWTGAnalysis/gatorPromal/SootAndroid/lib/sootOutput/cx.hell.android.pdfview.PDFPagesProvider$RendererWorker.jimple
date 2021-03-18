@@ -1,0 +1,243 @@
+class cx.hell.android.pdfview.PDFPagesProvider$RendererWorker extends java.lang.Object implements java.lang.Runnable
+{
+    private static int workerThreadId;
+    private cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache;
+    private boolean isFailed;
+    private cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider;
+    private java.util.Collection tiles;
+    private java.lang.Thread workerThread;
+
+    static void <clinit>()
+    {
+        <cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: int workerThreadId> = 0;
+
+        return;
+    }
+
+    void <init>(cx.hell.android.pdfview.PDFPagesProvider)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$RendererWorker $r0;
+        cx.hell.android.pdfview.PDFPagesProvider $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$RendererWorker;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.PDFPagesProvider;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: boolean isFailed> = 0;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.lang.Thread workerThread> = null;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.util.Collection tiles> = null;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider> = $r1;
+
+        return;
+    }
+
+    java.util.Collection popTiles()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$RendererWorker $r0;
+        java.util.Set $r1;
+        java.util.Collection $r2;
+        boolean $z0;
+        java.util.Iterator $r3;
+        java.lang.Object $r4;
+        cx.hell.android.lib.pagesview.Tile $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$RendererWorker;
+
+        $r1 = null;
+
+        entermonitor $r0;
+
+     label1:
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.util.Collection tiles>;
+
+        if $r2 == null goto label2;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.util.Collection tiles>;
+
+        $z0 = interfaceinvoke $r2.<java.util.Collection: boolean isEmpty()>();
+
+        if $z0 == 0 goto label4;
+
+     label2:
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.lang.Thread workerThread> = null;
+
+     label3:
+        exitmonitor $r0;
+
+        return $r1;
+
+     label4:
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.util.Collection tiles>;
+
+        $r3 = interfaceinvoke $r2.<java.util.Collection: java.util.Iterator iterator()>();
+
+        $r4 = interfaceinvoke $r3.<java.util.Iterator: java.lang.Object next()>();
+
+        $r5 = (cx.hell.android.lib.pagesview.Tile) $r4;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.util.Collection tiles>;
+
+        interfaceinvoke $r2.<java.util.Collection: boolean remove(java.lang.Object)>($r5);
+
+        $r1 = staticinvoke <java.util.Collections: java.util.Set singleton(java.lang.Object)>($r5);
+
+     label5:
+        goto label3;
+
+     label6:
+        $r6 := @caughtexception;
+
+        exitmonitor $r0;
+
+        throw $r6;
+
+        catch java.lang.Throwable from label1 to label3 with label6;
+        catch java.lang.Throwable from label4 to label5 with label6;
+    }
+
+    public void run()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$RendererWorker $r0;
+        cx.hell.android.lib.pagesview.RenderingException $r1;
+        boolean $z0;
+        java.util.Collection $r2;
+        int $i0;
+        cx.hell.android.pdfview.PDFPagesProvider $r3;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r4;
+        java.util.Map $r5;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$RendererWorker;
+
+     label1:
+        $z0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: boolean isFailed>;
+
+        if $z0 == 0 goto label2;
+
+        staticinvoke <android.util.Log: int i(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "RendererWorker is failed, exiting");
+
+        return;
+
+     label2:
+        $r2 = virtualinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.util.Collection popTiles()>();
+
+        if $r2 == null goto label8;
+
+        $i0 = interfaceinvoke $r2.<java.util.Collection: int size()>();
+
+        if $i0 == 0 goto label8;
+
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        $r4 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+     label3:
+        $r5 = staticinvoke <cx.hell.android.pdfview.PDFPagesProvider: java.util.Map access$0(cx.hell.android.pdfview.PDFPagesProvider,java.util.Collection,cx.hell.android.pdfview.PDFPagesProvider$BitmapCache)>($r3, $r2, $r4);
+
+        $i0 = interfaceinvoke $r5.<java.util.Map: int size()>();
+
+     label4:
+        if $i0 <= 0 goto label1;
+
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+     label5:
+        staticinvoke <cx.hell.android.pdfview.PDFPagesProvider: void access$1(cx.hell.android.pdfview.PDFPagesProvider,java.util.Map)>($r3, $r5);
+
+     label6:
+        goto label1;
+
+     label7:
+        $r1 := @caughtexception;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: boolean isFailed> = 1;
+
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: cx.hell.android.pdfview.PDFPagesProvider pdfPagesProvider>;
+
+        staticinvoke <cx.hell.android.pdfview.PDFPagesProvider: void access$2(cx.hell.android.pdfview.PDFPagesProvider,cx.hell.android.lib.pagesview.RenderingException)>($r3, $r1);
+
+        goto label1;
+
+     label8:
+        return;
+
+        catch cx.hell.android.lib.pagesview.RenderingException from label3 to label4 with label7;
+        catch cx.hell.android.lib.pagesview.RenderingException from label5 to label6 with label7;
+    }
+
+    void setTiles(java.util.Collection, cx.hell.android.pdfview.PDFPagesProvider$BitmapCache)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider$RendererWorker $r0;
+        java.util.Collection $r1;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r2;
+        java.lang.Thread $r3;
+        int $i0, $i1;
+        java.lang.StringBuilder $r4;
+        java.lang.String $r5;
+        java.lang.Throwable $r6;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider$RendererWorker;
+
+        $r1 := @parameter0: java.util.Collection;
+
+        $r2 := @parameter1: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        entermonitor $r0;
+
+     label1:
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.util.Collection tiles> = $r1;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache> = $r2;
+
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.lang.Thread workerThread>;
+
+        if $r3 != null goto label2;
+
+        $r3 = new java.lang.Thread;
+
+        specialinvoke $r3.<java.lang.Thread: void <init>(java.lang.Runnable)>($r0);
+
+        virtualinvoke $r3.<java.lang.Thread: void setPriority(int)>(1);
+
+        $r4 = new java.lang.StringBuilder;
+
+        specialinvoke $r4.<java.lang.StringBuilder: void <init>(java.lang.String)>("RendererWorkerThread#");
+
+        $i1 = <cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: int workerThreadId>;
+
+        $i0 = $i1 + 1;
+
+        <cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: int workerThreadId> = $i0;
+
+        $r4 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+
+        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r3.<java.lang.Thread: void setName(java.lang.String)>($r5);
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: java.lang.Thread workerThread> = $r3;
+
+        virtualinvoke $r3.<java.lang.Thread: void start()>();
+
+        staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "started new worker thread");
+
+     label2:
+        exitmonitor $r0;
+
+        return;
+
+     label3:
+        $r6 := @caughtexception;
+
+        exitmonitor $r0;
+
+        throw $r6;
+
+        catch java.lang.Throwable from label1 to label2 with label3;
+    }
+}

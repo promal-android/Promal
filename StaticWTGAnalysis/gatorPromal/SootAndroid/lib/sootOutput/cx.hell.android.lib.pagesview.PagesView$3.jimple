@@ -1,0 +1,79 @@
+class cx.hell.android.lib.pagesview.PagesView$3 extends java.lang.Object implements java.lang.Runnable
+{
+    final cx.hell.android.lib.pagesview.PagesView this$0;
+    private final android.app.Activity val$activity;
+    private final java.lang.String val$message;
+
+    void <init>(cx.hell.android.lib.pagesview.PagesView, android.app.Activity, java.lang.String)
+    {
+        cx.hell.android.lib.pagesview.PagesView$3 $r0;
+        cx.hell.android.lib.pagesview.PagesView $r1;
+        android.app.Activity $r2;
+        java.lang.String $r3;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$3;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.PagesView;
+
+        $r2 := @parameter1: android.app.Activity;
+
+        $r3 := @parameter2: java.lang.String;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$3: cx.hell.android.lib.pagesview.PagesView this$0> = $r1;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$3: android.app.Activity val$activity> = $r2;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$3: java.lang.String val$message> = $r3;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void run()
+    {
+        cx.hell.android.lib.pagesview.PagesView$3 $r0;
+        android.app.Activity $r1;
+        android.app.AlertDialog$Builder $r2;
+        java.lang.String $r3;
+        cx.hell.android.lib.pagesview.PagesView$3$1 $r4;
+        cx.hell.android.lib.pagesview.PagesView$3$2 $r5;
+        android.app.AlertDialog $r6;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$3;
+
+        $r2 = new android.app.AlertDialog$Builder;
+
+        $r1 = $r0.<cx.hell.android.lib.pagesview.PagesView$3: android.app.Activity val$activity>;
+
+        specialinvoke $r2.<android.app.AlertDialog$Builder: void <init>(android.content.Context)>($r1);
+
+        $r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setTitle(java.lang.CharSequence)>("Error");
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$3: java.lang.String val$message>;
+
+        $r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setMessage(java.lang.CharSequence)>($r3);
+
+        $r4 = new cx.hell.android.lib.pagesview.PagesView$3$1;
+
+        $r1 = $r0.<cx.hell.android.lib.pagesview.PagesView$3: android.app.Activity val$activity>;
+
+        specialinvoke $r4.<cx.hell.android.lib.pagesview.PagesView$3$1: void <init>(cx.hell.android.lib.pagesview.PagesView$3,android.app.Activity)>($r0, $r1);
+
+        $r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)>("Ok", $r4);
+
+        $r5 = new cx.hell.android.lib.pagesview.PagesView$3$2;
+
+        $r1 = $r0.<cx.hell.android.lib.pagesview.PagesView$3: android.app.Activity val$activity>;
+
+        specialinvoke $r5.<cx.hell.android.lib.pagesview.PagesView$3$2: void <init>(cx.hell.android.lib.pagesview.PagesView$3,android.app.Activity)>($r0, $r1);
+
+        $r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setOnCancelListener(android.content.DialogInterface$OnCancelListener)>($r5);
+
+        $r6 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog create()>();
+
+        virtualinvoke $r6.<android.app.AlertDialog: void show()>();
+
+        return;
+    }
+}

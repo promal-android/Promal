@@ -1,0 +1,521 @@
+public final class android.content.res.Configuration extends java.lang.Object implements android.os.Parcelable, java.lang.Comparable
+{
+    public float fontScale;
+    public int mcc;
+    public int mnc;
+    public java.util.Locale locale;
+    public static final int SCREENLAYOUT_SIZE_MASK;
+    public static final int SCREENLAYOUT_SIZE_UNDEFINED;
+    public static final int SCREENLAYOUT_SIZE_SMALL;
+    public static final int SCREENLAYOUT_SIZE_NORMAL;
+    public static final int SCREENLAYOUT_SIZE_LARGE;
+    public static final int SCREENLAYOUT_SIZE_XLARGE;
+    public static final int SCREENLAYOUT_LONG_MASK;
+    public static final int SCREENLAYOUT_LONG_UNDEFINED;
+    public static final int SCREENLAYOUT_LONG_NO;
+    public static final int SCREENLAYOUT_LONG_YES;
+    public static final int SCREENLAYOUT_LAYOUTDIR_MASK;
+    public static final int SCREENLAYOUT_LAYOUTDIR_SHIFT;
+    public static final int SCREENLAYOUT_LAYOUTDIR_UNDEFINED;
+    public static final int SCREENLAYOUT_LAYOUTDIR_LTR;
+    public static final int SCREENLAYOUT_LAYOUTDIR_RTL;
+    public static final int SCREENLAYOUT_UNDEFINED;
+    public int screenLayout;
+    public static final int TOUCHSCREEN_UNDEFINED;
+    public static final int TOUCHSCREEN_NOTOUCH;
+    public static final int TOUCHSCREEN_STYLUS;
+    public static final int TOUCHSCREEN_FINGER;
+    public int touchscreen;
+    public static final int KEYBOARD_UNDEFINED;
+    public static final int KEYBOARD_NOKEYS;
+    public static final int KEYBOARD_QWERTY;
+    public static final int KEYBOARD_12KEY;
+    public int keyboard;
+    public static final int KEYBOARDHIDDEN_UNDEFINED;
+    public static final int KEYBOARDHIDDEN_NO;
+    public static final int KEYBOARDHIDDEN_YES;
+    public int keyboardHidden;
+    public static final int HARDKEYBOARDHIDDEN_UNDEFINED;
+    public static final int HARDKEYBOARDHIDDEN_NO;
+    public static final int HARDKEYBOARDHIDDEN_YES;
+    public int hardKeyboardHidden;
+    public static final int NAVIGATION_UNDEFINED;
+    public static final int NAVIGATION_NONAV;
+    public static final int NAVIGATION_DPAD;
+    public static final int NAVIGATION_TRACKBALL;
+    public static final int NAVIGATION_WHEEL;
+    public int navigation;
+    public static final int NAVIGATIONHIDDEN_UNDEFINED;
+    public static final int NAVIGATIONHIDDEN_NO;
+    public static final int NAVIGATIONHIDDEN_YES;
+    public int navigationHidden;
+    public static final int ORIENTATION_UNDEFINED;
+    public static final int ORIENTATION_PORTRAIT;
+    public static final int ORIENTATION_LANDSCAPE;
+    public static final int ORIENTATION_SQUARE;
+    public int orientation;
+    public static final int UI_MODE_TYPE_MASK;
+    public static final int UI_MODE_TYPE_UNDEFINED;
+    public static final int UI_MODE_TYPE_NORMAL;
+    public static final int UI_MODE_TYPE_DESK;
+    public static final int UI_MODE_TYPE_CAR;
+    public static final int UI_MODE_TYPE_TELEVISION;
+    public static final int UI_MODE_TYPE_APPLIANCE;
+    public static final int UI_MODE_NIGHT_MASK;
+    public static final int UI_MODE_NIGHT_UNDEFINED;
+    public static final int UI_MODE_NIGHT_NO;
+    public static final int UI_MODE_NIGHT_YES;
+    public int uiMode;
+    public static final int SCREEN_WIDTH_DP_UNDEFINED;
+    public int screenWidthDp;
+    public static final int SCREEN_HEIGHT_DP_UNDEFINED;
+    public int screenHeightDp;
+    public static final int SMALLEST_SCREEN_WIDTH_DP_UNDEFINED;
+    public int smallestScreenWidthDp;
+    public static final int DENSITY_DPI_UNDEFINED;
+    public int densityDpi;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>()
+    {
+        android.content.res.Configuration r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.Configuration;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(android.content.res.Configuration)
+    {
+        android.content.res.Configuration r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.content.res.Configuration;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean isLayoutSizeAtLeast(int)
+    {
+        android.content.res.Configuration r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.Configuration;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setTo(android.content.res.Configuration)
+    {
+        android.content.res.Configuration r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.content.res.Configuration;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String toString()
+    {
+        android.content.res.Configuration r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.Configuration;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setToDefaults()
+    {
+        android.content.res.Configuration r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.Configuration;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int updateFrom(android.content.res.Configuration)
+    {
+        android.content.res.Configuration r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.content.res.Configuration;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int diff(android.content.res.Configuration)
+    {
+        android.content.res.Configuration r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.content.res.Configuration;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static boolean needNewResources(int, int)
+    {
+        int i0, i1;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public int describeContents()
+    {
+        android.content.res.Configuration r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.Configuration;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.content.res.Configuration r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void readFromParcel(android.os.Parcel)
+    {
+        android.content.res.Configuration r0;
+        android.os.Parcel r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int compareTo(android.content.res.Configuration)
+    {
+        android.content.res.Configuration r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.content.res.Configuration;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean equals(android.content.res.Configuration)
+    {
+        android.content.res.Configuration r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: android.content.res.Configuration;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        android.content.res.Configuration r0;
+        java.lang.Object r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: java.lang.Object;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int hashCode()
+    {
+        android.content.res.Configuration r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.Configuration;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setLocale(java.util.Locale)
+    {
+        android.content.res.Configuration r0;
+        java.util.Locale r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: java.util.Locale;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int getLayoutDirection()
+    {
+        android.content.res.Configuration r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.res.Configuration;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void setLayoutDirection(java.util.Locale)
+    {
+        android.content.res.Configuration r0;
+        java.util.Locale r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: java.util.Locale;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public volatile int compareTo(java.lang.Object)
+    {
+        android.content.res.Configuration r0, $r2;
+        java.lang.Object r1;
+        int $i0;
+
+        r0 := @this: android.content.res.Configuration;
+
+        r1 := @parameter0: java.lang.Object;
+
+        $r2 = (android.content.res.Configuration) r1;
+
+        $i0 = virtualinvoke r0.<android.content.res.Configuration: int compareTo(android.content.res.Configuration)>($r2);
+
+        return $i0;
+    }
+
+    static void <clinit>()
+    {
+        <android.content.res.Configuration: int DENSITY_DPI_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SMALLEST_SCREEN_WIDTH_DP_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SCREEN_HEIGHT_DP_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SCREEN_WIDTH_DP_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int UI_MODE_NIGHT_YES> = 32;
+
+        <android.content.res.Configuration: int UI_MODE_NIGHT_NO> = 16;
+
+        <android.content.res.Configuration: int UI_MODE_NIGHT_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int UI_MODE_NIGHT_MASK> = 48;
+
+        <android.content.res.Configuration: int UI_MODE_TYPE_APPLIANCE> = 5;
+
+        <android.content.res.Configuration: int UI_MODE_TYPE_TELEVISION> = 4;
+
+        <android.content.res.Configuration: int UI_MODE_TYPE_CAR> = 3;
+
+        <android.content.res.Configuration: int UI_MODE_TYPE_DESK> = 2;
+
+        <android.content.res.Configuration: int UI_MODE_TYPE_NORMAL> = 1;
+
+        <android.content.res.Configuration: int UI_MODE_TYPE_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int UI_MODE_TYPE_MASK> = 15;
+
+        <android.content.res.Configuration: int ORIENTATION_SQUARE> = 3;
+
+        <android.content.res.Configuration: int ORIENTATION_LANDSCAPE> = 2;
+
+        <android.content.res.Configuration: int ORIENTATION_PORTRAIT> = 1;
+
+        <android.content.res.Configuration: int ORIENTATION_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int NAVIGATIONHIDDEN_YES> = 2;
+
+        <android.content.res.Configuration: int NAVIGATIONHIDDEN_NO> = 1;
+
+        <android.content.res.Configuration: int NAVIGATIONHIDDEN_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int NAVIGATION_WHEEL> = 4;
+
+        <android.content.res.Configuration: int NAVIGATION_TRACKBALL> = 3;
+
+        <android.content.res.Configuration: int NAVIGATION_DPAD> = 2;
+
+        <android.content.res.Configuration: int NAVIGATION_NONAV> = 1;
+
+        <android.content.res.Configuration: int NAVIGATION_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int HARDKEYBOARDHIDDEN_YES> = 2;
+
+        <android.content.res.Configuration: int HARDKEYBOARDHIDDEN_NO> = 1;
+
+        <android.content.res.Configuration: int HARDKEYBOARDHIDDEN_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int KEYBOARDHIDDEN_YES> = 2;
+
+        <android.content.res.Configuration: int KEYBOARDHIDDEN_NO> = 1;
+
+        <android.content.res.Configuration: int KEYBOARDHIDDEN_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int KEYBOARD_12KEY> = 3;
+
+        <android.content.res.Configuration: int KEYBOARD_QWERTY> = 2;
+
+        <android.content.res.Configuration: int KEYBOARD_NOKEYS> = 1;
+
+        <android.content.res.Configuration: int KEYBOARD_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int TOUCHSCREEN_FINGER> = 3;
+
+        <android.content.res.Configuration: int TOUCHSCREEN_STYLUS> = 2;
+
+        <android.content.res.Configuration: int TOUCHSCREEN_NOTOUCH> = 1;
+
+        <android.content.res.Configuration: int TOUCHSCREEN_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LAYOUTDIR_RTL> = 128;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LAYOUTDIR_LTR> = 64;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LAYOUTDIR_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LAYOUTDIR_SHIFT> = 6;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LAYOUTDIR_MASK> = 192;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LONG_YES> = 32;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LONG_NO> = 16;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LONG_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_LONG_MASK> = 48;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_SIZE_XLARGE> = 4;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_SIZE_LARGE> = 3;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_SIZE_NORMAL> = 2;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_SIZE_SMALL> = 1;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_SIZE_UNDEFINED> = 0;
+
+        <android.content.res.Configuration: int SCREENLAYOUT_SIZE_MASK> = 15;
+
+        <android.content.res.Configuration: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}

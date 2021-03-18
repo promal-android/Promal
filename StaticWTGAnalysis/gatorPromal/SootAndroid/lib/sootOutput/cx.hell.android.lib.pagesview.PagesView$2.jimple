@@ -1,0 +1,383 @@
+class cx.hell.android.lib.pagesview.PagesView$2 extends java.lang.Object implements android.view.GestureDetector$OnDoubleTapListener
+{
+    final cx.hell.android.lib.pagesview.PagesView this$0;
+    private final cx.hell.android.pdfview.OpenFileActivity val$openFileActivity;
+    private final cx.hell.android.lib.pagesview.PagesView val$pagesView;
+
+    void <init>(cx.hell.android.lib.pagesview.PagesView, cx.hell.android.pdfview.OpenFileActivity, cx.hell.android.lib.pagesview.PagesView)
+    {
+        cx.hell.android.lib.pagesview.PagesView$2 $r0;
+        cx.hell.android.lib.pagesview.PagesView $r1, $r3;
+        cx.hell.android.pdfview.OpenFileActivity $r2;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$2;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.PagesView;
+
+        $r2 := @parameter1: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r3 := @parameter2: cx.hell.android.lib.pagesview.PagesView;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0> = $r1;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.pdfview.OpenFileActivity val$openFileActivity> = $r2;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView val$pagesView> = $r3;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public boolean onDoubleTap(android.view.MotionEvent)
+    {
+        cx.hell.android.lib.pagesview.PagesView$2 $r0;
+        android.view.MotionEvent $r1;
+        cx.hell.android.lib.pagesview.PagesView $r2, $r3;
+        int $i0, $i1, $i2;
+        float $f0, $f1, $f2;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$2;
+
+        $r1 := @parameter0: android.view.MotionEvent;
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$2(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        lookupswitch($i0)
+        {
+            case 1: goto label4;
+            case 2: goto label2;
+            default: goto label1;
+        };
+
+     label1:
+        return 0;
+
+     label2:
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$3(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        if $i0 == 0 goto label3;
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$4(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$5(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i0);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$6(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i1 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$3(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $i0 = $i0 * $i1;
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i1 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$7(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $i0 = $i0 / $i1;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$8(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i0);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$3(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$9(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i0);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        virtualinvoke $r2.<cx.hell.android.lib.pagesview.PagesView: void invalidate()>();
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$10(cx.hell.android.lib.pagesview.PagesView,int)>($r2, 0);
+
+        return 1;
+
+     label3:
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$11(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i1 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$7(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i2 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$11(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        $f0 = (float) $i2;
+
+        $f1 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i2 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$12(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $i2 = $i2 / 2;
+
+        $f2 = (float) $i2;
+
+        $f1 = $f1 - $f2;
+
+        $f0 = $f0 + $f1;
+
+        $i2 = (int) $f0;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$5(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i2);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i2 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$6(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        $f0 = (float) $i2;
+
+        $f1 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i2 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$13(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $i2 = $i2 / 2;
+
+        $f2 = (float) $i2;
+
+        $f1 = $f1 - $f2;
+
+        $f0 = $f0 + $f1;
+
+        $i2 = (int) $f0;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$8(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i2);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        virtualinvoke $r2.<cx.hell.android.lib.pagesview.PagesView: void zoom(float)>(2.0F);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$10(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i1);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$14(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i0);
+
+        return 1;
+
+     label4:
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$11(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        $f0 = (float) $i0;
+
+        $f1 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$12(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $i0 = $i0 / 2;
+
+        $f2 = (float) $i0;
+
+        $f1 = $f1 - $f2;
+
+        $f0 = $f0 + $f1;
+
+        $i0 = (int) $f0;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$5(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i0);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$6(cx.hell.android.lib.pagesview.PagesView)>($r2);
+
+        $f0 = (float) $i0;
+
+        $f1 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$13(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $i0 = $i0 / 2;
+
+        $f2 = (float) $i0;
+
+        $f1 = $f1 - $f2;
+
+        $f0 = $f0 + $f1;
+
+        $i0 = (int) $f0;
+
+        staticinvoke <cx.hell.android.lib.pagesview.PagesView: void access$8(cx.hell.android.lib.pagesview.PagesView,int)>($r2, $i0);
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        virtualinvoke $r2.<cx.hell.android.lib.pagesview.PagesView: void zoom(float)>(2.0F);
+
+        return 1;
+    }
+
+    public boolean onDoubleTapEvent(android.view.MotionEvent)
+    {
+        cx.hell.android.lib.pagesview.PagesView$2 $r0;
+        android.view.MotionEvent $r1;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$2;
+
+        $r1 := @parameter0: android.view.MotionEvent;
+
+        return 0;
+    }
+
+    public boolean onSingleTapConfirmed(android.view.MotionEvent)
+    {
+        cx.hell.android.lib.pagesview.PagesView$2 $r0;
+        android.view.MotionEvent $r1;
+        android.graphics.Rect $r2;
+        cx.hell.android.lib.pagesview.PagesView $r3, $r6;
+        long $l0, $l1;
+        byte $b2;
+        boolean $z0;
+        cx.hell.android.pdfview.OpenFileActivity $r4;
+        android.widget.LinearLayout $r5;
+        int $i3, $i4, $i5, $i6;
+        float $f0, $f1;
+        cx.hell.android.pdfview.Actions $r7;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$2;
+
+        $r1 := @parameter0: android.view.MotionEvent;
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $l0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: long access$15(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        $l0 = $l0 + 600L;
+
+        $l1 = staticinvoke <android.os.SystemClock: long uptimeMillis()>();
+
+        $b2 = $l0 cmp $l1;
+
+        if $b2 <= 0 goto label1;
+
+        return 0;
+
+     label1:
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $z0 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: boolean access$16(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        if $z0 != 0 goto label2;
+
+        $r4 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.pdfview.OpenFileActivity val$openFileActivity>;
+
+        virtualinvoke $r4.<cx.hell.android.pdfview.OpenFileActivity: void showZoom()>();
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView val$pagesView>;
+
+        virtualinvoke $r3.<cx.hell.android.lib.pagesview.PagesView: void invalidate()>();
+
+     label2:
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $r5 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: android.widget.LinearLayout access$17(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        if $r5 == null goto label3;
+
+        $r2 = new android.graphics.Rect;
+
+        specialinvoke $r2.<android.graphics.Rect: void <init>()>();
+
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $r5 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: android.widget.LinearLayout access$17(cx.hell.android.lib.pagesview.PagesView)>($r3);
+
+        virtualinvoke $r5.<android.widget.LinearLayout: void getDrawingRect(android.graphics.Rect)>($r2);
+
+        $i3 = $r2.<android.graphics.Rect: int left>;
+
+        $i3 = $i3 + -5;
+
+        $i4 = $r2.<android.graphics.Rect: int top>;
+
+        $i4 = $i4 + -5;
+
+        $i5 = $r2.<android.graphics.Rect: int right>;
+
+        $i5 = $i5 + 5;
+
+        $i6 = $r2.<android.graphics.Rect: int bottom>;
+
+        $i6 = $i6 + 5;
+
+        virtualinvoke $r2.<android.graphics.Rect: void set(int,int,int,int)>($i3, $i4, $i5, $i6);
+
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getX()>();
+
+        $i3 = (int) $f0;
+
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+
+        $i4 = (int) $f0;
+
+        $z0 = virtualinvoke $r2.<android.graphics.Rect: boolean contains(int,int)>($i3, $i4);
+
+        if $z0 != 0 goto label6;
+
+     label3:
+        $r3 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $r6 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $r7 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: cx.hell.android.pdfview.Actions access$18(cx.hell.android.lib.pagesview.PagesView)>($r6);
+
+        $f0 = virtualinvoke $r1.<android.view.MotionEvent: float getY()>();
+
+        $r6 = $r0.<cx.hell.android.lib.pagesview.PagesView$2: cx.hell.android.lib.pagesview.PagesView this$0>;
+
+        $i3 = staticinvoke <cx.hell.android.lib.pagesview.PagesView: int access$13(cx.hell.android.lib.pagesview.PagesView)>($r6);
+
+        $i3 = $i3 / 2;
+
+        $f1 = (float) $i3;
+
+        $b2 = $f0 cmpg $f1;
+
+        if $b2 >= 0 goto label5;
+
+        $i3 = 1000004;
+
+     label4:
+        $i3 = virtualinvoke $r7.<cx.hell.android.pdfview.Actions: int getAction(int)>($i3);
+
+        $z0 = virtualinvoke $r3.<cx.hell.android.lib.pagesview.PagesView: boolean doAction(int)>($i3);
+
+        return $z0;
+
+     label5:
+        $i3 = 1000005;
+
+        goto label4;
+
+     label6:
+        return 0;
+    }
+}

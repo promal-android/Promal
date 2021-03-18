@@ -1,0 +1,192 @@
+public final class android.hardware.Sensor extends java.lang.Object
+{
+    public static final int TYPE_ACCELEROMETER;
+    public static final int TYPE_MAGNETIC_FIELD;
+    public static final int TYPE_ORIENTATION;
+    public static final int TYPE_GYROSCOPE;
+    public static final int TYPE_LIGHT;
+    public static final int TYPE_PRESSURE;
+    public static final int TYPE_TEMPERATURE;
+    public static final int TYPE_PROXIMITY;
+    public static final int TYPE_GRAVITY;
+    public static final int TYPE_LINEAR_ACCELERATION;
+    public static final int TYPE_ROTATION_VECTOR;
+    public static final int TYPE_RELATIVE_HUMIDITY;
+    public static final int TYPE_AMBIENT_TEMPERATURE;
+    public static final int TYPE_ALL;
+
+    void <init>()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getName()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String getVendor()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getType()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getVersion()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public float getMaximumRange()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public float getResolution()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public float getPower()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getMinDelay()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.String toString()
+    {
+        android.hardware.Sensor r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.Sensor;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static void <clinit>()
+    {
+        <android.hardware.Sensor: int TYPE_ALL> = -1;
+
+        <android.hardware.Sensor: int TYPE_AMBIENT_TEMPERATURE> = 13;
+
+        <android.hardware.Sensor: int TYPE_RELATIVE_HUMIDITY> = 12;
+
+        <android.hardware.Sensor: int TYPE_ROTATION_VECTOR> = 11;
+
+        <android.hardware.Sensor: int TYPE_LINEAR_ACCELERATION> = 10;
+
+        <android.hardware.Sensor: int TYPE_GRAVITY> = 9;
+
+        <android.hardware.Sensor: int TYPE_PROXIMITY> = 8;
+
+        <android.hardware.Sensor: int TYPE_TEMPERATURE> = 7;
+
+        <android.hardware.Sensor: int TYPE_PRESSURE> = 6;
+
+        <android.hardware.Sensor: int TYPE_LIGHT> = 5;
+
+        <android.hardware.Sensor: int TYPE_GYROSCOPE> = 4;
+
+        <android.hardware.Sensor: int TYPE_ORIENTATION> = 3;
+
+        <android.hardware.Sensor: int TYPE_MAGNETIC_FIELD> = 2;
+
+        <android.hardware.Sensor: int TYPE_ACCELEROMETER> = 1;
+
+        return;
+    }
+}

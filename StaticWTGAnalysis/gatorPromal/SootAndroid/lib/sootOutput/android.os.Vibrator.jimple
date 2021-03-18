@@ -1,0 +1,27 @@
+public abstract class android.os.Vibrator extends java.lang.Object
+{
+
+    void <init>()
+    {
+        android.os.Vibrator r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.os.Vibrator;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public abstract boolean hasVibrator();
+
+    public abstract void vibrate(long);
+
+    public abstract void vibrate(long[], int);
+
+    public abstract void cancel();
+}

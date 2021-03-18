@@ -1,0 +1,48 @@
+class cx.hell.android.pdfview.OpenFileActivity$13 extends java.lang.Object implements android.view.View$OnClickListener
+{
+    final cx.hell.android.pdfview.OpenFileActivity this$0;
+    private final android.app.Dialog val$d;
+
+    void <init>(cx.hell.android.pdfview.OpenFileActivity, android.app.Dialog)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$13 $r0;
+        cx.hell.android.pdfview.OpenFileActivity $r1;
+        android.app.Dialog $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$13;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.OpenFileActivity;
+
+        $r2 := @parameter1: android.app.Dialog;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$13: cx.hell.android.pdfview.OpenFileActivity this$0> = $r1;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$13: android.app.Dialog val$d> = $r2;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void onClick(android.view.View)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$13 $r0;
+        android.view.View $r1;
+        android.app.Dialog $r2;
+        cx.hell.android.pdfview.OpenFileActivity $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$13;
+
+        $r1 := @parameter0: android.view.View;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity$13: android.app.Dialog val$d>;
+
+        virtualinvoke $r2.<android.app.Dialog: void dismiss()>();
+
+        $r3 = $r0.<cx.hell.android.pdfview.OpenFileActivity$13: cx.hell.android.pdfview.OpenFileActivity this$0>;
+
+        staticinvoke <cx.hell.android.pdfview.OpenFileActivity: void access$14(cx.hell.android.pdfview.OpenFileActivity,int)>($r3, 0);
+
+        return;
+    }
+}

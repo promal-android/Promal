@@ -1,0 +1,820 @@
+public class cx.hell.android.pdfview.PDFPagesProvider extends cx.hell.android.lib.pagesview.PagesProvider
+{
+    private static final int MB;
+    private static final java.lang.String TAG;
+    android.app.Activity activity;
+    private cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache;
+    private boolean doRenderAhead;
+    private int extraCache;
+    private boolean omitImages;
+    private cx.hell.android.lib.pagesview.OnImageRenderedListener onImageRendererListener;
+    private cx.hell.android.lib.pdf.PDF pdf;
+    private float renderAhead;
+    private cx.hell.android.pdfview.PDFPagesProvider$RendererWorker rendererWorker;
+
+    public void <init>(android.app.Activity, cx.hell.android.lib.pdf.PDF, boolean, boolean)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        android.app.Activity $r1;
+        cx.hell.android.lib.pdf.PDF $r2;
+        boolean $z0, $z1;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r3;
+        cx.hell.android.pdfview.PDFPagesProvider$RendererWorker $r4;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: android.app.Activity;
+
+        $r2 := @parameter1: cx.hell.android.lib.pdf.PDF;
+
+        $z0 := @parameter2: boolean;
+
+        $z1 := @parameter3: boolean;
+
+        specialinvoke $r0.<cx.hell.android.lib.pagesview.PagesProvider: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: float renderAhead> = 2.1F;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean doRenderAhead> = 1;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: int extraCache> = 0;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: android.app.Activity activity> = null;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pdf.PDF pdf> = null;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache> = null;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$RendererWorker rendererWorker> = null;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pagesview.OnImageRenderedListener onImageRendererListener> = null;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pdf.PDF pdf> = $r2;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean omitImages> = $z0;
+
+        $r3 = new cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        specialinvoke $r3.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: void <init>()>();
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache> = $r3;
+
+        $r4 = new cx.hell.android.pdfview.PDFPagesProvider$RendererWorker;
+
+        specialinvoke $r4.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: void <init>(cx.hell.android.pdfview.PDFPagesProvider)>($r0);
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$RendererWorker rendererWorker> = $r4;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: android.app.Activity activity> = $r1;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean doRenderAhead> = $z1;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: void setMaxCacheSize()>();
+
+        return;
+    }
+
+    static java.util.Map access$0(cx.hell.android.pdfview.PDFPagesProvider, java.util.Collection, cx.hell.android.pdfview.PDFPagesProvider$BitmapCache) throws cx.hell.android.lib.pagesview.RenderingException
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        java.util.Collection $r1;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r2;
+        java.util.Map $r3;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter1: java.util.Collection;
+
+        $r2 := @parameter2: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $r3 = specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: java.util.Map renderTiles(java.util.Collection,cx.hell.android.pdfview.PDFPagesProvider$BitmapCache)>($r1, $r2);
+
+        return $r3;
+    }
+
+    static void access$1(cx.hell.android.pdfview.PDFPagesProvider, java.util.Map)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        java.util.Map $r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter1: java.util.Map;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: void publishBitmaps(java.util.Map)>($r1);
+
+        return;
+    }
+
+    static void access$2(cx.hell.android.pdfview.PDFPagesProvider, cx.hell.android.lib.pagesview.RenderingException)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        cx.hell.android.lib.pagesview.RenderingException $r1;
+
+        $r0 := @parameter0: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter1: cx.hell.android.lib.pagesview.RenderingException;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: void publishRenderingException(cx.hell.android.lib.pagesview.RenderingException)>($r1);
+
+        return;
+    }
+
+    private void publishBitmaps(java.util.Map)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        java.util.Map $r1;
+        cx.hell.android.lib.pagesview.OnImageRenderedListener $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: java.util.Map;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pagesview.OnImageRenderedListener onImageRendererListener>;
+
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pagesview.OnImageRenderedListener onImageRendererListener>;
+
+        interfaceinvoke $r2.<cx.hell.android.lib.pagesview.OnImageRenderedListener: void onImagesRendered(java.util.Map)>($r1);
+
+        return;
+
+     label1:
+        staticinvoke <android.util.Log: int w(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", "we\'ve got new bitmaps, but there\'s no one to notify about it!");
+
+        return;
+    }
+
+    private void publishRenderingException(cx.hell.android.lib.pagesview.RenderingException)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        cx.hell.android.lib.pagesview.RenderingException $r1;
+        cx.hell.android.lib.pagesview.OnImageRenderedListener $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.RenderingException;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pagesview.OnImageRenderedListener onImageRendererListener>;
+
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pagesview.OnImageRenderedListener onImageRendererListener>;
+
+        interfaceinvoke $r2.<cx.hell.android.lib.pagesview.OnImageRenderedListener: void onRenderingException(cx.hell.android.lib.pagesview.RenderingException)>($r1);
+
+     label1:
+        return;
+    }
+
+    private android.graphics.Bitmap renderBitmap(cx.hell.android.lib.pagesview.Tile) throws cx.hell.android.lib.pagesview.RenderingException
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        cx.hell.android.lib.pagesview.Tile $r1;
+        boolean $z0;
+        cx.hell.android.lib.pdf.PDF$Size $r2;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r3;
+        int $i0, $i1, $i2, $i3, $i4;
+        cx.hell.android.lib.pdf.PDF $r4;
+        int[] $r5;
+        cx.hell.android.lib.pagesview.RenderingException $r6;
+        java.lang.StringBuilder $r7;
+        java.lang.String $r8;
+        java.lang.Throwable $r9;
+        android.graphics.Bitmap$Config $r10;
+        android.graphics.Bitmap $r11;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.Tile;
+
+        entermonitor $r1;
+
+     label1:
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        $z0 = virtualinvoke $r3.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: boolean contains(cx.hell.android.lib.pagesview.Tile)>($r1);
+
+        if $z0 == 0 goto label3;
+
+        exitmonitor $r1;
+
+     label2:
+        return null;
+
+     label3:
+        $r2 = new cx.hell.android.lib.pdf.PDF$Size;
+
+        $i0 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getPrefXSize()>();
+
+        $i1 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getPrefYSize()>();
+
+        specialinvoke $r2.<cx.hell.android.lib.pdf.PDF$Size: void <init>(int,int)>($i0, $i1);
+
+        $r4 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pdf.PDF pdf>;
+
+        $i0 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getPage()>();
+
+        $i1 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getZoom()>();
+
+        $i2 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getX()>();
+
+        $i3 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getY()>();
+
+        $i4 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getRotation()>();
+
+        $z0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean omitImages>;
+
+        $r5 = virtualinvoke $r4.<cx.hell.android.lib.pdf.PDF: int[] renderPage(int,int,int,int,int,boolean,cx.hell.android.lib.pdf.PDF$Size)>($i0, $i1, $i2, $i3, $i4, $z0, $r2);
+
+        if $r5 != null goto label6;
+
+        $r6 = new cx.hell.android.lib.pagesview.RenderingException;
+
+        $r7 = new java.lang.StringBuilder;
+
+        specialinvoke $r7.<java.lang.StringBuilder: void <init>(java.lang.String)>("Couldn\'t render page ");
+
+        $i0 = virtualinvoke $r1.<cx.hell.android.lib.pagesview.Tile: int getPage()>();
+
+        $r7 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r6.<cx.hell.android.lib.pagesview.RenderingException: void <init>(java.lang.String)>($r8);
+
+        throw $r6;
+
+     label4:
+        $r9 := @caughtexception;
+
+        exitmonitor $r1;
+
+     label5:
+        throw $r9;
+
+     label6:
+        $i0 = $r2.<cx.hell.android.lib.pdf.PDF$Size: int width>;
+
+        $i1 = $r2.<cx.hell.android.lib.pdf.PDF$Size: int height>;
+
+        $r10 = <android.graphics.Bitmap$Config: android.graphics.Bitmap$Config RGB_565>;
+
+        $r11 = staticinvoke <android.graphics.Bitmap: android.graphics.Bitmap createBitmap(int[],int,int,android.graphics.Bitmap$Config)>($r5, $i0, $i1, $r10);
+
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        virtualinvoke $r3.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: void put(cx.hell.android.lib.pagesview.Tile,android.graphics.Bitmap)>($r1, $r11);
+
+        exitmonitor $r1;
+
+     label7:
+        return $r11;
+
+        catch java.lang.Throwable from label1 to label2 with label4;
+        catch java.lang.Throwable from label3 to label5 with label4;
+        catch java.lang.Throwable from label6 to label7 with label4;
+    }
+
+    private java.util.Map renderTiles(java.util.Collection, cx.hell.android.pdfview.PDFPagesProvider$BitmapCache) throws cx.hell.android.lib.pagesview.RenderingException
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        java.util.Collection $r1;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r2;
+        java.util.HashMap $r3;
+        java.util.Iterator $r4;
+        boolean $z0;
+        java.lang.Object $r5;
+        cx.hell.android.lib.pagesview.Tile $r6;
+        android.graphics.Bitmap $r7;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: java.util.Collection;
+
+        $r2 := @parameter1: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache;
+
+        $r3 = new java.util.HashMap;
+
+        specialinvoke $r3.<java.util.HashMap: void <init>()>();
+
+        $r4 = interfaceinvoke $r1.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label1:
+        $z0 = interfaceinvoke $r4.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 != 0 goto label2;
+
+        return $r3;
+
+     label2:
+        $r5 = interfaceinvoke $r4.<java.util.Iterator: java.lang.Object next()>();
+
+        $r6 = (cx.hell.android.lib.pagesview.Tile) $r5;
+
+        $r7 = specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: android.graphics.Bitmap renderBitmap(cx.hell.android.lib.pagesview.Tile)>($r6);
+
+        if $r7 == null goto label1;
+
+        interfaceinvoke $r3.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r6, $r7);
+
+        goto label1;
+    }
+
+    private void setMaxCacheSize()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        long $l0;
+        java.lang.Runtime $r1;
+        byte $b1;
+        int $i2, $i3, $i4, $i5, $i6, $i7;
+        android.app.Activity $r2;
+        android.view.WindowManager $r3;
+        android.view.Display $r4;
+        float $f0, $f1;
+        boolean $z0;
+        java.lang.StringBuilder $r5;
+        java.lang.String $r6;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r7;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>();
+
+        $l0 = virtualinvoke $r1.<java.lang.Runtime: long maxMemory()>();
+
+        $l0 = $l0 / 2L;
+
+        $l0 = $l0 - 4194304L;
+
+        $b1 = $l0 cmp 268435456L;
+
+        if $b1 <= 0 goto label09;
+
+        $i2 = 268435456;
+
+     label01:
+        $i3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: int extraCache>;
+
+        $i3 = 7340032 + $i3;
+
+        if $i3 >= $i2 goto label02;
+
+        $i3 = $i2;
+
+     label02:
+        if $i3 >= 4194304 goto label03;
+
+        $i3 = 4194304;
+
+     label03:
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: android.app.Activity activity>;
+
+        $r3 = virtualinvoke $r2.<android.app.Activity: android.view.WindowManager getWindowManager()>();
+
+        $r4 = interfaceinvoke $r3.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+
+        $i4 = virtualinvoke $r4.<android.view.Display: int getHeight()>();
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: android.app.Activity activity>;
+
+        $r3 = virtualinvoke $r2.<android.app.Activity: android.view.WindowManager getWindowManager()>();
+
+        $r4 = interfaceinvoke $r3.<android.view.WindowManager: android.view.Display getDefaultDisplay()>();
+
+        $i5 = virtualinvoke $r4.<android.view.Display: int getWidth()>();
+
+        $i6 = $i5 * $i4;
+
+        if $i6 > 76800 goto label04;
+
+        $i6 = 76800;
+
+     label04:
+        $f0 = (float) $i6;
+
+        $f0 = $f0 * 1.25F;
+
+        $f0 = $f0 * 1.0001F;
+
+        $i6 = (int) $f0;
+
+        $z0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean doRenderAhead>;
+
+        if $z0 == 0 goto label11;
+
+        $f0 = (float) $i6;
+
+        $f0 = $f0 * 2.1F;
+
+        $i7 = (int) $f0;
+
+        if $i7 > $i3 goto label10;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: float renderAhead> = 2.1F;
+
+        $f0 = (float) $i6;
+
+        $f1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: float renderAhead>;
+
+        $f0 = $f0 * $f1;
+
+        $i6 = (int) $f0;
+
+     label05:
+        if $i6 >= 4194304 goto label06;
+
+        $i6 = 4194304;
+
+     label06:
+        $i7 = 20971520 + $i6;
+
+        if $i7 > $i3 goto label07;
+
+        $i6 = $i3 - 20971520;
+
+     label07:
+        if $i6 >= $i3 goto label08;
+
+        $i7 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: int extraCache>;
+
+        $i6 = $i6 + $i7;
+
+        if $i3 >= $i6 goto label08;
+
+        $i6 = $i3;
+
+     label08:
+        $r5 = new java.lang.StringBuilder;
+
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("Setting cache size=");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i6);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" renderAhead=");
+
+        $f0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: float renderAhead>;
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(float)>($f0);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" for ");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("x");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i4);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" (avail=");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        staticinvoke <android.util.Log: int v(java.lang.String,java.lang.String)>("cx.hell.android.pdfview", $r6);
+
+        $r7 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        virtualinvoke $r7.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: void setMaxCacheSizeBytes(int)>($i6);
+
+        return;
+
+     label09:
+        $i2 = (int) $l0;
+
+        goto label01;
+
+     label10:
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: float renderAhead> = 1.0001F;
+
+        goto label05;
+
+     label11:
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: float renderAhead> = 1.0001F;
+
+        goto label05;
+    }
+
+    public android.graphics.Bitmap getPageBitmap(cx.hell.android.lib.pagesview.Tile)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        cx.hell.android.lib.pagesview.Tile $r1;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r2;
+        android.graphics.Bitmap $r3;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.Tile;
+
+        $r2 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        $r3 = virtualinvoke $r2.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: android.graphics.Bitmap get(cx.hell.android.lib.pagesview.Tile)>($r1);
+
+        if $r3 == null goto label1;
+
+        return $r3;
+
+     label1:
+        return null;
+    }
+
+    public int getPageCount()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        cx.hell.android.lib.pdf.PDF $r1;
+        int $i0;
+        java.lang.RuntimeException $r2;
+        java.lang.StringBuilder $r3;
+        java.lang.String $r4;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pdf.PDF pdf>;
+
+        $i0 = virtualinvoke $r1.<cx.hell.android.lib.pdf.PDF: int getPageCount()>();
+
+        if $i0 > 0 goto label1;
+
+        $r2 = new java.lang.RuntimeException;
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>("failed to load pdf file: getPageCount returned ");
+
+        $r3 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>($r4);
+
+        throw $r2;
+
+     label1:
+        return $i0;
+    }
+
+    public int[][] getPageSizes()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        cx.hell.android.lib.pdf.PDF$Size $r1;
+        int[][] $r2;
+        int $i0, $i1, $i2;
+        cx.hell.android.lib.pdf.PDF $r3;
+        java.lang.RuntimeException $r4;
+        java.lang.StringBuilder $r5;
+        java.lang.String $r6;
+        int[] $r7;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $i0 = virtualinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: int getPageCount()>();
+
+        $r2 = newarray (int[])[$i0];
+
+        $r1 = new cx.hell.android.lib.pdf.PDF$Size;
+
+        specialinvoke $r1.<cx.hell.android.lib.pdf.PDF$Size: void <init>()>();
+
+        $i1 = 0;
+
+     label1:
+        if $i1 < $i0 goto label2;
+
+        return $r2;
+
+     label2:
+        $r3 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pdf.PDF pdf>;
+
+        $i2 = virtualinvoke $r3.<cx.hell.android.lib.pdf.PDF: int getPageSize(int,cx.hell.android.lib.pdf.PDF$Size)>($i1, $r1);
+
+        if $i2 == 0 goto label3;
+
+        $r4 = new java.lang.RuntimeException;
+
+        $r5 = new java.lang.StringBuilder;
+
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>(java.lang.String)>("failed to getPageSize(");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i1);
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",...), error: ");
+
+        $r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i2);
+
+        $r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>($r6);
+
+        throw $r4;
+
+     label3:
+        $r7 = newarray (int)[2];
+
+        $r2[$i1] = $r7;
+
+        $r7 = $r2[$i1];
+
+        $i2 = $r1.<cx.hell.android.lib.pdf.PDF$Size: int width>;
+
+        $r7[0] = $i2;
+
+        $r7 = $r2[$i1];
+
+        $i2 = $r1.<cx.hell.android.lib.pdf.PDF$Size: int height>;
+
+        $r7[1] = $i2;
+
+        $i1 = $i1 + 1;
+
+        goto label1;
+    }
+
+    public float getRenderAhead()
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        float f0;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        f0 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: float renderAhead>;
+
+        return f0;
+    }
+
+    public void setExtraCache(int)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        int $i0;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $i0 := @parameter0: int;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: int extraCache> = $i0;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: void setMaxCacheSize()>();
+
+        return;
+    }
+
+    public void setOmitImages(boolean)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        boolean $z0, $z1;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $z0 := @parameter0: boolean;
+
+        $z1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean omitImages>;
+
+        if $z1 != $z0 goto label1;
+
+        return;
+
+     label1:
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean omitImages> = $z0;
+
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        if $r1 == null goto label2;
+
+        $r1 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        virtualinvoke $r1.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: void clearCache()>();
+
+     label2:
+        return;
+    }
+
+    public void setOnImageRenderedListener(cx.hell.android.lib.pagesview.OnImageRenderedListener)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        cx.hell.android.lib.pagesview.OnImageRenderedListener $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.OnImageRenderedListener;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.lib.pagesview.OnImageRenderedListener onImageRendererListener> = $r1;
+
+        return;
+    }
+
+    public void setRenderAhead(boolean)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        boolean $z0;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $z0 := @parameter0: boolean;
+
+        $r0.<cx.hell.android.pdfview.PDFPagesProvider: boolean doRenderAhead> = $z0;
+
+        specialinvoke $r0.<cx.hell.android.pdfview.PDFPagesProvider: void setMaxCacheSize()>();
+
+        return;
+    }
+
+    public void setVisibleTiles(java.util.Collection)
+    {
+        cx.hell.android.pdfview.PDFPagesProvider $r0;
+        java.util.Collection $r1;
+        java.util.Iterator $r2;
+        java.util.LinkedList $r3;
+        boolean $z0;
+        cx.hell.android.pdfview.PDFPagesProvider$RendererWorker $r4;
+        cx.hell.android.pdfview.PDFPagesProvider$BitmapCache $r5;
+        java.lang.Object $r6;
+        cx.hell.android.lib.pagesview.Tile $r7;
+        java.lang.Throwable $r8;
+
+        $r0 := @this: cx.hell.android.pdfview.PDFPagesProvider;
+
+        $r1 := @parameter0: java.util.Collection;
+
+        entermonitor $r0;
+
+     label01:
+        $r2 = interfaceinvoke $r1.<java.util.Collection: java.util.Iterator iterator()>();
+
+     label02:
+        $r3 = null;
+
+     label03:
+        $z0 = interfaceinvoke $r2.<java.util.Iterator: boolean hasNext()>();
+
+        if $z0 != 0 goto label05;
+
+        if $r3 == null goto label04;
+
+        $r4 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$RendererWorker rendererWorker>;
+
+        $r5 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        virtualinvoke $r4.<cx.hell.android.pdfview.PDFPagesProvider$RendererWorker: void setTiles(java.util.Collection,cx.hell.android.pdfview.PDFPagesProvider$BitmapCache)>($r3, $r5);
+
+     label04:
+        exitmonitor $r0;
+
+        return;
+
+     label05:
+        $r6 = interfaceinvoke $r2.<java.util.Iterator: java.lang.Object next()>();
+
+        $r7 = (cx.hell.android.lib.pagesview.Tile) $r6;
+
+        $r5 = $r0.<cx.hell.android.pdfview.PDFPagesProvider: cx.hell.android.pdfview.PDFPagesProvider$BitmapCache bitmapCache>;
+
+        $z0 = virtualinvoke $r5.<cx.hell.android.pdfview.PDFPagesProvider$BitmapCache: boolean contains(cx.hell.android.lib.pagesview.Tile)>($r7);
+
+        if $z0 != 0 goto label03;
+
+        if $r3 != null goto label11;
+
+        $r3 = new java.util.LinkedList;
+
+        specialinvoke $r3.<java.util.LinkedList: void <init>()>();
+
+     label06:
+        interfaceinvoke $r3.<java.util.List: boolean add(java.lang.Object)>($r7);
+
+     label07:
+        goto label03;
+
+     label08:
+        $r8 := @caughtexception;
+
+     label09:
+        exitmonitor $r0;
+
+        throw $r8;
+
+     label10:
+        $r8 := @caughtexception;
+
+        goto label09;
+
+     label11:
+        goto label06;
+
+        catch java.lang.Throwable from label01 to label02 with label08;
+        catch java.lang.Throwable from label03 to label04 with label10;
+        catch java.lang.Throwable from label05 to label06 with label10;
+        catch java.lang.Throwable from label06 to label07 with label08;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.PDFPagesProvider: java.lang.String TAG> = "cx.hell.android.pdfview";
+
+        <cx.hell.android.pdfview.PDFPagesProvider: int MB> = 1048576;
+
+        return;
+    }
+}

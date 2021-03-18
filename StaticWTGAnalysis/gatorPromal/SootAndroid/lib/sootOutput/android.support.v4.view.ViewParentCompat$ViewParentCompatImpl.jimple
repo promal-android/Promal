@@ -1,0 +1,5 @@
+interface  android.support.v4.view.ViewParentCompat$ViewParentCompatImpl extends java.lang.Object
+{
+
+    public abstract boolean requestSendAccessibilityEvent(android.view.ViewParent, android.view.View, android.view.accessibility.AccessibilityEvent);
+}

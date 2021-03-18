@@ -1,0 +1,43 @@
+class cx.hell.android.lib.pagesview.PagesView$3$2 extends java.lang.Object implements android.content.DialogInterface$OnCancelListener
+{
+    final cx.hell.android.lib.pagesview.PagesView$3 this$1;
+    private final android.app.Activity val$activity;
+
+    void <init>(cx.hell.android.lib.pagesview.PagesView$3, android.app.Activity)
+    {
+        cx.hell.android.lib.pagesview.PagesView$3$2 $r0;
+        cx.hell.android.lib.pagesview.PagesView$3 $r1;
+        android.app.Activity $r2;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$3$2;
+
+        $r1 := @parameter0: cx.hell.android.lib.pagesview.PagesView$3;
+
+        $r2 := @parameter1: android.app.Activity;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$3$2: cx.hell.android.lib.pagesview.PagesView$3 this$1> = $r1;
+
+        $r0.<cx.hell.android.lib.pagesview.PagesView$3$2: android.app.Activity val$activity> = $r2;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void onCancel(android.content.DialogInterface)
+    {
+        cx.hell.android.lib.pagesview.PagesView$3$2 $r0;
+        android.content.DialogInterface $r1;
+        android.app.Activity $r2;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.PagesView$3$2;
+
+        $r1 := @parameter0: android.content.DialogInterface;
+
+        $r2 = $r0.<cx.hell.android.lib.pagesview.PagesView$3$2: android.app.Activity val$activity>;
+
+        virtualinvoke $r2.<android.app.Activity: void finish()>();
+
+        return;
+    }
+}

@@ -1,0 +1,37 @@
+class cx.hell.android.pdfview.OpenFileActivity$Finder$3 extends java.lang.Object implements java.lang.Runnable
+{
+    final cx.hell.android.pdfview.OpenFileActivity$Finder this$1;
+
+    void <init>(cx.hell.android.pdfview.OpenFileActivity$Finder)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$Finder$3 $r0;
+        cx.hell.android.pdfview.OpenFileActivity$Finder $r1;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$Finder$3;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.OpenFileActivity$Finder;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$3: cx.hell.android.pdfview.OpenFileActivity$Finder this$1> = $r1;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void run()
+    {
+        cx.hell.android.pdfview.OpenFileActivity$Finder$3 $r0;
+        android.app.AlertDialog $r1;
+        cx.hell.android.pdfview.OpenFileActivity$Finder $r2;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$Finder$3;
+
+        $r2 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$3: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r1 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: android.app.AlertDialog access$5(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r2);
+
+        virtualinvoke $r1.<android.app.AlertDialog: void show()>();
+
+        return;
+    }
+}

@@ -1,0 +1,58 @@
+public final class cx.hell.android.pdfview.R$id extends java.lang.Object
+{
+    public static final int button_close;
+    public static final int files;
+    public static final int folder;
+    public static final int home;
+    public static final int path;
+    public static final int recent1;
+    public static final int recent2;
+    public static final int recent3;
+    public static final int recent4;
+    public static final int recent5;
+    public static final int text;
+    public static final int upfolder;
+    public static final int webview_about;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$id $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$id;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$id: int webview_about> = 2131296256;
+
+        <cx.hell.android.pdfview.R$id: int upfolder> = 2131296260;
+
+        <cx.hell.android.pdfview.R$id: int text> = 2131296268;
+
+        <cx.hell.android.pdfview.R$id: int recent5> = 2131296267;
+
+        <cx.hell.android.pdfview.R$id: int recent4> = 2131296266;
+
+        <cx.hell.android.pdfview.R$id: int recent3> = 2131296265;
+
+        <cx.hell.android.pdfview.R$id: int recent2> = 2131296264;
+
+        <cx.hell.android.pdfview.R$id: int recent1> = 2131296263;
+
+        <cx.hell.android.pdfview.R$id: int path> = 2131296258;
+
+        <cx.hell.android.pdfview.R$id: int home> = 2131296262;
+
+        <cx.hell.android.pdfview.R$id: int folder> = 2131296261;
+
+        <cx.hell.android.pdfview.R$id: int files> = 2131296259;
+
+        <cx.hell.android.pdfview.R$id: int button_close> = 2131296257;
+
+        return;
+    }
+}

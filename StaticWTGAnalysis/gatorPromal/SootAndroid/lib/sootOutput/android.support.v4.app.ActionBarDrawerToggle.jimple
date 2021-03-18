@@ -1,0 +1,544 @@
+public class android.support.v4.app.ActionBarDrawerToggle extends java.lang.Object implements android.support.v4.widget.DrawerLayout$DrawerListener
+{
+    private static final int ID_HOME;
+    private static final android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl IMPL;
+    private final android.app.Activity mActivity;
+    private final android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl;
+    private final int mCloseDrawerContentDescRes;
+    private android.graphics.drawable.Drawable mDrawerImage;
+    private final int mDrawerImageResource;
+    private boolean mDrawerIndicatorEnabled;
+    private final android.support.v4.widget.DrawerLayout mDrawerLayout;
+    private final int mOpenDrawerContentDescRes;
+    private java.lang.Object mSetIndicatorInfo;
+    private android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider;
+    private android.graphics.drawable.Drawable mThemeImage;
+
+    static void <clinit>()
+    {
+        int $i0;
+        android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImplHC $r0;
+        android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImplBase $r1;
+
+        <android.support.v4.app.ActionBarDrawerToggle: int ID_HOME> = 16908332;
+
+        $i0 = <android.os.Build$VERSION: int SDK_INT>;
+
+        if $i0 < 11 goto label1;
+
+        $r0 = new android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImplHC;
+
+        specialinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImplHC: void <init>(android.support.v4.app.ActionBarDrawerToggle$1)>(null);
+
+        <android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl IMPL> = $r0;
+
+        return;
+
+     label1:
+        $r1 = new android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImplBase;
+
+        specialinvoke $r1.<android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImplBase: void <init>(android.support.v4.app.ActionBarDrawerToggle$1)>(null);
+
+        <android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl IMPL> = $r1;
+
+        return;
+    }
+
+    public void <init>(android.app.Activity, android.support.v4.widget.DrawerLayout, int, int, int)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.support.v4.widget.DrawerLayout $r1;
+        int $i0, $i1, $i2;
+        android.app.Activity $r2;
+        android.graphics.drawable.Drawable $r3;
+        android.content.res.Resources $r4;
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r5;
+        boolean $z0;
+        android.support.v4.app.ActionBarDrawerToggle$DelegateProvider $r6;
+        android.support.v4.app.ActionBarDrawerToggle$Delegate $r7;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r2 := @parameter0: android.app.Activity;
+
+        $r1 := @parameter1: android.support.v4.widget.DrawerLayout;
+
+        $i0 := @parameter2: int;
+
+        $i1 := @parameter3: int;
+
+        $i2 := @parameter4: int;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled> = 1;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.app.Activity mActivity> = $r2;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.widget.DrawerLayout mDrawerLayout> = $r1;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: int mDrawerImageResource> = $i0;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: int mOpenDrawerContentDescRes> = $i1;
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: int mCloseDrawerContentDescRes> = $i2;
+
+        $r3 = virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable getThemeUpIndicator()>();
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable mThemeImage> = $r3;
+
+        $r4 = virtualinvoke $r2.<android.app.Activity: android.content.res.Resources getResources()>();
+
+        $r3 = virtualinvoke $r4.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable mDrawerImage> = $r3;
+
+        $r5 = new android.support.v4.app.ActionBarDrawerToggle$SlideDrawable;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable mDrawerImage>;
+
+        specialinvoke $r5.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void <init>(android.graphics.drawable.Drawable)>($r3);
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider> = $r5;
+
+        $r5 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        virtualinvoke $r5.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void setOffsetBy(float)>(0.33333334F);
+
+        $z0 = $r2 instanceof android.support.v4.app.ActionBarDrawerToggle$DelegateProvider;
+
+        if $z0 == 0 goto label1;
+
+        $r6 = (android.support.v4.app.ActionBarDrawerToggle$DelegateProvider) $r2;
+
+        $r7 = interfaceinvoke $r6.<android.support.v4.app.ActionBarDrawerToggle$DelegateProvider: android.support.v4.app.ActionBarDrawerToggle$Delegate getDrawerToggleDelegate()>();
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl> = $r7;
+
+        return;
+
+     label1:
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl> = null;
+
+        return;
+    }
+
+    android.graphics.drawable.Drawable getThemeUpIndicator()
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.app.Activity $r1;
+        android.support.v4.app.ActionBarDrawerToggle$Delegate $r2;
+        android.graphics.drawable.Drawable $r3;
+        android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl $r4;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl>;
+
+        if $r2 == null goto label1;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl>;
+
+        $r3 = interfaceinvoke $r2.<android.support.v4.app.ActionBarDrawerToggle$Delegate: android.graphics.drawable.Drawable getThemeUpIndicator()>();
+
+        return $r3;
+
+     label1:
+        $r4 = <android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl IMPL>;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.app.Activity mActivity>;
+
+        $r3 = interfaceinvoke $r4.<android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl: android.graphics.drawable.Drawable getThemeUpIndicator(android.app.Activity)>($r1);
+
+        return $r3;
+    }
+
+    public boolean isDrawerIndicatorEnabled()
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        boolean z0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        z0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled>;
+
+        return z0;
+    }
+
+    public void onConfigurationChanged(android.content.res.Configuration)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.content.res.Configuration $r1;
+        int $i0;
+        android.graphics.drawable.Drawable $r2;
+        android.app.Activity $r3;
+        android.content.res.Resources $r4;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r1 := @parameter0: android.content.res.Configuration;
+
+        $r2 = virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable getThemeUpIndicator()>();
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable mThemeImage> = $r2;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.app.Activity mActivity>;
+
+        $r4 = virtualinvoke $r3.<android.app.Activity: android.content.res.Resources getResources()>();
+
+        $i0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: int mDrawerImageResource>;
+
+        $r2 = virtualinvoke $r4.<android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>($i0);
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable mDrawerImage> = $r2;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: void syncState()>();
+
+        return;
+    }
+
+    public void onDrawerClosed(android.view.View)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.view.View $r1;
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r2;
+        boolean $z0;
+        int $i0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r1 := @parameter0: android.view.View;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        virtualinvoke $r2.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void setOffset(float)>(0.0F);
+
+        $z0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled>;
+
+        if $z0 == 0 goto label1;
+
+        $i0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: int mCloseDrawerContentDescRes>;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: void setActionBarDescription(int)>($i0);
+
+     label1:
+        return;
+    }
+
+    public void onDrawerOpened(android.view.View)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.view.View $r1;
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r2;
+        boolean $z0;
+        int $i0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r1 := @parameter0: android.view.View;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        virtualinvoke $r2.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void setOffset(float)>(1.0F);
+
+        $z0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled>;
+
+        if $z0 == 0 goto label1;
+
+        $i0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: int mOpenDrawerContentDescRes>;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: void setActionBarDescription(int)>($i0);
+
+     label1:
+        return;
+    }
+
+    public void onDrawerSlide(android.view.View, float)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.view.View $r1;
+        float $f0, $f1;
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r2;
+        byte $b0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r1 := @parameter0: android.view.View;
+
+        $f0 := @parameter1: float;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        $f1 = virtualinvoke $r2.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: float getOffset()>();
+
+        $b0 = $f0 cmpl 0.5F;
+
+        if $b0 <= 0 goto label2;
+
+        $f0 = $f0 - 0.5F;
+
+        $f0 = staticinvoke <java.lang.Math: float max(float,float)>(0.0F, $f0);
+
+        $f0 = $f0 * 2.0F;
+
+        $f0 = staticinvoke <java.lang.Math: float max(float,float)>($f1, $f0);
+
+     label1:
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        virtualinvoke $r2.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void setOffset(float)>($f0);
+
+        return;
+
+     label2:
+        $f0 = $f0 * 2.0F;
+
+        $f0 = staticinvoke <java.lang.Math: float min(float,float)>($f1, $f0);
+
+        goto label1;
+    }
+
+    public void onDrawerStateChanged(int)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        int $i0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $i0 := @parameter0: int;
+
+        return;
+    }
+
+    public boolean onOptionsItemSelected(android.view.MenuItem)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.view.MenuItem $r1;
+        int $i0;
+        boolean $z0;
+        android.support.v4.widget.DrawerLayout $r2;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r1 := @parameter0: android.view.MenuItem;
+
+        if $r1 == null goto label3;
+
+        $i0 = interfaceinvoke $r1.<android.view.MenuItem: int getItemId()>();
+
+        if $i0 != 16908332 goto label3;
+
+        $z0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled>;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.widget.DrawerLayout mDrawerLayout>;
+
+        $z0 = virtualinvoke $r2.<android.support.v4.widget.DrawerLayout: boolean isDrawerVisible(int)>(8388611);
+
+        if $z0 == 0 goto label2;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.widget.DrawerLayout mDrawerLayout>;
+
+        virtualinvoke $r2.<android.support.v4.widget.DrawerLayout: void closeDrawer(int)>(8388611);
+
+     label1:
+        return 1;
+
+     label2:
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.widget.DrawerLayout mDrawerLayout>;
+
+        virtualinvoke $r2.<android.support.v4.widget.DrawerLayout: void openDrawer(int)>(8388611);
+
+        goto label1;
+
+     label3:
+        return 0;
+    }
+
+    void setActionBarDescription(int)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        int $i0;
+        java.lang.Object $r1;
+        android.app.Activity $r2;
+        android.support.v4.app.ActionBarDrawerToggle$Delegate $r3;
+        android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl $r4;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $i0 := @parameter0: int;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl>;
+
+        if $r3 == null goto label1;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl>;
+
+        interfaceinvoke $r3.<android.support.v4.app.ActionBarDrawerToggle$Delegate: void setActionBarDescription(int)>($i0);
+
+        return;
+
+     label1:
+        $r4 = <android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl IMPL>;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle: java.lang.Object mSetIndicatorInfo>;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.app.Activity mActivity>;
+
+        $r1 = interfaceinvoke $r4.<android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl: java.lang.Object setActionBarDescription(java.lang.Object,android.app.Activity,int)>($r1, $r2, $i0);
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: java.lang.Object mSetIndicatorInfo> = $r1;
+
+        return;
+    }
+
+    void setActionBarUpIndicator(android.graphics.drawable.Drawable, int)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.graphics.drawable.Drawable $r1;
+        int $i0;
+        java.lang.Object $r2;
+        android.app.Activity $r3;
+        android.support.v4.app.ActionBarDrawerToggle$Delegate $r4;
+        android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl $r5;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r1 := @parameter0: android.graphics.drawable.Drawable;
+
+        $i0 := @parameter1: int;
+
+        $r4 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl>;
+
+        if $r4 == null goto label1;
+
+        $r4 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$Delegate mActivityImpl>;
+
+        interfaceinvoke $r4.<android.support.v4.app.ActionBarDrawerToggle$Delegate: void setActionBarUpIndicator(android.graphics.drawable.Drawable,int)>($r1, $i0);
+
+        return;
+
+     label1:
+        $r5 = <android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl IMPL>;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: java.lang.Object mSetIndicatorInfo>;
+
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.app.Activity mActivity>;
+
+        $r2 = interfaceinvoke $r5.<android.support.v4.app.ActionBarDrawerToggle$ActionBarDrawerToggleImpl: java.lang.Object setActionBarUpIndicator(java.lang.Object,android.app.Activity,android.graphics.drawable.Drawable,int)>($r2, $r3, $r1, $i0);
+
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: java.lang.Object mSetIndicatorInfo> = $r2;
+
+        return;
+    }
+
+    public void setDrawerIndicatorEnabled(boolean)
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        boolean $z0, $z1;
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r1;
+        android.support.v4.widget.DrawerLayout $r2;
+        int $i0;
+        android.graphics.drawable.Drawable $r3;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $z0 := @parameter0: boolean;
+
+        $z1 = $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled>;
+
+        if $z0 == $z1 goto label5;
+
+        if $z0 == 0 goto label4;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.widget.DrawerLayout mDrawerLayout>;
+
+        $z1 = virtualinvoke $r2.<android.support.v4.widget.DrawerLayout: boolean isDrawerOpen(int)>(8388611);
+
+        if $z1 == 0 goto label3;
+
+        $i0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: int mOpenDrawerContentDescRes>;
+
+     label1:
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: void setActionBarUpIndicator(android.graphics.drawable.Drawable,int)>($r1, $i0);
+
+     label2:
+        $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled> = $z0;
+
+        return;
+
+     label3:
+        $i0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: int mCloseDrawerContentDescRes>;
+
+        goto label1;
+
+     label4:
+        $r3 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.graphics.drawable.Drawable mThemeImage>;
+
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: void setActionBarUpIndicator(android.graphics.drawable.Drawable,int)>($r3, 0);
+
+        goto label2;
+
+     label5:
+        return;
+    }
+
+    public void syncState()
+    {
+        android.support.v4.app.ActionBarDrawerToggle $r0;
+        android.support.v4.widget.DrawerLayout $r1;
+        boolean $z0;
+        android.support.v4.app.ActionBarDrawerToggle$SlideDrawable $r2;
+        int $i0;
+
+        $r0 := @this: android.support.v4.app.ActionBarDrawerToggle;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.widget.DrawerLayout mDrawerLayout>;
+
+        $z0 = virtualinvoke $r1.<android.support.v4.widget.DrawerLayout: boolean isDrawerOpen(int)>(8388611);
+
+        if $z0 == 0 goto label3;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        virtualinvoke $r2.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void setOffset(float)>(1.0F);
+
+     label1:
+        $z0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: boolean mDrawerIndicatorEnabled>;
+
+        if $z0 == 0 goto label5;
+
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        $r1 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.widget.DrawerLayout mDrawerLayout>;
+
+        $z0 = virtualinvoke $r1.<android.support.v4.widget.DrawerLayout: boolean isDrawerOpen(int)>(8388611);
+
+        if $z0 == 0 goto label4;
+
+        $i0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: int mOpenDrawerContentDescRes>;
+
+     label2:
+        virtualinvoke $r0.<android.support.v4.app.ActionBarDrawerToggle: void setActionBarUpIndicator(android.graphics.drawable.Drawable,int)>($r2, $i0);
+
+        return;
+
+     label3:
+        $r2 = $r0.<android.support.v4.app.ActionBarDrawerToggle: android.support.v4.app.ActionBarDrawerToggle$SlideDrawable mSlider>;
+
+        virtualinvoke $r2.<android.support.v4.app.ActionBarDrawerToggle$SlideDrawable: void setOffset(float)>(0.0F);
+
+        goto label1;
+
+     label4:
+        $i0 = $r0.<android.support.v4.app.ActionBarDrawerToggle: int mCloseDrawerContentDescRes>;
+
+        goto label2;
+
+     label5:
+        return;
+    }
+}

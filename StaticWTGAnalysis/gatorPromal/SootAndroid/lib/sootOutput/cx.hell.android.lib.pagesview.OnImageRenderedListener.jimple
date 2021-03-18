@@ -1,0 +1,7 @@
+public interface  cx.hell.android.lib.pagesview.OnImageRenderedListener extends java.lang.Object
+{
+
+    public abstract void onImagesRendered(java.util.Map);
+
+    public abstract void onRenderingException(cx.hell.android.lib.pagesview.RenderingException);
+}

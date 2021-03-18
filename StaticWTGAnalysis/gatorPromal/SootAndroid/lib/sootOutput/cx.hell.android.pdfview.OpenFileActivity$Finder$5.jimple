@@ -1,0 +1,127 @@
+class cx.hell.android.pdfview.OpenFileActivity$Finder$5 extends java.lang.Object implements java.lang.Runnable
+{
+    final cx.hell.android.pdfview.OpenFileActivity$Finder this$1;
+    private final java.util.List val$findResults;
+    private final int val$page;
+
+    void <init>(cx.hell.android.pdfview.OpenFileActivity$Finder, java.util.List, int)
+    {
+        cx.hell.android.pdfview.OpenFileActivity$Finder$5 $r0;
+        cx.hell.android.pdfview.OpenFileActivity$Finder $r1;
+        java.util.List $r2;
+        int $i0;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$Finder$5;
+
+        $r1 := @parameter0: cx.hell.android.pdfview.OpenFileActivity$Finder;
+
+        $r2 := @parameter1: java.util.List;
+
+        $i0 := @parameter2: int;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1> = $r1;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: java.util.List val$findResults> = $r2;
+
+        $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: int val$page> = $i0;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void run()
+    {
+        cx.hell.android.pdfview.OpenFileActivity$Finder$5 $r0;
+        cx.hell.android.pdfview.OpenFileActivity$Finder $r1;
+        boolean $z0;
+        int $i0, $i1;
+        cx.hell.android.pdfview.OpenFileActivity $r2;
+        java.lang.Integer $r3;
+        cx.hell.android.lib.pagesview.PagesView $r4;
+        java.util.List $r5;
+        android.widget.LinearLayout $r6;
+
+        $r0 := @this: cx.hell.android.pdfview.OpenFileActivity$Finder$5;
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $z0 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: boolean access$6(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        if $z0 == 0 goto label2;
+
+        $i0 = 0;
+
+     label1:
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $i1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: int val$page>;
+
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i1);
+
+        staticinvoke <cx.hell.android.pdfview.OpenFileActivity: void access$4(cx.hell.android.pdfview.OpenFileActivity,java.lang.Integer)>($r2, $r3);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r3 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i0);
+
+        staticinvoke <cx.hell.android.pdfview.OpenFileActivity: void access$5(cx.hell.android.pdfview.OpenFileActivity,java.lang.Integer)>($r2, $r3);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r4 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView access$1(cx.hell.android.pdfview.OpenFileActivity)>($r2);
+
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: java.util.List val$findResults>;
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void setFindResults(java.util.List)>($r5);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r4 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView access$1(cx.hell.android.pdfview.OpenFileActivity)>($r2);
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void setFindMode(boolean)>(1);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r4 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView access$1(cx.hell.android.pdfview.OpenFileActivity)>($r2);
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void scrollToFindResult(int)>($i0);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r6 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity: android.widget.LinearLayout access$6(cx.hell.android.pdfview.OpenFileActivity)>($r2);
+
+        virtualinvoke $r6.<android.widget.LinearLayout: void setVisibility(int)>(0);
+
+        $r1 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: cx.hell.android.pdfview.OpenFileActivity$Finder this$1>;
+
+        $r2 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity$Finder: cx.hell.android.pdfview.OpenFileActivity access$0(cx.hell.android.pdfview.OpenFileActivity$Finder)>($r1);
+
+        $r4 = staticinvoke <cx.hell.android.pdfview.OpenFileActivity: cx.hell.android.lib.pagesview.PagesView access$1(cx.hell.android.pdfview.OpenFileActivity)>($r2);
+
+        virtualinvoke $r4.<cx.hell.android.lib.pagesview.PagesView: void invalidate()>();
+
+        return;
+
+     label2:
+        $r5 = $r0.<cx.hell.android.pdfview.OpenFileActivity$Finder$5: java.util.List val$findResults>;
+
+        $i0 = interfaceinvoke $r5.<java.util.List: int size()>();
+
+        $i0 = $i0 + -1;
+
+        goto label1;
+    }
+}

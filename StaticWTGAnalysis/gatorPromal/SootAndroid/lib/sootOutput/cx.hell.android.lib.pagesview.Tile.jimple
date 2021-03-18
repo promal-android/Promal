@@ -1,0 +1,257 @@
+public class cx.hell.android.lib.pagesview.Tile extends java.lang.Object
+{
+    int _hashCode;
+    private int page;
+    private int prefXSize;
+    private int prefYSize;
+    private int rotation;
+    private int x;
+    private int y;
+    private int zoom;
+
+    public void <init>(int, int, int, int, int, int, int)
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int $i0, $i1, $i2, $i3, $i4, $i5, $i6;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        $i0 := @parameter0: int;
+
+        $i1 := @parameter1: int;
+
+        $i2 := @parameter2: int;
+
+        $i3 := @parameter3: int;
+
+        $i4 := @parameter4: int;
+
+        $i5 := @parameter5: int;
+
+        $i6 := @parameter6: int;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        $r0.<cx.hell.android.lib.pagesview.Tile: int prefXSize> = $i5;
+
+        $r0.<cx.hell.android.lib.pagesview.Tile: int prefYSize> = $i6;
+
+        $r0.<cx.hell.android.lib.pagesview.Tile: int page> = $i0;
+
+        $r0.<cx.hell.android.lib.pagesview.Tile: int zoom> = $i1;
+
+        $r0.<cx.hell.android.lib.pagesview.Tile: int x> = $i2;
+
+        $r0.<cx.hell.android.lib.pagesview.Tile: int y> = $i3;
+
+        $r0.<cx.hell.android.lib.pagesview.Tile: int rotation> = $i4;
+
+        return;
+    }
+
+    public boolean equals(java.lang.Object)
+    {
+        cx.hell.android.lib.pagesview.Tile $r0, $r2;
+        java.lang.Object $r1;
+        boolean $z0;
+        int $i0, $i1;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        $r1 := @parameter0: java.lang.Object;
+
+        $z0 = $r1 instanceof cx.hell.android.lib.pagesview.Tile;
+
+        if $z0 != 0 goto label1;
+
+        return 0;
+
+     label1:
+        $r2 = (cx.hell.android.lib.pagesview.Tile) $r1;
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int _hashCode>;
+
+        $i1 = $r2.<cx.hell.android.lib.pagesview.Tile: int _hashCode>;
+
+        if $i0 != $i1 goto label2;
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int page>;
+
+        $i1 = $r2.<cx.hell.android.lib.pagesview.Tile: int page>;
+
+        if $i0 != $i1 goto label2;
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int zoom>;
+
+        $i1 = $r2.<cx.hell.android.lib.pagesview.Tile: int zoom>;
+
+        if $i0 != $i1 goto label2;
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int x>;
+
+        $i1 = $r2.<cx.hell.android.lib.pagesview.Tile: int x>;
+
+        if $i0 != $i1 goto label2;
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int y>;
+
+        $i1 = $r2.<cx.hell.android.lib.pagesview.Tile: int y>;
+
+        if $i0 != $i1 goto label2;
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int rotation>;
+
+        $i1 = $r2.<cx.hell.android.lib.pagesview.Tile: int rotation>;
+
+        if $i0 != $i1 goto label2;
+
+        return 1;
+
+     label2:
+        return 0;
+    }
+
+    public int getPage()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int page>;
+
+        return i0;
+    }
+
+    public int getPrefXSize()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int prefXSize>;
+
+        return i0;
+    }
+
+    public int getPrefYSize()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int prefYSize>;
+
+        return i0;
+    }
+
+    public int getRotation()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int rotation>;
+
+        return i0;
+    }
+
+    public int getX()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int x>;
+
+        return i0;
+    }
+
+    public int getY()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int y>;
+
+        return i0;
+    }
+
+    public int getZoom()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int zoom>;
+
+        return i0;
+    }
+
+    public int hashCode()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        int i0;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int _hashCode>;
+
+        return i0;
+    }
+
+    public java.lang.String toString()
+    {
+        cx.hell.android.lib.pagesview.Tile $r0;
+        java.lang.StringBuilder $r1;
+        int $i0;
+        java.lang.String $r2;
+
+        $r0 := @this: cx.hell.android.lib.pagesview.Tile;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("Tile(");
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int page>;
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int zoom>;
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int x>;
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int y>;
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", ");
+
+        $i0 = $r0.<cx.hell.android.lib.pagesview.Tile: int rotation>;
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(")");
+
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        return $r2;
+    }
+}

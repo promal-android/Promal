@@ -1,0 +1,267 @@
+public class android.content.pm.ActivityInfo extends android.content.pm.ComponentInfo implements android.os.Parcelable
+{
+    public int theme;
+    public static final int LAUNCH_MULTIPLE;
+    public static final int LAUNCH_SINGLE_TOP;
+    public static final int LAUNCH_SINGLE_TASK;
+    public static final int LAUNCH_SINGLE_INSTANCE;
+    public int launchMode;
+    public java.lang.String permission;
+    public java.lang.String taskAffinity;
+    public java.lang.String targetActivity;
+    public static final int FLAG_MULTIPROCESS;
+    public static final int FLAG_FINISH_ON_TASK_LAUNCH;
+    public static final int FLAG_CLEAR_TASK_ON_LAUNCH;
+    public static final int FLAG_ALWAYS_RETAIN_TASK_STATE;
+    public static final int FLAG_STATE_NOT_NEEDED;
+    public static final int FLAG_EXCLUDE_FROM_RECENTS;
+    public static final int FLAG_ALLOW_TASK_REPARENTING;
+    public static final int FLAG_NO_HISTORY;
+    public static final int FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS;
+    public static final int FLAG_HARDWARE_ACCELERATED;
+    public static final int FLAG_SINGLE_USER;
+    public int flags;
+    public static final int SCREEN_ORIENTATION_UNSPECIFIED;
+    public static final int SCREEN_ORIENTATION_LANDSCAPE;
+    public static final int SCREEN_ORIENTATION_PORTRAIT;
+    public static final int SCREEN_ORIENTATION_USER;
+    public static final int SCREEN_ORIENTATION_BEHIND;
+    public static final int SCREEN_ORIENTATION_SENSOR;
+    public static final int SCREEN_ORIENTATION_NOSENSOR;
+    public static final int SCREEN_ORIENTATION_SENSOR_LANDSCAPE;
+    public static final int SCREEN_ORIENTATION_SENSOR_PORTRAIT;
+    public static final int SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
+    public static final int SCREEN_ORIENTATION_REVERSE_PORTRAIT;
+    public static final int SCREEN_ORIENTATION_FULL_SENSOR;
+    public int screenOrientation;
+    public static final int CONFIG_MCC;
+    public static final int CONFIG_MNC;
+    public static final int CONFIG_LOCALE;
+    public static final int CONFIG_TOUCHSCREEN;
+    public static final int CONFIG_KEYBOARD;
+    public static final int CONFIG_KEYBOARD_HIDDEN;
+    public static final int CONFIG_NAVIGATION;
+    public static final int CONFIG_ORIENTATION;
+    public static final int CONFIG_SCREEN_LAYOUT;
+    public static final int CONFIG_UI_MODE;
+    public static final int CONFIG_SCREEN_SIZE;
+    public static final int CONFIG_SMALLEST_SCREEN_SIZE;
+    public static final int CONFIG_DENSITY;
+    public static final int CONFIG_LAYOUT_DIRECTION;
+    public static final int CONFIG_FONT_SCALE;
+    public int configChanges;
+    public int softInputMode;
+    public int uiOptions;
+    public static final int UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW;
+    public java.lang.String parentActivityName;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>()
+    {
+        android.content.pm.ActivityInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ActivityInfo;
+
+        specialinvoke r0.<android.content.pm.ComponentInfo: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(android.content.pm.ActivityInfo)
+    {
+        android.content.pm.ActivityInfo r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.pm.ActivityInfo;
+
+        r1 := @parameter0: android.content.pm.ActivityInfo;
+
+        specialinvoke r0.<android.content.pm.ComponentInfo: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public final int getThemeResource()
+    {
+        android.content.pm.ActivityInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ActivityInfo;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void dump(android.util.Printer, java.lang.String)
+    {
+        android.content.pm.ActivityInfo r0;
+        android.util.Printer r1;
+        java.lang.String r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.pm.ActivityInfo;
+
+        r1 := @parameter0: android.util.Printer;
+
+        r2 := @parameter1: java.lang.String;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public java.lang.String toString()
+    {
+        android.content.pm.ActivityInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ActivityInfo;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int describeContents()
+    {
+        android.content.pm.ActivityInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ActivityInfo;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.content.pm.ActivityInfo r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.pm.ActivityInfo;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    static void <clinit>()
+    {
+        <android.content.pm.ActivityInfo: int UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW> = 1;
+
+        <android.content.pm.ActivityInfo: int CONFIG_FONT_SCALE> = 1073741824;
+
+        <android.content.pm.ActivityInfo: int CONFIG_LAYOUT_DIRECTION> = 8192;
+
+        <android.content.pm.ActivityInfo: int CONFIG_DENSITY> = 4096;
+
+        <android.content.pm.ActivityInfo: int CONFIG_SMALLEST_SCREEN_SIZE> = 2048;
+
+        <android.content.pm.ActivityInfo: int CONFIG_SCREEN_SIZE> = 1024;
+
+        <android.content.pm.ActivityInfo: int CONFIG_UI_MODE> = 512;
+
+        <android.content.pm.ActivityInfo: int CONFIG_SCREEN_LAYOUT> = 256;
+
+        <android.content.pm.ActivityInfo: int CONFIG_ORIENTATION> = 128;
+
+        <android.content.pm.ActivityInfo: int CONFIG_NAVIGATION> = 64;
+
+        <android.content.pm.ActivityInfo: int CONFIG_KEYBOARD_HIDDEN> = 32;
+
+        <android.content.pm.ActivityInfo: int CONFIG_KEYBOARD> = 16;
+
+        <android.content.pm.ActivityInfo: int CONFIG_TOUCHSCREEN> = 8;
+
+        <android.content.pm.ActivityInfo: int CONFIG_LOCALE> = 4;
+
+        <android.content.pm.ActivityInfo: int CONFIG_MNC> = 2;
+
+        <android.content.pm.ActivityInfo: int CONFIG_MCC> = 1;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_FULL_SENSOR> = 10;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_REVERSE_PORTRAIT> = 9;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_REVERSE_LANDSCAPE> = 8;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_SENSOR_PORTRAIT> = 7;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_SENSOR_LANDSCAPE> = 6;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_NOSENSOR> = 5;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_SENSOR> = 4;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_BEHIND> = 3;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_USER> = 2;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_PORTRAIT> = 1;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_LANDSCAPE> = 0;
+
+        <android.content.pm.ActivityInfo: int SCREEN_ORIENTATION_UNSPECIFIED> = -1;
+
+        <android.content.pm.ActivityInfo: int FLAG_SINGLE_USER> = 1073741824;
+
+        <android.content.pm.ActivityInfo: int FLAG_HARDWARE_ACCELERATED> = 512;
+
+        <android.content.pm.ActivityInfo: int FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS> = 256;
+
+        <android.content.pm.ActivityInfo: int FLAG_NO_HISTORY> = 128;
+
+        <android.content.pm.ActivityInfo: int FLAG_ALLOW_TASK_REPARENTING> = 64;
+
+        <android.content.pm.ActivityInfo: int FLAG_EXCLUDE_FROM_RECENTS> = 32;
+
+        <android.content.pm.ActivityInfo: int FLAG_STATE_NOT_NEEDED> = 16;
+
+        <android.content.pm.ActivityInfo: int FLAG_ALWAYS_RETAIN_TASK_STATE> = 8;
+
+        <android.content.pm.ActivityInfo: int FLAG_CLEAR_TASK_ON_LAUNCH> = 4;
+
+        <android.content.pm.ActivityInfo: int FLAG_FINISH_ON_TASK_LAUNCH> = 2;
+
+        <android.content.pm.ActivityInfo: int FLAG_MULTIPROCESS> = 1;
+
+        <android.content.pm.ActivityInfo: int LAUNCH_SINGLE_INSTANCE> = 3;
+
+        <android.content.pm.ActivityInfo: int LAUNCH_SINGLE_TASK> = 2;
+
+        <android.content.pm.ActivityInfo: int LAUNCH_SINGLE_TOP> = 1;
+
+        <android.content.pm.ActivityInfo: int LAUNCH_MULTIPLE> = 0;
+
+        <android.content.pm.ActivityInfo: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}

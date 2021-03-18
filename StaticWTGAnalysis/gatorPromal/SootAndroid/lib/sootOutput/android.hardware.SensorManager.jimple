@@ -1,0 +1,545 @@
+public abstract class android.hardware.SensorManager extends java.lang.Object
+{
+    public static final int SENSOR_ORIENTATION;
+    public static final int SENSOR_ACCELEROMETER;
+    public static final int SENSOR_TEMPERATURE;
+    public static final int SENSOR_MAGNETIC_FIELD;
+    public static final int SENSOR_LIGHT;
+    public static final int SENSOR_PROXIMITY;
+    public static final int SENSOR_TRICORDER;
+    public static final int SENSOR_ORIENTATION_RAW;
+    public static final int SENSOR_ALL;
+    public static final int SENSOR_MIN;
+    public static final int SENSOR_MAX;
+    public static final int DATA_X;
+    public static final int DATA_Y;
+    public static final int DATA_Z;
+    public static final int RAW_DATA_INDEX;
+    public static final int RAW_DATA_X;
+    public static final int RAW_DATA_Y;
+    public static final int RAW_DATA_Z;
+    public static final float STANDARD_GRAVITY;
+    public static final float GRAVITY_SUN;
+    public static final float GRAVITY_MERCURY;
+    public static final float GRAVITY_VENUS;
+    public static final float GRAVITY_EARTH;
+    public static final float GRAVITY_MOON;
+    public static final float GRAVITY_MARS;
+    public static final float GRAVITY_JUPITER;
+    public static final float GRAVITY_SATURN;
+    public static final float GRAVITY_URANUS;
+    public static final float GRAVITY_NEPTUNE;
+    public static final float GRAVITY_PLUTO;
+    public static final float GRAVITY_DEATH_STAR_I;
+    public static final float GRAVITY_THE_ISLAND;
+    public static final float MAGNETIC_FIELD_EARTH_MAX;
+    public static final float MAGNETIC_FIELD_EARTH_MIN;
+    public static final float PRESSURE_STANDARD_ATMOSPHERE;
+    public static final float LIGHT_SUNLIGHT_MAX;
+    public static final float LIGHT_SUNLIGHT;
+    public static final float LIGHT_SHADE;
+    public static final float LIGHT_OVERCAST;
+    public static final float LIGHT_SUNRISE;
+    public static final float LIGHT_CLOUDY;
+    public static final float LIGHT_FULLMOON;
+    public static final float LIGHT_NO_MOON;
+    public static final int SENSOR_DELAY_FASTEST;
+    public static final int SENSOR_DELAY_GAME;
+    public static final int SENSOR_DELAY_UI;
+    public static final int SENSOR_DELAY_NORMAL;
+    public static final int SENSOR_STATUS_UNRELIABLE;
+    public static final int SENSOR_STATUS_ACCURACY_LOW;
+    public static final int SENSOR_STATUS_ACCURACY_MEDIUM;
+    public static final int SENSOR_STATUS_ACCURACY_HIGH;
+    public static final int AXIS_X;
+    public static final int AXIS_Y;
+    public static final int AXIS_Z;
+    public static final int AXIS_MINUS_X;
+    public static final int AXIS_MINUS_Y;
+    public static final int AXIS_MINUS_Z;
+
+    void <init>()
+    {
+        android.hardware.SensorManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getSensors()
+    {
+        android.hardware.SensorManager r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.util.List getSensorList(int)
+    {
+        android.hardware.SensorManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public android.hardware.Sensor getDefaultSensor(int)
+    {
+        android.hardware.SensorManager r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean registerListener(android.hardware.SensorListener, int)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorListener r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorListener;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean registerListener(android.hardware.SensorListener, int, int)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorListener r1;
+        int i0, i1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorListener;
+
+        i0 := @parameter1: int;
+
+        i1 := @parameter2: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void unregisterListener(android.hardware.SensorListener)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorListener r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorListener;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void unregisterListener(android.hardware.SensorListener, int)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorListener r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorListener;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void unregisterListener(android.hardware.SensorEventListener, android.hardware.Sensor)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorEventListener r1;
+        android.hardware.Sensor r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorEventListener;
+
+        r2 := @parameter1: android.hardware.Sensor;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public void unregisterListener(android.hardware.SensorEventListener)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorEventListener r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorEventListener;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public boolean registerListener(android.hardware.SensorEventListener, android.hardware.Sensor, int)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorEventListener r1;
+        android.hardware.Sensor r2;
+        int i0;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorEventListener;
+
+        r2 := @parameter1: android.hardware.Sensor;
+
+        i0 := @parameter2: int;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public boolean registerListener(android.hardware.SensorEventListener, android.hardware.Sensor, int, android.os.Handler)
+    {
+        android.hardware.SensorManager r0;
+        android.hardware.SensorEventListener r1;
+        android.hardware.Sensor r2;
+        int i0;
+        android.os.Handler r3;
+        java.lang.RuntimeException $r4;
+
+        r0 := @this: android.hardware.SensorManager;
+
+        r1 := @parameter0: android.hardware.SensorEventListener;
+
+        r2 := @parameter1: android.hardware.Sensor;
+
+        i0 := @parameter2: int;
+
+        r3 := @parameter3: android.os.Handler;
+
+        $r4 = new java.lang.RuntimeException;
+
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r4;
+    }
+
+    public static boolean getRotationMatrix(float[], float[], float[], float[])
+    {
+        float[] r0, r1, r2, r3;
+        java.lang.RuntimeException $r4;
+
+        r0 := @parameter0: float[];
+
+        r1 := @parameter1: float[];
+
+        r2 := @parameter2: float[];
+
+        r3 := @parameter3: float[];
+
+        $r4 = new java.lang.RuntimeException;
+
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r4;
+    }
+
+    public static float getInclination(float[])
+    {
+        float[] r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: float[];
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static boolean remapCoordinateSystem(float[], int, int, float[])
+    {
+        float[] r0, r1;
+        int i0, i1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @parameter0: float[];
+
+        i0 := @parameter1: int;
+
+        i1 := @parameter2: int;
+
+        r1 := @parameter3: float[];
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static float[] getOrientation(float[], float[])
+    {
+        float[] r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @parameter0: float[];
+
+        r1 := @parameter1: float[];
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static float getAltitude(float, float)
+    {
+        float f0, f1;
+        java.lang.RuntimeException $r0;
+
+        f0 := @parameter0: float;
+
+        f1 := @parameter1: float;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static void getAngleChange(float[], float[], float[])
+    {
+        float[] r0, r1, r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @parameter0: float[];
+
+        r1 := @parameter1: float[];
+
+        r2 := @parameter2: float[];
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public static void getRotationMatrixFromVector(float[], float[])
+    {
+        float[] r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @parameter0: float[];
+
+        r1 := @parameter1: float[];
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static void getQuaternionFromVector(float[], float[])
+    {
+        float[] r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @parameter0: float[];
+
+        r1 := @parameter1: float[];
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static void <clinit>()
+    {
+        <android.hardware.SensorManager: int AXIS_MINUS_Z> = 131;
+
+        <android.hardware.SensorManager: int AXIS_MINUS_Y> = 130;
+
+        <android.hardware.SensorManager: int AXIS_MINUS_X> = 129;
+
+        <android.hardware.SensorManager: int AXIS_Z> = 3;
+
+        <android.hardware.SensorManager: int AXIS_Y> = 2;
+
+        <android.hardware.SensorManager: int AXIS_X> = 1;
+
+        <android.hardware.SensorManager: int SENSOR_STATUS_ACCURACY_HIGH> = 3;
+
+        <android.hardware.SensorManager: int SENSOR_STATUS_ACCURACY_MEDIUM> = 2;
+
+        <android.hardware.SensorManager: int SENSOR_STATUS_ACCURACY_LOW> = 1;
+
+        <android.hardware.SensorManager: int SENSOR_STATUS_UNRELIABLE> = 0;
+
+        <android.hardware.SensorManager: int SENSOR_DELAY_NORMAL> = 3;
+
+        <android.hardware.SensorManager: int SENSOR_DELAY_UI> = 2;
+
+        <android.hardware.SensorManager: int SENSOR_DELAY_GAME> = 1;
+
+        <android.hardware.SensorManager: int SENSOR_DELAY_FASTEST> = 0;
+
+        <android.hardware.SensorManager: float LIGHT_NO_MOON> = 0.001F;
+
+        <android.hardware.SensorManager: float LIGHT_FULLMOON> = 0.25F;
+
+        <android.hardware.SensorManager: float LIGHT_CLOUDY> = 100.0F;
+
+        <android.hardware.SensorManager: float LIGHT_SUNRISE> = 400.0F;
+
+        <android.hardware.SensorManager: float LIGHT_OVERCAST> = 10000.0F;
+
+        <android.hardware.SensorManager: float LIGHT_SHADE> = 20000.0F;
+
+        <android.hardware.SensorManager: float LIGHT_SUNLIGHT> = 110000.0F;
+
+        <android.hardware.SensorManager: float LIGHT_SUNLIGHT_MAX> = 120000.0F;
+
+        <android.hardware.SensorManager: float PRESSURE_STANDARD_ATMOSPHERE> = 1013.25F;
+
+        <android.hardware.SensorManager: float MAGNETIC_FIELD_EARTH_MIN> = 30.0F;
+
+        <android.hardware.SensorManager: float MAGNETIC_FIELD_EARTH_MAX> = 60.0F;
+
+        <android.hardware.SensorManager: float GRAVITY_THE_ISLAND> = 4.815162F;
+
+        <android.hardware.SensorManager: float GRAVITY_DEATH_STAR_I> = 3.5303614E-7F;
+
+        <android.hardware.SensorManager: float GRAVITY_PLUTO> = 0.6F;
+
+        <android.hardware.SensorManager: float GRAVITY_NEPTUNE> = 11.0F;
+
+        <android.hardware.SensorManager: float GRAVITY_URANUS> = 8.69F;
+
+        <android.hardware.SensorManager: float GRAVITY_SATURN> = 8.96F;
+
+        <android.hardware.SensorManager: float GRAVITY_JUPITER> = 23.12F;
+
+        <android.hardware.SensorManager: float GRAVITY_MARS> = 3.71F;
+
+        <android.hardware.SensorManager: float GRAVITY_MOON> = 1.6F;
+
+        <android.hardware.SensorManager: float GRAVITY_EARTH> = 9.80665F;
+
+        <android.hardware.SensorManager: float GRAVITY_VENUS> = 8.87F;
+
+        <android.hardware.SensorManager: float GRAVITY_MERCURY> = 3.7F;
+
+        <android.hardware.SensorManager: float GRAVITY_SUN> = 275.0F;
+
+        <android.hardware.SensorManager: float STANDARD_GRAVITY> = 9.80665F;
+
+        <android.hardware.SensorManager: int RAW_DATA_Z> = 5;
+
+        <android.hardware.SensorManager: int RAW_DATA_Y> = 4;
+
+        <android.hardware.SensorManager: int RAW_DATA_X> = 3;
+
+        <android.hardware.SensorManager: int RAW_DATA_INDEX> = 3;
+
+        <android.hardware.SensorManager: int DATA_Z> = 2;
+
+        <android.hardware.SensorManager: int DATA_Y> = 1;
+
+        <android.hardware.SensorManager: int DATA_X> = 0;
+
+        <android.hardware.SensorManager: int SENSOR_MAX> = 64;
+
+        <android.hardware.SensorManager: int SENSOR_MIN> = 1;
+
+        <android.hardware.SensorManager: int SENSOR_ALL> = 127;
+
+        <android.hardware.SensorManager: int SENSOR_ORIENTATION_RAW> = 128;
+
+        <android.hardware.SensorManager: int SENSOR_TRICORDER> = 64;
+
+        <android.hardware.SensorManager: int SENSOR_PROXIMITY> = 32;
+
+        <android.hardware.SensorManager: int SENSOR_LIGHT> = 16;
+
+        <android.hardware.SensorManager: int SENSOR_MAGNETIC_FIELD> = 8;
+
+        <android.hardware.SensorManager: int SENSOR_TEMPERATURE> = 4;
+
+        <android.hardware.SensorManager: int SENSOR_ACCELEROMETER> = 2;
+
+        <android.hardware.SensorManager: int SENSOR_ORIENTATION> = 1;
+
+        return;
+    }
+}

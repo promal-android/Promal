@@ -1,0 +1,230 @@
+public class android.content.pm.ApplicationInfo extends android.content.pm.PackageItemInfo implements android.os.Parcelable
+{
+    public java.lang.String taskAffinity;
+    public java.lang.String permission;
+    public java.lang.String processName;
+    public java.lang.String className;
+    public int descriptionRes;
+    public int theme;
+    public java.lang.String manageSpaceActivityName;
+    public java.lang.String backupAgentName;
+    public int uiOptions;
+    public static final int FLAG_SYSTEM;
+    public static final int FLAG_DEBUGGABLE;
+    public static final int FLAG_HAS_CODE;
+    public static final int FLAG_PERSISTENT;
+    public static final int FLAG_FACTORY_TEST;
+    public static final int FLAG_ALLOW_TASK_REPARENTING;
+    public static final int FLAG_ALLOW_CLEAR_USER_DATA;
+    public static final int FLAG_UPDATED_SYSTEM_APP;
+    public static final int FLAG_TEST_ONLY;
+    public static final int FLAG_SUPPORTS_SMALL_SCREENS;
+    public static final int FLAG_SUPPORTS_NORMAL_SCREENS;
+    public static final int FLAG_SUPPORTS_LARGE_SCREENS;
+    public static final int FLAG_RESIZEABLE_FOR_SCREENS;
+    public static final int FLAG_SUPPORTS_SCREEN_DENSITIES;
+    public static final int FLAG_VM_SAFE_MODE;
+    public static final int FLAG_ALLOW_BACKUP;
+    public static final int FLAG_KILL_AFTER_RESTORE;
+    public static final int FLAG_RESTORE_ANY_VERSION;
+    public static final int FLAG_EXTERNAL_STORAGE;
+    public static final int FLAG_SUPPORTS_XLARGE_SCREENS;
+    public static final int FLAG_LARGE_HEAP;
+    public static final int FLAG_STOPPED;
+    public static final int FLAG_SUPPORTS_RTL;
+    public static final int FLAG_INSTALLED;
+    public static final int FLAG_IS_DATA_ONLY;
+    public int flags;
+    public int requiresSmallestWidthDp;
+    public int compatibleWidthLimitDp;
+    public int largestWidthLimitDp;
+    public java.lang.String sourceDir;
+    public java.lang.String publicSourceDir;
+    public java.lang.String[] sharedLibraryFiles;
+    public java.lang.String dataDir;
+    public java.lang.String nativeLibraryDir;
+    public int uid;
+    public int targetSdkVersion;
+    public boolean enabled;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>()
+    {
+        android.content.pm.ApplicationInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ApplicationInfo;
+
+        specialinvoke r0.<android.content.pm.PackageItemInfo: void <init>()>();
+
+        r0.<android.content.pm.ApplicationInfo: java.lang.String[] sharedLibraryFiles> = null;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(android.content.pm.ApplicationInfo)
+    {
+        android.content.pm.ApplicationInfo r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.pm.ApplicationInfo;
+
+        r1 := @parameter0: android.content.pm.ApplicationInfo;
+
+        specialinvoke r0.<android.content.pm.PackageItemInfo: void <init>()>();
+
+        r0.<android.content.pm.ApplicationInfo: java.lang.String[] sharedLibraryFiles> = null;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void dump(android.util.Printer, java.lang.String)
+    {
+        android.content.pm.ApplicationInfo r0;
+        android.util.Printer r1;
+        java.lang.String r2;
+        java.lang.RuntimeException $r3;
+
+        r0 := @this: android.content.pm.ApplicationInfo;
+
+        r1 := @parameter0: android.util.Printer;
+
+        r2 := @parameter1: java.lang.String;
+
+        $r3 = new java.lang.RuntimeException;
+
+        specialinvoke $r3.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r3;
+    }
+
+    public java.lang.String toString()
+    {
+        android.content.pm.ApplicationInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ApplicationInfo;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int describeContents()
+    {
+        android.content.pm.ApplicationInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ApplicationInfo;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.content.pm.ApplicationInfo r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.pm.ApplicationInfo;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.CharSequence loadDescription(android.content.pm.PackageManager)
+    {
+        android.content.pm.ApplicationInfo r0;
+        android.content.pm.PackageManager r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.pm.ApplicationInfo;
+
+        r1 := @parameter0: android.content.pm.PackageManager;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    static void <clinit>()
+    {
+        <android.content.pm.ApplicationInfo: int FLAG_IS_DATA_ONLY> = 16777216;
+
+        <android.content.pm.ApplicationInfo: int FLAG_INSTALLED> = 8388608;
+
+        <android.content.pm.ApplicationInfo: int FLAG_SUPPORTS_RTL> = 4194304;
+
+        <android.content.pm.ApplicationInfo: int FLAG_STOPPED> = 2097152;
+
+        <android.content.pm.ApplicationInfo: int FLAG_LARGE_HEAP> = 1048576;
+
+        <android.content.pm.ApplicationInfo: int FLAG_SUPPORTS_XLARGE_SCREENS> = 524288;
+
+        <android.content.pm.ApplicationInfo: int FLAG_EXTERNAL_STORAGE> = 262144;
+
+        <android.content.pm.ApplicationInfo: int FLAG_RESTORE_ANY_VERSION> = 131072;
+
+        <android.content.pm.ApplicationInfo: int FLAG_KILL_AFTER_RESTORE> = 65536;
+
+        <android.content.pm.ApplicationInfo: int FLAG_ALLOW_BACKUP> = 32768;
+
+        <android.content.pm.ApplicationInfo: int FLAG_VM_SAFE_MODE> = 16384;
+
+        <android.content.pm.ApplicationInfo: int FLAG_SUPPORTS_SCREEN_DENSITIES> = 8192;
+
+        <android.content.pm.ApplicationInfo: int FLAG_RESIZEABLE_FOR_SCREENS> = 4096;
+
+        <android.content.pm.ApplicationInfo: int FLAG_SUPPORTS_LARGE_SCREENS> = 2048;
+
+        <android.content.pm.ApplicationInfo: int FLAG_SUPPORTS_NORMAL_SCREENS> = 1024;
+
+        <android.content.pm.ApplicationInfo: int FLAG_SUPPORTS_SMALL_SCREENS> = 512;
+
+        <android.content.pm.ApplicationInfo: int FLAG_TEST_ONLY> = 256;
+
+        <android.content.pm.ApplicationInfo: int FLAG_UPDATED_SYSTEM_APP> = 128;
+
+        <android.content.pm.ApplicationInfo: int FLAG_ALLOW_CLEAR_USER_DATA> = 64;
+
+        <android.content.pm.ApplicationInfo: int FLAG_ALLOW_TASK_REPARENTING> = 32;
+
+        <android.content.pm.ApplicationInfo: int FLAG_FACTORY_TEST> = 16;
+
+        <android.content.pm.ApplicationInfo: int FLAG_PERSISTENT> = 8;
+
+        <android.content.pm.ApplicationInfo: int FLAG_HAS_CODE> = 4;
+
+        <android.content.pm.ApplicationInfo: int FLAG_DEBUGGABLE> = 2;
+
+        <android.content.pm.ApplicationInfo: int FLAG_SYSTEM> = 1;
+
+        <android.content.pm.ApplicationInfo: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}

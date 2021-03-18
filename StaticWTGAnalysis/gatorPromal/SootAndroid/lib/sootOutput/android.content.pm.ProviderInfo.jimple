@@ -1,0 +1,114 @@
+public final class android.content.pm.ProviderInfo extends android.content.pm.ComponentInfo implements android.os.Parcelable
+{
+    public java.lang.String authority;
+    public java.lang.String readPermission;
+    public java.lang.String writePermission;
+    public boolean grantUriPermissions;
+    public android.os.PatternMatcher[] uriPermissionPatterns;
+    public android.content.pm.PathPermission[] pathPermissions;
+    public boolean multiprocess;
+    public int initOrder;
+    public static final int FLAG_SINGLE_USER;
+    public int flags;
+    public boolean isSyncable;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>()
+    {
+        android.content.pm.ProviderInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ProviderInfo;
+
+        specialinvoke r0.<android.content.pm.ComponentInfo: void <init>()>();
+
+        r0.<android.content.pm.ProviderInfo: android.os.PatternMatcher[] uriPermissionPatterns> = null;
+
+        r0.<android.content.pm.ProviderInfo: android.content.pm.PathPermission[] pathPermissions> = null;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(android.content.pm.ProviderInfo)
+    {
+        android.content.pm.ProviderInfo r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.pm.ProviderInfo;
+
+        r1 := @parameter0: android.content.pm.ProviderInfo;
+
+        specialinvoke r0.<android.content.pm.ComponentInfo: void <init>()>();
+
+        r0.<android.content.pm.ProviderInfo: android.os.PatternMatcher[] uriPermissionPatterns> = null;
+
+        r0.<android.content.pm.ProviderInfo: android.content.pm.PathPermission[] pathPermissions> = null;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int describeContents()
+    {
+        android.content.pm.ProviderInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ProviderInfo;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.content.pm.ProviderInfo r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.content.pm.ProviderInfo;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.String toString()
+    {
+        android.content.pm.ProviderInfo r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.content.pm.ProviderInfo;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    static void <clinit>()
+    {
+        <android.content.pm.ProviderInfo: int FLAG_SINGLE_USER> = 1073741824;
+
+        <android.content.pm.ProviderInfo: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}

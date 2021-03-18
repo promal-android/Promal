@@ -1,0 +1,160 @@
+public final class android.preference.PreferenceActivity$Header extends java.lang.Object implements android.os.Parcelable
+{
+    public long id;
+    public int titleRes;
+    public java.lang.CharSequence title;
+    public int summaryRes;
+    public java.lang.CharSequence summary;
+    public int breadCrumbTitleRes;
+    public java.lang.CharSequence breadCrumbTitle;
+    public int breadCrumbShortTitleRes;
+    public java.lang.CharSequence breadCrumbShortTitle;
+    public int iconRes;
+    public java.lang.String fragment;
+    public android.os.Bundle fragmentArguments;
+    public android.content.Intent intent;
+    public android.os.Bundle extras;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>()
+    {
+        android.preference.PreferenceActivity$Header r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public java.lang.CharSequence getTitle(android.content.res.Resources)
+    {
+        android.preference.PreferenceActivity$Header r0;
+        android.content.res.Resources r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        r1 := @parameter0: android.content.res.Resources;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.CharSequence getSummary(android.content.res.Resources)
+    {
+        android.preference.PreferenceActivity$Header r0;
+        android.content.res.Resources r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        r1 := @parameter0: android.content.res.Resources;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.CharSequence getBreadCrumbTitle(android.content.res.Resources)
+    {
+        android.preference.PreferenceActivity$Header r0;
+        android.content.res.Resources r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        r1 := @parameter0: android.content.res.Resources;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public java.lang.CharSequence getBreadCrumbShortTitle(android.content.res.Resources)
+    {
+        android.preference.PreferenceActivity$Header r0;
+        android.content.res.Resources r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        r1 := @parameter0: android.content.res.Resources;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public int describeContents()
+    {
+        android.preference.PreferenceActivity$Header r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.preference.PreferenceActivity$Header r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void readFromParcel(android.os.Parcel)
+    {
+        android.preference.PreferenceActivity$Header r0;
+        android.os.Parcel r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.preference.PreferenceActivity$Header;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    static void <clinit>()
+    {
+        <android.preference.PreferenceActivity$Header: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}

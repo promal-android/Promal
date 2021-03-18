@@ -1,0 +1,268 @@
+public final class cx.hell.android.pdfview.R$string extends java.lang.Object
+{
+    public static final int about;
+    public static final int app_name;
+    public static final int box;
+    public static final int cancel;
+    public static final int choose_file;
+    public static final int clear_find_text;
+    public static final int close;
+    public static final int color_mode;
+    public static final int default_box;
+    public static final int default_color_mode;
+    public static final int default_double_tap_action;
+    public static final int default_extra_cache;
+    public static final int default_fade_speed;
+    public static final int default_left_right_pair;
+    public static final int default_long_zoom_pair;
+    public static final int default_orientation;
+    public static final int default_page_animation;
+    public static final int default_right_up_down_pair;
+    public static final int default_side_margin;
+    public static final int default_top_bottom_tap_pair;
+    public static final int default_top_margin;
+    public static final int default_up_down_pair;
+    public static final int default_volume_pair;
+    public static final int default_zoom_animation;
+    public static final int default_zoom_pair;
+    public static final int delete;
+    public static final int dirs_first;
+    public static final int disabled;
+    public static final int double_tap_action;
+    public static final int eink;
+    public static final int extra_cache;
+    public static final int extra_cache_sub;
+    public static final int fade_speed;
+    public static final int find_cancel_button;
+    public static final int find_dialog_title;
+    public static final int find_go_button;
+    public static final int find_text;
+    public static final int fullscreen;
+    public static final int go_home;
+    public static final int goto_page;
+    public static final int goto_page_dialog_title;
+    public static final int goto_page_go_button;
+    public static final int gray;
+    public static final int gray_sub;
+    public static final int history;
+    public static final int hw;
+    public static final int invert;
+    public static final int keep_on;
+    public static final int left_right_pair;
+    public static final int long_zoom_pair;
+    public static final int nook2;
+    public static final int omit_images;
+    public static final int options;
+    public static final int orientation;
+    public static final int page;
+    public static final int page_animation;
+    public static final int page_of;
+    public static final int remove_from_recent;
+    public static final int render_ahead;
+    public static final int render_ahead_sub;
+    public static final int right_up_down_pair;
+    public static final int rotate_page_left;
+    public static final int rotate_page_right;
+    public static final int searching_for;
+    public static final int selector;
+    public static final int set_as_home;
+    public static final int show_extension;
+    public static final int show_zoom_on_scroll;
+    public static final int side_margin;
+    public static final int table_of_contents;
+    public static final int text_reflow;
+    public static final int toc_dialog_title;
+    public static final int toggle_fine_zoom;
+    public static final int toggle_invert;
+    public static final int top_bottom_tap_pair;
+    public static final int top_margin;
+    public static final int up_down_pair;
+    public static final int vertical_scroll_lock;
+    public static final int vertical_scroll_lock_sub;
+    public static final int viewer;
+    public static final int volume_pair;
+    public static final int zoom_animation;
+    public static final int zoom_pair;
+
+    public void <init>()
+    {
+        cx.hell.android.pdfview.R$string $r0;
+
+        $r0 := @this: cx.hell.android.pdfview.R$string;
+
+        specialinvoke $r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void <clinit>()
+    {
+        <cx.hell.android.pdfview.R$string: int zoom_pair> = 2131165245;
+
+        <cx.hell.android.pdfview.R$string: int zoom_animation> = 2131165205;
+
+        <cx.hell.android.pdfview.R$string: int volume_pair> = 2131165242;
+
+        <cx.hell.android.pdfview.R$string: int viewer> = 2131165216;
+
+        <cx.hell.android.pdfview.R$string: int vertical_scroll_lock_sub> = 2131165228;
+
+        <cx.hell.android.pdfview.R$string: int vertical_scroll_lock> = 2131165227;
+
+        <cx.hell.android.pdfview.R$string: int up_down_pair> = 2131165243;
+
+        <cx.hell.android.pdfview.R$string: int top_margin> = 2131165236;
+
+        <cx.hell.android.pdfview.R$string: int top_bottom_tap_pair> = 2131165248;
+
+        <cx.hell.android.pdfview.R$string: int toggle_invert> = 2131165197;
+
+        <cx.hell.android.pdfview.R$string: int toggle_fine_zoom> = 2131165198;
+
+        <cx.hell.android.pdfview.R$string: int toc_dialog_title> = 2131165264;
+
+        <cx.hell.android.pdfview.R$string: int text_reflow> = 2131165266;
+
+        <cx.hell.android.pdfview.R$string: int table_of_contents> = 2131165263;
+
+        <cx.hell.android.pdfview.R$string: int side_margin> = 2131165234;
+
+        <cx.hell.android.pdfview.R$string: int show_zoom_on_scroll> = 2131165261;
+
+        <cx.hell.android.pdfview.R$string: int show_extension> = 2131165213;
+
+        <cx.hell.android.pdfview.R$string: int set_as_home> = 2131165199;
+
+        <cx.hell.android.pdfview.R$string: int selector> = 2131165217;
+
+        <cx.hell.android.pdfview.R$string: int searching_for> = 2131165202;
+
+        <cx.hell.android.pdfview.R$string: int rotate_page_right> = 2131165190;
+
+        <cx.hell.android.pdfview.R$string: int rotate_page_left> = 2131165189;
+
+        <cx.hell.android.pdfview.R$string: int right_up_down_pair> = 2131165247;
+
+        <cx.hell.android.pdfview.R$string: int render_ahead_sub> = 2131165220;
+
+        <cx.hell.android.pdfview.R$string: int render_ahead> = 2131165219;
+
+        <cx.hell.android.pdfview.R$string: int remove_from_recent> = 2131165238;
+
+        <cx.hell.android.pdfview.R$string: int page_of> = 2131165203;
+
+        <cx.hell.android.pdfview.R$string: int page_animation> = 2131165207;
+
+        <cx.hell.android.pdfview.R$string: int page> = 2131165223;
+
+        <cx.hell.android.pdfview.R$string: int orientation> = 2131165214;
+
+        <cx.hell.android.pdfview.R$string: int options> = 2131165204;
+
+        <cx.hell.android.pdfview.R$string: int omit_images> = 2131165226;
+
+        <cx.hell.android.pdfview.R$string: int nook2> = 2131165258;
+
+        <cx.hell.android.pdfview.R$string: int long_zoom_pair> = 2131165246;
+
+        <cx.hell.android.pdfview.R$string: int left_right_pair> = 2131165244;
+
+        <cx.hell.android.pdfview.R$string: int keep_on> = 2131165260;
+
+        <cx.hell.android.pdfview.R$string: int invert> = 2131165211;
+
+        <cx.hell.android.pdfview.R$string: int hw> = 2131165256;
+
+        <cx.hell.android.pdfview.R$string: int history> = 2131165262;
+
+        <cx.hell.android.pdfview.R$string: int gray_sub> = 2131165222;
+
+        <cx.hell.android.pdfview.R$string: int gray> = 2131165221;
+
+        <cx.hell.android.pdfview.R$string: int goto_page_go_button> = 2131165188;
+
+        <cx.hell.android.pdfview.R$string: int goto_page_dialog_title> = 2131165187;
+
+        <cx.hell.android.pdfview.R$string: int goto_page> = 2131165186;
+
+        <cx.hell.android.pdfview.R$string: int go_home> = 2131165200;
+
+        <cx.hell.android.pdfview.R$string: int fullscreen> = 2131165218;
+
+        <cx.hell.android.pdfview.R$string: int find_text> = 2131165191;
+
+        <cx.hell.android.pdfview.R$string: int find_go_button> = 2131165193;
+
+        <cx.hell.android.pdfview.R$string: int find_dialog_title> = 2131165192;
+
+        <cx.hell.android.pdfview.R$string: int find_cancel_button> = 2131165194;
+
+        <cx.hell.android.pdfview.R$string: int fade_speed> = 2131165209;
+
+        <cx.hell.android.pdfview.R$string: int extra_cache_sub> = 2131165232;
+
+        <cx.hell.android.pdfview.R$string: int extra_cache> = 2131165231;
+
+        <cx.hell.android.pdfview.R$string: int eink> = 2131165257;
+
+        <cx.hell.android.pdfview.R$string: int double_tap_action> = 2131165241;
+
+        <cx.hell.android.pdfview.R$string: int disabled> = 2131165259;
+
+        <cx.hell.android.pdfview.R$string: int dirs_first> = 2131165212;
+
+        <cx.hell.android.pdfview.R$string: int delete> = 2131165239;
+
+        <cx.hell.android.pdfview.R$string: int default_zoom_pair> = 2131165252;
+
+        <cx.hell.android.pdfview.R$string: int default_zoom_animation> = 2131165206;
+
+        <cx.hell.android.pdfview.R$string: int default_volume_pair> = 2131165249;
+
+        <cx.hell.android.pdfview.R$string: int default_up_down_pair> = 2131165250;
+
+        <cx.hell.android.pdfview.R$string: int default_top_margin> = 2131165237;
+
+        <cx.hell.android.pdfview.R$string: int default_top_bottom_tap_pair> = 2131165255;
+
+        <cx.hell.android.pdfview.R$string: int default_side_margin> = 2131165235;
+
+        <cx.hell.android.pdfview.R$string: int default_right_up_down_pair> = 2131165254;
+
+        <cx.hell.android.pdfview.R$string: int default_page_animation> = 2131165208;
+
+        <cx.hell.android.pdfview.R$string: int default_orientation> = 2131165215;
+
+        <cx.hell.android.pdfview.R$string: int default_long_zoom_pair> = 2131165253;
+
+        <cx.hell.android.pdfview.R$string: int default_left_right_pair> = 2131165251;
+
+        <cx.hell.android.pdfview.R$string: int default_fade_speed> = 2131165210;
+
+        <cx.hell.android.pdfview.R$string: int default_extra_cache> = 2131165233;
+
+        <cx.hell.android.pdfview.R$string: int default_double_tap_action> = 2131165240;
+
+        <cx.hell.android.pdfview.R$string: int default_color_mode> = 2131165225;
+
+        <cx.hell.android.pdfview.R$string: int default_box> = 2131165230;
+
+        <cx.hell.android.pdfview.R$string: int color_mode> = 2131165224;
+
+        <cx.hell.android.pdfview.R$string: int close> = 2131165265;
+
+        <cx.hell.android.pdfview.R$string: int clear_find_text> = 2131165195;
+
+        <cx.hell.android.pdfview.R$string: int choose_file> = 2131165196;
+
+        <cx.hell.android.pdfview.R$string: int cancel> = 2131165201;
+
+        <cx.hell.android.pdfview.R$string: int box> = 2131165229;
+
+        <cx.hell.android.pdfview.R$string: int app_name> = 2131165184;
+
+        <cx.hell.android.pdfview.R$string: int about> = 2131165185;
+
+        return;
+    }
+}

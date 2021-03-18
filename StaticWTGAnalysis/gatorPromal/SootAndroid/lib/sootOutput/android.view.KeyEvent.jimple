@@ -1,0 +1,1876 @@
+public class android.view.KeyEvent extends android.view.InputEvent implements android.os.Parcelable
+{
+    public static final int KEYCODE_UNKNOWN;
+    public static final int KEYCODE_SOFT_LEFT;
+    public static final int KEYCODE_SOFT_RIGHT;
+    public static final int KEYCODE_HOME;
+    public static final int KEYCODE_BACK;
+    public static final int KEYCODE_CALL;
+    public static final int KEYCODE_ENDCALL;
+    public static final int KEYCODE_0;
+    public static final int KEYCODE_1;
+    public static final int KEYCODE_2;
+    public static final int KEYCODE_3;
+    public static final int KEYCODE_4;
+    public static final int KEYCODE_5;
+    public static final int KEYCODE_6;
+    public static final int KEYCODE_7;
+    public static final int KEYCODE_8;
+    public static final int KEYCODE_9;
+    public static final int KEYCODE_STAR;
+    public static final int KEYCODE_POUND;
+    public static final int KEYCODE_DPAD_UP;
+    public static final int KEYCODE_DPAD_DOWN;
+    public static final int KEYCODE_DPAD_LEFT;
+    public static final int KEYCODE_DPAD_RIGHT;
+    public static final int KEYCODE_DPAD_CENTER;
+    public static final int KEYCODE_VOLUME_UP;
+    public static final int KEYCODE_VOLUME_DOWN;
+    public static final int KEYCODE_POWER;
+    public static final int KEYCODE_CAMERA;
+    public static final int KEYCODE_CLEAR;
+    public static final int KEYCODE_A;
+    public static final int KEYCODE_B;
+    public static final int KEYCODE_C;
+    public static final int KEYCODE_D;
+    public static final int KEYCODE_E;
+    public static final int KEYCODE_F;
+    public static final int KEYCODE_G;
+    public static final int KEYCODE_H;
+    public static final int KEYCODE_I;
+    public static final int KEYCODE_J;
+    public static final int KEYCODE_K;
+    public static final int KEYCODE_L;
+    public static final int KEYCODE_M;
+    public static final int KEYCODE_N;
+    public static final int KEYCODE_O;
+    public static final int KEYCODE_P;
+    public static final int KEYCODE_Q;
+    public static final int KEYCODE_R;
+    public static final int KEYCODE_S;
+    public static final int KEYCODE_T;
+    public static final int KEYCODE_U;
+    public static final int KEYCODE_V;
+    public static final int KEYCODE_W;
+    public static final int KEYCODE_X;
+    public static final int KEYCODE_Y;
+    public static final int KEYCODE_Z;
+    public static final int KEYCODE_COMMA;
+    public static final int KEYCODE_PERIOD;
+    public static final int KEYCODE_ALT_LEFT;
+    public static final int KEYCODE_ALT_RIGHT;
+    public static final int KEYCODE_SHIFT_LEFT;
+    public static final int KEYCODE_SHIFT_RIGHT;
+    public static final int KEYCODE_TAB;
+    public static final int KEYCODE_SPACE;
+    public static final int KEYCODE_SYM;
+    public static final int KEYCODE_EXPLORER;
+    public static final int KEYCODE_ENVELOPE;
+    public static final int KEYCODE_ENTER;
+    public static final int KEYCODE_DEL;
+    public static final int KEYCODE_GRAVE;
+    public static final int KEYCODE_MINUS;
+    public static final int KEYCODE_EQUALS;
+    public static final int KEYCODE_LEFT_BRACKET;
+    public static final int KEYCODE_RIGHT_BRACKET;
+    public static final int KEYCODE_BACKSLASH;
+    public static final int KEYCODE_SEMICOLON;
+    public static final int KEYCODE_APOSTROPHE;
+    public static final int KEYCODE_SLASH;
+    public static final int KEYCODE_AT;
+    public static final int KEYCODE_NUM;
+    public static final int KEYCODE_HEADSETHOOK;
+    public static final int KEYCODE_FOCUS;
+    public static final int KEYCODE_PLUS;
+    public static final int KEYCODE_MENU;
+    public static final int KEYCODE_NOTIFICATION;
+    public static final int KEYCODE_SEARCH;
+    public static final int KEYCODE_MEDIA_PLAY_PAUSE;
+    public static final int KEYCODE_MEDIA_STOP;
+    public static final int KEYCODE_MEDIA_NEXT;
+    public static final int KEYCODE_MEDIA_PREVIOUS;
+    public static final int KEYCODE_MEDIA_REWIND;
+    public static final int KEYCODE_MEDIA_FAST_FORWARD;
+    public static final int KEYCODE_MUTE;
+    public static final int KEYCODE_PAGE_UP;
+    public static final int KEYCODE_PAGE_DOWN;
+    public static final int KEYCODE_PICTSYMBOLS;
+    public static final int KEYCODE_SWITCH_CHARSET;
+    public static final int KEYCODE_BUTTON_A;
+    public static final int KEYCODE_BUTTON_B;
+    public static final int KEYCODE_BUTTON_C;
+    public static final int KEYCODE_BUTTON_X;
+    public static final int KEYCODE_BUTTON_Y;
+    public static final int KEYCODE_BUTTON_Z;
+    public static final int KEYCODE_BUTTON_L1;
+    public static final int KEYCODE_BUTTON_R1;
+    public static final int KEYCODE_BUTTON_L2;
+    public static final int KEYCODE_BUTTON_R2;
+    public static final int KEYCODE_BUTTON_THUMBL;
+    public static final int KEYCODE_BUTTON_THUMBR;
+    public static final int KEYCODE_BUTTON_START;
+    public static final int KEYCODE_BUTTON_SELECT;
+    public static final int KEYCODE_BUTTON_MODE;
+    public static final int KEYCODE_ESCAPE;
+    public static final int KEYCODE_FORWARD_DEL;
+    public static final int KEYCODE_CTRL_LEFT;
+    public static final int KEYCODE_CTRL_RIGHT;
+    public static final int KEYCODE_CAPS_LOCK;
+    public static final int KEYCODE_SCROLL_LOCK;
+    public static final int KEYCODE_META_LEFT;
+    public static final int KEYCODE_META_RIGHT;
+    public static final int KEYCODE_FUNCTION;
+    public static final int KEYCODE_SYSRQ;
+    public static final int KEYCODE_BREAK;
+    public static final int KEYCODE_MOVE_HOME;
+    public static final int KEYCODE_MOVE_END;
+    public static final int KEYCODE_INSERT;
+    public static final int KEYCODE_FORWARD;
+    public static final int KEYCODE_MEDIA_PLAY;
+    public static final int KEYCODE_MEDIA_PAUSE;
+    public static final int KEYCODE_MEDIA_CLOSE;
+    public static final int KEYCODE_MEDIA_EJECT;
+    public static final int KEYCODE_MEDIA_RECORD;
+    public static final int KEYCODE_F1;
+    public static final int KEYCODE_F2;
+    public static final int KEYCODE_F3;
+    public static final int KEYCODE_F4;
+    public static final int KEYCODE_F5;
+    public static final int KEYCODE_F6;
+    public static final int KEYCODE_F7;
+    public static final int KEYCODE_F8;
+    public static final int KEYCODE_F9;
+    public static final int KEYCODE_F10;
+    public static final int KEYCODE_F11;
+    public static final int KEYCODE_F12;
+    public static final int KEYCODE_NUM_LOCK;
+    public static final int KEYCODE_NUMPAD_0;
+    public static final int KEYCODE_NUMPAD_1;
+    public static final int KEYCODE_NUMPAD_2;
+    public static final int KEYCODE_NUMPAD_3;
+    public static final int KEYCODE_NUMPAD_4;
+    public static final int KEYCODE_NUMPAD_5;
+    public static final int KEYCODE_NUMPAD_6;
+    public static final int KEYCODE_NUMPAD_7;
+    public static final int KEYCODE_NUMPAD_8;
+    public static final int KEYCODE_NUMPAD_9;
+    public static final int KEYCODE_NUMPAD_DIVIDE;
+    public static final int KEYCODE_NUMPAD_MULTIPLY;
+    public static final int KEYCODE_NUMPAD_SUBTRACT;
+    public static final int KEYCODE_NUMPAD_ADD;
+    public static final int KEYCODE_NUMPAD_DOT;
+    public static final int KEYCODE_NUMPAD_COMMA;
+    public static final int KEYCODE_NUMPAD_ENTER;
+    public static final int KEYCODE_NUMPAD_EQUALS;
+    public static final int KEYCODE_NUMPAD_LEFT_PAREN;
+    public static final int KEYCODE_NUMPAD_RIGHT_PAREN;
+    public static final int KEYCODE_VOLUME_MUTE;
+    public static final int KEYCODE_INFO;
+    public static final int KEYCODE_CHANNEL_UP;
+    public static final int KEYCODE_CHANNEL_DOWN;
+    public static final int KEYCODE_ZOOM_IN;
+    public static final int KEYCODE_ZOOM_OUT;
+    public static final int KEYCODE_TV;
+    public static final int KEYCODE_WINDOW;
+    public static final int KEYCODE_GUIDE;
+    public static final int KEYCODE_DVR;
+    public static final int KEYCODE_BOOKMARK;
+    public static final int KEYCODE_CAPTIONS;
+    public static final int KEYCODE_SETTINGS;
+    public static final int KEYCODE_TV_POWER;
+    public static final int KEYCODE_TV_INPUT;
+    public static final int KEYCODE_STB_POWER;
+    public static final int KEYCODE_STB_INPUT;
+    public static final int KEYCODE_AVR_POWER;
+    public static final int KEYCODE_AVR_INPUT;
+    public static final int KEYCODE_PROG_RED;
+    public static final int KEYCODE_PROG_GREEN;
+    public static final int KEYCODE_PROG_YELLOW;
+    public static final int KEYCODE_PROG_BLUE;
+    public static final int KEYCODE_APP_SWITCH;
+    public static final int KEYCODE_BUTTON_1;
+    public static final int KEYCODE_BUTTON_2;
+    public static final int KEYCODE_BUTTON_3;
+    public static final int KEYCODE_BUTTON_4;
+    public static final int KEYCODE_BUTTON_5;
+    public static final int KEYCODE_BUTTON_6;
+    public static final int KEYCODE_BUTTON_7;
+    public static final int KEYCODE_BUTTON_8;
+    public static final int KEYCODE_BUTTON_9;
+    public static final int KEYCODE_BUTTON_10;
+    public static final int KEYCODE_BUTTON_11;
+    public static final int KEYCODE_BUTTON_12;
+    public static final int KEYCODE_BUTTON_13;
+    public static final int KEYCODE_BUTTON_14;
+    public static final int KEYCODE_BUTTON_15;
+    public static final int KEYCODE_BUTTON_16;
+    public static final int KEYCODE_LANGUAGE_SWITCH;
+    public static final int KEYCODE_MANNER_MODE;
+    public static final int KEYCODE_3D_MODE;
+    public static final int KEYCODE_CONTACTS;
+    public static final int KEYCODE_CALENDAR;
+    public static final int KEYCODE_MUSIC;
+    public static final int KEYCODE_CALCULATOR;
+    public static final int KEYCODE_ZENKAKU_HANKAKU;
+    public static final int KEYCODE_EISU;
+    public static final int KEYCODE_MUHENKAN;
+    public static final int KEYCODE_HENKAN;
+    public static final int KEYCODE_KATAKANA_HIRAGANA;
+    public static final int KEYCODE_YEN;
+    public static final int KEYCODE_RO;
+    public static final int KEYCODE_KANA;
+    public static final int KEYCODE_ASSIST;
+    public static final int MAX_KEYCODE;
+    public static final int ACTION_DOWN;
+    public static final int ACTION_UP;
+    public static final int ACTION_MULTIPLE;
+    public static final int META_ALT_ON;
+    public static final int META_ALT_LEFT_ON;
+    public static final int META_ALT_RIGHT_ON;
+    public static final int META_SHIFT_ON;
+    public static final int META_SHIFT_LEFT_ON;
+    public static final int META_SHIFT_RIGHT_ON;
+    public static final int META_SYM_ON;
+    public static final int META_FUNCTION_ON;
+    public static final int META_CTRL_ON;
+    public static final int META_CTRL_LEFT_ON;
+    public static final int META_CTRL_RIGHT_ON;
+    public static final int META_META_ON;
+    public static final int META_META_LEFT_ON;
+    public static final int META_META_RIGHT_ON;
+    public static final int META_CAPS_LOCK_ON;
+    public static final int META_NUM_LOCK_ON;
+    public static final int META_SCROLL_LOCK_ON;
+    public static final int META_SHIFT_MASK;
+    public static final int META_ALT_MASK;
+    public static final int META_CTRL_MASK;
+    public static final int META_META_MASK;
+    public static final int FLAG_WOKE_HERE;
+    public static final int FLAG_SOFT_KEYBOARD;
+    public static final int FLAG_KEEP_TOUCH_MODE;
+    public static final int FLAG_FROM_SYSTEM;
+    public static final int FLAG_EDITOR_ACTION;
+    public static final int FLAG_CANCELED;
+    public static final int FLAG_VIRTUAL_HARD_KEY;
+    public static final int FLAG_LONG_PRESS;
+    public static final int FLAG_CANCELED_LONG_PRESS;
+    public static final int FLAG_TRACKING;
+    public static final int FLAG_FALLBACK;
+    public static final android.os.Parcelable$Creator CREATOR;
+
+    public void <init>(int, int)
+    {
+        android.view.KeyEvent r0;
+        int i0, i1;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(long, long, int, int, int)
+    {
+        android.view.KeyEvent r0;
+        long l0, l1;
+        int i2, i3, i4;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        l0 := @parameter0: long;
+
+        l1 := @parameter1: long;
+
+        i2 := @parameter2: int;
+
+        i3 := @parameter3: int;
+
+        i4 := @parameter4: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(long, long, int, int, int, int)
+    {
+        android.view.KeyEvent r0;
+        long l0, l1;
+        int i2, i3, i4, i5;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        l0 := @parameter0: long;
+
+        l1 := @parameter1: long;
+
+        i2 := @parameter2: int;
+
+        i3 := @parameter3: int;
+
+        i4 := @parameter4: int;
+
+        i5 := @parameter5: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(long, long, int, int, int, int, int, int)
+    {
+        android.view.KeyEvent r0;
+        long l0, l1;
+        int i2, i3, i4, i5, i6, i7;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        l0 := @parameter0: long;
+
+        l1 := @parameter1: long;
+
+        i2 := @parameter2: int;
+
+        i3 := @parameter3: int;
+
+        i4 := @parameter4: int;
+
+        i5 := @parameter5: int;
+
+        i6 := @parameter6: int;
+
+        i7 := @parameter7: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(long, long, int, int, int, int, int, int, int)
+    {
+        android.view.KeyEvent r0;
+        long l0, l1;
+        int i2, i3, i4, i5, i6, i7, i8;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        l0 := @parameter0: long;
+
+        l1 := @parameter1: long;
+
+        i2 := @parameter2: int;
+
+        i3 := @parameter3: int;
+
+        i4 := @parameter4: int;
+
+        i5 := @parameter5: int;
+
+        i6 := @parameter6: int;
+
+        i7 := @parameter7: int;
+
+        i8 := @parameter8: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(long, long, int, int, int, int, int, int, int, int)
+    {
+        android.view.KeyEvent r0;
+        long l0, l1;
+        int i2, i3, i4, i5, i6, i7, i8, i9;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        l0 := @parameter0: long;
+
+        l1 := @parameter1: long;
+
+        i2 := @parameter2: int;
+
+        i3 := @parameter3: int;
+
+        i4 := @parameter4: int;
+
+        i5 := @parameter5: int;
+
+        i6 := @parameter6: int;
+
+        i7 := @parameter7: int;
+
+        i8 := @parameter8: int;
+
+        i9 := @parameter9: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void <init>(long, java.lang.String, int, int)
+    {
+        android.view.KeyEvent r0;
+        long l0;
+        java.lang.String r1;
+        int i1, i2;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        l0 := @parameter0: long;
+
+        r1 := @parameter1: java.lang.String;
+
+        i1 := @parameter2: int;
+
+        i2 := @parameter3: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void <init>(android.view.KeyEvent)
+    {
+        android.view.KeyEvent r0, r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: android.view.KeyEvent;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public void <init>(android.view.KeyEvent, long, int)
+    {
+        android.view.KeyEvent r0, r1;
+        long l0;
+        int i1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: android.view.KeyEvent;
+
+        l0 := @parameter1: long;
+
+        i1 := @parameter2: int;
+
+        specialinvoke r0.<android.view.InputEvent: void <init>()>();
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public static int getMaxKeyCode()
+    {
+        java.lang.RuntimeException $r0;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static int getDeadChar(int, int)
+    {
+        int i0, i1;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static android.view.KeyEvent changeTimeRepeat(android.view.KeyEvent, long, int)
+    {
+        android.view.KeyEvent r0;
+        long l0;
+        int i1;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.view.KeyEvent;
+
+        l0 := @parameter1: long;
+
+        i1 := @parameter2: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.view.KeyEvent changeTimeRepeat(android.view.KeyEvent, long, int, int)
+    {
+        android.view.KeyEvent r0;
+        long l0;
+        int i1, i2;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.view.KeyEvent;
+
+        l0 := @parameter1: long;
+
+        i1 := @parameter2: int;
+
+        i2 := @parameter3: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.view.KeyEvent changeAction(android.view.KeyEvent, int)
+    {
+        android.view.KeyEvent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.view.KeyEvent;
+
+        i0 := @parameter1: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static android.view.KeyEvent changeFlags(android.view.KeyEvent, int)
+    {
+        android.view.KeyEvent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: android.view.KeyEvent;
+
+        i0 := @parameter1: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isSystem()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static final boolean isGamepadButton(int)
+    {
+        int i0;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public final int getDeviceId()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getSource()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final void setSource(int)
+    {
+        android.view.KeyEvent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getMetaState()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getModifiers()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getFlags()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static int getModifierMetaStateMask()
+    {
+        java.lang.RuntimeException $r0;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static boolean isModifierKey(int)
+    {
+        int i0;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static int normalizeMetaState(int)
+    {
+        int i0;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static boolean metaStateHasNoModifiers(int)
+    {
+        int i0;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static boolean metaStateHasModifiers(int, int)
+    {
+        int i0, i1;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public final boolean hasNoModifiers()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean hasModifiers(int)
+    {
+        android.view.KeyEvent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isAltPressed()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isShiftPressed()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isSymPressed()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isCtrlPressed()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isMetaPressed()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isFunctionPressed()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isCapsLockOn()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isNumLockOn()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isScrollLockOn()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getAction()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isCanceled()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final void startTracking()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isTracking()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean isLongPress()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getKeyCode()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final java.lang.String getCharacters()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getScanCode()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final int getRepeatCount()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final long getDownTime()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final long getEventTime()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final android.view.KeyCharacterMap getKeyCharacterMap()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public char getDisplayLabel()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getUnicodeChar()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public int getUnicodeChar(int)
+    {
+        android.view.KeyEvent r0;
+        int i0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        i0 := @parameter0: int;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean getKeyData(android.view.KeyCharacterMap$KeyData)
+    {
+        android.view.KeyEvent r0;
+        android.view.KeyCharacterMap$KeyData r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: android.view.KeyCharacterMap$KeyData;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public char getMatch(char[])
+    {
+        android.view.KeyEvent r0;
+        char[] r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: char[];
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public char getMatch(char[], int)
+    {
+        android.view.KeyEvent r0;
+        char[] r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: char[];
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public char getNumber()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public boolean isPrintingKey()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public final boolean dispatch(android.view.KeyEvent$Callback)
+    {
+        android.view.KeyEvent r0;
+        android.view.KeyEvent$Callback r1;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: android.view.KeyEvent$Callback;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    public final boolean dispatch(android.view.KeyEvent$Callback, android.view.KeyEvent$DispatcherState, java.lang.Object)
+    {
+        android.view.KeyEvent r0;
+        android.view.KeyEvent$Callback r1;
+        android.view.KeyEvent$DispatcherState r2;
+        java.lang.Object r3;
+        java.lang.RuntimeException $r4;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: android.view.KeyEvent$Callback;
+
+        r2 := @parameter1: android.view.KeyEvent$DispatcherState;
+
+        r3 := @parameter2: java.lang.Object;
+
+        $r4 = new java.lang.RuntimeException;
+
+        specialinvoke $r4.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r4;
+    }
+
+    public java.lang.String toString()
+    {
+        android.view.KeyEvent r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @this: android.view.KeyEvent;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public static java.lang.String keyCodeToString(int)
+    {
+        int i0;
+        java.lang.RuntimeException $r0;
+
+        i0 := @parameter0: int;
+
+        $r0 = new java.lang.RuntimeException;
+
+        specialinvoke $r0.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r0;
+    }
+
+    public static int keyCodeFromString(java.lang.String)
+    {
+        java.lang.String r0;
+        java.lang.RuntimeException $r1;
+
+        r0 := @parameter0: java.lang.String;
+
+        $r1 = new java.lang.RuntimeException;
+
+        specialinvoke $r1.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r1;
+    }
+
+    public void writeToParcel(android.os.Parcel, int)
+    {
+        android.view.KeyEvent r0;
+        android.os.Parcel r1;
+        int i0;
+        java.lang.RuntimeException $r2;
+
+        r0 := @this: android.view.KeyEvent;
+
+        r1 := @parameter0: android.os.Parcel;
+
+        i0 := @parameter1: int;
+
+        $r2 = new java.lang.RuntimeException;
+
+        specialinvoke $r2.<java.lang.RuntimeException: void <init>(java.lang.String)>("Stub!");
+
+        throw $r2;
+    }
+
+    static void <clinit>()
+    {
+        <android.view.KeyEvent: int FLAG_FALLBACK> = 1024;
+
+        <android.view.KeyEvent: int FLAG_TRACKING> = 512;
+
+        <android.view.KeyEvent: int FLAG_CANCELED_LONG_PRESS> = 256;
+
+        <android.view.KeyEvent: int FLAG_LONG_PRESS> = 128;
+
+        <android.view.KeyEvent: int FLAG_VIRTUAL_HARD_KEY> = 64;
+
+        <android.view.KeyEvent: int FLAG_CANCELED> = 32;
+
+        <android.view.KeyEvent: int FLAG_EDITOR_ACTION> = 16;
+
+        <android.view.KeyEvent: int FLAG_FROM_SYSTEM> = 8;
+
+        <android.view.KeyEvent: int FLAG_KEEP_TOUCH_MODE> = 4;
+
+        <android.view.KeyEvent: int FLAG_SOFT_KEYBOARD> = 2;
+
+        <android.view.KeyEvent: int FLAG_WOKE_HERE> = 1;
+
+        <android.view.KeyEvent: int META_META_MASK> = 458752;
+
+        <android.view.KeyEvent: int META_CTRL_MASK> = 28672;
+
+        <android.view.KeyEvent: int META_ALT_MASK> = 50;
+
+        <android.view.KeyEvent: int META_SHIFT_MASK> = 193;
+
+        <android.view.KeyEvent: int META_SCROLL_LOCK_ON> = 4194304;
+
+        <android.view.KeyEvent: int META_NUM_LOCK_ON> = 2097152;
+
+        <android.view.KeyEvent: int META_CAPS_LOCK_ON> = 1048576;
+
+        <android.view.KeyEvent: int META_META_RIGHT_ON> = 262144;
+
+        <android.view.KeyEvent: int META_META_LEFT_ON> = 131072;
+
+        <android.view.KeyEvent: int META_META_ON> = 65536;
+
+        <android.view.KeyEvent: int META_CTRL_RIGHT_ON> = 16384;
+
+        <android.view.KeyEvent: int META_CTRL_LEFT_ON> = 8192;
+
+        <android.view.KeyEvent: int META_CTRL_ON> = 4096;
+
+        <android.view.KeyEvent: int META_FUNCTION_ON> = 8;
+
+        <android.view.KeyEvent: int META_SYM_ON> = 4;
+
+        <android.view.KeyEvent: int META_SHIFT_RIGHT_ON> = 128;
+
+        <android.view.KeyEvent: int META_SHIFT_LEFT_ON> = 64;
+
+        <android.view.KeyEvent: int META_SHIFT_ON> = 1;
+
+        <android.view.KeyEvent: int META_ALT_RIGHT_ON> = 32;
+
+        <android.view.KeyEvent: int META_ALT_LEFT_ON> = 16;
+
+        <android.view.KeyEvent: int META_ALT_ON> = 2;
+
+        <android.view.KeyEvent: int ACTION_MULTIPLE> = 2;
+
+        <android.view.KeyEvent: int ACTION_UP> = 1;
+
+        <android.view.KeyEvent: int ACTION_DOWN> = 0;
+
+        <android.view.KeyEvent: int MAX_KEYCODE> = 84;
+
+        <android.view.KeyEvent: int KEYCODE_ASSIST> = 219;
+
+        <android.view.KeyEvent: int KEYCODE_KANA> = 218;
+
+        <android.view.KeyEvent: int KEYCODE_RO> = 217;
+
+        <android.view.KeyEvent: int KEYCODE_YEN> = 216;
+
+        <android.view.KeyEvent: int KEYCODE_KATAKANA_HIRAGANA> = 215;
+
+        <android.view.KeyEvent: int KEYCODE_HENKAN> = 214;
+
+        <android.view.KeyEvent: int KEYCODE_MUHENKAN> = 213;
+
+        <android.view.KeyEvent: int KEYCODE_EISU> = 212;
+
+        <android.view.KeyEvent: int KEYCODE_ZENKAKU_HANKAKU> = 211;
+
+        <android.view.KeyEvent: int KEYCODE_CALCULATOR> = 210;
+
+        <android.view.KeyEvent: int KEYCODE_MUSIC> = 209;
+
+        <android.view.KeyEvent: int KEYCODE_CALENDAR> = 208;
+
+        <android.view.KeyEvent: int KEYCODE_CONTACTS> = 207;
+
+        <android.view.KeyEvent: int KEYCODE_3D_MODE> = 206;
+
+        <android.view.KeyEvent: int KEYCODE_MANNER_MODE> = 205;
+
+        <android.view.KeyEvent: int KEYCODE_LANGUAGE_SWITCH> = 204;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_16> = 203;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_15> = 202;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_14> = 201;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_13> = 200;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_12> = 199;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_11> = 198;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_10> = 197;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_9> = 196;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_8> = 195;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_7> = 194;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_6> = 193;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_5> = 192;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_4> = 191;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_3> = 190;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_2> = 189;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_1> = 188;
+
+        <android.view.KeyEvent: int KEYCODE_APP_SWITCH> = 187;
+
+        <android.view.KeyEvent: int KEYCODE_PROG_BLUE> = 186;
+
+        <android.view.KeyEvent: int KEYCODE_PROG_YELLOW> = 185;
+
+        <android.view.KeyEvent: int KEYCODE_PROG_GREEN> = 184;
+
+        <android.view.KeyEvent: int KEYCODE_PROG_RED> = 183;
+
+        <android.view.KeyEvent: int KEYCODE_AVR_INPUT> = 182;
+
+        <android.view.KeyEvent: int KEYCODE_AVR_POWER> = 181;
+
+        <android.view.KeyEvent: int KEYCODE_STB_INPUT> = 180;
+
+        <android.view.KeyEvent: int KEYCODE_STB_POWER> = 179;
+
+        <android.view.KeyEvent: int KEYCODE_TV_INPUT> = 178;
+
+        <android.view.KeyEvent: int KEYCODE_TV_POWER> = 177;
+
+        <android.view.KeyEvent: int KEYCODE_SETTINGS> = 176;
+
+        <android.view.KeyEvent: int KEYCODE_CAPTIONS> = 175;
+
+        <android.view.KeyEvent: int KEYCODE_BOOKMARK> = 174;
+
+        <android.view.KeyEvent: int KEYCODE_DVR> = 173;
+
+        <android.view.KeyEvent: int KEYCODE_GUIDE> = 172;
+
+        <android.view.KeyEvent: int KEYCODE_WINDOW> = 171;
+
+        <android.view.KeyEvent: int KEYCODE_TV> = 170;
+
+        <android.view.KeyEvent: int KEYCODE_ZOOM_OUT> = 169;
+
+        <android.view.KeyEvent: int KEYCODE_ZOOM_IN> = 168;
+
+        <android.view.KeyEvent: int KEYCODE_CHANNEL_DOWN> = 167;
+
+        <android.view.KeyEvent: int KEYCODE_CHANNEL_UP> = 166;
+
+        <android.view.KeyEvent: int KEYCODE_INFO> = 165;
+
+        <android.view.KeyEvent: int KEYCODE_VOLUME_MUTE> = 164;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_RIGHT_PAREN> = 163;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_LEFT_PAREN> = 162;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_EQUALS> = 161;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_ENTER> = 160;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_COMMA> = 159;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_DOT> = 158;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_ADD> = 157;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_SUBTRACT> = 156;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_MULTIPLY> = 155;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_DIVIDE> = 154;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_9> = 153;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_8> = 152;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_7> = 151;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_6> = 150;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_5> = 149;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_4> = 148;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_3> = 147;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_2> = 146;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_1> = 145;
+
+        <android.view.KeyEvent: int KEYCODE_NUMPAD_0> = 144;
+
+        <android.view.KeyEvent: int KEYCODE_NUM_LOCK> = 143;
+
+        <android.view.KeyEvent: int KEYCODE_F12> = 142;
+
+        <android.view.KeyEvent: int KEYCODE_F11> = 141;
+
+        <android.view.KeyEvent: int KEYCODE_F10> = 140;
+
+        <android.view.KeyEvent: int KEYCODE_F9> = 139;
+
+        <android.view.KeyEvent: int KEYCODE_F8> = 138;
+
+        <android.view.KeyEvent: int KEYCODE_F7> = 137;
+
+        <android.view.KeyEvent: int KEYCODE_F6> = 136;
+
+        <android.view.KeyEvent: int KEYCODE_F5> = 135;
+
+        <android.view.KeyEvent: int KEYCODE_F4> = 134;
+
+        <android.view.KeyEvent: int KEYCODE_F3> = 133;
+
+        <android.view.KeyEvent: int KEYCODE_F2> = 132;
+
+        <android.view.KeyEvent: int KEYCODE_F1> = 131;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_RECORD> = 130;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_EJECT> = 129;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_CLOSE> = 128;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_PAUSE> = 127;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_PLAY> = 126;
+
+        <android.view.KeyEvent: int KEYCODE_FORWARD> = 125;
+
+        <android.view.KeyEvent: int KEYCODE_INSERT> = 124;
+
+        <android.view.KeyEvent: int KEYCODE_MOVE_END> = 123;
+
+        <android.view.KeyEvent: int KEYCODE_MOVE_HOME> = 122;
+
+        <android.view.KeyEvent: int KEYCODE_BREAK> = 121;
+
+        <android.view.KeyEvent: int KEYCODE_SYSRQ> = 120;
+
+        <android.view.KeyEvent: int KEYCODE_FUNCTION> = 119;
+
+        <android.view.KeyEvent: int KEYCODE_META_RIGHT> = 118;
+
+        <android.view.KeyEvent: int KEYCODE_META_LEFT> = 117;
+
+        <android.view.KeyEvent: int KEYCODE_SCROLL_LOCK> = 116;
+
+        <android.view.KeyEvent: int KEYCODE_CAPS_LOCK> = 115;
+
+        <android.view.KeyEvent: int KEYCODE_CTRL_RIGHT> = 114;
+
+        <android.view.KeyEvent: int KEYCODE_CTRL_LEFT> = 113;
+
+        <android.view.KeyEvent: int KEYCODE_FORWARD_DEL> = 112;
+
+        <android.view.KeyEvent: int KEYCODE_ESCAPE> = 111;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_MODE> = 110;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_SELECT> = 109;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_START> = 108;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_THUMBR> = 107;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_THUMBL> = 106;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_R2> = 105;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_L2> = 104;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_R1> = 103;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_L1> = 102;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_Z> = 101;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_Y> = 100;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_X> = 99;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_C> = 98;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_B> = 97;
+
+        <android.view.KeyEvent: int KEYCODE_BUTTON_A> = 96;
+
+        <android.view.KeyEvent: int KEYCODE_SWITCH_CHARSET> = 95;
+
+        <android.view.KeyEvent: int KEYCODE_PICTSYMBOLS> = 94;
+
+        <android.view.KeyEvent: int KEYCODE_PAGE_DOWN> = 93;
+
+        <android.view.KeyEvent: int KEYCODE_PAGE_UP> = 92;
+
+        <android.view.KeyEvent: int KEYCODE_MUTE> = 91;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_FAST_FORWARD> = 90;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_REWIND> = 89;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_PREVIOUS> = 88;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_NEXT> = 87;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_STOP> = 86;
+
+        <android.view.KeyEvent: int KEYCODE_MEDIA_PLAY_PAUSE> = 85;
+
+        <android.view.KeyEvent: int KEYCODE_SEARCH> = 84;
+
+        <android.view.KeyEvent: int KEYCODE_NOTIFICATION> = 83;
+
+        <android.view.KeyEvent: int KEYCODE_MENU> = 82;
+
+        <android.view.KeyEvent: int KEYCODE_PLUS> = 81;
+
+        <android.view.KeyEvent: int KEYCODE_FOCUS> = 80;
+
+        <android.view.KeyEvent: int KEYCODE_HEADSETHOOK> = 79;
+
+        <android.view.KeyEvent: int KEYCODE_NUM> = 78;
+
+        <android.view.KeyEvent: int KEYCODE_AT> = 77;
+
+        <android.view.KeyEvent: int KEYCODE_SLASH> = 76;
+
+        <android.view.KeyEvent: int KEYCODE_APOSTROPHE> = 75;
+
+        <android.view.KeyEvent: int KEYCODE_SEMICOLON> = 74;
+
+        <android.view.KeyEvent: int KEYCODE_BACKSLASH> = 73;
+
+        <android.view.KeyEvent: int KEYCODE_RIGHT_BRACKET> = 72;
+
+        <android.view.KeyEvent: int KEYCODE_LEFT_BRACKET> = 71;
+
+        <android.view.KeyEvent: int KEYCODE_EQUALS> = 70;
+
+        <android.view.KeyEvent: int KEYCODE_MINUS> = 69;
+
+        <android.view.KeyEvent: int KEYCODE_GRAVE> = 68;
+
+        <android.view.KeyEvent: int KEYCODE_DEL> = 67;
+
+        <android.view.KeyEvent: int KEYCODE_ENTER> = 66;
+
+        <android.view.KeyEvent: int KEYCODE_ENVELOPE> = 65;
+
+        <android.view.KeyEvent: int KEYCODE_EXPLORER> = 64;
+
+        <android.view.KeyEvent: int KEYCODE_SYM> = 63;
+
+        <android.view.KeyEvent: int KEYCODE_SPACE> = 62;
+
+        <android.view.KeyEvent: int KEYCODE_TAB> = 61;
+
+        <android.view.KeyEvent: int KEYCODE_SHIFT_RIGHT> = 60;
+
+        <android.view.KeyEvent: int KEYCODE_SHIFT_LEFT> = 59;
+
+        <android.view.KeyEvent: int KEYCODE_ALT_RIGHT> = 58;
+
+        <android.view.KeyEvent: int KEYCODE_ALT_LEFT> = 57;
+
+        <android.view.KeyEvent: int KEYCODE_PERIOD> = 56;
+
+        <android.view.KeyEvent: int KEYCODE_COMMA> = 55;
+
+        <android.view.KeyEvent: int KEYCODE_Z> = 54;
+
+        <android.view.KeyEvent: int KEYCODE_Y> = 53;
+
+        <android.view.KeyEvent: int KEYCODE_X> = 52;
+
+        <android.view.KeyEvent: int KEYCODE_W> = 51;
+
+        <android.view.KeyEvent: int KEYCODE_V> = 50;
+
+        <android.view.KeyEvent: int KEYCODE_U> = 49;
+
+        <android.view.KeyEvent: int KEYCODE_T> = 48;
+
+        <android.view.KeyEvent: int KEYCODE_S> = 47;
+
+        <android.view.KeyEvent: int KEYCODE_R> = 46;
+
+        <android.view.KeyEvent: int KEYCODE_Q> = 45;
+
+        <android.view.KeyEvent: int KEYCODE_P> = 44;
+
+        <android.view.KeyEvent: int KEYCODE_O> = 43;
+
+        <android.view.KeyEvent: int KEYCODE_N> = 42;
+
+        <android.view.KeyEvent: int KEYCODE_M> = 41;
+
+        <android.view.KeyEvent: int KEYCODE_L> = 40;
+
+        <android.view.KeyEvent: int KEYCODE_K> = 39;
+
+        <android.view.KeyEvent: int KEYCODE_J> = 38;
+
+        <android.view.KeyEvent: int KEYCODE_I> = 37;
+
+        <android.view.KeyEvent: int KEYCODE_H> = 36;
+
+        <android.view.KeyEvent: int KEYCODE_G> = 35;
+
+        <android.view.KeyEvent: int KEYCODE_F> = 34;
+
+        <android.view.KeyEvent: int KEYCODE_E> = 33;
+
+        <android.view.KeyEvent: int KEYCODE_D> = 32;
+
+        <android.view.KeyEvent: int KEYCODE_C> = 31;
+
+        <android.view.KeyEvent: int KEYCODE_B> = 30;
+
+        <android.view.KeyEvent: int KEYCODE_A> = 29;
+
+        <android.view.KeyEvent: int KEYCODE_CLEAR> = 28;
+
+        <android.view.KeyEvent: int KEYCODE_CAMERA> = 27;
+
+        <android.view.KeyEvent: int KEYCODE_POWER> = 26;
+
+        <android.view.KeyEvent: int KEYCODE_VOLUME_DOWN> = 25;
+
+        <android.view.KeyEvent: int KEYCODE_VOLUME_UP> = 24;
+
+        <android.view.KeyEvent: int KEYCODE_DPAD_CENTER> = 23;
+
+        <android.view.KeyEvent: int KEYCODE_DPAD_RIGHT> = 22;
+
+        <android.view.KeyEvent: int KEYCODE_DPAD_LEFT> = 21;
+
+        <android.view.KeyEvent: int KEYCODE_DPAD_DOWN> = 20;
+
+        <android.view.KeyEvent: int KEYCODE_DPAD_UP> = 19;
+
+        <android.view.KeyEvent: int KEYCODE_POUND> = 18;
+
+        <android.view.KeyEvent: int KEYCODE_STAR> = 17;
+
+        <android.view.KeyEvent: int KEYCODE_9> = 16;
+
+        <android.view.KeyEvent: int KEYCODE_8> = 15;
+
+        <android.view.KeyEvent: int KEYCODE_7> = 14;
+
+        <android.view.KeyEvent: int KEYCODE_6> = 13;
+
+        <android.view.KeyEvent: int KEYCODE_5> = 12;
+
+        <android.view.KeyEvent: int KEYCODE_4> = 11;
+
+        <android.view.KeyEvent: int KEYCODE_3> = 10;
+
+        <android.view.KeyEvent: int KEYCODE_2> = 9;
+
+        <android.view.KeyEvent: int KEYCODE_1> = 8;
+
+        <android.view.KeyEvent: int KEYCODE_0> = 7;
+
+        <android.view.KeyEvent: int KEYCODE_ENDCALL> = 6;
+
+        <android.view.KeyEvent: int KEYCODE_CALL> = 5;
+
+        <android.view.KeyEvent: int KEYCODE_BACK> = 4;
+
+        <android.view.KeyEvent: int KEYCODE_HOME> = 3;
+
+        <android.view.KeyEvent: int KEYCODE_SOFT_RIGHT> = 2;
+
+        <android.view.KeyEvent: int KEYCODE_SOFT_LEFT> = 1;
+
+        <android.view.KeyEvent: int KEYCODE_UNKNOWN> = 0;
+
+        <android.view.KeyEvent: android.os.Parcelable$Creator CREATOR> = null;
+
+        return;
+    }
+}
