@@ -31,49 +31,49 @@ ProMal contains three major components.
 
 ## Appendix
 List of the APPs used for evaluation
-| **App ID** | Package Name            | Density | LOC | Category |
-|:---------------|:----------------------------------|------------------:|--------------:|-------------------|
-| App 1         | com.jacobsmedia.sparts           | 1.50             | 6,205        | Sports            |
-| App 2         | com.galaxyodyssey.pushgenius     | 2.50             | 1,815        | Game              |
-| App 3         | com.ajas.CoinFlipFullFree        | 2.80             | 7,079        | Entertainment     |
-| App 4         | net.kreci.crackedscreen          | 3.20             | 7,547        | Entertainment     |
-| App 5         | com.chartcross.gpstest           | 3.25             | 10,402       | Tools             |
-| App 6         | com.unicornrobot.instantzing     | 3.33             | 26,882       | Game              |
-| App 7         | com.laan.hacky                   | 4.00             | 2,708        | Game              |
-| App 8         | com.kineticfoundry.ripple0beta   | 4.40             | 6,508        | Game              |
-| App 9         | com.diotasoft.spark              | 4.50             | 2,345        | Game              |
-| App 10        | com.m3roving.bettercrackedscreen | 4.80             | 8,065        | Entertainment     |
-| App 11        | apps.powdercode.sailboat         | 5.18             | 28,662       | Game              |
-| App 12        | cc.primevision.andosc            | 5.30             | 2,233        | Communication     |
-| App 13        | com.distinctdev.tmtlite          | 7.33             | 14,641       | Game              |
-| App 14        | com.hanoi                        | 7.67             | 4,598        | Game              |
-| App 15        | com.groggy.cleanjokes.free       | 7.80             | 28,083       | Comics            |
-| App 16        | bg.apps.randomstuff              | 8.75             | 8,451        | Tools             |
-| App 17        | net.mandaria.tippytipper         | 8.83             | 4,858        | Finance           |
-| App 18        | com.ts.sticks                    | 8.86             | 44,980       | Game              |
-| App 19        | com.a4droid.sql\_reference       | 10.25            | 281,434      | Books & Reference |
-| App 20        | com.twobitinc.cornholescore      | 12.71            | 4,421        | Entertainment     |
-| App 21        | Gecko.Droid.PhysicsHelper        | 14.00            | 327,700      | Education         |
-| App 22        | com.piviandco.fatbooth           | 17.36            | 16,658       | Entertainment     |
-| App 23        | hr.podlanica                     | 23.30            | 23,549       | Music & Audio     |
-| App 24        | com.roidapp.photogrid            | 23.30            | 12,558       | Photography       |
-| App 25        | CapitalizationCalculator         | 23.60            | 9121         | Finance           |
-| App 26        | com.tof.myquran                  | 25.54            | 41,349       | Books & Reference |
-| App 27        | mobi.infolife.installer          | 30.91            | 52,975       | Business          |
-| App 28        | com.cg.stickynote                | 31.00            | 341,608      | Productivity      |
-| App 29        | com.pilot51.coinflip             | 31.89            | 16,700       | Game              |
-| App 30        | com.youthhr.phonto               | 37.40            | 370,454      | Photography       |
-| App 31        | conjugate.french.free            | 37.60            | 10,520       | Education         |
-| App 32        | com.nixon.eval                   | 46.00            | 5,226        | Tools             |
-| App 33        | nz.gen.geek\_central.ti5x        | 52.00            | 11,968       | Productivity      |
-| App 34        | com.phellax.drum                 | 84.00            | 16,182       | Music & Audio     |
-| App 35        | com.pandapow.vpn                 | 155.57           | 11,363       | Communication     |
-| App 36        | com.naman14.stools               | 1.50             | 131,111      | Tools             |
-| App 37        | com.secuso.torchlight2           | 2.50             | 127,752      | Tools             |
-| App 38        | za.co.lukestonehm.logicaldefence | 3.00             | 192,093      | Education         |
-| App 39        | de.ub0r.android.smsdroid         | 8.50             | 13,762       | Communication     |
-| App 40        | com.bleyl.recurrence             | 35.75            | 249,326      | Productivity      |
-| **Total**       | --                               | --        | 2,666,807    | --                |
+| **App ID** | Package Name            | Density | LOC | Category | Group |
+|:---------------|:----------------------------------|------------------:|--------------:|-------------------|------------|
+| App 1         | com.jacobsmedia.sparts           | 1.50             | 6,205        | Sports            |1|
+| App 2         | com.galaxyodyssey.pushgenius     | 2.50             | 1,815        | Game              |1|
+| App 3         | com.ajas.CoinFlipFullFree        | 2.80             | 7,079        | Entertainment     |1|
+| App 4         | net.kreci.crackedscreen          | 3.20             | 7,547        | Entertainment     |1|
+| App 5         | com.chartcross.gpstest           | 3.25             | 10,402       | Tools             |1|
+| App 6         | com.unicornrobot.instantzing     | 3.33             | 26,882       | Game              |2|
+| App 7         | com.laan.hacky                   | 4.00             | 2,708        | Game              |2|
+| App 8         | com.kineticfoundry.ripple0beta   | 4.40             | 6,508        | Game              |2|
+| App 9         | com.diotasoft.spark              | 4.50             | 2,345        | Game              |2|
+| App 10        | com.m3roving.bettercrackedscreen | 4.80             | 8,065        | Entertainment     |2|
+| App 11        | apps.powdercode.sailboat         | 5.18             | 28,662       | Game              |3|
+| App 12        | cc.primevision.andosc            | 5.30             | 2,233        | Communication     |3|
+| App 13        | com.distinctdev.tmtlite          | 7.33             | 14,641       | Game              |3|
+| App 14        | com.hanoi                        | 7.67             | 4,598        | Game              |3|
+| App 15        | com.groggy.cleanjokes.free       | 7.80             | 28,083       | Comics            |3|
+| App 16        | bg.apps.randomstuff              | 8.75             | 8,451        | Tools             |4|
+| App 17        | net.mandaria.tippytipper         | 8.83             | 4,858        | Finance           |4|
+| App 18        | com.ts.sticks                    | 8.86             | 44,980       | Game              |4|
+| App 19        | com.a4droid.sql\_reference       | 10.25            | 281,434      | Books & Reference |4|
+| App 20        | com.twobitinc.cornholescore      | 12.71            | 4,421        | Entertainment     |4|
+| App 21        | Gecko.Droid.PhysicsHelper        | 14.00            | 327,700      | Education         |5|
+| App 22        | com.piviandco.fatbooth           | 17.36            | 16,658       | Entertainment     |5|
+| App 23        | hr.podlanica                     | 23.30            | 23,549       | Music & Audio     |5|
+| App 24        | com.roidapp.photogrid            | 23.30            | 12,558       | Photography       |5|
+| App 25        | CapitalizationCalculator         | 23.60            | 9121         | Finance           |5|
+| App 26        | com.tof.myquran                  | 25.54            | 41,349       | Books & Reference |6|
+| App 27        | mobi.infolife.installer          | 30.91            | 52,975       | Business          |6|
+| App 28        | com.cg.stickynote                | 31.00            | 341,608      | Productivity      |6|
+| App 29        | com.pilot51.coinflip             | 31.89            | 16,700       | Game              |6|
+| App 30        | com.youthhr.phonto               | 37.40            | 370,454      | Photography       |6|
+| App 31        | conjugate.french.free            | 37.60            | 10,520       | Education         |7|
+| App 32        | com.nixon.eval                   | 46.00            | 5,226        | Tools             |7|
+| App 33        | nz.gen.geek\_central.ti5x        | 52.00            | 11,968       | Productivity      |7|
+| App 34        | com.phellax.drum                 | 84.00            | 16,182       | Music & Audio     |7|
+| App 35        | com.pandapow.vpn                 | 155.57           | 11,363       | Communication     |7|
+| App 36        | com.naman14.stools               | 1.50             | 131,111      | Tools             |F-Droid|
+| App 37        | com.secuso.torchlight2           | 2.50             | 127,752      | Tools             |F-Droid|
+| App 38        | za.co.lukestonehm.logicaldefence | 3.00             | 192,093      | Education         |F-Droid|
+| App 39        | de.ub0r.android.smsdroid         | 8.50             | 13,762       | Communication     |F-Droid|
+| App 40        | com.bleyl.recurrence             | 35.75            | 249,326      | Productivity      |F-Droid|
+| **Total**       | --                               | --        | 2,666,807    | --                | --|
 
 ## Acknowledgement
 
